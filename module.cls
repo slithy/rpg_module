@@ -20,8 +20,6 @@
 
 % TO DO
 %
-% 1. Title page : Title / subtitle / author / picture / abstract / copyright / publisher
-%
 % 3. Tables incl. wandering monster chart
 % 4. Have separate commands for inline stat blocks and new monster stat blocks. The inline one should detect if it is inside the table environment and format itself appropriately.
 % 5. Monster stat blocks : inline, table or full text for appendix
@@ -39,7 +37,7 @@
 
 
 
-% Load class and options
+% Process options
 
 \newcounter{numoptions}
 \newlength\myoffset
@@ -86,6 +84,10 @@
    \PackageError{dnd_module}{Multiple paper sizes specified}{The 'a4paper' and 'letter' options are mutually exclusive}
 \fi
 
+
+
+% This class is based on article, one of the LaTeX base classes
+
 \LoadClass[twocolumn]{article}
 
 
@@ -93,17 +95,43 @@
 % Required packages
 
 \RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry}    % Page size
-\RequirePackage[T1]{fontenc}                                                       % Use T1 (8-bit) font encoding
-\RequirePackage{avant}                                                             % Default sans-serif font is URW Gothic (like Futura)
 \RequirePackage[explicit]{titlesec}                                                % Redefine section headings
 \RequirePackage{framed}                                                            % For boxed text
 \RequirePackage{pgfkeys}                                                           % For stat blocks
 \input{pgfutil-common}
 \input{pgfmath.code}
 \RequirePackage{xstring}                                                           % For stat blocks
-\RequirePackage{graphicx}                                                          % For images and text across two columns
+\RequirePackage{graphicx}                                                          % Allow images and text across two columns
 \RequirePackage{dblfloatfix}                                                       % Allow positioning of figure* at bottom of page
 \RequirePackage{url}                                                               % To create a hyperlink for the URL in the license text
+
+
+
+% Define font faces and sizes
+
+\RequirePackage[T1]{fontenc}                                                       % Use T1 (8-bit) font encoding
+\RequirePackage{avant}                                                             % Use URW Gothic as default sans-serif font (similar to ITC Avant Garde Gothic)
+\IfFileExists{souvenir.sty}{
+   \RequirePackage{souvenir}                                                       % Use ITC Souvenir as default serifed font (if it exists)
+   \renewcommand{\bfdefault}{d}                                                    % Use demi-bold instead of bold
+}{
+   \PackageWarning{module}{%
+      ITC Souvenir not detected, substituting Bookman as default serifed font.}
+   \RequirePackage{bookman}                                                        % Use Bookman as default serifed font
+}
+
+\renewcommand*\familydefault{\sfdefault}                                           % Default to sans-serif font (URW Gothic)
+
+\renewcommand{\tiny}        {\fontsize {4pt} {4.8pt}\selectfont}
+\renewcommand{\scriptsize}  {\fontsize {5pt} {6.0pt}\selectfont}
+\renewcommand{\footnotesize}{\fontsize {7pt} {8.4pt}\selectfont}
+\renewcommand{\small}       {\fontsize {8pt} {9.6pt}\selectfont}
+\renewcommand{\normalsize}  {\fontsize {9pt}{10.8pt}\selectfont}
+\renewcommand{\large}       {\fontsize{10pt}{12.0pt}\selectfont}
+\renewcommand{\Large}       {\fontsize{11pt}{13.2pt}\selectfont}
+\renewcommand{\LARGE}       {\fontsize{13pt}{15.6pt}\selectfont}
+\renewcommand{\huge}        {\fontsize{16pt}{19.2pt}\selectfont}
+\renewcommand{\Huge}        {\fontsize{18pt}{21.6pt}\selectfont}
 
 
 
@@ -128,81 +156,47 @@
 
 
 
-
-% Define font faces and sizes
-
-\renewcommand*\familydefault{\sfdefault}                         % Default to sans-serif font (URW Gothic loaded above)
-\renewcommand*{\rmdefault}{psv}                                  % Define default serif font as PSV (ITC Souvenir), if available
-
-\renewcommand{\tiny}        {\fontsize {4pt} {4.8pt}\selectfont}
-\renewcommand{\scriptsize}  {\fontsize {5pt} {6.0pt}\selectfont}
-\renewcommand{\footnotesize}{\fontsize {7pt} {8.4pt}\selectfont}
-\renewcommand{\small}       {\fontsize {8pt} {9.6pt}\selectfont}
-\renewcommand{\normalsize}  {\fontsize {9pt}{10.8pt}\selectfont}
-\renewcommand{\large}       {\fontsize{10pt}{12.0pt}\selectfont}
-\renewcommand{\Large}       {\fontsize{11pt}{13.2pt}\selectfont}
-\renewcommand{\LARGE}       {\fontsize{13pt}{15.6pt}\selectfont}
-\renewcommand{\huge}        {\fontsize{16pt}{19.2pt}\selectfont}
-\renewcommand{\Huge}        {\fontsize{18pt}{21.6pt}\selectfont}
-
-
-
 % Title Page
 
-\renewcommand\maketitle{\begin{titlepage}%
-\let\footnotesize\small
-\let\footnoterule\relax
-\let \footnote \thanks
-\null\vfil
-\vskip 60\p@
-\begin{center}%
-{\LARGE \@title \par}%
-\vskip 3em%
-{\Large \@subtitle \par}%
-\vskip 3em%
-{\large
-\lineskip .75em%
-\begin{tabular}[t]{c}%
-\@author
-\end{tabular}\par}%
-\vskip 1.5em%
-{\large \@date \par}% % Set date in \large size.
-\vskip 1.5em%
-{\large \@abstract \par}
-\vskip 1.5em%
-{\large \@copyright \par}
-\vskip 1.5em%
-{\large \@contact \par}
+\renewcommand\maketitle{\begin{titlepage}
+\vfil
+\begin{minipage}{\textwidth}
+\begin{center}
+{\Huge \textbf{\@title} \par}
+\vskip 0.5em
+{\LARGE \textbf{by \@author} \par}
+\@subtitle
+\@coverimg
 \end{center}\par
-\@thanks
-\vfil\null
-\end{titlepage}%
-\setcounter{footnote}{0}%
-\global\let\thanks\relax
+\@abstract
+\@copyright
+\@contact
+\end{minipage}
+\vfil
+\end{titlepage}
 \global\let\maketitle\relax
-\global\let\@thanks\@empty
-\global\let\@author\@empty
-\global\let\@date\@empty
 \global\let\@title\@empty
+\global\let\@author\@empty
 \global\let\@subtitle\@empty
+\global\let\@coverimg\@empty
+\global\let\@abstract\@empty
 \global\let\@copyright\@empty
 \global\let\@contact\@empty
-\global\let\@abstract\@empty
 \global\let\title\relax
 \global\let\author\relax
-\global\let\date\relax
-\global\let\and\relax
 }
 
-\renewcommand{\abstract}[1]{\gdef\@abstract{#1}}
-
 \def\@subtitle{\relax}
+\def\@coverimg{\relax}
+\def\@abstract{\relax}
 \def\@copyright{\relax}
 \def\@contact{\relax}
 
-\newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
-\newcommand{\copyrightblock}[1]{\gdef\@copyright{#1}}
-\newcommand{\contactblock}[1]{\gdef\@contact{#1}}
+\newcommand{\subtitle}[1]{\gdef\@subtitle{\vskip 0.5em \LARGE \textbf{\MakeUppercase{#1}}}}
+\newcommand{\coverimage}[1]{\gdef\@coverimg{\vskip 1em \includegraphics[width=\columnwidth]{#1} \par}}
+\renewcommand{\abstract}[1]{\gdef\@abstract{\vskip 0.5em #1 \par}}
+\newcommand{\copyrightblock}[1]{\gdef\@copyright{\vskip 0.5em \centering #1 \par}}
+\newcommand{\contactblock}[1]{\gdef\@contact{\vskip 0.5em #1 \par}}
 
 
 

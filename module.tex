@@ -4,18 +4,25 @@
 
 \documentclass[a4paper]{module}
 
-\usepackage{lipsum}     % generates filler text, not needed in a real project
+\usepackage{lipsum}                         % generates filler text, not needed in a real project
 
-\renewcommand*\familydefault{\rmdefault} % select font \sfdefault for sans-serif or \rmdefault for serif
+% By default, the module class uses a sans-serif font. Uncomment the line below if you prefer to
+% use a serifed font.
+
+\renewcommand*\familydefault{\rmdefault}
+
+
 
 \begin{document}
 
 \title{Dungeon Module X2$\varepsilon$\\
-A \LaTeX~Adventure Module Class}
+An Adventure Module Class for LaTeX}
 
-\author{by Michael Davis}
+\author{Michael Davis}
 
 \subtitle{Introductory module for character levels 1--3}
+
+\coverimage{module_art_cover.png}
 
 \abstract{This template is provided as a resource for authors of adventure modules for fantasy roleplaying games.
 The template requires \LaTeX, a free document preparation system for high-quality typesetting. Unlike a conventional
