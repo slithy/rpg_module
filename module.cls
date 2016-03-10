@@ -20,6 +20,10 @@
 
 % TO DO
 %
+% 1. Add LaTeX license information
+% 2. Add logo option for contact block
+% 3. Move stat blocks into a separate .sty file, keep OGL content separate from other text
+% 4. Add all monsters into stat blocks
 % 3. Tables incl. wandering monster chart
 % 4. Have separate commands for inline stat blocks and new monster stat blocks. The inline one should detect if it is inside the table environment and format itself appropriately.
 % 5. Monster stat blocks : inline, table or full text for appendix
@@ -30,7 +34,7 @@
 % 9. Perhaps allow system-dependent stat blocks... maybe going too far but at least think of how this could be accomplished and design in a way that allows the possibility in future. Stat blocks could be defined as system-specific as well as language specific.
 %
 % 10. Free to use but have a PayPal option for donations in case of commercial use...
-% 11. Put it on CTAN and on Dragonsfoot. Set up a ticketing system for bugs and/or improvements
+% 11. Host it online (CTAN? git?). Set up a ticketing system for bugs and/or improvements
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{module}[2016/03/10 Adventure Module document class]
@@ -103,7 +107,6 @@
 \RequirePackage{xstring}                                                           % For stat blocks
 \RequirePackage{graphicx}                                                          % Allow images and text across two columns
 \RequirePackage{dblfloatfix}                                                       % Allow positioning of figure* at bottom of page
-\RequirePackage{textcomp}                                                          % A more beautiful copyright symbol
 \RequirePackage{url}                                                               % To create a hyperlink for the URL in the license text
 
 
@@ -121,8 +124,6 @@
    \RequirePackage{bookman}                                                        % Use Bookman as default serifed font
 }
 
-\renewcommand*\familydefault{\sfdefault}                                           % Default to sans-serif font (URW Gothic)
-
 \renewcommand{\tiny}        {\fontsize {4pt} {4.8pt}\selectfont}
 \renewcommand{\scriptsize}  {\fontsize {5pt} {6.0pt}\selectfont}
 \renewcommand{\footnotesize}{\fontsize {7pt} {8.4pt}\selectfont}
@@ -133,6 +134,8 @@
 \renewcommand{\LARGE}       {\fontsize{13pt}{15.6pt}\selectfont}
 \renewcommand{\huge}        {\fontsize{16pt}{19.2pt}\selectfont}
 \renewcommand{\Huge}        {\fontsize{17.28pt}{20.74pt}\selectfont}
+
+\renewcommand*\familydefault{\sfdefault}                                           % Default to sans-serif font (URW Gothic)
 
 
 
