@@ -33,7 +33,7 @@
 % 11. Put it on CTAN and on Dragonsfoot. Set up a ticketing system for bugs and/or improvements
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{module}[2016/03/08 Adventure Module style]
+\ProvidesClass{module}[2016/03/10 Adventure Module document class]
 
 
 
@@ -103,6 +103,7 @@
 \RequirePackage{xstring}                                                           % For stat blocks
 \RequirePackage{graphicx}                                                          % Allow images and text across two columns
 \RequirePackage{dblfloatfix}                                                       % Allow positioning of figure* at bottom of page
+\RequirePackage{textcomp}                                                          % A more beautiful copyright symbol
 \RequirePackage{url}                                                               % To create a hyperlink for the URL in the license text
 
 
@@ -131,7 +132,7 @@
 \renewcommand{\Large}       {\fontsize{11pt}{13.2pt}\selectfont}
 \renewcommand{\LARGE}       {\fontsize{13pt}{15.6pt}\selectfont}
 \renewcommand{\huge}        {\fontsize{16pt}{19.2pt}\selectfont}
-\renewcommand{\Huge}        {\fontsize{18pt}{21.6pt}\selectfont}
+\renewcommand{\Huge}        {\fontsize{17.28pt}{20.74pt}\selectfont}
 
 
 
@@ -159,20 +160,18 @@
 % Title Page
 
 \renewcommand\maketitle{\begin{titlepage}
-\vfil
-\begin{minipage}{\textwidth}
+\vspace*{\fill}
 \begin{center}
-{\Huge \textbf{\@title} \par}
+\Huge \textbf{\@title} \par
 \vskip 0.5em
-{\LARGE \textbf{by \@author} \par}
+\LARGE \textbf{by \@author}
 \@subtitle
 \@coverimg
-\end{center}\par
+\end{center}
 \@abstract
 \@copyright
 \@contact
-\end{minipage}
-\vfil
+\vfill
 \end{titlepage}
 \global\let\maketitle\relax
 \global\let\@title\@empty
@@ -193,7 +192,7 @@
 \def\@contact{\relax}
 
 \newcommand{\subtitle}[1]{\gdef\@subtitle{\vskip 0.5em \LARGE \textbf{\MakeUppercase{#1}}}}
-\newcommand{\coverimage}[1]{\gdef\@coverimg{\vskip 1em \includegraphics[width=\columnwidth]{#1} \par}}
+\newcommand{\coverimage}[1]{\gdef\@coverimg{\vskip 1em \includegraphics[width=\textwidth]{#1} \par}}
 \renewcommand{\abstract}[1]{\gdef\@abstract{\vskip 0.5em #1 \par}}
 \newcommand{\copyrightblock}[1]{\gdef\@copyright{\vskip 0.5em \centering #1 \par}}
 \newcommand{\contactblock}[1]{\gdef\@contact{\vskip 0.5em #1 \par}}
