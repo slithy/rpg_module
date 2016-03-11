@@ -2,3 +2,5 @@ ls-R
 *.pdf
 *.aux
 *.log
+*.out
+*.toc
