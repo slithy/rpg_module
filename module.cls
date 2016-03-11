@@ -112,7 +112,8 @@
 % Required packages
 
 \RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry}    % Page size
-\RequirePackage[explicit]{titlesec}                                                % Redefine section headings
+\RequirePackage[explicit,newparttoc]{titlesec}                                     % Redefine section headings
+\RequirePackage{titletoc}                                                          % Redefine table of contents
 \RequirePackage{framed}                                                            % For boxed text
 \RequirePackage{pgfkeys}                                                           % For stat blocks
 \input{pgfutil-common}
@@ -123,7 +124,7 @@
 
 % Hyperlinks
 
-\RequirePackage{hyperref}                                                          % Allow hyperlinks
+\RequirePackage[linktocpage=true]{hyperref}                                        % Allow hyperlinks, only page numbers in TOC are clickable
 \RequirePackage[dvipsnames]{xcolor}                                                % Pre-defined colour names
 \hypersetup{colorlinks=true,
     urlcolor=blue,                                                                 % Colour for external links
@@ -228,9 +229,9 @@
 \renewcommand\thesubsection{}
 \renewcommand\thesubsubsection{\arabic{subsubsection}}
 
-\titleformat{\part}[block]
+\titleformat{\part}
 {\LARGE\filcenter\bfseries}
-{\LARGE\MakeUppercase{Part} \thepart:}{0.5em}{\MakeUppercase{#1}}
+{\LARGE PART \thepart:}{0.5em}{\MakeUppercase{#1}}
 
 \titleformat{\section}
 {\Large\bfseries}
@@ -240,7 +241,7 @@
 {\large\filcenter\bfseries}
 {}{0em}{#1}
 
-\titleformat{\subsubsection}[block]
+\titleformat{\subsubsection}
 {\normalfont\bfseries}
 {\thesubsubsection.}{0.5em}{\MakeUppercase{#1}}
 
@@ -248,8 +249,10 @@
 
 % Table of Contents
 
-\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
-
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+%\titlecontents{part}[0em]{\large}{PART \thepart:}{NUMBERLESS }{}[\vskip]
+\titlecontents{part}[0em]{\large\bfseries}{PART \thecontentslabel : \MakeUppercase}{}{\quad\thecontentspage}[\vspace{0.5em}]
+\titlecontents*{section}[0em]{\normalsize}{}{}{~\thecontentspage}[, ][.\vspace{0.5em}]
 
 
 % Define boxed text
