@@ -1,26 +1,39 @@
-% Adventure Module Class for LaTeX 2e
+%% module.cls
 %
-% Author: Michael Davis
-% Date:   8 March 2016
+% An Adventure Module class for LaTeX
 %
-% See the accompanying file module.tex for an example of how to use this class.
+% Copyright 2016 Michael C. Davis
 %
-% LICENSE
+% LICENSE FOR THE WORK
 %
-% This LaTeX class is Copyright 2016 Michael Davis.
+% This work consists of the files module.cls and module.tex.
 %
-% It is distributed under the Creative Commons Attribution ShareAlike license version 3.0.
-% A short summary of the license can be found here:
+% This work may be distributed and/or modified under the conditions of the LaTeX
+% Project Public License, either version 1.3 of this license or (at your option)
+% any later version. The latest version of this license can be found at:
+% http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX version
+% 2005/12/01 or later.
 %
-% https://creativecommons.org/licenses/by-sa/3.0/
+% This work has the LPPL maintenance status `author-maintained'.
+% 
+% The Author and Maintainer of this work is Michael C. Davis
 %
-% The full text of the license is here:
 %
-% https://creativecommons.org/licenses/by-sa/3.0/legalcode
+% LICENSE FOR COMPILED WORKS
+%
+% You may distribute compiled works generated using the work as specified in
+% Clause 2 of the LaTeX Project Public License. If you incorporate Open Gaming
+% Content into the compiled work, you must also comply with the terms of that
+% license.
+%
+%
+% USAGE
+%
+% See the file module.tex for an example of how to use this class.
 
 % TO DO
 %
-% 1. Add LaTeX license information
 % 2. Add logo option for contact block
 % 3. Move stat blocks into a separate .sty file, keep OGL content separate from other text
 % 4. Add all monsters into stat blocks
@@ -107,9 +120,15 @@
 \RequirePackage{xstring}                                                           % For stat blocks
 \RequirePackage{graphicx}                                                          % Allow images and text across two columns
 \RequirePackage{dblfloatfix}                                                       % Allow positioning of figure* at bottom of page
-\RequirePackage{url}                                                               % To create a hyperlink for the URL in the license text
 
+% Hyperlinks
 
+\RequirePackage{hyperref}                                                          % Allow hyperlinks
+\RequirePackage[dvipsnames]{xcolor}                                                % Pre-defined colour names
+\hypersetup{colorlinks=true,
+    urlcolor=blue,                                                                 % Colour for external links
+    linkcolor=MidnightBlue,                                                        % Colour for internal links (including Table of Contents)
+    citecolor=MidnightBlue}                                                        % Colour for references
 
 % Define font faces and sizes
 
@@ -205,6 +224,8 @@
 % Define headings
 
 \renewcommand\thepart{\arabic{part}}
+\renewcommand\thesection{}
+\renewcommand\thesubsection{}
 \renewcommand\thesubsubsection{\arabic{subsubsection}}
 
 \titleformat{\part}[block]
@@ -223,6 +244,11 @@
 {\normalfont\bfseries}
 {\thesubsubsection.}{0.5em}{\MakeUppercase{#1}}
 
+
+
+% Table of Contents
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 
 
 
@@ -337,12 +363,9 @@
 % Copyright and license macros
 
 \newcommand{\modulecopyright}{%
-The \LaTeX~module class is copyright \textcopyright 2016 Michael Davis. The class is distributed under the Creative
-Commons Attribution ShareAlike license version 3.0. You are granted permission to use, share and adapt the class under
-the terms of that license, which include giving attribution (this copyright message) and sharealike (this license applies
-to any modified version of the class you distribute). You may not add any restrictions which prevent others from
-exercising their rights under the license. The full text of the license can be found at
-\url{https://creativecommons.org/licenses/by-sa/3.0/legalcode}}
+The \LaTeX~module class is copyright \textcopyright 2016 Michael Davis. It can be distributed and/or modified under the conditions of the
+\href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License}, either version 1.3 or (at your option) any later version. You
+have the right to distribute Compiled Works generated using the module class as specified in Clause 3 of the license.}
 
 
 

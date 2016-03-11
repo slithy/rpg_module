@@ -6,7 +6,10 @@ all: $(TARGET)
 show: $(TARGET)
 	evince $(TARGET)
 
-%.pdf: %.tex $(CLASS)
+%.pdf: %.tex $(CLASS) %.toc
+	pdflatex $<
+
+%.toc: %.tex $(CLASS)
 	pdflatex $<
 
 clean:
