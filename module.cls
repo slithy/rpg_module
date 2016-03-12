@@ -56,54 +56,38 @@
 
 % Process options
 
-\newcounter{numoptions}
-\newlength\myoffset
+\newcounter{papersizeoption}
+\newif\ifmodule@letterpaper
 
-\DeclareOption{a4paper}{
-   \stepcounter              {numoptions}
+\DeclareOption{letterpaper}{\module@letterpapertrue\stepcounter{papersizeoption}}
+\DeclareOption{a4paper}{\module@letterpaperfalse\stepcounter{papersizeoption}}
 
-   \setlength\paperheight    {297mm}
-   \setlength\paperwidth     {210mm}
-
-   \setlength\myoffset       {-1in}
-   \setlength\voffset        \myoffset
-   \setlength\hoffset        \myoffset
-
-   \PassOptionsToClass{\CurrentOption}{article}
-}
-\DeclareOption{letter}{
-   \stepcounter              {numoptions}
-
-   \setlength\paperheight    {279.4mm}
-   \setlength\paperwidth     {215.9mm}
-
-   \setlength\myoffset       {-1in}
-   \addtolength\myoffset     {-17.6mm}
-   \setlength\voffset        \myoffset
-
-   \setlength\myoffset       {-1in}
-   \addtolength\myoffset     {2.95mm}
-   \setlength\hoffset        \myoffset
-
-   \PassOptionsToClass{\CurrentOption}{article}
-}
 \DeclareOption*{
-   \PackageError{dnd_module}{Unrecognised option '\CurrentOption'}{The only valid options are 'a4paper' or 'letter'}
+   \PackageError{dnd_module}{Unrecognised option '\CurrentOption'}{Valid options are a4paper,letterpaper}
 }
+
+\ExecuteOptions{a4paper} % default paper size is A4
 
 \ProcessOptions\relax
 
-\ifcase\thenumoptions
-   \PackageError{dnd_module}{Paper size not specified}{The valid paper sizes are 'a4paper' or 'letter'}
-\or
-   % We got exactly one paper size option, do nothing
-\else
-   \PackageError{dnd_module}{Multiple paper sizes specified}{The 'a4paper' and 'letter' options are mutually exclusive}
+\ifcase\thepapersizeoption\or\or\else
+   \PackageError{module}{a4paper and letterpaper options are mutually exclusive}
+   {The input file contains a statement like documentclass[letterpaper,a4paper]{module}.
+    You can only select one paper size, either letterpaper or a4paper. The default is a4paper.}
 \fi
 
+\setlength\voffset{-1in}
+\setlength\hoffset{-1in}
 
+\ifmodule@letterpaper
+   \PassOptionsToClass{letterpaper}{article}
+   \addtolength\voffset{-17.6mm}
+   \addtolength\hoffset{2.95mm}
+\else
+   \PassOptionsToClass{a4paper}{article}
+\fi
 
-% This class is based on article, one of the LaTeX base classes
+% Load article, the standard LaTeX document class that module is based on
 
 \LoadClass[twocolumn]{article}
 
