@@ -226,33 +226,37 @@
 
 \renewcommand\thepart{\arabic{part}}
 \renewcommand\thesection{}
-\renewcommand\thesubsection{}
-\renewcommand\thesubsubsection{\arabic{subsubsection}}
+\renewcommand\thesubsection{\arabic{subsection}}
 
-\titleformat{\part}
+\titleformat{\part}[block]
 {\LARGE\filcenter\bfseries}
 {\LARGE PART \thepart:}{0.5em}{\MakeUppercase{#1}}
 
-\titleformat{\section}
+\titleformat{\section}[hang]
 {\Large\bfseries}
 {}{0em}{\MakeUppercase{#1}}
 
-\titleformat{\subsection}
+\titleformat{name=\section,numberless}[block]    % how to handle \section*
 {\large\filcenter\bfseries}
-{}{0em}{#1}
+{}{0em}{#1\addcontentsline{toc}{section}{#1}}
 
-\titleformat{\subsubsection}
+\titleformat{\subsection}[hang]
 {\normalfont\bfseries}
-{\thesubsubsection.}{0.5em}{\MakeUppercase{#1}}
+{\thesubsection.}{0.5em}{\MakeUppercase{#1}}
+
+\renewcommand{\subsubsection}{\relax}
 
 
 
 % Table of Contents
 
+\renewcommand\tableofcontents{%
+   \noindent\Large\textbf{\MakeUppercase\contentsname}\vspace{1em}\@starttoc{toc}
+}
+
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
-%\titlecontents{part}[0em]{\large}{PART \thepart:}{NUMBERLESS }{}[\vskip]
-\titlecontents{part}[0em]{\large\bfseries}{PART \thecontentslabel : \MakeUppercase}{}{\quad\thecontentspage}[\vspace{0.5em}]
-\titlecontents*{section}[0em]{\normalsize}{}{}{~\thecontentspage}[, ][.\vspace{0.5em}]
+\titlecontents{part}[0em]{\normalsize\bfseries}{PART \thecontentslabel : \MakeUppercase}{}{\quad\thecontentspage}[\vspace{0.5em}]
+\titlecontents*{section}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{0.5em}]
 
 
 % Define boxed text
@@ -260,8 +264,7 @@
 \newcommand{\boxtext}[1]{
 \begin{framed}
 \noindent #1
-\end{framed}
-}
+\end{framed}}
 
 
 
@@ -374,7 +377,7 @@ have the right to distribute Compiled Works generated using the module class as 
 
 \newenvironment{ogl}{%
 \footnotesize
-\subsubsection*{OPEN GAME LICENSE Version 1.0a}
+\subsection*{OPEN GAME LICENSE Version 1.0a}
 The following text is the property of Wizards of the Coast, Inc. and is Copyright 2000 Wizards of the Coast, Inc (``Wizards''). All Rights Reserved.
 \begin{enumerate}
 \item Definitions: (a) ``Contributors'' means the copyright and/or trademark owners who have contributed Open Game Content; (b) ``Derivative Material''
@@ -443,13 +446,13 @@ enforceable.
 
 \newenvironment{productidentity}{%
 \footnotesize
-\subsubsection*{Designation of Product Identity}
+\subsection*{Designation of Product Identity}
 \begin{list}{}{\leftmargin=0cm}
 }{\end{list}}
 
 \newenvironment{opengamecontent}{%
 \footnotesize
-\subsubsection*{Designation of Open Game Content}
+\subsection*{Designation of Open Game Content}
 \begin{list}{}{\leftmargin=0cm}
 }{\end{list}}
 

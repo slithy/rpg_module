@@ -95,6 +95,16 @@ The first thing you need to be aware of is that LaTeX uses a markup language in 
 % the only difference between the two options is the size of the top margin and left/right margins. This allows
 % module writers to easily create two almost identical PDFs for use in USA and Europe/rest of the world.
 
+\part{A very long section heading that will wrap over several lines}
+
+\section{A very long section heading that will wrap over several lines}
+
+\section*{A very long starred section heading that will wrap over several lines}
+
+\subsection{A very long subsection heading that will wrap over several lines}
+
+\subsubsection{A very long subsubsection heading that will wrap over several lines}
+
 \section{Fonts}
 
 % Choose \rmdefault to select the serifed font and \sfdefault for a sans-serif font
@@ -147,25 +157,28 @@ Jim the Rogue: leather armour, small fruit knife, S7 I12 W5 D17 C12 Ch15. He can
 
 Some introductory text for the DM.
 
-\subsection{Key to Dungeon Level One}
+\section*{Key to Dungeon Level One}
 
-\subsubsection*{Start}
+\subsection*{Start}
 
 \boxtext{Some boxed text to read to the players to introduce them to the adventure.}
 
-\subsubsection{The Gatehouse}
+\subsection{The Gatehouse}
+
+Some DM info above the box blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
 
 \boxtext{It looks dangerous.}
 
 Some monsters are here.
+Some DM info below the box blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
 
-\subsubsection{The Secret Entrance}
+\subsection{The Secret Entrance}
 
 \boxtext{You see some bushes.}
 
 If the players investigate, they will find a hidden trapdoor under the bushes. Under the trapdoor is a tunnel leading under the wall.
 
-\subsubsection{The big bad end guy}
+\subsection{The big bad end guy}
 
 \begin{figure}[ht]
 \includegraphics[width=\columnwidth]{module_art_interior.png}
@@ -175,14 +188,14 @@ Image Copyright \textcopyright 1987, 2016 Michael Davis.}
 
 %%%%% Level Two %%%%%
 
-\begin{minipage1col}[b]
+\begin{minipage1col}[h]
 \part{Second Dungeon Level}
 
 The \texttt{\textbackslash onecolumn} command can be used to switch into single column mode. \texttt{\textbackslash twocolumn} switches back to two-column mode. However,
 these commands do not allow mixing one- and two-column text on the same page. If you would like to have just part of a page in one-column mode, use the custom
 environment \texttt{minipage1col}.
 
-\subsection{Wandering Monsters}
+\section*{Wandering Monsters}
 
 \lipsum
 \end{minipage1col}
