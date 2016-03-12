@@ -54,19 +54,26 @@
 
 
 
-% Process options
+% Process class options
 
 \newcounter{papersizeoption}
 \newif\ifmodule@letterpaper
 
+\newcounter{fontoption}
+\newif\ifmodule@seriffont
+
 \DeclareOption{letterpaper}{\module@letterpapertrue\stepcounter{papersizeoption}}
 \DeclareOption{a4paper}{\module@letterpaperfalse\stepcounter{papersizeoption}}
 
+\DeclareOption{serif}{\module@seriffonttrue\stepcounter{fontoption}}
+\DeclareOption{sansserif}{\module@seriffontfalse\stepcounter{fontoption}}
+
 \DeclareOption*{
-   \PackageError{dnd_module}{Unrecognised option '\CurrentOption'}{Valid options are a4paper,letterpaper}
+   \PackageError{dnd_module}{Unrecognised option '\CurrentOption'}{Valid options are a4paper,letterpaper,serif,sansserif}
 }
 
-\ExecuteOptions{a4paper} % default paper size is A4
+\ExecuteOptions{a4paper}                                                           % default paper size is A4
+\ExecuteOptions{sansserif}                                                         % default font option is sans serif
 
 \ProcessOptions\relax
 
@@ -75,6 +82,16 @@
    {The input file contains a statement like documentclass[letterpaper,a4paper]{module}.
     You can only select one paper size, either letterpaper or a4paper. The default is a4paper.}
 \fi
+
+\ifcase\thefontoption\or\or\else
+   \PackageError{module}{serif and sanserif options are mutually exclusive}
+   {The input file contains a statement like documentclass[serif,sansserif]{module}.
+    You can only select one font style, either serif or sans serif. The default is sans serif.}
+\fi
+
+
+
+% Process paper size options
 
 \setlength\voffset{-1in}
 \setlength\hoffset{-1in}
@@ -87,9 +104,64 @@
    \PassOptionsToClass{a4paper}{article}
 \fi
 
+
+
 % Load article, the standard LaTeX document class that module is based on
 
 \LoadClass[twocolumn]{article}
+
+
+
+% Set page margins
+
+\setlength{\oddsidemargin}{1cm}
+\setlength{\evensidemargin}{1cm}
+
+\setlength{\topmargin}{2.6cm}
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{0cm}
+
+\setlength{\textheight}{25.4cm}
+\setlength{\textwidth}{19cm}
+
+\setlength{\marginparsep}{0cm}
+\setlength{\marginparwidth}{0cm}
+
+\setlength{\footskip}{0.7cm}
+
+\pagenumbering{arabic}
+
+
+
+% Process font options
+
+\RequirePackage[T1]{fontenc}                                                       % Use T1 (8-bit) font encoding
+
+\ifmodule@seriffont
+   \IfFileExists{souvenir.sty}{                                                    % If ITC Souvenir font is installed in this LaTeX distribution
+      \RequirePackage{souvenir}                                                    % Use ITC Souvenir as serifed font
+      \renewcommand{\bfdefault}{d}                                                 % Use demi-bold instead of bold
+   }{
+      \PackageWarning{module}{%
+         ITC Souvenir not detected, substituting Bookman as default serifed font.}
+      \RequirePackage{bookman}                                                     % Use Bookman as serifed font
+   }
+   \renewcommand*\familydefault{\rmdefault}                                        % Default to serifed font
+\else
+   \RequirePackage{avant}                                                          % Use URW Gothic as default sans-serif font (similar to ITC Avant Garde Gothic)
+   \renewcommand*\familydefault{\sfdefault}                                        % Default to sans-serif font
+\fi
+
+\renewcommand{\tiny}        {\fontsize {4pt} {4.8pt}\selectfont}
+\renewcommand{\scriptsize}  {\fontsize {5pt} {6.0pt}\selectfont}
+\renewcommand{\footnotesize}{\fontsize {7pt} {8.4pt}\selectfont}
+\renewcommand{\small}       {\fontsize {8pt} {9.6pt}\selectfont}
+\renewcommand{\normalsize}  {\fontsize {9pt}{10.8pt}\selectfont}
+\renewcommand{\large}       {\fontsize{10pt}{12.0pt}\selectfont}
+\renewcommand{\Large}       {\fontsize{11pt}{13.2pt}\selectfont}
+\renewcommand{\LARGE}       {\fontsize{13pt}{15.6pt}\selectfont}
+\renewcommand{\huge}        {\fontsize{16pt}{19.2pt}\selectfont}
+\renewcommand{\Huge}        {\fontsize{17.28pt}{20.74pt}\selectfont}
 
 
 
@@ -114,53 +186,6 @@
     urlcolor=MidnightBlue,                                                         % Colour for external links
     linkcolor=MidnightBlue,                                                        % Colour for internal links (including Table of Contents)
     citecolor=MidnightBlue}                                                        % Colour for references
-
-% Define font faces and sizes
-
-\RequirePackage[T1]{fontenc}                                                       % Use T1 (8-bit) font encoding
-\RequirePackage{avant}                                                             % Use URW Gothic as default sans-serif font (similar to ITC Avant Garde Gothic)
-\IfFileExists{souvenir.sty}{
-   \RequirePackage{souvenir}                                                       % Use ITC Souvenir as default serifed font (if it exists)
-   \renewcommand{\bfdefault}{d}                                                    % Use demi-bold instead of bold
-}{
-   \PackageWarning{module}{%
-      ITC Souvenir not detected, substituting Bookman as default serifed font.}
-   \RequirePackage{bookman}                                                        % Use Bookman as default serifed font
-}
-
-\renewcommand{\tiny}        {\fontsize {4pt} {4.8pt}\selectfont}
-\renewcommand{\scriptsize}  {\fontsize {5pt} {6.0pt}\selectfont}
-\renewcommand{\footnotesize}{\fontsize {7pt} {8.4pt}\selectfont}
-\renewcommand{\small}       {\fontsize {8pt} {9.6pt}\selectfont}
-\renewcommand{\normalsize}  {\fontsize {9pt}{10.8pt}\selectfont}
-\renewcommand{\large}       {\fontsize{10pt}{12.0pt}\selectfont}
-\renewcommand{\Large}       {\fontsize{11pt}{13.2pt}\selectfont}
-\renewcommand{\LARGE}       {\fontsize{13pt}{15.6pt}\selectfont}
-\renewcommand{\huge}        {\fontsize{16pt}{19.2pt}\selectfont}
-\renewcommand{\Huge}        {\fontsize{17.28pt}{20.74pt}\selectfont}
-
-\renewcommand*\familydefault{\sfdefault}                                           % Default to sans-serif font (URW Gothic)
-
-
-
-% Define page dimensions and margins
-
-\setlength{\oddsidemargin}{1cm}
-\setlength{\evensidemargin}{1cm}
-
-\setlength{\topmargin}{2.6cm}
-\setlength{\headheight}{0cm}
-\setlength{\headsep}{0cm}
-
-\setlength{\textheight}{25.4cm}
-\setlength{\textwidth}{19cm}
-
-\setlength{\marginparsep}{0cm}
-\setlength{\marginparwidth}{0cm}
-
-\setlength{\footskip}{0.7cm}
-
-\pagenumbering{arabic}
 
 
 
