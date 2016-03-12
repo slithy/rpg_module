@@ -127,7 +127,7 @@
 \RequirePackage[linktocpage=true]{hyperref}                                        % Allow hyperlinks, only page numbers in TOC are clickable
 \RequirePackage[dvipsnames]{xcolor}                                                % Pre-defined colour names
 \hypersetup{colorlinks=true,
-    urlcolor=blue,                                                                 % Colour for external links
+    urlcolor=MidnightBlue,                                                         % Colour for external links
     linkcolor=MidnightBlue,                                                        % Colour for internal links (including Table of Contents)
     citecolor=MidnightBlue}                                                        % Colour for references
 
@@ -182,7 +182,8 @@
 
 % Title Page
 
-\renewcommand\maketitle{\begin{titlepage}
+\renewcommand\maketitle{\hypersetup{pageanchor=false}% No internal links to title page allowed
+\begin{titlepage}
 \vspace*{\fill}
 \begin{center}
 \Huge \textbf{\@title} \par
@@ -196,6 +197,7 @@
 \@contact
 \vfill
 \end{titlepage}
+\hypersetup{pageanchor=true}
 \global\let\maketitle\relax
 \global\let\@title\@empty
 \global\let\@author\@empty
@@ -240,15 +242,15 @@
 {\Large\bfseries}
 {}{0em}{\MakeUppercase{#1}}
 
-\titleformat{name=\section,numberless}[block]    % how to handle \section*
+\titleformat{name=\section,numberless}[block]                                         % how to handle \section*
 {\large\filcenter\bfseries}
-{}{0em}{#1\addcontentsline{toc}{section}{#1}}
+{}{0em}{#1\phantomsection\addcontentsline{toc}{section}{#1}}
 
 \titleformat{\subsection}[hang]
 {\normalfont\bfseries}
 {\thesubsection.}{0.5em}{\MakeUppercase{#1}}
 
-\renewcommand{\subsubsection}{\relax}
+\renewcommand{\subsubsection}{\relax}                                                 % The lowest defined section type is subsection
 
 
 
@@ -274,7 +276,7 @@
 
 % Define one-column minipage
 
-\newenvironment{minipage1col}[1][t]{%
+\newenvironment{minipageonecol}[1][t]{%
    \begin{figure*}[#1]
    \begin{minipage}{\textwidth}
 }{%
