@@ -217,7 +217,11 @@
 \newcommand{\subtitle}[1]{\gdef\@subtitle{\vskip 0.5em \LARGE \textbf{\MakeUppercase{#1}}}}
 \newcommand{\coverimage}[1]{\gdef\@coverimg{\vskip 1em \includegraphics[width=\textwidth]{#1} \par}}
 \renewcommand{\abstract}[1]{\gdef\@abstract{\vskip 0.5em #1 \par}}
-\newcommand{\copyrightblock}[1]{\gdef\@copyright{\vskip 0.5em \centering #1 \par}}
+\newcommand{\copyrightblock}[1]{\gdef\@copyright{\vskip 0.5em
+\begin{quote}
+\centering
+#1
+\end{quote}}}
 \newcommand{\contactblock}[1]{\gdef\@contact{\vskip 0.5em #1 \par}}
 
 
