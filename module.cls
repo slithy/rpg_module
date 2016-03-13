@@ -141,6 +141,7 @@
    \IfFileExists{souvenir.sty}{                                                    % If ITC Souvenir font is installed in this LaTeX distribution
       \RequirePackage{souvenir}                                                    % Use ITC Souvenir as serifed font
       \renewcommand{\bfdefault}{d}                                                 % Use demi-bold instead of bold
+      \renewcommand*\copyright{{\usefont{T1}{lmr}{m}{n}\textcopyright}}            % Get a good-looking copyright symbol
    }{
       \PackageWarning{module}{%
          ITC Souvenir not detected, substituting Bookman as default serifed font.}
@@ -384,7 +385,7 @@
 % Copyright and license macros
 
 \newcommand{\modulecopyright}{%
-The \LaTeX~module class is copyright \textcopyright 2016 Michael Davis. It can be distributed and/or modified under the conditions of the
+The \LaTeX~module class is copyright \copyright 2016 Michael Davis. It can be distributed and/or modified under the conditions of the
 \href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License}, either version 1.3 or (at your option) any later version. You
 have the right to distribute Compiled Works generated using the module class as specified in Clause 3 of the license.}
 
