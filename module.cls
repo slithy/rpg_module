@@ -34,7 +34,7 @@
 
 % TO DO
 %
-% 2. Add logo option for contact block
+% 1. Remove space above INTRODUCTION on first page
 % 3. Move stat blocks into a separate .sty file, keep OGL content separate from other text
 % 4. Add all monsters into stat blocks
 % 3. Tables incl. wandering monster chart
@@ -172,12 +172,15 @@
 \RequirePackage[explicit,newparttoc]{titlesec}                                     % Redefine section headings
 \RequirePackage{titletoc}                                                          % Redefine table of contents
 \RequirePackage{framed}                                                            % For boxed text
-\RequirePackage{pgfkeys}                                                           % For stat blocks
-\input{pgfutil-common}
-\input{pgfmath.code}
-\RequirePackage{xstring}                                                           % For stat blocks
 \RequirePackage{graphicx}                                                          % Allow images and text across two columns
 \RequirePackage{dblfloatfix}                                                       % Allow positioning of figure* at bottom of page
+
+% Stat blocks
+
+\RequirePackage{pgfkeys}
+\input{pgfutil-common}
+\input{pgfmath.code}
+\RequirePackage{xstring}
 
 % Hyperlinks
 
@@ -229,12 +232,18 @@
 \newcommand{\subtitle}[1]{\gdef\@subtitle{\vskip 0.5em \LARGE \textbf{\MakeUppercase{#1}}}}
 \newcommand{\coverimage}[1]{\gdef\@coverimg{\vskip 1em \includegraphics[width=\textwidth]{#1} \par}}
 \renewcommand{\abstract}[1]{\gdef\@abstract{\vskip 0.5em #1 \par}}
+
 \newcommand{\copyrightblock}[1]{\gdef\@copyright{\vskip 0.5em
 \begin{quote}
 \centering
 #1
 \end{quote}}}
-\newcommand{\contactblock}[1]{\gdef\@contact{\vskip 0.5em #1 \par}}
+
+\newcommand{\contactblock}[4][p{5.9cm} p{5.9cm} p{5.9cm}]{\gdef\@contact{\vskip 0.5em
+\begin{tabular}{#1}
+{#2} & {#3} & {#4}
+\end{tabular}
+}}
 
 
 

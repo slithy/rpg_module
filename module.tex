@@ -39,7 +39,7 @@
 % If you want a title page, the minimum requirement is to define author and title, then use \maketitle
 
 \title{Dungeon Module X2$\varepsilon$\\
-An Adventure Module Class for LaTeX}
+An Adventure Module Class and Template}
 
 \author{Michael C. Davis}
 
@@ -49,11 +49,10 @@ An Adventure Module Class for LaTeX}
 
 \coverimage{module_art_cover.png}
 
-\abstract{Inspired by the old-school modules of the 1980s, this template tries to recapture the look and feel of those
-classic adventures, combined with the power and beauty of the \LaTeX~typesetting system. It is designed to allow authors
-to typeset their adventures with a minimum of effort and without needing to learn all the intricacies of how \LaTeX~works.
-Write your adventure, add some simple markup notation as shown in the example file, and in a few clicks you will have
-a beautifully-formatted PDF.}
+\abstract{This template is inspired by the old-school modules of the 1980s. It is an attempt to recapture the look and feel
+of those classic adventures using the power and beauty of the \LaTeX~typesetting system. The template is designed to allow
+authors to typeset their adventures with a minimum of effort. Write your adventure, add some simple markup notation as shown
+in the example file, and in a few clicks you will have a beautifully-formatted PDF.}
 
 \copyrightblock{The \LaTeX~module class is Copyright \copyright 2016 Michael Davis and is distributed under the terms
 of the \href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License} Version 1.3c. You are free to use this
@@ -63,13 +62,31 @@ Some parts of this template, namely the monster stat blocks, are Copyright \copy
 and are distributed under the \hyperref[ogl]{Open Game License (OGL)} Version 1.0A. The module class includes some handy
 macros to make it easy to add the OGL license text to your own work.}
 
-\contactblock{
+% The contact block is to typeset your logo(s), company name and/or contact details. It consists of three columns; you
+% can use any or all of them. By default the columns are top-aligned and of equal width, but you can redefine this in the
+% optional argument. See the documentation of the LaTeX tabular environment for details.
+
+\contactblock[p{2.9cm} p{5.9cm} p{8.9cm}]{% column 1 : logo
+\begin{center}
 \includegraphics[width=1.5cm]{module_logo.pdf}
-% leftblock / middleblock / rightblock
-Contact me as slithy on DragonsFoot
+\end{center}
+}{% column 2 : empty in this example
+}{% column 3 : contact details
+\vspace{0.4cm}
+\begin{flushright}
+The author can be contacted on Dragonsfoot (user:
+\href{http://www.dragonsfoot.org/forums/ucp.php?i=pm&mode=compose&u=7317}{slithy}).\\[0.5em]
+
+Support for the module class and this template will be provided on the
+\href{http://www.dragonsfoot.org/forums/viewforum.php?f=87}{Dragonsfoot Computer Gaming \& Utilities} forum.
+\end{flushright}
 }
 
+% Typeset the title page from the elements above. Remove \maketitle if you don't want a title page.
+
 \maketitle
+
+% Start of page 1
 
 \part{Introduction}
 
