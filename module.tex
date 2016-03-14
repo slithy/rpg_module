@@ -231,11 +231,33 @@ Image Copyright \copyright 1987, 2016 Michael Davis.}
 
 The \texttt{\textbackslash onecolumn} command can be used to switch into single column mode. \texttt{\textbackslash twocolumn} switches back to two-column mode. However,
 these commands do not allow mixing one- and two-column text on the same page. If you would like to have just part of a page in one-column mode, use the custom
-environment \texttt{minipageonecol}.
+environment \texttt{minipageonecol}.\\[0.5em]
 
 \section*{Wandering Monsters}
 
-\lipsum
+% maybe need a \newcolumntype (from array package) to give a number which counts from a specified starting number (see enumerated columns)
+% wandering monster table can use that type
+
+%\newcommand\underlinecol[1]{\foreach \c in {1,...,#1}{\cmidrule(l{\tabcolsep}r{\tabcolsep}){\c-\c}}}
+
+\begin{center}
+\begin{tabular}{c l c c c c c c c c c}
+\bfseries Die Roll & \bfseries\centering Wandering Monster & \bfseries No. & \bfseries AC & \bfseries HD & \bfseries MV & \bfseries Attacks & \bfseries Damage & \bfseries Save & \bfseries ML & \bfseries AL\\
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){1-1}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){2-2}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){3-3}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){4-4}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){5-5}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){6-6}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){7-7}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){8-8}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){9-9}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){10-10}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){11-11}
+1 & Acolyte & 1d8 & 2 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
+2 & Monster with a very long name & 1d8 & 2 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
+\end{tabular}
+\end{center}
 \end{minipageonecol}
 
 \lipsum

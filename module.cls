@@ -34,7 +34,6 @@
 
 % TO DO
 %
-% 1. Remove space above INTRODUCTION on first page
 % 3. Move stat blocks into a separate .sty file, keep OGL content separate from other text
 % 4. Add all monsters into stat blocks
 % 3. Tables incl. wandering monster chart
@@ -171,6 +170,8 @@
 \RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry}    % Page size
 \RequirePackage[explicit,newparttoc]{titlesec}                                     % Redefine section headings
 \RequirePackage{titletoc}                                                          % Redefine table of contents
+\RequirePackage{booktabs}                                                          % For table headings
+\RequirePackage{pgffor}                                                            % For processing table contents
 \RequirePackage{framed}                                                            % For boxed text
 \RequirePackage{graphicx}                                                          % Allow images and text across two columns
 \RequirePackage{dblfloatfix}                                                       % Allow positioning of figure* at bottom of page
@@ -224,7 +225,8 @@
 
 \newcommand\showtitle[1][\@title]{\begin{center}
 \LARGE\textbf{#1}
-\end{center}}
+\end{center}
+\let\if@afterindentfalse}
 
 \def\@subtitle{\relax}
 \def\@coverimg{\relax}
@@ -265,7 +267,7 @@
 {}{0em}{\MakeUppercase{#1}}
 
 \titleformat{name=\section,numberless}[block]                                         % how to handle \section*
-{\large\filcenter\bfseries}
+{\Large\filcenter\bfseries}
 {}{0em}{#1\phantomsection\addcontentsline{toc}{section}{#1}}
 
 \titleformat{\subsection}[hang]
