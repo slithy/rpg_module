@@ -212,7 +212,6 @@
 \end{titlepage}
 \hypersetup{pageanchor=true}
 \global\let\maketitle\relax
-\global\let\@title\@empty
 \global\let\@author\@empty
 \global\let\@subtitle\@empty
 \global\let\@coverimg\@empty
@@ -222,6 +221,10 @@
 \global\let\title\relax
 \global\let\author\relax
 }
+
+\newcommand\showtitle[1][\@title]{\begin{center}
+\LARGE\textbf{#1}
+\end{center}}
 
 \def\@subtitle{\relax}
 \def\@coverimg{\relax}
