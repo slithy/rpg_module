@@ -170,18 +170,18 @@
 \RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry}    % Page size
 \RequirePackage[explicit,newparttoc]{titlesec}                                     % Redefine section headings
 \RequirePackage{titletoc}                                                          % Redefine table of contents
-\RequirePackage{booktabs}                                                          % For table headings
-\RequirePackage{pgffor}                                                            % For processing table contents
+\RequirePackage{array}                                                             % Format table headings
+\RequirePackage{booktabs}                                                          % Underline table headings
 \RequirePackage{framed}                                                            % For boxed text
 \RequirePackage{graphicx}                                                          % Allow images and text across two columns
 \RequirePackage{dblfloatfix}                                                       % Allow positioning of figure* at bottom of page
+\RequirePackage{xstring}                                                           % Manipulate strings
 
 % Stat blocks
 
 \RequirePackage{pgfkeys}
 \input{pgfutil-common}
 \input{pgfmath.code}
-\RequirePackage{xstring}
 
 % Hyperlinks
 
@@ -289,7 +289,8 @@
 \titlecontents*{section}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{0.5em}]
 
 
-% Define boxed text
+
+% Boxed text
 
 \newcommand{\boxtext}[1]{
 \begin{framed}
@@ -298,9 +299,28 @@
 
 
 
-% Define one-column minipage
+% Tables
 
-\newenvironment{minipageonecol}[1][t]{%
+\newtoks\module@tableul
+\newcommand{\tableul}[1]{%
+  \noalign{%
+    \global\module@tableul={}%
+    \toks@={\cmidrule(l{\tabcolsep}r{\tabcolsep})}%
+    \count@=\z@
+    \loop\ifnum\count@<#1\relax
+      \advance\count@\@ne
+      \edef\module@temp{\the\toks@{\the\count@-\the\count@}}%
+      \global\module@tableul\expandafter{\the\expandafter\module@tableul\module@temp}%
+    \repeat
+  }%
+  \the\module@tableul
+}
+
+
+
+% Define a minipage the full width of a page. It takes the usual LaTeX float position arguments.
+
+\newenvironment{wideminipage}[1][t]{%
    \begin{figure*}[#1]
    \begin{minipage}{\textwidth}
 }{%
@@ -310,7 +330,7 @@
 
 
 
-% Define monster stat blocks
+% Monster stat blocks
 
 \newcounter{currentstat}
 
