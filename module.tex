@@ -238,23 +238,19 @@ environment \texttt{wideminipage}.\\[0.5em]
 \makeatletter
 \newcounter{numcols@module}
 
-\edef\lbracetoken{\string{}
-\edef\rbracetoken{\string}}
-%\newcommand\headerstyle{\multicolumn{1}{h}\lbracetoken#1}
-\newcommand\headerstyle{\centering}
-\newcolumntype{h}{>{\bfseries}c}
+\newcolumntype{b}{>{\bfseries}c}
 
-
-\newcommand\tableheader[2][\relax]{{%
+\newcommand\tableheader[2][c]{{%
+   \edef\lbracetoken{\string{}
+   \edef\rbracetoken{\string}}
    \StrCount{#2}{&}[\numamps]\global\setcounter{numcols@module}{\numamps}\stepcounter{numcols@module}
-   \def\source{\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken h\rbracetoken\lbracetoken#2\rbracetoken}
-   \def\replace{\rbracetoken&\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken h\rbracetoken\lbracetoken}
+   \def\source{\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken#1\rbracetoken\lbracetoken#2\rbracetoken}
+   \def\replace{\rbracetoken&\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken#1\rbracetoken\lbracetoken}
    \StrSubstitute{\source}{ & }{\replace}[\tmptblhdr]
    \StrExpand{\tmptblhdr}{\tmptblhdrexpand}
    \tokenize{\tmptbltok}{\tmptblhdr}
    \global\let\tableheader@module\tmptbltok
-}
-\\
+}\\
 \tableheader@module\\
 \tableul{\thenumcols@module}
 }
@@ -274,15 +270,15 @@ environment \texttt{wideminipage}.\\[0.5em]
 
 \begin{center}
 \begin{tabular}{clccccccccc}
-\tableheader{Die Roll & Wandering Monster & No. & AC & HD & MV & Attacks & Damage & Save & ML & AL}
 1 & Acolyte & 1d8 & 2 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
+\tableheader{Die Roll & Wandering Monster & No. & AC & HD & MV & Attacks & Damage & Save & ML & AL}
 2 & Monster with a very long name & 1d8 & 2 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
 \end{tabular}
 \end{center}
 
 \begin{center}
 \begin{tabular}{clccccccccc}
-\tableheader[\bfseries]{Die Roll & Wandering Monster & No. & AC & HD & MV & Attacks & Damage & Save & ML & AL}
+\tableheader[b]{Die Roll & Wandering Monster & No. & AC & HD & MV & Attacks & Damage & Save & ML & AL}
 1 & Acolyte & 1d8 & 2 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
 2 & Monster with a very long name & 1d8 & 2 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
 \end{tabular}
