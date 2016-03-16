@@ -238,20 +238,24 @@ environment \texttt{wideminipage}.\\[0.5em]
 \makeatletter
 \newcounter{numcols@module}
 
-%\edef\lbracetoken{\string{}
-%\edef\rbracetoken{\string}}
+\edef\lbracetoken{\string{}
+\edef\rbracetoken{\string}}
+%\newcommand\headerstyle{\multicolumn{1}{h}\lbracetoken#1}
+\newcommand\headerstyle{\centering}
+\newcolumntype{h}{>{\bfseries}c}
 
-\newcommand\tableheader[2][\relax]{%
-   \newcolumntype{h}{>{\centering#1}c}
-   {\StrCount{\noexpand#2}{&}[\numamps]\global\setcounter{numcols@module}{\numamps}\stepcounter{numcols@module}}
-%   {\StrSubstitute[1]{\noexpand#2}{&}{\rbracetoken &}[\tableheader]
-%   \gdef\headerrow{\multicolumn{1}{h}\lbracetoken\noexpand\tableheader}
-%}
-%\headerrow
-% \gdef\tableheader@module
 
-% I want to do something here like split the string into substrings (StrSplit?) and process each one individually
-#2\\
+\newcommand\tableheader[2][\relax]{{%
+   \StrCount{#2}{&}[\numamps]\global\setcounter{numcols@module}{\numamps}\stepcounter{numcols@module}
+   \def\source{\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken h\rbracetoken\lbracetoken#2\rbracetoken}
+   \def\replace{\rbracetoken&\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken h\rbracetoken\lbracetoken}
+   \StrSubstitute{\source}{ & }{\replace}[\tmptblhdr]
+   \StrExpand{\tmptblhdr}{\tmptblhdrexpand}
+   \tokenize{\tmptbltok}{\tmptblhdr}
+   \global\let\tableheader@module\tmptbltok
+}
+\\
+\tableheader@module\\
 \tableul{\thenumcols@module}
 }
 \makeatother
