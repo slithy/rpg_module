@@ -36,7 +36,7 @@
 %
 % 3. Move stat blocks into a separate .sty file, keep OGL content separate from other text
 % 4. Add all monsters into stat blocks
-% 3. Tables incl. wandering monster chart
+% 3. wandering monster chart
 % 4. Have separate commands for inline stat blocks and new monster stat blocks. The inline one should detect if it is inside the table environment and format itself appropriately.
 % 5. Monster stat blocks : inline, table or full text for appendix
 % 6. Stat block hit points should be an optional argument, tables can be defined with or without a hit point column.
@@ -49,7 +49,7 @@
 % 11. Host it online (CTAN? git?). Set up a ticketing system for bugs and/or improvements
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{module}[2016/03/10 Adventure Module document class]
+\ProvidesClass{module}[2016/03/16 Adventure Module document class]
 
 
 
@@ -301,6 +301,12 @@
 
 % Tables
 
+\newcolumntype{b}{>{\bfseries}c}                                                      % New column type 'b' for bold, centred headings
+\newcounter{numcols@module}                                                           % Counter to keep track of how many columns are in the table
+\renewcommand{\arraystretch}{1.2}                                                     % Increase the table row spacing a little
+
+% Underline heading text
+
 \newtoks\module@tableul
 \newcommand{\tableul}[1]{%
   \noalign{%
@@ -314,6 +320,23 @@
     \repeat
   }%
   \the\module@tableul
+}
+
+% Typeset the table heading. Takes a column type as an optional argument (defaults to 'c' for centred text)
+
+\newcommand\tableheader[2][c]{{%
+   \edef\lbracetoken{\string{}
+   \edef\rbracetoken{\string}}
+   \StrCount{#2}{&}[\numamps]\global\setcounter{numcols@module}{\numamps}\stepcounter{numcols@module}
+   \def\source{\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken#1\rbracetoken\lbracetoken#2\rbracetoken}
+   \def\replace{\rbracetoken&\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken#1\rbracetoken\lbracetoken}
+   \StrSubstitute{\source}{ & }{\replace}[\tmptblhdr]
+   \StrExpand{\tmptblhdr}{\tmptblhdrexpand}
+   \tokenize{\tmptbltok}{\tmptblhdr}
+   \global\let\tableheader@module\tmptbltok
+}\\[-2ex] % hack to get around the fact that it's not allowed to have non-expandable text in the same cell as \multicolumn
+\tableheader@module\\
+\tableul{\thenumcols@module}
 }
 
 

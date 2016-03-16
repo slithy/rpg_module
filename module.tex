@@ -131,6 +131,8 @@ The first thing you need to be aware of is that LaTeX uses a markup language in 
 
 \section{Fonts}
 
+blah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blah                                 
+
 % Choose \rmdefault to select the serifed font and \sfdefault for a sans-serif font
 % If you are using the serifed font, the ITC Souvenir, the font used in the Moldvay Basic rulebook from 1981)
 
@@ -189,6 +191,44 @@ He is with his \stats[10 bodyguards: ]{kobold}{10}{4 each}
 Jim the Rogue: leather armour, small fruit knife, S7 I12 W5 D17 C12 Ch15. He can backstab with +4 to hit and double damage. AL C
 \end{statblockfreestyle}
 
+\section{Tables}
+
+The module class uses the standard \texttt{tabular} environment for tables. You need to specify the horizontal alignment of each column as 
+usual. The class provides a \texttt{tableheader} macro which centres the table headings and writes a horizontal rule under each
+one. You can redefine the column type for headings: the example below uses the \texttt{[b]} option to get bold headings.
+
+\section*{Variable Weapon Damage Table}
+
+\begin{center}
+\begin{tabular}{cl}
+\tableheader[b]{Damage & Weapon Type}
+1-2 (1d2) & Small Fruit Knife\\
+1-4 (1d4) & Torch\\
+1-6 (1d6) & Hand Axe\\
+1-8 (1d8) & Battle Axe\\
+1-10 (1d10) & Two-handed sword\\
+6-36 (6d6) & Laser Cannon\\
+\end{tabular}
+\end{center}
+
+\noindent If you need to squeeze wide tables into a column, you can reduce the width between columns (\texttt{tabcolsep}):
+
+\section*{Character Attacks}
+
+\begin{center}
+\addtolength{\tabcolsep}{-4pt}
+\begin{tabular}{lccccccccccccc}
+\tableheader{Attacker's Level & 9 & 8 & 7 & 6 & 5 & 4 & 3 & 2 & 1 & 0 & -1 & -2 & -3}
+Normal man & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 20 & 20 & 20\\
+1st to 3rd & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 20 & 20\\
+4th + higher & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20\\
+\end{tabular}
+\addtolength{\tabcolsep}{4pt}
+\end{center}
+
+\noindent See also: the Wandering Monster table on p.\pageref{wanderingmonsters}.
+
+
 %%%%% Level One %%%%%
 
 \part{First Dungeon Level}
@@ -234,47 +274,7 @@ these commands do not allow mixing one- and two-column text on the same page. If
 environment \texttt{wideminipage}.\\[0.5em]
 
 \section*{Wandering Monsters}
-
-\makeatletter
-\newcounter{numcols@module}
-
-\newcolumntype{b}{>{\bfseries}c}
-
-\newcommand\tableheader[2][c]{{%
-   \edef\lbracetoken{\string{}
-   \edef\rbracetoken{\string}}
-   \StrCount{#2}{&}[\numamps]\global\setcounter{numcols@module}{\numamps}\stepcounter{numcols@module}
-   \def\source{\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken#1\rbracetoken\lbracetoken#2\rbracetoken}
-   \def\replace{\rbracetoken&\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken#1\rbracetoken\lbracetoken}
-   \StrSubstitute{\source}{ & }{\replace}[\tmptblhdr]
-   \StrExpand{\tmptblhdr}{\tmptblhdrexpand}
-   \tokenize{\tmptbltok}{\tmptblhdr}
-   \global\let\tableheader@module\tmptbltok
-}\\
-\tableheader@module\\
-\tableul{\thenumcols@module}
-}
-\makeatother
-
-\newcommand{\tilerow}[1]{
-  \foreach\i in {1,2,...,5} {
-    \StrChar{#1}{\i}[\currentchar]
-    \ifnum\i=1
-      \xdef\current{\currentchar}
-    \else
-      \xdef\current{\current & \currentchar}
-    \fi
-  }
-  \current\\
-}
-
-\begin{center}
-\begin{tabular}{clccccccccc}
-1 & Acolyte & 1d8 & 2 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
-\tableheader{Die Roll & Wandering Monster & No. & AC & HD & MV & Attacks & Damage & Save & ML & AL}
-2 & Monster with a very long name & 1d8 & 2 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
-\end{tabular}
-\end{center}
+\label{wanderingmonsters}
 
 \begin{center}
 \begin{tabular}{clccccccccc}
