@@ -6,7 +6,10 @@
 %
 % LICENSE FOR THE WORK
 %
-% This work consists of the files module.cls and module.tex.
+% This work consists of the following files:
+%    module.cls
+%    basic_stats.sty
+%    module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
 % Project Public License, either version 1.3 of this license or (at your option)
@@ -23,7 +26,7 @@
 % LICENSE FOR COMPILED WORKS
 %
 % You may distribute compiled works generated using the work as specified in
-% Clause 2 of the LaTeX Project Public License. If you incorporate Open Gaming
+% Clause 3 of the LaTeX Project Public License. If you incorporate Open Gaming
 % Content into the compiled work, you must also comply with the terms of that
 % license.
 %
@@ -177,12 +180,6 @@
 \RequirePackage{dblfloatfix}                                                       % Allow positioning of figure* at bottom of page
 \RequirePackage{xstring}                                                           % Manipulate strings
 
-% Stat blocks
-
-\RequirePackage{pgfkeys}
-\input{pgfutil-common}
-\input{pgfmath.code}
-
 % Hyperlinks
 
 \RequirePackage[linktocpage=true]{hyperref}                                        % Allow hyperlinks, only page numbers in TOC are clickable
@@ -192,7 +189,49 @@
     linkcolor=MidnightBlue,                                                        % Colour for internal links (including Table of Contents)
     citecolor=MidnightBlue}                                                        % Colour for references
 
+% Stat blocks
 
+\RequirePackage{pgfkeys}
+\input{pgfutil-common}
+\input{pgfmath.code}
+
+% The freestyle (system-independent) stat block
+
+\newenvironment{statblockfreestyle}{\begin{list}{}{\leftmargin=1em\rightmargin=1em}\item}{\end{list}}
+
+% Armour class macros
+
+%\newcommand{\descac}{7}
+%\pgfmathtruncatemacro{\ascac}{19-\descac}
+%\newcommand{\holmesac}{\descac[\ascac]}
+
+% Counter for setting up key-value pairs
+
+\newcounter{currentstat}
+
+% Define monsters
+
+\newcommand{\monster}[4][default]{
+   \pgfkeys{/#2/SingleName/.initial = {#3}}
+      \ifnum\pdfstrcmp{#1}{default}=\z@
+      \IfEndWith{#3}{y}
+      {\pgfkeys{/#2/PluralName/.initial = \StrGobbleRight{#3}{1}ies}}     % Plural names ending in -y change to -ies
+      {
+         \IfEndWith{#3}{s}
+         {\pgfkeys{/#2/PluralName/.initial = #3es}}                       % Plural names ending in -s change to -ses
+         {\pgfkeys{/#2/PluralName/.initial = #3s}}                        % Default case, plurals where we add -s
+      }
+   \else
+      \pgfkeys{/#2/PluralName/.initial = #1}                              % Override for irregular plurals
+   \fi
+   \setcounter{currentstat}{0}
+   \def\currentmonster{#2}
+   \scan@stats#4|\relax|
+}
+
+% Load system-specific stat blocks
+
+\input{basic_stats.sty}
 
 % Title Page
 
@@ -252,7 +291,7 @@
 
 
 
-% Define headings
+% Headings
 
 \renewcommand\thepart{\arabic{part}}
 \renewcommand\thesection{}
@@ -305,7 +344,7 @@
 \newcounter{numcols@module}                                                           % Counter to keep track of how many columns are in the table
 \renewcommand{\arraystretch}{1.2}                                                     % Increase the table row spacing a little
 
-% Underline heading text
+% Underline table headers
 
 \newtoks\module@tableul
 \newcommand{\tableul}[1]{%
@@ -322,7 +361,8 @@
   \the\module@tableul
 }
 
-% Typeset the table heading. Takes a column type as an optional argument (defaults to 'c' for centred text)
+% Typeset the table heading
+% Takes a column type as an optional argument (defaults to 'c' for centred text)
 
 \newcommand\tableheader[2][c]{{%
    \edef\lbracetoken{\string{}
@@ -353,100 +393,12 @@
 
 
 
-% Monster stat blocks
-
-\newcounter{currentstat}
-
-%\newcommand{\descac}{7}
-%\pgfmathtruncatemacro{\ascac}{19-\descac}
-%\newcommand{\holmesac}{\descac[\ascac]}
-
-\newcommand{\setstatbasic}[2]{%
-   \ifcase\thecurrentstat
-      \pgfkeys{/#1/AC/.initial  = {#2}}
-   \or
-      \pgfkeys{/#1/HD/.initial  = {#2}}
-   \or
-      \pgfkeys{/#1/MV/.initial  = {#2}}
-   \or
-      \pgfkeys{/#1/Att/.initial = {#2}}
-   \or
-      \pgfkeys{/#1/Dmg/.initial = {#2}}
-   \or
-      \pgfkeys{/#1/SV/.initial  = {#2}}
-   \or
-      \pgfkeys{/#1/ML/.initial  = {#2}}
-   \or
-      \pgfkeys{/#1/AL/.initial  = {#2}}
-   \fi
-}
-
-\def\scan@stats#1|{%
-   \ifx#1\relax
-      \let\next\relax
-   \else
-      \setstatbasic{\currentmonster}{#1}\let\next\scan@stats
-      \stepcounter{currentstat}
-  \fi\next
-}
-
-\newcommand{\monster}[4][default]{
-   \pgfkeys{/#2/SingleName/.initial = {#3}}
-      \ifnum\pdfstrcmp{#1}{default}=\z@
-      \IfEndWith{#3}{y}
-      {\pgfkeys{/#2/PluralName/.initial = \StrGobbleRight{#3}{1}ies}}     % Plural names ending in -y change to -ies
-      {
-         \IfEndWith{#3}{s}
-         {\pgfkeys{/#2/PluralName/.initial = #3es}}                       % Plural names ending in -s change to -ses
-         {\pgfkeys{/#2/PluralName/.initial = #3s}}                        % Default case, plurals where we add -s
-      }
-   \else
-      \pgfkeys{/#2/PluralName/.initial = #1}                              % Override for irregular plurals
-   \fi
-   \setcounter{currentstat}{0}
-   \def\currentmonster{#2}
-   \scan@stats#4|\relax|
-}
-
-\newcommand{\stats}[4][default]{%
-   \ifnum\pdfstrcmp{#1}{default}=\z@
-      \ifnum\pdfstrcmp{#3}{1}=\z@
-         \pgfkeys{/#2/SingleName}:               % Use the generic name defined for this monster (single instance)
-      \else
-         \pgfkeys{/#2/PluralName} (#3):          % Use the generic name defined for this monster (plural + number appearing)
-      \fi
-   \else
-      #1                                         % Override the generic name with the optional argument
-   \fi
-   AC      \pgfkeys{/#2/AC},
-   HD      \pgfkeys{/#2/HD},
-   hp      #4,
-   MV      \pgfkeys{/#2/MV},
-   Att     \pgfkeys{/#2/Att},
-   D       \pgfkeys{/#2/Dmg},
-   Save    \pgfkeys{/#2/SV},
-   ML      \pgfkeys{/#2/ML},
-   AL      \pgfkeys{/#2/AL}%
-}
-
-\newenvironment{statblockfreestyle}{\begin{list}{}{\leftmargin=1em\rightmargin=1em}\item}{\end{list}}
-
-\newcommand{\statblock}[4][default]{%
-   \begin{statblockfreestyle}
-   \stats[#1]{#2}{#3}{#4}
-   \end{statblockfreestyle}
-}
-
-
-
 % Copyright and license macros
 
 \newcommand{\modulecopyright}{%
 The \LaTeX~module class is copyright \copyright 2016 Michael Davis. It can be distributed and/or modified under the conditions of the
 \href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License}, either version 1.3 or (at your option) any later version. You
 have the right to distribute Compiled Works generated using the module class as specified in Clause 3 of the license.}
-
-
 
 \newenvironment{ogl}{%
 \footnotesize

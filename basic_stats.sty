@@ -1,0 +1,117 @@
+%% basic_stats.sty
+%
+% Basic stat blocks for the Adventure Module class
+%
+% Copyright 2016 Michael C. Davis
+%
+% LICENSE FOR THE WORK
+%
+% This work consists of the following files:
+%    module.cls
+%    basic_stats.sty
+%    module.tex
+%
+% This work may be distributed and/or modified under the conditions of the LaTeX
+% Project Public License, either version 1.3 of this license or (at your option)
+% any later version. The latest version of this license can be found at:
+% http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX version
+% 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `author-maintained'.
+% 
+% The Author and Maintainer of this work is Michael C. Davis
+%
+%
+% OPEN GAME LICENSE
+%
+% The monster stat blocks in this file are copyright 2000, Wizards of the Coast, Inc.
+% and are distributed with permission under the terms of the Open Game License v 1.0.
+% See the file module.cls or the compiled file module.pdf for the full text of the
+% license.
+%
+%
+% LICENSE FOR COMPILED WORKS
+%
+% You may distribute compiled works generated using the work as specified in
+% Clause 3 of the LaTeX Project Public License. If you incorporate Open Gaming
+% Content into the compiled work, you must also comply with the terms of that
+% license.
+
+
+
+% Basic stat block key-value pairs
+
+\newcommand{\setstatbasic}[2]{%
+   \ifcase\thecurrentstat
+      \pgfkeys{/#1/AC/.initial  = {#2}}
+   \or
+      \pgfkeys{/#1/HD/.initial  = {#2}}
+   \or
+      \pgfkeys{/#1/MV/.initial  = {#2}}
+   \or
+      \pgfkeys{/#1/Att/.initial = {#2}}
+   \or
+      \pgfkeys{/#1/Dmg/.initial = {#2}}
+   \or
+      \pgfkeys{/#1/SV/.initial  = {#2}}
+   \or
+      \pgfkeys{/#1/ML/.initial  = {#2}}
+   \or
+      \pgfkeys{/#1/AL/.initial  = {#2}}
+   \fi
+}
+
+% Define monsters using \setstatbasic
+
+\def\scan@stats#1|{%
+   \ifx#1\relax
+      \let\next\relax
+   \else
+      \setstatbasic{\currentmonster}{#1}\let\next\scan@stats
+      \stepcounter{currentstat}
+  \fi\next
+}
+
+
+
+% Display monster stats inline
+
+\newcommand{\stats}[4][default]{%
+   \ifnum\pdfstrcmp{#1}{default}=\z@
+      \ifnum\pdfstrcmp{#3}{1}=\z@
+         \pgfkeys{/#2/SingleName}:               % Use the generic name defined for this monster (single instance)
+      \else
+         \pgfkeys{/#2/PluralName} (#3):          % Use the generic name defined for this monster (plural + number appearing)
+      \fi
+   \else
+      #1                                         % Override the generic name with the optional argument
+   \fi
+   AC      \pgfkeys{/#2/AC},
+   HD      \pgfkeys{/#2/HD},
+   hp      #4,
+   MV      \pgfkeys{/#2/MV},
+   Att     \pgfkeys{/#2/Att},
+   D       \pgfkeys{/#2/Dmg},
+   Save    \pgfkeys{/#2/SV},
+   ML      \pgfkeys{/#2/ML},
+   AL      \pgfkeys{/#2/AL}%
+}
+
+% Display monster stats in a stat block
+
+\newcommand{\statblock}[4][default]{%
+   \begin{statblockfreestyle}
+   \stats[#1]{#2}{#3}{#4}
+   \end{statblockfreestyle}
+}
+
+
+
+%
+% Pre-defined monster stats (OGL)
+%
+
+\monster{kobold}{Kobold}{7|$1/2$|60' (20')|weapon|1d4|NM|6|C}
+\monster{harpy}{Harpy}{7|3*|20'/50'|2 claws and a weapon + charm|1d4/1d4/1d6|F6|6|C}
+
