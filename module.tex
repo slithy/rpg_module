@@ -55,12 +55,14 @@ authors to typeset their adventures with a minimum of effort. Write your adventu
 in the example file, and in a few clicks you will have a beautifully-formatted PDF.}
 
 \copyrightblock{The \LaTeX~module class is Copyright \copyright 2016 Michael Davis and is distributed under the terms
-of the \href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License} Version 1.3c. You are free to use this
+of the \href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License} (LPPL) Version 1.3c. You are free to use this
 template to generate works for distribution, both for free and commercially, as detailed in Clause 3 of the license.
 
-Some parts of this template, namely the monster stat blocks, are Copyright \copyright 2000--2003 Wizards of the Coast
-and are distributed under the \hyperref[ogl]{Open Game License (OGL)} Version 1.0A. The module class includes some handy
-macros to make it easy to add the OGL license text to your own work.}
+Some parts of the template are Copyright \copyright 2000--2003 Wizards of the Coast and are distributed under the
+\hyperref[ogl]{Open Game License (OGL)} Version 1.0A. The module class includes macros to make it easy to
+add the OGL license text to your own work.
+
+The images and maps in this example template are not covered by the LPPL. See the license for each work.}
 
 % The contact block is to typeset your logo(s), company name and/or contact details. It consists of three columns; you
 % can use any or all of them. By default the columns are top-aligned and of equal width, but you can redefine this in the
@@ -231,6 +233,16 @@ Normal man & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 20 & 20 & 20\\
 
 %%%%% Level One %%%%%
 
+% Float the map on a page on its own
+
+\begin{figure*}[p]
+\centering
+\includegraphics[width=0.60\textwidth]{module_map.png}
+\center{Map Copyright \copyright 2008, 2016 Tim Hartin of
+\href{http://paratime.ca}{Paratime Design}. Used with permission. All rights reserved.}
+\label{img:map}
+\end{figure*}
+
 \part{First Dungeon Level}
 
 Some introductory text for the DM.
@@ -261,7 +273,8 @@ If the players investigate, they will find a hidden trapdoor under the bushes. U
 \begin{figure}[ht]
 \includegraphics[width=\columnwidth]{module_art_interior.png}
 \center{Tomb It May Concern.\\
-Image Copyright \copyright 1987, 2016 Michael Davis.}
+Image Copyright \copyright 1987, 2016 Michael Davis. All rights reserved.}
+\label{img:tomb}
 \end{figure}
 
 %%%%% Level Two %%%%%
@@ -303,7 +316,16 @@ David Noonan, Rich Redman, Bruce R. Cordell, John D. Rateliff, Thomas Reid, Jame
 \item The text of this \LaTeX~module class and example template, which comprises all typesetting elements and all text which is not explitly Open Game Content, is Product Identity.
 \modulecopyright
 
-\item All artwork in this template is Product Identity. Copyright belongs to the artists, all rights reserved.
+\item All photographs, artwork and maps in this template are Product Identity.
+
+\item The cover image is adapted from an original image on \href{https://commons.wikimedia.org/wiki/File:Karnak_Tempel_Vorhof_05.jpg}{Wikimedia Commons},
+copyright \copyright 2009 Olaf Tausch. Used with permission under the terms of the
+\href{https://creativecommons.org/licenses/by/3.0/deed.en}{Creative Commons Attribution 3.0 Unported} license.
+
+\item The map on p.\pageref{img:map} is copyright \copyright 2008, 2016 Tim Hartin of \href{http://paratime.ca}{Paratime Design}. Used with permission. All rights reserved.
+
+\item The drawing on p.\pageref{img:tomb} is copyright \copyright 1987, 2016 Michael Davis. All rights reserved.
+
 \end{productidentity}
 
 \begin{opengamecontent}
