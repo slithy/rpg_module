@@ -1,12 +1,13 @@
 TARGET=module.pdf
 CLASS=module.cls
+STYLES=basic_stats.sty
 
 all: $(TARGET)
 
 show: $(TARGET)
 	evince $(TARGET)
 
-%.pdf: %.tex $(CLASS) %.toc
+%.pdf: %.tex $(CLASS) $(STYLES) %.toc
 	pdflatex $<
 
 %.toc: %.tex $(CLASS)

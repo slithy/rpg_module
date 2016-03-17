@@ -37,19 +37,17 @@
 
 % TO DO
 %
-% 3. Move stat blocks into a separate .sty file, keep OGL content separate from other text
-% 4. Add all monsters into stat blocks
-% 3. wandering monster chart
-% 4. Have separate commands for inline stat blocks and new monster stat blocks. The inline one should detect if it is inside the table environment and format itself appropriately.
-% 5. Monster stat blocks : inline, table or full text for appendix
-% 6. Stat block hit points should be an optional argument, tables can be defined with or without a hit point column.
+% 1. Wandering monster table (no hp, auto-counter)
+% 2. Monster roster table (with hp, room no. instead of counter)
+% 3. Table-line stat blocks for the above
+% 4. End of module monster description blocks
+% 5. Add all monsters from B/X into stat blocks (pref. without having to retype them all)
+%
 % 7. Have option for Holmes AC, descending AC or ascending AC with descending AC as default
-%
-% 8. Set language to US or UK from paper size with option to override to any arbitrary language. Import text for stat blocks from a language-specific include file.
-% 9. Perhaps allow system-dependent stat blocks... maybe going too far but at least think of how this could be accomplished and design in a way that allows the possibility in future. Stat blocks could be defined as system-specific as well as language specific.
-%
+% 8. Edit map
+% 9. Set UK/US-specific language features from paper size (spelling of Armor/Armour)?
 % 10. Free to use but have a PayPal option for donations in case of commercial use...
-% 11. Host it online (CTAN? git?). Set up a ticketing system for bugs and/or improvements
+% 11. Host it online (CTAN? github?). Set up a ticketing system for bugs and/or improvements
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{module}[2016/03/16 Adventure Module document class]

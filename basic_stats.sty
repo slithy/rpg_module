@@ -108,6 +108,18 @@
 
 
 
+% Table display formats for wandering monsters and monster roster
+
+\newenvironment{wanderingmonsters}[1][c]{\begin{center}\begin{tabular}{clccccccccc}
+\tableheader[#1]{Die Roll & Wandering Monster & No. & AC & HD & MV & Attacks & Damage & Save & ML & AL}}
+{\end{tabular}\end{center}}
+
+\newenvironment{monsterroster}[1][c]{\begin{center}\begin{tabular}{clcccccccccc}
+\tableheader[#1]{Room & Monster & No. & AC & HD & hp & MV & Attacks & Damage & Save & ML & AL}}
+{\end{tabular}\end{center}}
+
+
+
 %
 % Pre-defined monster stats (OGL)
 %
