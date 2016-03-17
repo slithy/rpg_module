@@ -59,9 +59,10 @@
 % Process class options
 
 \newcounter{papersizeoption}
-\newif\ifmodule@letterpaper
-
 \newcounter{fontoption}
+\newcounter{statsoption}
+
+\newif\ifmodule@letterpaper
 \newif\ifmodule@seriffont
 
 \DeclareOption{letterpaper}{\module@letterpapertrue\stepcounter{papersizeoption}}
@@ -70,12 +71,17 @@
 \DeclareOption{serif}{\module@seriffonttrue\stepcounter{fontoption}}
 \DeclareOption{sansserif}{\module@seriffontfalse\stepcounter{fontoption}}
 
+\DeclareOption{basic}{\def\statstyle@module{basic_stats.sty}\stepcounter{statsoption}}
+\DeclareOption{advanced}{\def\statstyle@module{advanced_stats.sty}\stepcounter{statsoption}}
+% other stat block options can be added here
+
 \DeclareOption*{
    \PackageError{dnd_module}{Unrecognised option '\CurrentOption'}{Valid options are a4paper,letterpaper,serif,sansserif}
 }
 
 \ExecuteOptions{a4paper}                                                           % default paper size is A4
 \ExecuteOptions{sansserif}                                                         % default font option is sans serif
+\ExecuteOptions{basic}                                                             % default stat block style is basic
 
 \ProcessOptions\relax
 
@@ -89,6 +95,13 @@
    \PackageError{module}{serif and sanserif options are mutually exclusive}
    {The input file contains a statement like documentclass[serif,sansserif]{module}.
     You can only select one font style, either serif or sans serif. The default is sans serif.}
+\fi
+
+\ifcase\thestatsoption\or\or\else
+   \PackageError{module}{you can only select one style}
+   {The input file contains a statement like documentclass[basic,advanced]{module}.
+    You can only select one style for stat blocks. The recognised styles are basic and advanced.
+    The default is basic. Advanced will be defined in a future version of the module class.}
 \fi
 
 
@@ -231,7 +244,7 @@
 
 % Load system-specific stat blocks
 
-\input{basic_stats.sty}
+\input{\statstyle@module}
 
 % Title Page
 
