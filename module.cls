@@ -342,9 +342,10 @@
 
 % Boxed text
 
-\newcommand{\boxtext}[1]{
+\newcommand{\boxtext}[2][-0.5em]{
+\vspace{#1}
 \begin{framed}
-\noindent #1
+\noindent #2
 \end{framed}}
 
 

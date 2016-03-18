@@ -199,9 +199,9 @@ Jim the Rogue: leather armour, small fruit knife, S7 I12 W5 D17 C12 Ch15. He can
 
 \section{Tables}
 
-The module class uses the standard \texttt{tabular} environment for tables. You need to specify the horizontal alignment of each column as 
-usual. The class provides a \texttt{tableheader} macro which centres the table headings and writes a horizontal rule under each
-one. You can redefine the column type for headings: the example below uses the \texttt{[b]} option to get bold headings.
+The module class uses the standard \verb|tabular| environment for tables. You need to specify the horizontal alignment of each column as 
+usual. The class provides a \verb|\tableheader| macro which centres the table headings and writes a horizontal rule under each
+one. You can redefine the column type for headings: the example below uses the \verb|[b]| option to get bold headings.
 
 \section*{Variable Weapon Damage Table}
 
@@ -217,19 +217,19 @@ one. You can redefine the column type for headings: the example below uses the \
 \end{tabular}
 \end{center}
 
-\noindent If you need to squeeze wide tables into a column, you can reduce the width between columns (\texttt{tabcolsep}):
+\noindent If you need to squeeze wide tables into a text column, you can reduce \verb|\tabcolsep|, which controls the spacing between table columns.
 
 \section*{Character Attacks}
 
 \begin{center}
-\addtolength{\tabcolsep}{-4pt}
+\addtolength{\tabcolsep}{-4.1pt}
 \begin{tabular}{lccccccccccccc}
 \tableheader{Attacker's Level & 9 & 8 & 7 & 6 & 5 & 4 & 3 & 2 & 1 & 0 & -1 & -2 & -3}
 Normal man & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 20 & 20 & 20\\
 1st to 3rd & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 20 & 20\\
 4th + higher & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20\\
 \end{tabular}
-\addtolength{\tabcolsep}{4pt}
+\addtolength{\tabcolsep}{4.1pt}
 \end{center}
 
 \noindent See also: the Wandering Monster table on p.\pageref{wanderingmonsters}.
@@ -261,7 +261,11 @@ Some introductory text for the DM.
 
 Some DM info above the box blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
 
-\boxtext{It looks dangerous.}
+% By default, boxed text is moved up by 0.5em to avoid the space below headings (where it is usually placed)
+% being too large. If you want to put a box between normal paragraphs, give it the [0pt] parameter to restore
+% the default spacing.
+
+\boxtext[0pt]{It looks dangerous.}
 
 Some monsters are here.
 Some DM info below the box blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
@@ -284,11 +288,16 @@ Image Copyright \copyright 1987, 2016 Michael Davis. All rights reserved.}
 %%%%% Level Two %%%%%
 
 \begin{table*}[t]
+\setlength{\parindent}{1em}
 \part{Second Dungeon Level}
 
-The \texttt{\textbackslash onecolumn} command can be used to switch into single column mode. \texttt{\textbackslash twocolumn} switches back to two-column mode. However,
-these commands do not allow mixing one- and two-column text on the same page. If you would like to have just part of a page in one-column mode, use the custom
-environment \texttt{wideminipage}.\\[0.5em]
+If you want to have some pages with a single column of text, you can use \verb|\onecolumn| to switch
+into one-column mode and \verb|\twocolumn| to switch back to two-column mode. These commands cause
+a page break.
+
+If you want to mix single and double-column text on the same page, use the \verb|table*| environment
+to create a float which is the full width of the page. You can do the same thing with graphics using
+the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 
 \section*{Wandering Monsters}
 \label{wanderingmonsters}
