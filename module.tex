@@ -287,15 +287,14 @@ Image Copyright \copyright 1987, 2016 Michael Davis. All rights reserved.}
 
 %%%%% Level Two %%%%%
 
-\begin{table*}[t]
-\setlength{\parindent}{1em}
+\begin{onecolumnfloat}[t]
 \part{Second Dungeon Level}
 
 If you want to have some pages with a single column of text, you can use \verb|\onecolumn| to switch
 into one-column mode and \verb|\twocolumn| to switch back to two-column mode. These commands cause
 a page break.
 
-If you want to mix single and double-column text on the same page, use the \verb|table*| environment
+If you want to mix single and double-column text on the same page, use the \verb|onecolumnfloat| environment
 to create a float which is the full width of the page. You can do the same thing with graphics using
 the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 
@@ -313,7 +312,7 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 1 & Acolyte & 1d8 & 2 & 47 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
 2 & Monster with a very long name & 1d8 & 2 & 23 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
 \end{monsterroster}
-\end{table*}
+\end{onecolumnfloat}
 
 \lipsum
 

@@ -350,6 +350,15 @@
 
 
 
+% Single-column text
+
+\newenvironment{onecolumnfloat}[1][t]{%
+\let\@floatboxreset\relax%
+\let\@parboxrestore\relax%
+\begin{table*}[#1]\unskip}{\end{table*}}
+
+
+
 % Tables
 
 \newcolumntype{b}{>{\bfseries}c}                                                      % New column type 'b' for bold, centred headings
