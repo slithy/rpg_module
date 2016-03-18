@@ -193,7 +193,7 @@
 
 % Hyperlinks
 
-\RequirePackage[linktocpage=true]{hyperref}                                        % Allow hyperlinks, only page numbers in TOC are clickable
+\RequirePackage[linktocpage]{hyperref}                                             % Allow hyperlinks, only page numbers in TOC are clickable
 \RequirePackage[dvipsnames]{xcolor}                                                % Pre-defined colour names
 \hypersetup{colorlinks=true,
     urlcolor=MidnightBlue,                                                         % Colour for external links
@@ -388,18 +388,6 @@
 }\\[-2ex] % hack to get around the fact that it's not allowed to have non-expandable text in the same cell as \multicolumn
 \tableheader@module\\
 \tableul{\thenumcols@module}
-}
-
-
-
-% Define a minipage the full width of a page. It takes the usual LaTeX float position arguments.
-
-\newenvironment{wideminipage}[1][t]{%
-   \begin{figure*}[#1]
-   \begin{minipage}{\textwidth}
-}{%
-   \end{minipage}
-   \end{figure*}
 }
 
 
