@@ -142,6 +142,8 @@
 
 \setlength{\footskip}{0.7cm}
 
+\setlength{\columnsep}{0.75cm}
+
 \pagenumbering{arabic}
 
 
