@@ -149,6 +149,7 @@
 % Process font options
 
 \RequirePackage[T1]{fontenc}                                                       % Use T1 (8-bit) font encoding
+\RequirePackage{lmodern}                                                           % Use Latin Modern instead of Computer Modern for symbols etc.
 
 \ifmodule@seriffont
    \IfFileExists{souvenir.sty}{                                                    % If ITC Souvenir font is installed in this LaTeX distribution
