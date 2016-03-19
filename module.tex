@@ -173,8 +173,8 @@ Test font sizes
 
 \section{Monster Stat Blocks}
 
-\monster[Octopodes]{octopus}{Octopus}{7|3*|20'/50'|8 legs|1d6 each|F6|6|C}
-\monster{platypus}{Platypus}{7|3*|20'/50'|bill|1d4|F6|6|C}
+\monster[Octopodes]{octopus}{Octopus}{7|3*|20'/50'|8|8 legs|1d6 each|F6|6|C}
+\monster{platypus}{Platypus}{7|3*|20'/50'|1|bill|1d4|F6|6|C}
 
 First stat block:
 \statblock{kobold}{5}{4,4,3,2,1}
@@ -257,7 +257,8 @@ Some introductory text for the DM.
 
 \boxtext{Some boxed text to read to the players to introduce them to the adventure.}
 
-\subsection{The Gatehouse}
+\subsection{The Portico}
+\label{portico}
 
 Some DM info above the box blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
 
@@ -302,30 +303,19 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 \label{wanderingmonsters}
 
 \begin{wanderingmonsters}[b]
-\wandering{kobold}{1-6 (1d6)}
-\wandering{harpy}{1-4 (1d4)}
-\wandering[8-10]{octopus}{1}
-\wandering[11]{octopus}{1-4 (1d4)}
-\wandering{platypus}{1}
-\wandering{platypus}{1-4 (1d4)}
-\end{wanderingmonsters}
-
-\begin{wanderingmonsters}[b]
-\wandering{kobold}{1-6 (1d6)}
-\wandering{harpy}{1-4 (1d4)}
-\wandering[8-10]{octopus}{1}
-\wandering[11]{octopus}{1-4 (1d4)}
-\wandering{platypus}{1}
-\wandering{platypus}{1-4 (1d4)}
-1 & Acolyte & 1d8 & 2 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
-2 & Monster with a very long name & 1d8 & 2 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
+\wanderitem{kobold}{1-6 (1d6)}
+\wanderitem{harpy}{1-4 (1d4)}
+\wanderitem[8-10]{octopus}{1}
+\wanderitem[11]{octopus}{1-4 (1d4)}
+\wanderitem{platypus}{1}
+\wanderitem{platypus}{1-4 (1d4)}
 \end{wanderingmonsters}
 
 \section*{Monster Roster}
 
 \begin{monsterroster}
-1 & Acolyte & 1d8 & 2 & 47 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
-2 & Monster with a very long name & 1d8 & 2 & 23 & 1 & mace & 1d6 & 60'(20') & C1 & 7 & C\\
+\rosteritem{\ref{portico}}{kobold}{16}{4 each}
+\rosteritem{2}{harpy}{1}{23}
 \end{monsterroster}
 \end{onecolumnfloat}
 
