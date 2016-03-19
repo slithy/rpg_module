@@ -56,6 +56,7 @@
 \newcounter{papersizeoption}
 \newcounter{fontoption}
 \newcounter{statsoption}
+\newcounter{acoption}
 
 \newif\ifmodule@letterpaper
 \newif\ifmodule@seriffont
@@ -68,10 +69,19 @@
 
 \DeclareOption{basic}{\def\statstyle@module{basic_stats.sty}\stepcounter{statsoption}}
 \DeclareOption{advanced}{\def\statstyle@module{advanced_stats.sty}\stepcounter{statsoption}}
-% other stat block options can be added here
+% \DeclareOption stat block options for more systems here...
+
+% Note: the class does not define a default AC display option. The default is handled by the
+% \ac@module macro which is defined in the style file selected by the previous option.
+
+\DeclareOption{acdesc}{\def\acstyle@module{desc}\stepcounter{acoption}}
+\DeclareOption{acasc}{\def\acstyle@module{asc}\stepcounter{acoption}}
+\DeclareOption{acb1}{\def\acstyle@module{b1}\stepcounter{acoption}}
+\DeclareOption{acsw}{\def\acstyle@module{sw}\stepcounter{acoption}}
 
 \DeclareOption*{
-   \PackageError{dnd_module}{Unrecognised option '\CurrentOption'}{Valid options are a4paper,letterpaper,serif,sansserif}
+   \ClassError{dnd_module}{Unrecognised option '\CurrentOption'}{Valid options are:\MessageBreak
+      a4paper,letterpaper,\MessageBreak serif,sansserif,\MessageBreak basic,advanced,\MessageBreak acdesc,acac,acb1,acsw}
 }
 
 \ExecuteOptions{a4paper}                                                        % default paper size is A4
@@ -81,22 +91,36 @@
 \ProcessOptions\relax
 
 \ifcase\thepapersizeoption\or\or\else
-   \PackageError{module}{a4paper and letterpaper options are mutually exclusive}
-   {The input file contains a statement like documentclass[letterpaper,a4paper]{module}.
-    You can only select one paper size, either letterpaper or a4paper. The default is a4paper.}
+   \ClassError{module}{a4paper and letterpaper options are mutually exclusive}
+   {The input file contains a statement like:\MessageBreak
+    \protect\documentclass[letterpaper,a4paper]{module}\MessageBreak
+    You can only select one paper size, either letterpaper or a4paper.\MessageBreak
+    The default is a4paper.}
 \fi
 
 \ifcase\thefontoption\or\or\else
-   \PackageError{module}{serif and sanserif options are mutually exclusive}
-   {The input file contains a statement like documentclass[serif,sansserif]{module}.
-    You can only select one font style, either serif or sans serif. The default is sans serif.}
+   \ClassError{module}{serif and sanserif options are mutually exclusive}
+   {The input file contains a statement like:\MessageBreak
+    \protect\documentclass[serif,sansserif]{module}.\MessageBreak
+    You can only select one font style, either serif or sans serif.\MessageBreak
+    The default is sans serif.}
 \fi
 
 \ifcase\thestatsoption\or\or\else
-   \PackageError{module}{you can only select one style}
-   {The input file contains a statement like documentclass[basic,advanced]{module}.
-    You can only select one style for stat blocks. The recognised styles are basic and advanced.
+   \ClassError{module}{you can only select one style}
+   {The input file contains a statement like:
+    \protect\documentclass[basic,advanced]{module}.
+    You can only select one style for stat blocks.\MessageBreak
+    The recognised styles are basic and advanced.\MessageBreak
     The default is basic. Advanced will be defined in a future version of the module class.}
+\fi
+
+\ifcase\theacoption\or\else
+   \ClassError{module}{you can only select one AC style}
+   {The input file contains a statement like:\MessageBreak
+    \protect\documentclass[acasc,acdesc]{module}.\MessageBreak
+    You can only select one style for armour class.\MessageBreak
+    The recognised styles are acasc, acdesc, acb1 and acsw.}
 \fi
 
 
@@ -156,7 +180,7 @@
       \renewcommand{\bfdefault}{d}                                              % Use demi-bold instead of bold
       \renewcommand*\copyright{{\usefont{T1}{lmr}{m}{n}\textcopyright}}         % Get a good-looking copyright symbol
    }{
-      \PackageWarning{module}{%
+      \ClassWarning{module}{%
          ITC Souvenir not detected, substituting Bookman as default serifed font.}
       \RequirePackage{bookman}                                                  % Use Bookman as serifed font
    }
@@ -210,18 +234,11 @@
 
 \newenvironment{statblockfreestyle}{\begin{list}{}{\leftmargin=1em\rightmargin=1em}\item}{\end{list}}
 
-% Armour class macros
 
-\newcommand\ac[1]{\setcounter{ac}{19}\addtocounter{ac}{#1}\theac}
-%\newcommand{\descac}{7}
-%\pgfmathtruncatemacro{\ascac}{19-\descac}
-%\newcommand{\holmesac}{\descac[\ascac]}
-
-% Counter for setting up key-value pairs
-
-\newcounter{currentstat}
 
 % Define monsters
+
+\newcounter{currentstat}                                                        % Counter for setting up key-value pairs
 
 \newcommand{\monster}[4][default]{
    \pgfkeys{/#2/SingleName/.initial = {#3}}

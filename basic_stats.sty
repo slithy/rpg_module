@@ -25,7 +25,7 @@
 %
 % OPEN GAME LICENSE
 %
-% The monster stat blocks in this file are copyright 2000, Wizards of the Coast, Inc.
+% The monster stats in this file are copyright 2000, Wizards of the Coast, Inc.
 % and are distributed with permission under the terms of the Open Game License v 1.0.
 % See the file module.cls or the compiled file module.pdf for the full text of the
 % license.
@@ -40,11 +40,42 @@
 
 
 
+% Armour class macro
+%
+% The default for Basic stats is to use the same descending AC that is used in
+% the Basic rulebook. However, three alternative styles are defined: ascending
+% AC style, B1 style and Swords & Wizardry style. Thanks to Zenopus archives
+% for pointing out that the B1 style is an early form of ascending AC, see:
+%
+% http://zenopusarchives.blogspot.com/2014/02/ascending-ac-in-holmes-basic.html
+
+\newcounter{acasc@module}                                                       % Counter for AC calculations
+
+\newcommand\ac@module[1]{%
+   \@ifundefined{acstyle@module}{\gdef\acstyle@module{desc}}{}%                 % Default AC style is descending
+   \ifnum\pdfstrcmp{\acstyle@module}{desc}=\z@                                  % Display descending AC
+      #1
+   \else
+      \setcounter{acasc@module}{19}\addtocounter{acasc@module}{-#1}%
+      \ifnum\pdfstrcmp{\acstyle@module}{asc}=\z@                                % Display ascending AC
+         \theacasc@module
+      \else\ifnum\pdfstrcmp{\acstyle@module}{b1}=\z@                            % Display AC using B1 notation
+         #1/\theacasc@module
+      \else\ifnum\pdfstrcmp{\acstyle@module}{sw}=\z@                            % Display AC using Swords & Wizardry notation
+         #1(\theacasc@module)
+      \else
+         Unknown AC style \acstyle@module
+      \fi\fi\fi
+   \fi
+}
+
+
+
 % Basic stat block key-value pairs
 
 \newcommand{\setstatbasic}[2]{%
    \ifcase\thecurrentstat
-      \pgfkeys{/#1/AC/.initial  = {#2}}
+      \pgfkeys{/#1/AC/.initial  = \ac@module{#2}}
    \or
       \pgfkeys{/#1/HD/.initial  = {#2}}
    \or
@@ -74,8 +105,6 @@
       \stepcounter{currentstat}
   \fi\next
 }
-
-% Format name as singular or plural
 
 
 
@@ -152,6 +181,9 @@
 {\end{tabular}\end{center}}
 
 % Usage: \rosteritem{room key}{monster key}{no. appearing}{hit points}
+%
+% If the room key is provided as a reference, the class will create a hyperlink from the monster
+% roster to the room description
 
 \newcommand{\rosteritem}[4]{%
    #1 &
@@ -171,5 +203,5 @@
 %
 
 \monster{kobold}{Kobold}{7|$1/2$|60' (20')|1|weapon|1d4|NM|6|C}
-\monster{harpy}{Harpy}{7|3*|20'/50'|3 + special|2 claws and a weapon + charm|1d4/1d4/1d6|F6|6|C}
+\monster{harpy}{Harpy}{-1|3*|20'/50'|3 + special|2 claws and a weapon + charm|1d4/1d4/1d6|F6|6|C}
 
