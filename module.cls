@@ -173,12 +173,16 @@
 
 \RequirePackage[T1]{fontenc}                                                    % Use T1 (8-bit) font encoding
 \RequirePackage{lmodern}                                                        % Use Latin Modern instead of Computer Modern for symbols etc.
+\RequirePackage{xfrac}                                                          % Get a good-looking 1/2 symbol
+
+\newcommand\half{\sfrac{1}{2}}                                                  % Get a good-looking 1/2 symbol
 
 \ifmodule@seriffont
    \IfFileExists{souvenir.sty}{                                                 % If ITC Souvenir font is installed in this LaTeX distribution
       \RequirePackage{souvenir}                                                 % Use ITC Souvenir as serifed font
       \renewcommand{\bfdefault}{d}                                              % Use demi-bold instead of bold
       \renewcommand*\copyright{{\usefont{T1}{lmr}{m}{n}\textcopyright}}         % Get a good-looking copyright symbol
+      \renewcommand\half{{\usefont{T1}{lmr}{m}{n}\sfrac{1}{2}}}                 % Redefine font for 1/2 symbol
    }{
       \ClassWarning{module}{%
          ITC Souvenir not detected, substituting Bookman as default serifed font.}
@@ -224,17 +228,21 @@
     linkcolor=MidnightBlue,                                                     % Colour for internal links (including Table of Contents)
     citecolor=MidnightBlue}                                                     % Colour for references
 
-% Stat blocks
+% Key-value pairs, used for stat blocks
 
 \RequirePackage{pgfkeys}
 \input{pgfutil-common}
 \input{pgfmath.code}
 
+% Define a narrow breaking space
+
+\newcommand*{\thinspacebrk}{\hskip0.16667em\relax}
+
 % The freestyle (system-independent) stat block
+%
+% Other stat-block styles depend on the RPG system option chosen and are defined in the appropriate .sty file
 
 \newenvironment{statblockfreestyle}{\begin{list}{}{\leftmargin=1em\rightmargin=1em}\item}{\end{list}}
-
-
 
 % Define monsters
 

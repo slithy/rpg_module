@@ -54,15 +54,15 @@
 \newcommand\ac@module[1]{%
    \@ifundefined{acstyle@module}{\gdef\acstyle@module{desc}}{}%                 % Default AC style is descending
    \ifnum\pdfstrcmp{\acstyle@module}{desc}=\z@                                  % Display descending AC
-      #1
+      #1\ignorespaces
    \else
       \setcounter{acasc@module}{19}\addtocounter{acasc@module}{-#1}%
       \ifnum\pdfstrcmp{\acstyle@module}{asc}=\z@                                % Display ascending AC
-         \theacasc@module
+         \theacasc@module\ignorespaces
       \else\ifnum\pdfstrcmp{\acstyle@module}{b1}=\z@                            % Display AC using B1 notation
-         #1/\theacasc@module
+         #1/\theacasc@module\ignorespaces
       \else\ifnum\pdfstrcmp{\acstyle@module}{sw}=\z@                            % Display AC using Swords & Wizardry notation
-         #1(\theacasc@module)
+         #1\,(\theacasc@module)\ignorespaces
       \else
          Unknown AC style \acstyle@module
       \fi\fi\fi
@@ -79,7 +79,9 @@
    \or
       \pgfkeys{/#1/HD/.initial  = {#2}}
    \or
-      \pgfkeys{/#1/MV/.initial  = {#2}}
+      \pgfkeys{/#1/MVturn/.initial  = {#2}}
+   \or
+      \pgfkeys{/#1/MVrd/.initial  = {#2}}
    \or
       \pgfkeys{/#1/AttShort/.initial = {#2}}
    \or
@@ -125,7 +127,7 @@
    AC      \pgfkeys{/#2/AC},
    HD      \pgfkeys{/#2/HD},
    hp      #4,
-   MV      \pgfkeys{/#2/MV},
+   MV      \pgfkeys{/#2/MVturn}\thinspacebrk(\pgfkeys{/#2/MVrd}),
    Att     \pgfkeys{/#2/AttLong},
    D       \pgfkeys{/#2/Dmg},
    Save    \pgfkeys{/#2/SV},
@@ -168,7 +170,7 @@
    \else
       \pgfkeys{/#2/PluralName} &
    \fi
-   #3 & \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD} & \pgfkeys{/#2/MV} & \pgfkeys{/#2/AttShort} &
+   #3 & \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD} & \pgfkeys{/#2/MVrd} & \pgfkeys{/#2/AttShort} &
         \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \pgfkeys{/#2/AL}\\
 }
 
@@ -192,7 +194,7 @@
    \else
       \pgfkeys{/#2/PluralName} &
    \fi
-   #3 & \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD} & #4 & \pgfkeys{/#2/MV} & \pgfkeys{/#2/AttShort} &
+   #3 & \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD} & #4 & \pgfkeys{/#2/MVrd} & \pgfkeys{/#2/AttShort} &
         \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \pgfkeys{/#2/AL}\\
 }
 
@@ -202,6 +204,6 @@
 % Pre-defined monster stats (OGL)
 %
 
-\monster{kobold}{Kobold}{7|$1/2$|60' (20')|1|weapon|1d4|NM|6|C}
-\monster{harpy}{Harpy}{-1|3*|20'/50'|3 + special|2 claws and a weapon + charm|1d4/1d4/1d6|F6|6|C}
+\monster{kobold}{Kobold}{7|\half|60'|20'|1|weapon|1d4|NM|6|C}
+\monster{harpy}{Harpy}{-1|3*|60'/150'|20'/50'|3 + special|2 claws and a weapon + charm|1d4/1d4/1d6|F6|6|C}
 
