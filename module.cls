@@ -37,14 +37,11 @@
 
 % TO DO
 %
-% 1. Wandering monster table (no hp, auto-counter)
-%    - short and long versions of attacks
-% 2. Monster roster table (with hp, room no. instead of counter)
-% 3. Table-line stat blocks for the above
+% 1. Have option for Holmes AC, descending AC or ascending AC with descending AC as default
 % 4. End of module monster description blocks
 % 5. Add all monsters from B/X into stat blocks (pref. without having to retype them all)
+% 6. Running page header option in A4 paper size only
 %
-% 7. Have option for Holmes AC, descending AC or ascending AC with descending AC as default
 % 9. Set UK/US-specific language features from paper size (spelling of Armor/Armour)?
 % 10. Free to use but have a PayPal option for donations in case of commercial use...
 % 11. Host it online (CTAN? github?). Set up a ticketing system for bugs and/or improvements
@@ -215,6 +212,7 @@
 
 % Armour class macros
 
+\newcommand\ac[1]{\setcounter{ac}{19}\addtocounter{ac}{#1}\theac}
 %\newcommand{\descac}{7}
 %\pgfmathtruncatemacro{\ascac}{19-\descac}
 %\newcommand{\holmesac}{\descac[\ascac]}
@@ -245,7 +243,13 @@
 
 % Load system-specific stat blocks
 
-\input{\statstyle@module}
+\InputIfFileExists{\statstyle@module}{%
+   \ClassInfo{module}{Loading monster stats from \statstyle@module}
+}{%
+   \ClassWarning{module}{Monster stats style \statstyle@module\space not found,\MessageBreak
+   defaulting to basic_stats.sty}
+   \input{basic_stats.sty}
+}
 
 % Title Page
 
@@ -281,11 +285,11 @@
 \end{center}
 \let\if@afterindentfalse}
 
-\def\@subtitle{\relax}
-\def\@coverimg{\relax}
-\def\@abstract{\relax}
-\def\@copyright{\relax}
-\def\@contact{\relax}
+\newcommand\@subtitle{\relax}
+\newcommand\@coverimg{\relax}
+\newcommand\@abstract{\relax}
+\newcommand\@copyright{\relax}
+\newcommand\@contact{\relax}
 
 \newcommand{\subtitle}[1]{\gdef\@subtitle{\vskip 0.5em \LARGE \textbf{\MakeUppercase{#1}}}}
 \newcommand{\coverimage}[1]{\gdef\@coverimg{\vskip 1em \includegraphics[width=\textwidth]{#1} \par}}
@@ -395,8 +399,8 @@
    \edef\lbracetoken{\string{}
    \edef\rbracetoken{\string}}
    \StrCount{#2}{&}[\numamps]\global\setcounter{numcols@module}{\numamps}\stepcounter{numcols@module}
-   \def\source{\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken#1\rbracetoken\lbracetoken#2\rbracetoken}
-   \def\replace{\rbracetoken&\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken#1\rbracetoken\lbracetoken}
+   \newcommand\source{\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken#1\rbracetoken\lbracetoken#2\rbracetoken}
+   \newcommand\replace{\rbracetoken&\string\multicolumn\lbracetoken 1\rbracetoken\lbracetoken#1\rbracetoken\lbracetoken}
    \StrSubstitute{\source}{ & }{\replace}[\tmptblhdr]
    \StrExpand{\tmptblhdr}{\tmptblhdrexpand}
    \tokenize{\tmptbltok}{\tmptblhdr}
