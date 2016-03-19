@@ -257,7 +257,7 @@ Some introductory text for the DM.
 
 \boxtext{Some boxed text to read to the players to introduce them to the adventure.}
 
-\subsection{The Portico}
+\subsection{The Portico}                                                        % Key area 1
 \label{portico}
 
 Some DM info above the box blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
@@ -271,13 +271,31 @@ Some DM info above the box blah blah blah blah blah blah blah blah blah blah bla
 Some monsters are here.
 Some DM info below the box blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
 
-\subsection{The Secret Entrance}
+\subsection{Vestibule}                                                          % Key area 2
 
-\boxtext{You see some bushes.}
+\boxtext{blah}
 
-If the players investigate, they will find a hidden trapdoor under the bushes. Under the trapdoor is a tunnel leading under the wall.
+blah
 
-\subsection{The big bad end guy}
+\subsection{Central Aisle}                                                      % Key area 3
+
+\boxtext{blah}
+
+blah
+
+\vdots                                                                          % Skip areas 4-6
+
+\setcounter{subsection}{7}
+\subsubsection{West Court}                                                      % Key area 7a
+\label{west_court}
+
+\subsubsection{East Court}                                                      % Key area 7b
+
+\vdots
+\setcounter{subsection}{13}                                                     % Skip areas 8-13
+
+\subsection{Inner Sanctuary}                                                    % Key area 14
+\label{inner_sanctuary}
 
 \begin{figure}[ht]
 \includegraphics[width=\columnwidth]{module_art_interior.png}
@@ -315,7 +333,8 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 
 \begin{monsterroster}
 \rosteritem{\ref{portico}}{kobold}{16}{4 each}
-\rosteritem{2}{harpy}{1}{23}
+\rosteritem{\ref{west_court}}{harpy}{1}{23}
+\rosteritem{\ref{inner_sanctuary}}{harpy}{3}{18 each}
 \end{monsterroster}
 \end{onecolumnfloat}
 

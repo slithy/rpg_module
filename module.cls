@@ -77,9 +77,9 @@
    \PackageError{dnd_module}{Unrecognised option '\CurrentOption'}{Valid options are a4paper,letterpaper,serif,sansserif}
 }
 
-\ExecuteOptions{a4paper}                                                           % default paper size is A4
-\ExecuteOptions{sansserif}                                                         % default font option is sans serif
-\ExecuteOptions{basic}                                                             % default stat block style is basic
+\ExecuteOptions{a4paper}                                                        % default paper size is A4
+\ExecuteOptions{sansserif}                                                      % default font option is sans serif
+\ExecuteOptions{basic}                                                          % default stat block style is basic
 
 \ProcessOptions\relax
 
@@ -119,7 +119,7 @@
 
 
 
-% Load article, the standard LaTeX document class that module is based on
+% Load the standard LaTeX 'article' document class that module is based on
 
 \LoadClass[twocolumn]{article}
 
@@ -150,23 +150,23 @@
 
 % Process font options
 
-\RequirePackage[T1]{fontenc}                                                       % Use T1 (8-bit) font encoding
-\RequirePackage{lmodern}                                                           % Use Latin Modern instead of Computer Modern for symbols etc.
+\RequirePackage[T1]{fontenc}                                                    % Use T1 (8-bit) font encoding
+\RequirePackage{lmodern}                                                        % Use Latin Modern instead of Computer Modern for symbols etc.
 
 \ifmodule@seriffont
-   \IfFileExists{souvenir.sty}{                                                    % If ITC Souvenir font is installed in this LaTeX distribution
-      \RequirePackage{souvenir}                                                    % Use ITC Souvenir as serifed font
-      \renewcommand{\bfdefault}{d}                                                 % Use demi-bold instead of bold
-      \renewcommand*\copyright{{\usefont{T1}{lmr}{m}{n}\textcopyright}}            % Get a good-looking copyright symbol
+   \IfFileExists{souvenir.sty}{                                                 % If ITC Souvenir font is installed in this LaTeX distribution
+      \RequirePackage{souvenir}                                                 % Use ITC Souvenir as serifed font
+      \renewcommand{\bfdefault}{d}                                              % Use demi-bold instead of bold
+      \renewcommand*\copyright{{\usefont{T1}{lmr}{m}{n}\textcopyright}}         % Get a good-looking copyright symbol
    }{
       \PackageWarning{module}{%
          ITC Souvenir not detected, substituting Bookman as default serifed font.}
-      \RequirePackage{bookman}                                                     % Use Bookman as serifed font
+      \RequirePackage{bookman}                                                  % Use Bookman as serifed font
    }
-   \renewcommand*\familydefault{\rmdefault}                                        % Default to serifed font
+   \renewcommand*\familydefault{\rmdefault}                                     % Default to serifed font
 \else
-   \RequirePackage{avant}                                                          % Use URW Gothic as default sans-serif font (similar to ITC Avant Garde Gothic)
-   \renewcommand*\familydefault{\sfdefault}                                        % Default to sans-serif font
+   \RequirePackage{avant}                                                       % Use URW Gothic as default sans-serif font (similar to ITC Avant Garde Gothic)
+   \renewcommand*\familydefault{\sfdefault}                                     % Default to sans-serif font
 \fi
 
 \renewcommand{\tiny}        {\fontsize {4pt} {4.8pt}\selectfont}
@@ -184,24 +184,24 @@
 
 % Required packages
 
-\RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry}    % Page size
-\RequirePackage[explicit,newparttoc]{titlesec}                                     % Redefine section headings
-\RequirePackage{titletoc}                                                          % Redefine table of contents
-\RequirePackage{array}                                                             % Format table headings
-\RequirePackage{booktabs}                                                          % Underline table headings
-\RequirePackage{framed}                                                            % For boxed text
-\RequirePackage{graphicx}                                                          % Allow images and text across two columns
-\RequirePackage{dblfloatfix}                                                       % Allow positioning of figure* at bottom of page
-\RequirePackage{xstring}                                                           % Manipulate strings
+\RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry} % Page size
+\RequirePackage[explicit,newparttoc]{titlesec}                                  % Redefine section headings
+\RequirePackage{titletoc}                                                       % Redefine table of contents
+\RequirePackage{array}                                                          % Format table headings
+\RequirePackage{booktabs}                                                       % Underline table headings
+\RequirePackage{framed}                                                         % Boxed text
+\RequirePackage{graphicx}                                                       % Allow images and text across two columns
+\RequirePackage{dblfloatfix}                                                    % Allow positioning of figure* at bottom of page
+\RequirePackage{xstring}                                                        % Manipulate strings
 
 % Hyperlinks
 
-\RequirePackage[linktocpage]{hyperref}                                             % Allow hyperlinks, only page numbers in TOC are clickable
-\RequirePackage[dvipsnames]{xcolor}                                                % Pre-defined colour names
+\RequirePackage[linktocpage]{hyperref}                                          % Allow hyperlinks, only page numbers in TOC are clickable
+\RequirePackage[dvipsnames]{xcolor}                                             % Pre-defined colour names
 \hypersetup{colorlinks=true,
-    urlcolor=MidnightBlue,                                                         % Colour for external links
-    linkcolor=MidnightBlue,                                                        % Colour for internal links (including Table of Contents)
-    citecolor=MidnightBlue}                                                        % Colour for references
+    urlcolor=MidnightBlue,                                                      % Colour for external links
+    linkcolor=MidnightBlue,                                                     % Colour for internal links (including Table of Contents)
+    citecolor=MidnightBlue}                                                     % Colour for references
 
 % Stat blocks
 
@@ -229,14 +229,14 @@
    \pgfkeys{/#2/SingleName/.initial = {#3}}
       \ifnum\pdfstrcmp{#1}{default}=\z@
       \IfEndWith{#3}{y}
-      {\pgfkeys{/#2/PluralName/.initial = \StrGobbleRight{#3}{1}ies}}     % Plural names ending in -y change to -ies
+      {\pgfkeys{/#2/PluralName/.initial = \StrGobbleRight{#3}{1}ies}}           % Plural names ending in -y change to -ies
       {
          \IfEndWith{#3}{s}
-         {\pgfkeys{/#2/PluralName/.initial = #3es}}                       % Plural names ending in -s change to -ses
-         {\pgfkeys{/#2/PluralName/.initial = #3s}}                        % Default case, plurals where we add -s
+         {\pgfkeys{/#2/PluralName/.initial = #3es}}                             % Plural names ending in -s change to -ses
+         {\pgfkeys{/#2/PluralName/.initial = #3s}}                              % Default case, plurals where we add -s
       }
    \else
-      \pgfkeys{/#2/PluralName/.initial = #1}                              % Override for irregular plurals
+      \pgfkeys{/#2/PluralName/.initial = #1}                                    % Override for irregular plurals
    \fi
    \setcounter{currentstat}{0}
    \def\currentmonster{#2}
@@ -310,6 +310,7 @@
 \renewcommand\thepart{\arabic{part}}
 \renewcommand\thesection{}
 \renewcommand\thesubsection{\arabic{subsection}}
+\renewcommand\thesubsubsection{\arabic{subsection}\alph{subsubsection}}
 
 \titleformat{\part}[block]
 {\LARGE\filcenter\bfseries}
@@ -319,7 +320,7 @@
 {\Large\bfseries}
 {}{0em}{\MakeUppercase{#1}}
 
-\titleformat{name=\section,numberless}[block]                                         % how to handle \section*
+\titleformat{name=\section,numberless}[block]                                   % how to handle \section*
 {\Large\filcenter\bfseries}
 {}{0em}{#1\phantomsection\addcontentsline{toc}{section}{#1}}
 
@@ -327,7 +328,9 @@
 {\normalfont\bfseries}
 {\thesubsection.}{0.5em}{\MakeUppercase{#1}}
 
-\renewcommand{\subsubsection}{\relax}                                                 % The lowest defined section type is subsection
+\titleformat{\subsubsection}[hang]                                              % \subsubsection is indentical to \subsection except for the numbering
+{\normalfont\bfseries}
+{\thesubsubsection.}{0.5em}{\MakeUppercase{#1}}
 
 
 
@@ -364,9 +367,9 @@
 
 % Tables
 
-\newcolumntype{b}{>{\bfseries}c}                                                      % New column type 'b' for bold, centred headings
-\newcounter{numcols@module}                                                           % Counter to keep track of how many columns are in the table
-\renewcommand{\arraystretch}{1.2}                                                     % Increase the table row spacing a little
+\newcolumntype{b}{>{\bfseries}c}                                                % New column type 'b' for bold, centred headings
+\newcounter{numcols@module}                                                     % Counter to keep track of how many columns are in the table
+\renewcommand{\arraystretch}{1.2}                                               % Increase the table row spacing a little
 
 % Underline table headers
 
