@@ -73,9 +73,13 @@
   \fi\next
 }
 
+% Format name as singular or plural
+
 
 
 % Display monster stats inline
+%
+% Usage: \stats[monster name]{monster key}{no. appearing}{hit points}
 
 \newcommand{\stats}[4][default]{%
    \ifnum\pdfstrcmp{#1}{default}=\z@
@@ -99,6 +103,8 @@
 }
 
 % Display monster stats in a stat block
+%
+% Usage: \statblock[monster name]{monster key}{no. appearing}{hit points}
 
 \newcommand{\statblock}[4][default]{%
    \begin{statblockfreestyle}
@@ -108,11 +114,36 @@
 
 
 
-% Table display formats for wandering monsters and monster roster
+% Table display format for wandering monsters
+
+\newcounter{wandering@module}
+
 
 \newenvironment{wanderingmonsters}[1][c]{\begin{center}\begin{tabular}{clccccccccc}
+\setcounter{wandering@module}{0}%
 \tableheader[#1]{Die Roll & Wandering Monster & No. & AC & HD & MV & Attacks & Damage & Save & ML & AL}}
 {\end{tabular}\end{center}}
+
+% Usage: \wandering[die roll]{monster key}{no. appearing}
+
+\newcommand{\wandering}[3][default]{%
+   \ifnum\pdfstrcmp{#1}{default}=\z@
+      \stepcounter{wandering@module}\thewandering@module
+   \else%
+      \IfInteger{#1}{\setcounter{wandering@module}{#1}\thewandering@module}{#1}
+   \fi &
+   \ifnum\pdfstrcmp{#3}{1}=\z@
+      \pgfkeys{/#2/SingleName} &
+   \else
+      \pgfkeys{/#2/PluralName} &
+   \fi
+   #3 & \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD} & \pgfkeys{/#2/MV} & \pgfkeys{/#2/Att} &
+        \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \pgfkeys{/#2/AL}\\
+}
+
+
+
+% Table display format for monster roster
 
 \newenvironment{monsterroster}[1][c]{\begin{center}\begin{tabular}{clcccccccccc}
 \tableheader[#1]{Room & Monster & No. & AC & HD & hp & MV & Attacks & Damage & Save & ML & AL}}

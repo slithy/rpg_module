@@ -38,13 +38,13 @@
 % TO DO
 %
 % 1. Wandering monster table (no hp, auto-counter)
+%    - short and long versions of attacks
 % 2. Monster roster table (with hp, room no. instead of counter)
 % 3. Table-line stat blocks for the above
 % 4. End of module monster description blocks
 % 5. Add all monsters from B/X into stat blocks (pref. without having to retype them all)
 %
 % 7. Have option for Holmes AC, descending AC or ascending AC with descending AC as default
-% 8. Edit map
 % 9. Set UK/US-specific language features from paper size (spelling of Armor/Armour)?
 % 10. Free to use but have a PayPal option for donations in case of commercial use...
 % 11. Host it online (CTAN? github?). Set up a ticketing system for bugs and/or improvements
