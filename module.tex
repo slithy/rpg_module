@@ -187,8 +187,8 @@ Test font sizes
 
 \section{Monster Stat Blocks}
 
-\monster[Octopodes]{octopus}{Octopus}{7|3*|20'|50'|8|8 legs|1d6 each|F6|6|C}
-\monster{platypus}{Platypus}{7|3*|20'|50'|1|bill|1d4|F6|6|C}
+\monster[Octopodes]{octopus}{Octopus}{7|3*|20'|50'|8|8 legs|1d6 each|Fighter: 10|6|C}
+\monster{platypus}{Platypus}{7|3*|20'|50'|1|bill|1d4|Fighter: 3|6|C}
 
 First stat block:
 \statblock{kobold}{5}{4,4,3,2,1}
@@ -354,41 +354,60 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 
 \lipsum
 
+%
+% New Monsters part
+%
+
+\part{New Monsters}
+
+%\begin{newmonster}{kobold}{4-16 (6-60)}{P (J)}
+%These small, evil dog-like men\ldots
+%\end{newmonster}
+
+
+%
+% License section
+%
+
 \section{Open Game Content}
 \label{ogl}
 
-The template includes macros to make it easy to distribute your work under the Open Game License from Wizards of the Coast.
+The template includes three macros to make it easy to distribute your work under the Open Game License
+from Wizards of the Coast: \verb|\ogl|, \verb|\productidentity| and \verb|\opengamecontent|.
 
 \begin{ogl}
 \item Here include the exact text of the COPYRIGHT NOTICE of any other OGL text you are copying, modifying or distributing.
 \item Add the title, copyright date and copyright holder's name(s) of any OGL content you distribute. Example:
-\item System Reference Document, Copyright \copyright 2000--2003, Wizards of the Coast, Inc., by Jonathan Tweet, Monte Cook, Skip Williams, Rich Baker, Andy Collins,
-David Noonan, Rich Redman, Bruce R. Cordell, John D. Rateliff, Thomas Reid, James Wyatt, based on original material by E. Gary Gygax and Dave Arneson.
+\item System Reference Document, Copyright \copyright 2000--2003, Wizards of the Coast, Inc., by Jonathan Tweet, Monte Cook,
+Skip Williams, Rich Baker, Andy Collins, David Noonan, Rich Redman, Bruce R. Cordell, John D. Rateliff, Thomas Reid, James
+Wyatt, based on original material by E. Gary Gygax and Dave Arneson.
 \end{ogl}
 
 \begin{productidentity}
-\item The text of this \LaTeX~module class and example template, which comprises all typesetting elements and all text which is not explitly Open Game Content, is Product Identity.
+\item The text of this \LaTeX~module class and example template, which comprises all typesetting elements and all text which
+is not explitly Open Game Content, is Product Identity.
 \modulecopyright
 
 \item All photographs, artwork and maps in this template are Product Identity.
 
-\item The cover image is adapted from an original image on \href{https://commons.wikimedia.org/wiki/File:Karnak_Tempel_Vorhof_05.jpg}{Wikimedia Commons},
-copyright \copyright 2009 Olaf Tausch. Used with permission under the terms of the
+\item The cover image is adapted from an original image on
+\href{https://commons.wikimedia.org/wiki/File:Karnak_Tempel_Vorhof_05.jpg}{Wikimedia Commons}, copyright \copyright 2009 Olaf
+Tausch. Used with permission under the terms of the
 \href{https://creativecommons.org/licenses/by/3.0/deed.en}{Creative Commons Attribution 3.0 Unported} license.
 
-\item The map on p.\pageref{img:map} is copyright \copyright 2008, 2016 Tim Hartin of \href{http://paratime.ca}{Paratime Design}. Used with permission. All rights reserved.
+\item The map on p.\pageref{img:map} is copyright \copyright 2008, 2016 Tim Hartin of \href{http://paratime.ca}{Paratime Design}.
+Used with permission. All rights reserved.
 
 \item The drawing on p.\pageref{img:tomb} is copyright \copyright 1987, 2016 Michael Davis. All rights reserved.
-
 \end{productidentity}
 
 \begin{opengamecontent}
 \item The monster statistics from the SRD are Open Game Content.
-\item The cover page image is in the public domain. The original image is from 
-\href{https://commons.wikimedia.org/wiki/File:The_Great_Pyramid_and_the_Sphinx.jpg}{Wikimedia Commons}.
 \end{opengamecontent}
 
+%
 % Table of Contents
+%
 
 \tableofcontents
 

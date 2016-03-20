@@ -37,7 +37,6 @@
 
 % TO DO
 %
-% 1. Have option for Holmes AC, descending AC or ascending AC with descending AC as default
 % 4. End of module monster description blocks
 % 5. Add all monsters from B/X into stat blocks (pref. without having to retype them all)
 % 6. Running page header option in A4 paper size only

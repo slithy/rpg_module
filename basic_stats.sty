@@ -69,31 +69,41 @@
    \fi
 }
 
+% Saving throws : convert long form to short form for stat blocks
+
+\newcommand\sv@module[1]{\StrLeft{#1}{1}[\first]\StrBehind{#1}{ }[\second]\IfInteger{\second}{}{\StrLeft{\second}{1}[\second]}\first\second}
+
+% Morale macro : convert long form to short form for stat blocks
+
+\newcommand\ml@module[1]{\IfSubStr{#1}{ }{\StrBefore{#1}{ }}{#1}}
+
 
 
 % Basic stat block key-value pairs
 
 \newcommand{\setstatbasic}[2]{%
    \ifcase\thecurrentstat
-      \pgfkeys{/#1/AC/.initial  = \ac@module{#2}}
+      \pgfkeys{/#1/AC/.initial       = \ac@module{#2}}
    \or
-      \pgfkeys{/#1/HD/.initial  = {#2}}
+      \pgfkeys{/#1/HD/.initial       = {#2}}
    \or
-      \pgfkeys{/#1/MVturn/.initial  = {#2}}
+      \pgfkeys{/#1/MVturn/.initial   = {#2}}
    \or
-      \pgfkeys{/#1/MVrd/.initial  = {#2}}
+      \pgfkeys{/#1/MVrd/.initial     = {#2}}
    \or
-      \pgfkeys{/#1/AttShort/.initial = {#2}}
+      \pgfkeys{/#1/Attshort/.initial = {#2}}
    \or
-      \pgfkeys{/#1/AttLong/.initial = {#2}}
+      \pgfkeys{/#1/Attlong/.initial  = {#2}}
    \or
-      \pgfkeys{/#1/Dmg/.initial = {#2}}
+      \pgfkeys{/#1/Dmg/.initial      = {#2}}
    \or
-      \pgfkeys{/#1/SV/.initial  = {#2}}
+      \pgfkeys{/#1/SVlong/.initial   = {#2}}
+      \pgfkeys{/#1/SVshort/.initial  = \sv@module{#2}}
    \or
-      \pgfkeys{/#1/ML/.initial  = {#2}}
+      \pgfkeys{/#1/MLlong/.initial   = {#2}}
+      \pgfkeys{/#1/MLshort/.initial  = \ml@module{#2}}
    \or
-      \pgfkeys{/#1/AL/.initial  = {#2}}
+      \pgfkeys{/#1/AL/.initial       = {#2}}
    \fi
 }
 
@@ -128,10 +138,10 @@
    HD      \pgfkeys{/#2/HD},
    hp      #4,
    MV      \pgfkeys{/#2/MVturn}\thinspacebrk(\pgfkeys{/#2/MVrd}),
-   Att     \pgfkeys{/#2/AttLong},
+   Att     \pgfkeys{/#2/Attlong},
    D       \pgfkeys{/#2/Dmg},
-   Save    \pgfkeys{/#2/SV},
-   ML      \pgfkeys{/#2/ML},
+   Save    \pgfkeys{/#2/SVshort},
+   ML      \pgfkeys{/#2/MLshort},
    AL      \pgfkeys{/#2/AL}%
 }
 
@@ -170,8 +180,8 @@
    \else
       \pgfkeys{/#2/PluralName} &
    \fi
-   #3 & \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD} & \pgfkeys{/#2/MVrd} & \pgfkeys{/#2/AttShort} &
-        \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \pgfkeys{/#2/AL}\\
+   #3 & \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD} & \pgfkeys{/#2/MVrd} & \pgfkeys{/#2/Attshort} &
+        \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SVshort} & \pgfkeys{/#2/MLshort} & \pgfkeys{/#2/AL}\\
 }
 
 
@@ -194,8 +204,8 @@
    \else
       \pgfkeys{/#2/PluralName} &
    \fi
-   #3 & \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD} & #4 & \pgfkeys{/#2/MVrd} & \pgfkeys{/#2/AttShort} &
-        \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \pgfkeys{/#2/AL}\\
+   #3 & \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD} & #4 & \pgfkeys{/#2/MVrd} & \pgfkeys{/#2/Attshort} &
+        \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SVshort} & \pgfkeys{/#2/MLshort} & \pgfkeys{/#2/AL}\\
 }
 
 
@@ -204,6 +214,6 @@
 % Pre-defined monster stats (OGL)
 %
 
-\monster{kobold}{Kobold}{7|\half|60'|20'|1|weapon|1d4|NM|6|C}
-\monster{harpy}{Harpy}{-1|3*|60'/150'|20'/50'|3 + special|2 claws and a weapon + charm|1d4/1d4/1d6|F6|6|C}
+\monster{kobold}{Kobold}{7|\half|60'|20'|1|weapon|1d4|Normal Man|6 or see below|C}
+\monster{harpy}{Harpy}{-1|3*|60'/150'|20'/50'|3 + special|2 claws and a weapon + charm|1d4/1d4/1d6|Fighter: 6|12|C}
 
