@@ -77,6 +77,10 @@
 
 \newcommand\ml@module[1]{\IfSubStr{#1}{ }{\StrBefore{#1}{ }}{#1}}
 
+% Alignment macro : convert long form to short form for stat blocks
+
+\newcommand\al@module[1]{\StrLeft{#1}{1}}
+
 
 
 % Basic stat block key-value pairs
@@ -103,7 +107,8 @@
       \pgfkeys{/#1/MLlong/.initial   = {#2}}
       \pgfkeys{/#1/MLshort/.initial  = \ml@module{#2}}
    \or
-      \pgfkeys{/#1/AL/.initial       = {#2}}
+      \pgfkeys{/#1/ALlong/.initial   = {#2}}
+      \pgfkeys{/#1/ALshort/.initial  = \al@module{#2}}
    \or
       \pgfkeys{/#1/NoAppear/.initial = {#2}}
    \or
@@ -148,7 +153,7 @@
    D       \pgfkeys{/#2/Dmg},
    Save    \pgfkeys{/#2/SVshort},
    ML      \pgfkeys{/#2/MLshort},
-   AL      \pgfkeys{/#2/AL}%
+   AL      \pgfkeys{/#2/ALshort}%
 }
 
 % Display monster stats in a stat block
@@ -189,7 +194,7 @@
       \ifnum\pdfstrcmp{#3}{1}=\z@\pgfkeys{/#2/SingleName}\else\pgfkeys{/#2/PluralName}\fi & #3 &
    }
    \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD}      & \pgfkeys{/#2/MVrd}    & \pgfkeys{/#2/Attshort} &
-   \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SVshort} & \pgfkeys{/#2/MLshort} & \pgfkeys{/#2/AL}\\
+   \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SVshort} & \pgfkeys{/#2/MLshort} & \pgfkeys{/#2/ALshort}\\
 }
 
 
@@ -213,7 +218,37 @@
       \pgfkeys{/#2/PluralName} &
    \fi
    #3 & \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD} & #4 & \pgfkeys{/#2/MVrd} & \pgfkeys{/#2/Attshort} &
-        \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SVshort} & \pgfkeys{/#2/MLshort} & \pgfkeys{/#2/AL}\\
+        \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SVshort} & \pgfkeys{/#2/MLshort} & \pgfkeys{/#2/ALshort}\\
+}
+
+
+
+% New Monster environment
+
+\newenvironment{newmonster}[2]{%
+\pgfkeys{/#1/PluralName}
+
+Armour Class: \pgfkeys{/#1/AC}
+
+Hit Dice: \pgfkeys{/#1/HD}
+
+Move: \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd})
+
+Attacks: \pgfkeys{/#1/Attlong}
+
+Damage: \pgfkeys{/#1/Dmg}
+
+No. Appearing: \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})
+
+Save As: \pgfkeys{/#1/SVlong}
+
+Morale: \pgfkeys{/#1/MLlong}
+
+Treasure Type: \pgfkeys{/#1/TT}
+
+Alignment: \pgfkeys{/#1/ALlong}
+
+\noindent #2
 }
 
 
@@ -222,6 +257,6 @@
 % Pre-defined monster stats (OGL)
 %
 
-\monster{kobold}{Kobold}{7|\half|60'|20'|1|weapon|1d4|Normal Man|6 or see below|C|4-16|6-60|P\,(J)}
-\monster{harpy}{Harpy}{-1|3*|60'/150'|20'/50'|3 + special|2 claws and a weapon + charm|1d4/1d4/1d6|Fighter: 6|12|C|1|1-4|Z}
+\monster{kobold}{Kobold}{7|\half|60'|20'|1|weapon|1d4|Normal Man|6 or see below|Chaotic|4-16|6-60|P\,(J)}
+\monster{harpy}{Harpy}{-1|3*|60'/150'|20'/50'|3 + special|2 claws and a weapon + charm|1d4/1d4/1d6|Fighter: 6|12|Chaotic|1|1-4|Z}
 

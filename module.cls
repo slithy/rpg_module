@@ -40,7 +40,6 @@
 % 4. End of module monster description blocks
 % 5. Add all monsters from B/X into stat blocks (pref. without having to retype them all)
 % 6. Running page header option in A4 paper size only
-%
 % 9. Set UK/US-specific language features from paper size (spelling of Armor/Armour)?
 % 10. Free to use but have a PayPal option for donations in case of commercial use...
 % 11. Host it online (CTAN? github?). Set up a ticketing system for bugs and/or improvements
