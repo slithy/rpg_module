@@ -104,6 +104,12 @@
       \pgfkeys{/#1/MLshort/.initial  = \ml@module{#2}}
    \or
       \pgfkeys{/#1/AL/.initial       = {#2}}
+   \or
+      \pgfkeys{/#1/NoAppear/.initial = {#2}}
+   \or
+      \pgfkeys{/#1/NoInLair/.initial = {#2}}
+   \or
+      \pgfkeys{/#1/TT/.initial       = {#2}}
    \fi
 }
 
@@ -168,20 +174,22 @@
 {\end{tabular}\end{center}}
 
 % Usage: \wanderitem[die roll]{monster key}{no. appearing}
+%
+% Leave no. appearing blank to use the value from the monster stats
 
 \newcommand{\wanderitem}[3][default]{%
    \ifnum\pdfstrcmp{#1}{default}=\z@
       \stepcounter{wandering@module}\thewandering@module
-   \else%
+   \else
       \IfInteger{#1}{\setcounter{wandering@module}{#1}\thewandering@module}{#1}
    \fi &
-   \ifnum\pdfstrcmp{#3}{1}=\z@
-      \pgfkeys{/#2/SingleName} &
-   \else
-      \pgfkeys{/#2/PluralName} &
-   \fi
-   #3 & \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD} & \pgfkeys{/#2/MVrd} & \pgfkeys{/#2/Attshort} &
-        \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SVshort} & \pgfkeys{/#2/MLshort} & \pgfkeys{/#2/AL}\\
+   \IfStrEq{#3}{}{%
+      \if\pgfkeysvalueof{/#2/NoAppear}\string 1\pgfkeys{/#2/SingleName}\else\pgfkeys{/#2/PluralName}\fi & \pgfkeys{/#2/NoAppear} &
+   }{%
+      \ifnum\pdfstrcmp{#3}{1}=\z@\pgfkeys{/#2/SingleName}\else\pgfkeys{/#2/PluralName}\fi & #3 &
+   }
+   \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD}      & \pgfkeys{/#2/MVrd}    & \pgfkeys{/#2/Attshort} &
+   \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SVshort} & \pgfkeys{/#2/MLshort} & \pgfkeys{/#2/AL}\\
 }
 
 
@@ -214,6 +222,6 @@
 % Pre-defined monster stats (OGL)
 %
 
-\monster{kobold}{Kobold}{7|\half|60'|20'|1|weapon|1d4|Normal Man|6 or see below|C}
-\monster{harpy}{Harpy}{-1|3*|60'/150'|20'/50'|3 + special|2 claws and a weapon + charm|1d4/1d4/1d6|Fighter: 6|12|C}
+\monster{kobold}{Kobold}{7|\half|60'|20'|1|weapon|1d4|Normal Man|6 or see below|C|4-16|6-60|P\,(J)}
+\monster{harpy}{Harpy}{-1|3*|60'/150'|20'/50'|3 + special|2 claws and a weapon + charm|1d4/1d4/1d6|Fighter: 6|12|C|1|1-4|Z}
 

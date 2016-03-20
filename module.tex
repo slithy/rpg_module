@@ -187,8 +187,8 @@ Test font sizes
 
 \section{Monster Stat Blocks}
 
-\monster[Octopodes]{octopus}{Octopus}{7|3*|20'|50'|8|8 legs|1d6 each|Fighter: 10|6|C}
-\monster{platypus}{Platypus}{7|3*|20'|50'|1|bill|1d4|Fighter: 3|6|C}
+\monster[Octopodes]{octopus}{Octopus}{7|3*|20'|50'|8|8 legs|1d6 each|Fighter: 10|6|C|1|1-4|X}
+\monster{platypus}{Platypus}{7|3*|20'|50'|1|bill|1d4|Fighter: 3|6|C|1|1-4|Y}
 
 First stat block:
 \statblock{kobold}{5}{4,4,3,2,1}
@@ -335,12 +335,13 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 \label{wanderingmonsters}
 
 \begin{wanderingmonsters}[b]
-\wanderitem{kobold}{1-6 (1d6)}
-\wanderitem{harpy}{1-4 (1d4)}
-\wanderitem[8-10]{octopus}{1}
-\wanderitem[11]{octopus}{1-4 (1d4)}
-\wanderitem{platypus}{1}
-\wanderitem{platypus}{1-4 (1d4)}
+\wanderitem{kobold}{1}
+\wanderitem{kobold}{}
+\wanderitem{harpy}{1-4}
+\wanderitem[8-10]{octopus}{2}
+\wanderitem[11]{octopus}{}
+\wanderitem{platypus}{2}
+\wanderitem{platypus}{}
 \end{wanderingmonsters}
 
 \section*{Monster Roster}
