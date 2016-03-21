@@ -375,8 +375,12 @@
 
 % Boxed text
 
-\newcommand{\boxtext}[2][-0.5em]{
-\vspace{#1}
+\newlength{\boxtexttopsep@module}
+
+\newcommand{\boxtext}[2][0pt]{
+\setlength{\boxtexttopsep@module}{-\topsep}
+\addtolength{\boxtexttopsep@module}{#1}
+\vspace{\boxtexttopsep@module}
 \begin{framed}
 \noindent #2
 \end{framed}}

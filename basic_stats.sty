@@ -225,7 +225,7 @@
 
 % New Monster environment
 
-\newenvironment{newmonster}[2]{%
+\newenvironment{newmonster}[1]{%
 \pgfkeys{/#1/PluralName}
 
 Armour Class: \pgfkeys{/#1/AC}
@@ -246,10 +246,7 @@ Morale: \pgfkeys{/#1/MLlong}
 
 Treasure Type: \pgfkeys{/#1/TT}
 
-Alignment: \pgfkeys{/#1/ALlong}
-
-\noindent #2
-}
+Alignment: \pgfkeys{/#1/ALlong}\noindent}{}
 
 
 
