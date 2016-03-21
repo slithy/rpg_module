@@ -38,6 +38,8 @@
 % Content into the compiled work, you must also comply with the terms of that
 % license.
 
+\RequirePackage{tabularx}
+
 
 
 % Armour class macro
@@ -232,15 +234,13 @@
 
 \newenvironment{newmonster}[1]{%
 \noindent{\Large\filcenter\bfseries \pgfkeys{/#1/SingleName}\phantomsection\addcontentsline{toc}{section}{#1}}\\[\topskip]
-\addtolength{\tabcolsep}{-2.5pt}
-\begin{tabular}{@{\extracolsep{\fill}}lp{0.22\linewidth}ll}
+\begin{tabularx}{\linewidth}{lXll}
 \ArmourClass: & \pgfkeys{/#1/AC}                          & No. Appearing: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})\\
 Hit Dice:     & \pgfkeys{/#1/HDlong}                      & Save As:       & \pgfkeys{/#1/SVlong}\\
 Move:         & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd}) & Morale:        & \pgfkeys{/#1/MLlong}\\
 Attacks:      & \pgfkeys{/#1/Attlong}                     & Treasure Type: & \pgfkeys{/#1/TT}\\
 Damage:       & \pgfkeys{/#1/Dmg}                         & Alignment:     & \pgfkeys{/#1/ALlong}\\
-\end{tabular}\vspace{\topskip}
-\addtolength{\tabcolsep}{-2.5pt}}{\vspace{\topskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
+\end{tabularx}\par\vspace{\topskip}\noindent\ignorespaces}{\vspace{\topskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
 
 
