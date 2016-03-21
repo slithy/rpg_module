@@ -37,15 +37,19 @@
 
 % TO DO
 %
-% 6. Running page header option in A4 paper size only
-% 5. Add all monsters from B/X into stat blocks (pref. without having to retype them all)
-% 10. Customisations for multi-column end of module monsters
-% 11. Different move types (flying, swimming, in web, etc.)
-% 10. Free to use but have a PayPal option for donations in case of commercial use...
-% 11. Host it online (CTAN? github?). Set up a ticketing system for bugs and/or improvements
+% 1. Running page header option in A4 paper size only
+% 2. Convert all monsters from B/X into stat block format
+% 3. Create a DF thread for support requests and set up a watch on it. Create a link to the thread into the document.
+% 4. Host the class online on CTAN.
+%
+% WISH LIST
+%
+% 1. New monster section: allow different movement types (flying, swimming, in web, etc.)
+% 2. New monster section: multi-column version for monster variants
+% 3. Advanced stat block options
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{module}[2016/03/16 Adventure Module document class]
+\ProvidesClass{module}[2016/03/21 Adventure Module document class]
 
 
 
