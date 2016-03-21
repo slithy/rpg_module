@@ -41,6 +41,8 @@
 % 5. Add all monsters from B/X into stat blocks (pref. without having to retype them all)
 % 6. Running page header option in A4 paper size only
 % 9. Set UK/US-specific language features from paper size (spelling of Armor/Armour)?
+% 10. Customisations for multi-column end of module monsters
+% 11. Different move types (flying, swimming, in web, etc.)
 % 10. Free to use but have a PayPal option for donations in case of commercial use...
 % 11. Host it online (CTAN? github?). Set up a ticketing system for bugs and/or improvements
 
@@ -132,8 +134,10 @@
    \PassOptionsToClass{letterpaper}{article}
    \addtolength\voffset{-17.6mm}
    \addtolength\hoffset{2.95mm}
+   \newcommand{\ArmourClass}{Armor Class}                                       % Concession to US spelling of Armour
 \else
    \PassOptionsToClass{a4paper}{article}
+   \newcommand{\ArmourClass}{Armour Class}
 \fi
 
 
@@ -379,13 +383,11 @@
 
 \newlength{\boxtexttopsep@module}
 
-\newcommand{\boxtext}[2][0pt]{
+\newenvironment{boxtext}[1][0pt]{%
 \setlength{\boxtexttopsep@module}{-\topsep}
 \addtolength{\boxtexttopsep@module}{#1}
 \vspace{\boxtexttopsep@module}
-\begin{framed}
-\noindent #2
-\end{framed}}
+\begin{framed}\noindent}{\end{framed}\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
 
 

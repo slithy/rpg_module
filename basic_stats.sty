@@ -69,6 +69,10 @@
    \fi
 }
 
+% Hit Dice : convert short form to long form for stat blocks
+
+\newcommand\hd@module[1]{\IfBeginWith{#1}{\half}{#1 (1-4 hp)}{#1}}
+
 % Saving throws : convert long form to short form for stat blocks
 
 \newcommand\sv@module[1]{\StrLeft{#1}{1}[\first]\StrBehind{#1}{ }[\second]\IfInteger{\second}{}{\StrLeft{\second}{1}[\second]}\first\second}
@@ -89,6 +93,7 @@
    \ifcase\thecurrentstat
       \pgfkeys{/#1/AC/.initial       = \ac@module{#2}}
    \or
+      \pgfkeys{/#1/HDlong/.initial   = \hd@module{#2}}
       \pgfkeys{/#1/HD/.initial       = {#2}}
    \or
       \pgfkeys{/#1/MVturn/.initial   = {#2}}
@@ -226,27 +231,16 @@
 % New Monster environment
 
 \newenvironment{newmonster}[1]{%
-\pgfkeys{/#1/PluralName}
-
-Armour Class: \pgfkeys{/#1/AC}
-
-Hit Dice: \pgfkeys{/#1/HD}
-
-Move: \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd})
-
-Attacks: \pgfkeys{/#1/Attlong}
-
-Damage: \pgfkeys{/#1/Dmg}
-
-No. Appearing: \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})
-
-Save As: \pgfkeys{/#1/SVlong}
-
-Morale: \pgfkeys{/#1/MLlong}
-
-Treasure Type: \pgfkeys{/#1/TT}
-
-Alignment: \pgfkeys{/#1/ALlong}\noindent}{}
+\noindent{\Large\filcenter\bfseries \pgfkeys{/#1/SingleName}\phantomsection\addcontentsline{toc}{section}{#1}}\\[\topskip]
+\addtolength{\tabcolsep}{-2.5pt}
+\begin{tabular}{@{\extracolsep{\fill}}lp{0.22\linewidth}ll}
+\ArmourClass: & \pgfkeys{/#1/AC}                          & No. Appearing: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})\\
+Hit Dice:     & \pgfkeys{/#1/HDlong}                      & Save As:       & \pgfkeys{/#1/SVlong}\\
+Move:         & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd}) & Morale:        & \pgfkeys{/#1/MLlong}\\
+Attacks:      & \pgfkeys{/#1/Attlong}                     & Treasure Type: & \pgfkeys{/#1/TT}\\
+Damage:       & \pgfkeys{/#1/Dmg}                         & Alignment:     & \pgfkeys{/#1/ALlong}\\
+\end{tabular}\vspace{\topskip}
+\addtolength{\tabcolsep}{-2.5pt}}{\vspace{\topskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
 
 

@@ -269,7 +269,9 @@ Some introductory text for the DM.
 
 \subsection*{Start}
 
-\boxtext{Some boxed text to read to the players to introduce them to the adventure.}
+\begin{boxtext}
+Some boxed text to read to the players to introduce them to the adventure.
+\end{boxtext}
 
 \subsection{The Portico}                                                        % Key area 1
 \label{portico}
@@ -280,20 +282,28 @@ Some DM info above the box blah blah blah blah blah blah blah blah blah blah bla
 % being too large. If you want to put a box between normal paragraphs, give it the [0pt] parameter to restore
 % the default spacing.
 
-\boxtext[\topsep]{It looks dangerous.}
+\begin{boxtext}[\topsep]
+It looks dangerous.
+\end{boxtext}
 
 Some monsters are here.
 Some DM info below the box blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
 
 \subsection{Vestibule}                                                          % Key area 2
 
-\boxtext{blah}
+\begin{boxtext}
+blah blah
+
+Multiple paragraphs of boxed text
+\end{boxtext}
 
 blah
 
 \subsection{Central Aisle}                                                      % Key area 3
 
-\boxtext{blah}
+\begin{boxtext}
+blah
+\end{boxtext}
 
 blah
 
@@ -303,13 +313,19 @@ blah
 \subsubsection{West Court}                                                      % Key area 7a
 \label{west_court}
 
+some text
+
 \subsubsection{East Court}                                                      % Key area 7b
+
+some text
 
 \vdots
 \setcounter{subsection}{13}                                                     % Skip areas 8-13
 
 \subsection{Inner Sanctuary}                                                    % Key area 14
 \label{inner_sanctuary}
+
+more text
 
 \begin{figure}[ht]
 \includegraphics[width=\columnwidth]{module_art_interior.png}
@@ -363,9 +379,15 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 
 \begin{newmonster}{kobold}
 These small, evil dog-like men\ldots
+
+\lipsum
 \end{newmonster}
 
+\begin{newmonster}{octopus}
+Octopodes are cunning and evil.
+\end{newmonster}
 
+Text following the monster block.
 
 %
 % License section
