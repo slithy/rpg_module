@@ -37,9 +37,8 @@
 
 % TO DO
 %
-% 5. Add all monsters from B/X into stat blocks (pref. without having to retype them all)
 % 6. Running page header option in A4 paper size only
-% 9. Set UK/US-specific language features from paper size (spelling of Armor/Armour)?
+% 5. Add all monsters from B/X into stat blocks (pref. without having to retype them all)
 % 10. Customisations for multi-column end of module monsters
 % 11. Different move types (flying, swimming, in web, etc.)
 % 10. Free to use but have a PayPal option for donations in case of commercial use...
@@ -445,9 +444,9 @@
 % Copyright and license macros
 
 \newcommand{\modulecopyright}{%
-The \LaTeX~module class is copyright \copyright 2016 Michael Davis. It can be distributed and/or modified under the conditions of the
-\href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License}, either version 1.3 or (at your option) any later version. You
-have the right to distribute Compiled Works generated using the module class as specified in Clause 3 of the license.}
+The \LaTeX~module class is copyright \copyright 2016 Michael Davis and is distributed under the conditions of the
+\href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License}, either version 1.3 or (at your option)
+any later version. Compiled Works generated using the module class can be distributed as specified in Clause 3 of the license.}
 
 \newenvironment{ogl}{%
 \footnotesize

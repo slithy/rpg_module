@@ -77,7 +77,7 @@ in the example file, and in a few clicks you will have a beautifully-formatted P
 
 \copyrightblock{The \LaTeX~module class is Copyright \copyright 2016 Michael Davis and is distributed under the terms
 of the \href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License} (LPPL) Version 1.3c. You are free to use this
-template to generate works for distribution, for free or commercially, as detailed in Clause 3 of the license.
+class to generate works for distribution, for free or commercially, as detailed in Clause 3 of the license.
 
 Some parts of the template are Copyright \copyright 2000--2003 Wizards of the Coast and are distributed under the
 \hyperref[ogl]{Open Game License (OGL)} Version 1.0A.
@@ -389,6 +389,18 @@ Octopodes are cunning and evil.
 
 Text following the monster block.
 
+\part{License Information}
+
+The \LaTeX~module class is Copyright \copyright 2016 Michael Davis and is distributed under the terms of the
+\href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License} (LPPL) Version 1.3c.
+
+You are free to use the class to generate works for your own private use and/or for distribution as detailed in
+Clause 3 of the license. There is no restriction on commercial use.
+
+An acknowledgement is much appreciated: you can use the \verb|\modulecopyright| macro to insert an acknowledgement
+block. No payment is required or expected, but if you wish to express your appreciation you are welcome to do so via
+\href{https://paypal.me/slithy}{PayPal}.
+
 %
 % License section
 %
@@ -397,11 +409,13 @@ Text following the monster block.
 \label{ogl}
 
 The template includes three macros to make it easy to distribute your work under the Open Game License
-from Wizards of the Coast: \verb|\ogl|, \verb|\productidentity| and \verb|\opengamecontent|.
+from Wizards of the Coast: \verb|\ogl|, \verb|\productidentity| and \verb|\opengamecontent|. You can see
+an example below:
 
 \begin{ogl}
-\item Here include the exact text of the COPYRIGHT NOTICE of any other OGL text you are copying, modifying or distributing.
-\item Add the title, copyright date and copyright holder's name(s) of any OGL content you distribute. Example:
+% This environment includes the complete text of the OGL v1.0A. Within the environment, you should include
+% the exact text of the COPYRIGHT NOTICE of any other OGL text you are copying, modifying or distributing.
+% Usually this will include the title, copyright date and copyright holder's name(s). Example:
 \item System Reference Document, Copyright \copyright 2000--2003, Wizards of the Coast, Inc., by Jonathan Tweet, Monte Cook,
 Skip Williams, Rich Baker, Andy Collins, David Noonan, Rich Redman, Bruce R. Cordell, John D. Rateliff, Thomas Reid, James
 Wyatt, based on original material by E. Gary Gygax and Dave Arneson.

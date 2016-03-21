@@ -232,8 +232,9 @@
 
 % New Monster environment
 
+
 \newenvironment{newmonster}[1]{%
-\noindent{\Large\filcenter\bfseries \pgfkeys{/#1/SingleName}\phantomsection\addcontentsline{toc}{section}{#1}}\\[\topskip]
+\noindent{\Large\filcenter\bfseries \pgfkeys{/#1/SingleName}\phantomsection\addcontentsline{toc}{section}{\pgfkeysvalueof{/#1/SingleName}}}\\[\topskip]
 \begin{tabularx}{\linewidth}{lXll}
 \ArmourClass: & \pgfkeys{/#1/AC}                          & No. Appearing: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})\\
 Hit Dice:     & \pgfkeys{/#1/HDlong}                      & Save As:       & \pgfkeys{/#1/SVlong}\\
