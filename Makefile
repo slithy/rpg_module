@@ -14,7 +14,7 @@ show: $(TARGET)
 	pdflatex $<
 
 clean:
-	rm -f *.aux *.bbl *.blg *.log *.dvi *.bak *.lof *.log *.lol *.lot *.out *.toc
+	rm -f *.aux *.bbl *.blg *.log *.dvi *.bak *.lof *.log *.lol *.lot *.out *.toc *.cut
 
 clobber: clean
 	rm -f $(TARGET)

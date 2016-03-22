@@ -125,7 +125,7 @@ This file is both a short tutorial and example of how to use the module class to
 \part{Introduction}
 
 The module class is a free resource for authors of adventure modules for fantasy roleplaying games.
-It is inspired by the look and feel of the ``Red Book'' Basic incarnation of the world's most popular FRPG.
+It is inspired by the look and feel of the 1981 ``Red Book'' Basic incarnation of the world's most popular FRPG.
 
 To prepare your work using this class, you will need \LaTeX, a free document preparation system for high-quality
 typesetting. The module class was developed and tested using \TeX Live, which you can download from
@@ -137,13 +137,13 @@ about what fonts to choose or what size the page margins or table columns should
 of all that. Another advantage is that all documents produced using this template will have a similar look and
 feel, so if you want to publish a series of works they will appear consistent.
 
-LaTeX uses a markup language in order to describe document structure and presentation. This
+\LaTeX~uses a markup language in order to describe document structure and presentation. This
 file---\verb|module.pdf|---was created from the markup file \verb|module.tex|. If you open \verb|module.tex|
 in an ordinary text editor, you will see the markup commands and some explanatory comments (prefixed by \%).
 \LaTeX~converts your source text, combined with the markup and the module class, into a high quality PDF document.
 
 You can find numerous tutorials online to get you started with the basics of document preparation using \LaTeX.
-The rest of this document is a short tutorial on the module class and examples of its features.
+The rest of this document explains the features of the module class and provides examples of how to use them.
 
 \part{Using the Module Class}
 
@@ -152,18 +152,18 @@ The rest of this document is a short tutorial on the module class and examples o
 At the beginning of your document, load the module class with \verb|\documentclass[<options>]{module}|. You can
 specify the following options:
 
-\begin{description}
-\item[a4paper]         Use A4 paper size (default)
-\item[letterpaper]     Use US letter paper size
-\item[sansserif]       Use a sans-serif font, URW Gothic (default).
-\item[serif]           Use a serifed font. This option will use ITC Souvenir if available, URW Bookman otherwise.
-\item[acdesc]          Use descending AC in stat blocks (default for Basic stats)
-\item[acasc]           Use ascending AC in stat blocks
-\item[acb1]            Use \href{http://zenopusarchives.blogspot.com/2014/02/ascending-ac-in-holmes-basic.html}{the B1 AC style} in stat blocks
-\item[acsw]            Use \href{http://www.swordsandwizardry.com/}{Swords \& Wizardry} AC style in stat blocks
-\item[basic]           Use Basic monster stat blocks (default)
-\item[advanced]        Use Advanced monster stat blocks (not currently implemented, planned for a future release)
-\end{description}
+\begin{tabularx}{\linewidth}{lX}
+\verb|a4paper|     & Use A4 paper size (default)\\
+\verb|letterpaper| & Use US letter paper size\\
+\verb|sansserif|   & Use a sans-serif font, URW Gothic (default).\\
+\verb|serif|       & Use a serifed font. This option will use ITC Souvenir if available, URW Bookman otherwise.\\
+\verb|acdesc|      & Use descending AC in stat blocks (default for Basic stats)\\
+\verb|acasc|       & Use ascending AC in stat blocks\\
+\verb|acb1|        & Use \href{http://zenopusarchives.blogspot.com/2014/02/ascending-ac-in-holmes-basic.html}{the B1 AC style} in stat blocks\\
+\verb|acsw|        & Use \href{http://www.swordsandwizardry.com/}{Swords \& Wizardry} AC style in stat blocks\\
+\verb|basic|       & Use Basic monster stat blocks (default)\\
+\verb|advanced|    & Use Advanced monster stat blocks (not currently implemented, planned for a future release)\\
+\end{tabularx}
 
 \subsection*{Paper Size}
 
@@ -178,68 +178,77 @@ As A4 pages are slightly taller, you have the option of a running header if you 
 You can select a serifed or sans-serif font. The default font is URW Gothic (sans-serif), a free font which is similar to
 ITC Avant Garde Gothic. Avant Garde was used in many early TSR modules, including B1 and B2.
 
-If you choose the serif option, the module class will check if ITC Souvenir is installed on your system and configured for
-\LaTeX~to use. Souvenir is the font used for the 1981 Basic rulebook and several modules of that era. Souvenir is a
-commercial font which you must have a license to use. It is expensive to buy the font directly, but it was bundled with some
-versions of CorelDraw, so that is a more economical way to obtain a license. To configure the font for use with \LaTeX, you
-will need the Adobe Type 1 font definitions (.pfb and .afm files) from CorelDraw and the corresponding LaTeX .tfm and .vf files,
-which you can obtain from the \href{https://www.ctan.org/pkg/corelpak}{Corelpak} package. The
-\href{https://www.ctan.org/pkg/corelpak-contrib}{Corelpak-contrib} package may also be useful to help with installation.
+If you choose the serif option, the module class will try to use ITC Souvenir. Souvenir is used for the 1981 Basic rulebook
+and modules including B3, X1 and X2. However, it is a commercial font which is not distributed with \LaTeX. If you don't have
+Souvenir installed, the module class will use URW Bookman instead, which is included in the standard \TeX Live distribution.
 
-If you don't have Souvenir installed, the module class will use URW Bookman instead. Bookman is included in the standard
-\TeX Live distribution.
+If you want to obtain the Souvenir font, take note that it was bundled with some versions of CorelDraw.
+It is almost certainly more economical to buy CorelDraw with its bundled font license than to buy the font directly from the foundry.
+To configure the font for use with \LaTeX, you will need the Adobe Type 1 font definitions (.pfb and .afm files) from CorelDraw
+and the corresponding LaTeX .tfm and .vf files, which you can obtain from the \href{https://www.ctan.org/pkg/corelpak}{Corelpak} package. The
+\href{https://www.ctan.org/pkg/corelpak-contrib}{Corelpak-contrib} package may also be useful to help with installation.
 
 \subsection*{Stat Blocks}
 
-This version of the class includes Basic-style monster stat blocks, but it is possible to define a new stat block format for any
-RPG system. In principle, authors will be able to compile their work with stats for different systems simply by changing the option
-paseed to \verb|documentclass|.
+The module class is designed to be extensible.
+This version of the class includes Basic-style monster stat blocks (\verb|basic|). See p.\pageref{stat_blocks} for more detail.
 
-See p.\pageref{stat_blocks} for more detail on monster stat blocks.
+\verb|advanced| stat blocks are planned for the next version of the class. In principle it is possible to define a new stat
+block format for any RPG system. If several systems are defined, authors can compile the same work with stats for different
+systems simply by changing the option passed to \verb|documentclass|.
 
 \section{Layout Options}
 
 \subsection*{Headings}
 
-The following heading styles are supported:
-
-\begin{description}
-\item[\textbackslash part] Chapter heading (numbered, included in table of contents)
-\item[\textbackslash section] Section heading (not numbered, left justified, upper case, included in table of contents)
-\item[\textbackslash section*] Section heading (alternate section style, not numbered, centred, included in table of contents)
-\item[\textbackslash subsection] Location key (numbered)
-\item[\textbackslash subsection*] Other subheading (same style as location key, not numbered)
-\item[\textbackslash subsubsection] Sub-location key (numbered with number and letter, e.g. 7a.
-\item[\textbackslash subsubsection*] Sub-location key (not numbered, same style as location key)
-\end{description}
-
-Location keys are numbered automatically, but you can control the numbering using the \verb|\setcounter| command. For example,
-if you want to restart your room location keys at 1 on the second level of your dungeon, just insert |\setcounter{subsection}{0}|
-before the first section heading.
-
+The defined heading styles are listed in Table~\ref{tab:heading_styles}.
 If you want a table of contents in your document, simply place a \verb|\tableofcontents| command where you would like it to appear.
 
-\section{Tables}
+\begin{table}[ht]
+\begin{tabularx}{\linewidth}{lp{0.25\linewidth}X}
+\tableheader{Style                     & Description                 & Features}
+\texttt{\textbackslash part}           & Chapter heading             & Numbered, included in table of contents (ToC)\\
+\texttt{\textbackslash section}        & Section heading             & Not numbered, left justified, upper case, included in ToC\\
+\texttt{\textbackslash section*}       & Section heading (alternate) & Not numbered, centred, included in ToC\\
+\texttt{\textbackslash subsection}     & Location key                & Numbered, not included in ToC\\
+\texttt{\textbackslash subsection*}    & Subheading/Table heading    & Not numbered, not included in ToC\\
+\texttt{\textbackslash subsubsection}  & Sub-location key            & Numbered with number and letter: ``7a.'' Not included in ToC\\
+\texttt{\textbackslash subsubsection*} & Sub-location key            & Not numbered, not included in ToC\\
+\end{tabularx}
+\caption{Heading Styles}
+\label{tab:heading_styles}
+\end{table}
 
-The module class uses the standard \verb|tabular| environment for tables. You need to specify the horizontal alignment of each column as 
-usual. The class provides a \verb|\tableheader| macro which centres the table headings and writes a horizontal rule under each
-one. You can redefine the column type for headings: the example below uses the \verb|[b]| option to get bold headings.
+Location keys are numbered automatically starting from 1, but you can change the numbering using the \verb|\setcounter| command. For example,
+if you want to restart your location keys at 1 on the second level of your dungeon, just insert \verb|\setcounter{subsection}{0}|
+before the first section heading.
 
-\section*{Variable Weapon Damage Table}
+\subsection*{Tables}
+
+The module class uses the standard \verb|tabular| environment for tables. It defines a new \verb|\tableheader| macro which centres
+the table headings and writes a horizontal rule of the correct width under each one, in the same style as the Basic rulebook.
+
+You need to specify the number and format of each column in your table as usual: \verb|l| for left-aligned, \verb|c| for centred
+and \verb|r| for right-aligned. The class also provides a new \verb|b| column type for bold, centred headings.
+
+\noindent Here is an example. The table below has two columns: one centred and one left-aligned. So the table format
+is defined using \verb|\begin{tabular}{cl}|. The heading rows are bold and centred, defined as \verb|\tableheader[b]{Damage & Weapon Type}|.
+
+\section*{New Weapon Damage Table}
 
 \begin{center}
 \begin{tabular}{cl}
 \tableheader[b]{Damage & Weapon Type}
-1-2 (1d2) & Small Fruit Knife\\
-1-4 (1d4) & Torch\\
-1-6 (1d6) & Hand Axe\\
-1-8 (1d8) & Battle Axe\\
-1-10 (1d10) & Two-handed sword\\
-6-36 (6d6) & Laser Cannon\\
+1-4 (1d4) & Throwing Stick\\
+1-6 (1d6) & Composite Bow\\
+1-4 (1d4) & Cutting Axe\\
+1-6 (1d6) & Piercing Axe\\
+1-8 (1d8) & Khopesh\\
+6-36 (6d6) & Chariot\\
 \end{tabular}
 \end{center}
 
-\noindent If you need to squeeze wide tables into a text column, you can reduce \verb|\tabcolsep|, which controls the spacing between table columns.
+\noindent If you need to squeeze wide tables into a text column, you can control the inter-column spacing using \verb|\tabcolsep|:
 
 \section*{Character Attacks}
 
@@ -254,30 +263,63 @@ Normal man & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 20 & 20 & 20\\
 \addtolength{\tabcolsep}{4.1pt}
 \end{center}
 
-\noindent See also: the Wandering Monster table on p.\pageref{wanderingmonsters}.
+\vspace{1em}\noindent The module class also defines two special-purpose tables: the Wandering Monster table and Monster Roster table. These tables
+have pre-defined headings and each line is populated using a monster stat block (see the next section).
+
+Wandering Monster tables are defined with:
+\begin{statblockfreestyle}
+\verb|\begin| \verb|{wanderingmonsters}[style]|
+\end{statblockfreestyle}
+The optional \verb|[style]| argument specifies the column type for headers. The \verb|[b]| style uses the same bold,
+centred style used for the New Weapon Damage Table above.
+
+Each line of the Wandering Monster table is defined using:
+\begin{statblockfreestyle}
+\noindent \verb|\wanderitem[die roll]{monstername}{no. appearing}|
+\end{statblockfreestyle}
+\verb|[die roll]| is optional, if you omit it, each row will be numbered consecutively starting at 1. If you want to
+roll 2d6 for wandering monster determination, then put \verb|[2]| on the first row and the following rows will be numbered
+consecutively. Or if you want to use ranges, e.g. using percentile dice, you can put the range here like so: \verb|[01--10]|.
+(A point of typographic pedantry: in \LaTeX, two hyphens will be typeset as an en-dash, which is the correct length of dash to
+use for numeric ranges). \verb|{monstername}| is the key for the stat block; see the next section for an explanation.
+\verb|{no. appearing}| is optional; if you leave it empty, the module class will use the default number appearing as defined in the stat block.
+
+The Monster Roster table is similar, but the table headings are slightly different. Define the table with:
+\begin{statblockfreestyle}
+\noindent \verb|\begin{monsterroster}[style]|
+\end{statblockfreestyle}
+The first column is the location key, and there is an extra column for hit points. Each line in
+the table is defined using:
+\begin{statblockfreestyle}
+\hspace{-1em}\verb|\rosteritem{locationkey}{monstername}{number}{hitpoints}|
+\end{statblockfreestyle}
+If the location key is defined as a \LaTeX~reference, the class will generate the correct location number and create a hyperlink to that section.
+
+You can see examples of Wandering Monster and Monster Roster tables on p.\pageref{wanderingmonsters}.
 
 \section{Monster Stat Blocks}
 \label{stat_blocks}
 
-\monster[Octopodes]{octopus}{Octopus}{7|3*|20'|50'|8|8 legs|1d6 each|Fighter: 10|6|C|1|1-4|X}
-\monster{platypus}{Platypus}{7|3*|20'|50'|1|bill|1d4|Fighter: 3|6|C|1|1-4|Y}
+The Basic stats style included with the module class has stats for all of the monsters in the Basic and Expert rulebooks.
+To typeset a statblock, simply use:
+\begin{statblockfreestyle}
+\verb|\statblock{monstername}{noappearing}{hitpoints}|
+\end{statblockfreestyle}
+The module class will work out the correct singular or plural forms automatically, so
+\verb|\statblock{gnoll}{1}{10}| gives:
+\statblock{gnoll}{1}{10}
+while \verb|\statblock{gnoll}{5}{16,14,12,9,8}| gives:
+\statblock{gnoll}{5}{16,14,12,9,8}
+If you prefer, there is also an inline style:
+\begin{statblockfreestyle}
+\hspace{-1em}\verb|\stats[description]{monstername}{noappearing}{hitpoints}|
+\end{statblockfreestyle}
+where the optional \verb|[description]| overrides the default name of the monster.
+For example:\\[0.15em]
 
-First stat block:
-\statblock{kobold}{5}{4,4,3,2,1}
-Second stat block:
-\statblock{kobold}{1}{3}
+\noindent You find yourself face to face with the \stats[Gnoll Chieftain!]{gnoll}{1}{16}. He is flanked
+by his \stats[12 bodyguards: ]{gnoll}{12}{10 each}.
 
-You must face the \stats[Kobold King!]{kobold}{1}{4}. 
-He is with his \stats[10 bodyguards: ]{kobold}{10}{4 each}
-
-\statblock{harpy}{1}{10}
-\statblock{harpy}{3}{24 each}
-
-\statblock{octopus}{1}{10}
-\statblock{octopus}{3}{24 each}
-
-\statblock{platypus}{1}{10}
-\statblock{platypus}{3}{24 each}
 
 \begin{statblockfreestyle}
 \begin{ifbasicstats}
@@ -395,16 +437,16 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 \wanderitem{kobold}{3-18}
 \wanderitem{kobold}{}
 \wanderitem{harpy}{1-4}
-\wanderitem[8-10]{octopus}{2}
-\wanderitem[11]{octopus}{}
-\wanderitem{platypus}{2}
-\wanderitem{platypus}{}
+\wanderitem[8-10]{kobold}{2}
+\wanderitem[11]{kobold}{}
+\wanderitem{gnoll}{2}
+\wanderitem{gnoll}{}
 \end{wanderingmonsters}
 
 \section*{Monster Roster}
 
 \begin{monsterroster}
-\rosteritem{\ref{portico}}{kobold}{16}{4 each}
+\rosteritem{\ref{portico}}{gnoll}{16}{4 each}
 \rosteritem{\ref{west_court}}{harpy}{1}{23}
 \rosteritem{\ref{inner_sanctuary}}{harpy}{3}{18 each}
 \end{monsterroster}
@@ -424,10 +466,6 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 These small, evil dog-like men\ldots
 
 \lipsum
-\end{newmonster}
-
-\begin{newmonster}{octopus}
-Octopodes are cunning and evil.
 \end{newmonster}
 
 Text following the monster block.
