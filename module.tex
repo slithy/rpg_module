@@ -192,8 +192,10 @@ If you don't have Souvenir installed, the module class will use URW Bookman inst
 \subsection*{Stat Blocks}
 
 This version of the class includes Basic-style monster stat blocks, but it is possible to define a new stat block format for any
-RPG system. In principle, authors will be able to compile their work with stats for different systems simply by changing one option
-to \verb|documentclass|.
+RPG system. In principle, authors will be able to compile their work with stats for different systems simply by changing the option
+paseed to \verb|documentclass|.
+
+See p.\pageref{stat_blocks} for more detail on monster stat blocks.
 
 \section{Layout Options}
 
@@ -255,6 +257,7 @@ Normal man & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 20 & 20 & 20\\
 \noindent See also: the Wandering Monster table on p.\pageref{wanderingmonsters}.
 
 \section{Monster Stat Blocks}
+\label{stat_blocks}
 
 \monster[Octopodes]{octopus}{Octopus}{7|3*|20'|50'|8|8 legs|1d6 each|Fighter: 10|6|C|1|1-4|X}
 \monster{platypus}{Platypus}{7|3*|20'|50'|1|bill|1d4|Fighter: 3|6|C|1|1-4|Y}
@@ -277,7 +280,12 @@ He is with his \stats[10 bodyguards: ]{kobold}{10}{4 each}
 \statblock{platypus}{3}{24 each}
 
 \begin{statblockfreestyle}
-Jim the Rogue: leather armour, small fruit knife, S7 I12 W5 D17 C12 Ch15. He can backstab with +4 to hit and double damage. AL C
+\begin{ifbasicstats}
+Jim the Rogue: leather armour (AC 7), small fruit knife, S7 I12 W5 D17 C12 Ch15. He can backstab with +4 to hit and double damage. AL C
+\end{ifbasicstats}
+\begin{ifadvancedstats}
+Jim the Rogue: leather armour (AC 8), small fruit knife, S7 I12 W5 D17 C12 Ch15. He can backstab with +4 to hit and double damage. AL C
+\end{ifadvancedstats}
 \end{statblockfreestyle}
 
 
@@ -409,6 +417,8 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 %
 
 \part{New Monsters}
+
+\includegraphics[width=\linewidth]{minion_of_set.jpg}
 
 \begin{newmonster}{kobold}
 These small, evil dog-like men\ldots

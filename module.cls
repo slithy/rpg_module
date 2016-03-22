@@ -53,6 +53,16 @@
 
 
 
+% Define which stat block systems are recognised. ONE of these environments should be redefined in
+% the system-specific stat block package.
+
+\RequirePackage{comment}                                                        % Allow some sections to conditionally appear or not
+\excludecomment{ifbasicstats}
+\excludecomment{ifadvancedstats}
+% \excludecomment{next_system}{...
+
+
+
 % Process class options
 
 \newcounter{papersizeoption}
@@ -71,7 +81,7 @@
 
 \DeclareOption{basic}{\def\statstyle@module{basic_stats.sty}\stepcounter{statsoption}}
 \DeclareOption{advanced}{\def\statstyle@module{advanced_stats.sty}\stepcounter{statsoption}}
-% \DeclareOption stat block options for more systems here...
+% \DeclareOption{next_system}{...
 
 % Note: the class does not define a default AC display option. The default is handled by the
 % \ac@module macro which is defined in the style file selected by the previous option.
