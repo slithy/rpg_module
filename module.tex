@@ -223,6 +223,16 @@ Location keys are numbered automatically starting from 1, but you can change the
 to reset the location key numbering on the second level of your dungeon, insert \verb|\setcounter{subsection}{0}|
 before the first subsection heading on level 2.
 
+\subsection*{Boxed Text}
+
+To draw a box around any text, enclose it in the \verb|boxtext| environment:
+
+\begin{boxtext}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut
+purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
+Curabitur dictum gravida mauris. Nam arcu libero, nonummy
+\end{boxtext}
+
 \subsection*{Tables}
 
 The module class uses the standard \verb|tabular| environment for tables. It defines a new \verb|\tableheader| macro which centres
@@ -231,7 +241,7 @@ the table headings and writes a horizontal rule of the correct width under each 
 You need to specify the number and format of each column in your table as usual: \verb|l| for left-aligned, \verb|c| for centred
 and \verb|r| for right-aligned. The class also provides a new \verb|b| column type for bold, centred headings.
 
-\noindent Here is an example. The table below has two columns: one centred and one left-aligned. So the table format
+Here is an example. The table below has two columns: one centred and one left-aligned. So the table format
 is defined using \verb|\begin{tabular}{cl}|. The heading rows are defined as bold and centred: \verb|\tableheader[b]{Damage & Weapon Type}|.
 
 \section*{New Weapon Damage Table}
@@ -248,7 +258,7 @@ is defined using \verb|\begin{tabular}{cl}|. The heading rows are defined as bol
 \end{tabular}
 \end{center}
 
-\noindent If you need to squeeze wide tables into a text column, you can control the inter-column spacing using \verb|\tabcolsep|,
+If you need to squeeze wide tables into a text column, you can control the inter-column spacing using \verb|\tabcolsep|,
 like this:
 
 \section*{Character Attacks}
@@ -320,6 +330,8 @@ For example:\\[0.15em]
 
 \noindent You find yourself face to face with the \stats[Gnoll Chieftain!]{gnoll}{1}{16}. He is flanked
 by his \stats[12 bodyguards: ]{gnoll}{12}{10 each}.
+
+If you want to include monsters
 
 
 \begin{statblockfreestyle}

@@ -397,17 +397,10 @@
 \titlecontents*{subsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
 \titlecontents*{subsubsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
 
+
+
 % Boxed text
 
-%\newlength{\boxtexttopsep@module}
-%
-%\newenvironment{boxtext}[1][0pt]{%
-%\setlength{\boxtexttopsep@module}{-\topsep}
-%\addtolength{\boxtexttopsep@module}{#1}
-%\vspace{\boxtexttopsep@module}
-%\begin{framed}\@afterheading}{\end{framed}\aftergroup\@afterindentfalse\aftergroup\@afterheading}
-   %\vspace{-\topskip}
-%\fi
 \newenvironment{boxtext}{%
 \if@nobreak
    \vspace{-\topsep}
