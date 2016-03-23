@@ -220,8 +220,8 @@ If you want a table of contents in your document, simply place a \verb|\tableofc
 \end{table}
 
 Location keys are numbered automatically starting from 1, but you can change the numbering using the \verb|\setcounter| command. For example,
-if you want to restart your location keys at 1 on the second level of your dungeon, just insert \verb|\setcounter{subsection}{0}|
-before the first section heading.
+to reset the location key numbering on the second level of your dungeon, insert \verb|\setcounter{subsection}{0}|
+before the first subsection heading on level 2.
 
 \subsection*{Tables}
 
@@ -232,7 +232,7 @@ You need to specify the number and format of each column in your table as usual:
 and \verb|r| for right-aligned. The class also provides a new \verb|b| column type for bold, centred headings.
 
 \noindent Here is an example. The table below has two columns: one centred and one left-aligned. So the table format
-is defined using \verb|\begin{tabular}{cl}|. The heading rows are bold and centred, defined as \verb|\tableheader[b]{Damage & Weapon Type}|.
+is defined using \verb|\begin{tabular}{cl}|. The heading rows are defined as bold and centred: \verb|\tableheader[b]{Damage & Weapon Type}|.
 
 \section*{New Weapon Damage Table}
 
@@ -248,7 +248,8 @@ is defined using \verb|\begin{tabular}{cl}|. The heading rows are bold and centr
 \end{tabular}
 \end{center}
 
-\noindent If you need to squeeze wide tables into a text column, you can control the inter-column spacing using \verb|\tabcolsep|:
+\noindent If you need to squeeze wide tables into a text column, you can control the inter-column spacing using \verb|\tabcolsep|,
+like this:
 
 \section*{Character Attacks}
 
@@ -267,32 +268,32 @@ Normal man & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 20 & 20 & 20\\
 have pre-defined headings and each line is populated using a monster stat block (see the next section).
 
 Wandering Monster tables are defined with:
-\begin{statblockfreestyle}
+\begin{quote}
 \verb|\begin| \verb|{wanderingmonsters}[style]|
-\end{statblockfreestyle}
+\end{quote}
 The optional \verb|[style]| argument specifies the column type for headers. The \verb|[b]| style uses the same bold,
-centred style used for the New Weapon Damage Table above.
-
-Each line of the Wandering Monster table is defined using:
-\begin{statblockfreestyle}
-\noindent \verb|\wanderitem[die roll]{monstername}{no. appearing}|
-\end{statblockfreestyle}
-\verb|[die roll]| is optional, if you omit it, each row will be numbered consecutively starting at 1. If you want to
+centred style used for the New Weapon Damage Table above. Each line of the Wandering Monster table is defined using:
+\begin{quote}
+\verb|\wanderitem[die roll]{monstername}{no. appearing}|
+\end{quote}
+\verb|[die roll]| is optional; if you omit it, each row will be numbered consecutively starting at 1. If you want to
 roll 2d6 for wandering monster determination, then put \verb|[2]| on the first row and the following rows will be numbered
-consecutively. Or if you want to use ranges, e.g. using percentile dice, you can put the range here like so: \verb|[01--10]|.
-(A point of typographic pedantry: in \LaTeX, two hyphens will be typeset as an en-dash, which is the correct length of dash to
-use for numeric ranges). \verb|{monstername}| is the key for the stat block; see the next section for an explanation.
+consecutively. Or if you want to use ranges, you can specify the range for each line like this: \verb|[01--10]|.
+(A point of typographic pedantry: in \LaTeX, two hyphens will be typeset as an en-dash, ``--'', which is the correct length
+of dash to use for numeric ranges. For parenthetical dashes use three hyphens to get the longer em-dash, ``---'').
+
+\verb|{monstername}| is the key for the stat block; see the next section for an explanation.
 \verb|{no. appearing}| is optional; if you leave it empty, the module class will use the default number appearing as defined in the stat block.
 
 The Monster Roster table is similar, but the table headings are slightly different. Define the table with:
-\begin{statblockfreestyle}
-\noindent \verb|\begin{monsterroster}[style]|
-\end{statblockfreestyle}
+\begin{quote}
+\verb|\begin{monsterroster}[style]|
+\end{quote}
 The first column is the location key, and there is an extra column for hit points. Each line in
 the table is defined using:
-\begin{statblockfreestyle}
-\hspace{-1em}\verb|\rosteritem{locationkey}{monstername}{number}{hitpoints}|
-\end{statblockfreestyle}
+\begin{quote}
+\hspace{-2em}\verb|\rosteritem{locationkey}{monstername}{number}{hitpoints}|
+\end{quote}
 If the location key is defined as a \LaTeX~reference, the class will generate the correct location number and create a hyperlink to that section.
 
 You can see examples of Wandering Monster and Monster Roster tables on p.\pageref{wanderingmonsters}.
@@ -302,18 +303,18 @@ You can see examples of Wandering Monster and Monster Roster tables on p.\pagere
 
 The Basic stats style included with the module class has stats for all of the monsters in the Basic and Expert rulebooks.
 To typeset a statblock, simply use:
-\begin{statblockfreestyle}
+\begin{quote}
 \verb|\statblock{monstername}{noappearing}{hitpoints}|
-\end{statblockfreestyle}
+\end{quote}
 The module class will work out the correct singular or plural forms automatically, so
 \verb|\statblock{gnoll}{1}{10}| gives:
 \statblock{gnoll}{1}{10}
 while \verb|\statblock{gnoll}{5}{16,14,12,9,8}| gives:
 \statblock{gnoll}{5}{16,14,12,9,8}
 If you prefer, there is also an inline style:
-\begin{statblockfreestyle}
-\hspace{-1em}\verb|\stats[description]{monstername}{noappearing}{hitpoints}|
-\end{statblockfreestyle}
+\begin{quote}
+\hspace{-2em}\verb|\stats[description]{monstername}{noappearing}{hitpoints}|
+\end{quote}
 where the optional \verb|[description]| overrides the default name of the monster.
 For example:\\[0.15em]
 
@@ -365,7 +366,7 @@ Some DM info above the box blah blah blah blah blah blah blah blah blah blah bla
 % being too large. If you want to put a box between normal paragraphs, give it the [0pt] parameter to restore
 % the default spacing.
 
-\begin{boxtext}[\topsep]
+\begin{boxtext}%[\topsep]
 It looks dangerous.
 \end{boxtext}
 

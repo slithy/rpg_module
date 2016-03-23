@@ -375,7 +375,14 @@
 {\normalfont\bfseries}
 {\thesubsubsection.}{0.5em}{\MakeUppercase{#1}}
 
-
+% Default section spacing, for reference
+%
+%\titlespacing*{\chapter} {0pt}{50pt}{40pt}
+%\titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+%\titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%\titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
+%\titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
 
 % Table of Contents
 
@@ -383,23 +390,29 @@
    \noindent\Large\textbf{\MakeUppercase\contentsname}\vspace{1em}\@starttoc{toc}
 }
 
+
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
-\titlecontents{part}[0em]{\normalsize\bfseries}{PART \thecontentslabel : \MakeUppercase}{}{\quad\thecontentspage}[\vspace{0.5em}]
-\titlecontents*{section}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{0.5em}]
-\titlecontents*{subsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{0.5em}]
-\titlecontents*{subsubsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{0.5em}]
-
-
+\titlecontents{part}[0em]{\normalsize\bfseries}{PART \thecontentslabel : \MakeUppercase}{}{\quad\thecontentspage}[\vspace{1.5ex plus .2ex}]
+\titlecontents*{section}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
+\titlecontents*{subsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
+\titlecontents*{subsubsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
 
 % Boxed text
 
-\newlength{\boxtexttopsep@module}
-
-\newenvironment{boxtext}[1][0pt]{%
-\setlength{\boxtexttopsep@module}{-\topsep}
-\addtolength{\boxtexttopsep@module}{#1}
-\vspace{\boxtexttopsep@module}
-\begin{framed}\noindent}{\end{framed}\aftergroup\@afterindentfalse\aftergroup\@afterheading}
+%\newlength{\boxtexttopsep@module}
+%
+%\newenvironment{boxtext}[1][0pt]{%
+%\setlength{\boxtexttopsep@module}{-\topsep}
+%\addtolength{\boxtexttopsep@module}{#1}
+%\vspace{\boxtexttopsep@module}
+%\begin{framed}\@afterheading}{\end{framed}\aftergroup\@afterindentfalse\aftergroup\@afterheading}
+   %\vspace{-\topskip}
+%\fi
+\newenvironment{boxtext}{%
+\if@nobreak
+   \vspace{-\topsep}
+\fi
+\begin{framed}\@afterheading}{\end{framed}\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
 
 
