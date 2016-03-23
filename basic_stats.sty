@@ -158,15 +158,15 @@
    \else
       #1                                         % Override the generic name with the optional argument
    \fi
-   AC      \pgfkeys{/#2/AC},
-   HD      \pgfkeys{/#2/HD},
-   hp      #4,
-   MV      \pgfkeys{/#2/MVturn}\thinspacebrk(\pgfkeys{/#2/MVrd}),
-   Att     \pgfkeys{/#2/Attlong},
-   D       \pgfkeys{/#2/Dmg},
-   Save    \pgfkeys{/#2/SV},
-   ML      \pgfkeys{/#2/ML},
-   AL      \pgfkeys{/#2/AL}%
+   AC~\pgfkeys{/#2/AC},
+   HD~\pgfkeys{/#2/HD},
+   hp~#4,
+   MV~\pgfkeys{/#2/MVturn}\thinspacebrk(\pgfkeys{/#2/MVrd}),
+   Att~\pgfkeys{/#2/Attlong},
+   D~\pgfkeys{/#2/Dmg},
+   Save~\pgfkeys{/#2/SV},
+   ML~\pgfkeys{/#2/ML},
+   AL~\pgfkeys{/#2/AL}%
 }
 
 % Display monster stats in a stat block
@@ -255,7 +255,7 @@ Damage:       & \pgfkeys{/#1/Dmglong}                     & Alignment:     & \pg
 % Pre-defined monster stats (OGL)
 %
 
-\monster{kobold}{Kobold}{7|\half|60'|20'|1|weapon|1d4|1d4 or weapon-1|Normal Man|6 or see below|Chaotic|4-16|6-60|P\,(J)}
-\monster{gnoll}{Gnoll}{5|2|90'|30'|1|1 weapon|2-8|2-8|Fighter: 2|8|Chaotic|1-6|3-18|D}
-\monster{harpy}{Harpy}{-1|3*|60'/150'|20'/50'|3 + special|2 claws and a weapon + charm|1d4/1d4/1d6|1d4/1d4/1d6|Fighter: 6|12|Chaotic|1|1-4|Z}
+\monster{kobold}{Kobold}{7|\half|60'|20'|1|weapon|1d4|1d4 or weapon-1|Normal Man|6 or see below|Chaotic|4--16|6--60|P\,(J)}
+\monster{gnoll}{Gnoll}{5|2|90'|30'|1|1 weapon|2--8|2--8|Fighter: 2|8|Chaotic|1--6|3--18|D}
+\monster{harpy}{Harpy}{-1|3*|60'/150'|20'/50'|3 + special|2 claws and a weapon + charm|1d4/1d4/1d6|1d4/1d4/1d6|Fighter: 6|12|Chaotic|1|1--4|Z}
 

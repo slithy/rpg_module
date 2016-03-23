@@ -274,10 +274,10 @@ Normal man & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 20 & 20 & 20\\
 \addtolength{\tabcolsep}{4.1pt}
 \end{center}
 
-\vspace{1em}\noindent The module class also defines two special-purpose tables: the Wandering Monster table and Monster Roster table. These tables
+\vspace{1ex}\noindent The module class also defines two special-purpose tables: the Wandering Monster table and Monster Roster table. These tables
 have pre-defined headings and each line is populated using a monster stat block (see the next section).
 
-Wandering Monster tables are defined with:
+\noindent Wandering Monster tables are defined with:
 \begin{quote}
 \verb|\begin| \verb|{wanderingmonsters}[style]|
 \end{quote}
@@ -326,20 +326,83 @@ If you prefer, there is also an inline style:
 \hspace{-2em}\verb|\stats[description]{monstername}{noappearing}{hitpoints}|
 \end{quote}
 where the optional \verb|[description]| overrides the default name of the monster.
-For example:\\[0.15em]
+For example:\\[0.1em]
 
 \noindent You find yourself face to face with the \stats[Gnoll Chieftain!]{gnoll}{1}{16}. He is flanked
-by his \stats[12 bodyguards: ]{gnoll}{12}{10 each}.
+by \stats[12 bodyguards: ]{gnoll}{12}{10 each}.\\[0.1em]
 
-If you want to include monsters
+\noindent You can of course also define new monsters beyond those in the Basic and Expert rulebooks. Define the new
+monster once at the beginning of your document, and then you can use it in the same way as the predefined
+monsters above. The format for a new monster definition is:
+\begin{quote}
+\verb|\monster[pluralname]{label}{name}{stats}|
+\end{quote}
+where \verb|label| is the key you want to use for the monster (\verb|gnoll| in the examples above) and
+\verb|name| is the (singular) name of the monster that will be displayed in the text, ``Gnoll''. The module
+class can usually work out the plural form by following some simple rules, but if the plural is unusual,
+you can specify it in the optional \verb|pluralname| field. For example, if you decide that the plural of
+``Octopus'' is ``Octopodes'', you would define this using:
+\begin{quote}
+\verb|\monster[Octopodes]{octopus}{Octopus}{|\ldots
+\end{quote}
 
+\noindent The \verb|stats| field is a list of the monster stats, separated by ``\verb:|:''. It should contain the following items in order:
+\renewcommand{\labelitemi}{$\bullet$}
+\begin{itemize}\setlength{\itemsep}{0pt}
+\item \ArmourClass
+\item Hit Dice
+\item Movement per Turn
+\item Movement per Round
+\item Attacks (short form)
+\item Attacks (long form)
+\item Damage (short form)
+\item Damage (long form)
+\item Save As
+\item Morale
+\item Alignment
+\item No. Appearing (wandering monster)
+\item No. Appearing in Lair
+\item Treasure Type
+\end{itemize}
+
+\noindent For example, suppose we create the following definition:\\[0.1em]
+
+\monster[Minions of Set]{minion_set}{Minion of Set}{0|5*|120'|40'|weapon/bite|1 weapon or by form|1--8/1--12 + poison|1--8 or 1--12 + poison or by form|Fighter: 10|12|Chaotic|1--6|1--20|Nil}
+
+\noindent\texttt{\textbackslash monster[Minions~of~Set]\{minion\_set\}\{Minion~of~Set\}\{0|
+5*|120'|40'|weapon/bite|1~weapon~or~by~form|
+1--8/1--12~+~poison|1--8~or~1--12~+~poison~or~by~form|
+Fighter:~10|12|Chaotic|1--6|1--20|Nil\}}\\[0.1em]
+
+\noindent Now we can use definitions like this:
+\begin{quote}
+\verb|\statblock{minion_set}{4}{25 each}|
+\end{quote}
+to produce stat blocks like this:
+\statblock{minion_set}{4}{25 each}
+You can add details of your new monster with the environment:
+\begin{quote}
+\verb|\begin{newmonster}{minion_set}|
+\verb|Text description of your monster here|\ldots\\
+\verb|\end{newmonster}|
+\end{quote}
+You can see an example of what this looks like on p.\pageref{minion_set}.
+
+If you want to redefine an existing monster, you can do so using exactly the same commands.
+
+Finally, there is the \verb|statblockfreestyle| environment, which is provided for monsters which don't fit easily into the standard
+template. This may be suitable for NPCs or other non-standard encounters. The module class includes additional \verb|ifbasicstats|
+and \verb|ifadvancedstats| macros to allow you to create stats for your NPCs across several RPG systems. Here is an example:
 
 \begin{statblockfreestyle}
 \begin{ifbasicstats}
-Jim the Rogue: leather armour (AC 7), small fruit knife, S7 I12 W5 D17 C12 Ch15. He can backstab with +4 to hit and double damage. AL C
+Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 90'\,(30'), Att mace, D 1-6, Save C5, ML 11, AL C.
+He can cast the following spells: Protection from Good, Cause Fear, Snake Charm, Hold Person.
 \end{ifbasicstats}
 \begin{ifadvancedstats}
-Jim the Rogue: leather armour (AC 8), small fruit knife, S7 I12 W5 D17 C12 Ch15. He can backstab with +4 to hit and double damage. AL C
+Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 9", Att mace, D 2-7, AL LE.
+He can cast the following spells: Protection from Good, Cause Fear, Cause Light Wounds ($\times 2$), Darkness,
+Snake Charm, Hold Person, Slow Poison, Spiritual Hammer, Speak with Animals, Animate Dead, Curse.
 \end{ifadvancedstats}
 \end{statblockfreestyle}
 
@@ -359,7 +422,7 @@ Jim the Rogue: leather armour (AC 8), small fruit knife, S7 I12 W5 D17 C12 Ch15.
 
 \part{First Dungeon Level}
 
-Some introductory text for the DM.
+The rest of this document shows a full example of how an adventure can be typeset using the module class.
 
 \section*{Key to Dungeon Level One}
 
@@ -374,11 +437,7 @@ Some boxed text to read to the players to introduce them to the adventure.
 
 Some DM info above the box blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
 
-% By default, boxed text is moved up by 0.5em to avoid the space below headings (where it is usually placed)
-% being too large. If you want to put a box between normal paragraphs, give it the [0pt] parameter to restore
-% the default spacing.
-
-\begin{boxtext}%[\topsep]
+\begin{boxtext}
 It looks dangerous.
 \end{boxtext}
 
@@ -450,10 +509,11 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 \wanderitem{kobold}{3-18}
 \wanderitem{kobold}{}
 \wanderitem{harpy}{1-4}
-\wanderitem[8-10]{kobold}{2}
-\wanderitem[11]{kobold}{}
+\wanderitem{kobold}{2}
+\wanderitem{kobold}{}
 \wanderitem{gnoll}{2}
 \wanderitem{gnoll}{}
+\wanderitem{minion_set}{}
 \end{wanderingmonsters}
 
 \section*{Monster Roster}
@@ -461,7 +521,7 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 \begin{monsterroster}
 \rosteritem{\ref{portico}}{gnoll}{16}{4 each}
 \rosteritem{\ref{west_court}}{harpy}{1}{23}
-\rosteritem{\ref{inner_sanctuary}}{harpy}{3}{18 each}
+\rosteritem{\ref{inner_sanctuary}}{minion_set}{3}{18 each}
 \end{monsterroster}
 \end{onecolumnfloat}
 
@@ -475,10 +535,13 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 
 \includegraphics[width=\linewidth]{minion_of_set.jpg}
 
-\begin{newmonster}{kobold}
-These small, evil dog-like men\ldots
+\begin{newmonster}{minion_set}\label{minion_set}%
+Minions of Set serve their master, the god of evil and the night, with unswerving devotion. In combat, they
+never need to check morale. They are the implacable enemies of the servants of Osiris and Horus.
 
-\lipsum
+In human form, the Minions of Set wear scaly black plate armour and weild curved khopesh swords. Once per
+day, they can polymorph themselves into the form of a giant snake with a poisonous bite. Some minions can
+transform themselves into cave bears, giant crocodiles or giant scorpions.
 \end{newmonster}
 
 Text following the monster block.
