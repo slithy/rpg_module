@@ -396,11 +396,11 @@ and \verb|ifadvancedstats| macros to allow you to create stats for your NPCs acr
 
 \begin{statblockfreestyle}
 \begin{ifbasicstats}
-Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 90'\,(30'), Att mace, D 1-6, Save C5, ML 11, AL C.
+Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 90'\,(30'), Att mace, D 1--6, Save C5, ML 11, AL C.
 He can cast the following spells: Protection from Good, Cause Fear, Snake Charm, Hold Person.
 \end{ifbasicstats}
 \begin{ifadvancedstats}
-Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 9", Att mace, D 2-7, AL LE.
+Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 9", Att mace, D 2--7, AL LE.
 He can cast the following spells: Protection from Good, Cause Fear, Cause Light Wounds ($\times 2$), Darkness,
 Snake Charm, Hold Person, Slow Poison, Spiritual Hammer, Speak with Animals, Animate Dead, Curse.
 \end{ifadvancedstats}
@@ -429,58 +429,69 @@ The rest of this document shows a full example of how an adventure can be typese
 \subsection*{Start}
 
 \begin{boxtext}
-Some boxed text to read to the players to introduce them to the adventure.
+You have traveled across the desert for many days. Ahead in the distance you can see a large stone
+structure rising above the sand.
 \end{boxtext}
 
-\subsection{The Portico}                                                        % Key area 1
+The structure is the fabled Temple of Set. Within, the evil priests of Set plan world domination.
+A tribe of gnolls revere the site and guard the outer precincts.
+
+\subsection{The Portico} % Key 1
 \label{portico}
 
-Some DM info above the box blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
+The gnolls do not live within the temple; their settlement is a short distance away. But every day they
+send a small delegation to petition the priests and seek the power of Set. They will be hostile towards
+strangers.
 
 \begin{boxtext}
-It looks dangerous.
+The building is made of cyclopean blocks of granite rising above the desert sands. You wonder how such
+an edifice could have been constructed here, so far from any obvious habitation. Surely thousands of
+workers---slaves in all probability---must have been employed in building it.
+
+The facade of the edifice is some 150' across. Huge stone steps lead up to a portico, which is flanked
+by six immense pillars.
 \end{boxtext}
 
-Some monsters are here.
-Some DM info below the box blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
+There are 13 steps, each 3' tall and thus difficult to climb. The pillars are embossed with heiroglyphs
+which (could the players read them), tell the story of Set's rise to power, his conquests and the
+bitter enmity which exists between him and his brother Osiris.
 
-\subsection{Vestibule}                                                          % Key area 2
+On the porch at the top of the stairs, a group of Gnoll petitioners keep watch. When they perceive
+the party from afar, they will hide behind the pillars. As the party begin to mount the steps, they will
+spring out and hurl their javelins (1d6+1 dmg). They are also armed with spiked clubs:
+\statblock{gnoll}{6}{9 each}
+The gnolls each carry 1d4 ep and 2d10 cp.
+
+On the porch, behind the pillars and not visible from below, are eight statues\ldots
+
+\subsection{Vestibule} % Key 2
 
 \begin{boxtext}
-blah blah
-
-Multiple paragraphs of boxed text
+\lipsum[1]
 \end{boxtext}
 
-blah
+\lipsum[2]
 
-\subsection{Central Aisle}                                                      % Key area 3
+\subsection{Central Aisle} % Key area 3
 
 \begin{boxtext}
-blah
+\lipsum[3]
 \end{boxtext}
 
-blah
+\lipsum[4]
 
-\vdots                                                                          % Skip areas 4-6
+\subsection{East Court} % Key area 4
 
-\setcounter{subsection}{7}
-\subsubsection{West Court}                                                      % Key area 7a
-\label{west_court}
+\lipsum[5]
 
-some text
+\subsection{West Court} % Key area 5
 
-\subsubsection{East Court}                                                      % Key area 7b
+\lipsum[6]
 
-some text
+\subsection{Great Hypostyle Hall} % Key area 6
+\label{hypostyle_hall}
 
-\vdots
-\setcounter{subsection}{13}                                                     % Skip areas 8-13
-
-\subsection{Inner Sanctuary}                                                    % Key area 14
-\label{inner_sanctuary}
-
-more text
+% Floating image
 
 \begin{figure}[ht]
 \includegraphics[width=\columnwidth]{module_art_interior.png}
@@ -489,7 +500,7 @@ Image Copyright \copyright 1987, 2016 Michael Davis. All rights reserved.}
 \label{img:tomb}
 \end{figure}
 
-%%%%% Level Two %%%%%
+%%%%% Floating half-page %%%%%
 
 \begin{onecolumnfloat}[t]
 \part{Second Dungeon Level}
@@ -506,26 +517,64 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 \label{wanderingmonsters}
 
 \begin{wanderingmonsters}[b]
-\wanderitem{kobold}{3-18}
+\wanderitem{minion_set}{1}
+\wanderitem{harpy}{}
 \wanderitem{kobold}{}
-\wanderitem{harpy}{1-4}
-\wanderitem{kobold}{2}
-\wanderitem{kobold}{}
-\wanderitem{gnoll}{2}
 \wanderitem{gnoll}{}
-\wanderitem{minion_set}{}
 \end{wanderingmonsters}
 
 \section*{Monster Roster}
 
 \begin{monsterroster}
-\rosteritem{\ref{portico}}{gnoll}{16}{4 each}
-\rosteritem{\ref{west_court}}{harpy}{1}{23}
-\rosteritem{\ref{inner_sanctuary}}{minion_set}{3}{18 each}
+\rosteritem{\ref{portico}}{gnoll}{6}{9 each}
+\ref{inner_sanctuary} & Snefru-hotep & 1 & 5 & C5 & 21 & 30' & mace & 1--6 & C5 & 11 & C\\
+\rosteritem{\ref{inner_sanctuary}}{minion_set}{4}{25 each}
 \end{monsterroster}
 \end{onecolumnfloat}
 
-\lipsum
+\lipsum[7]
+
+\subsection{The Court of Set's Wives} % Key area 7
+
+\lipsum[8]
+
+\subsubsection{Statue of Nephthys} % Key area 7a
+\label{west_court}
+
+The statue of Nephthys, Set's first wife, is 20' tall. She is styled as a very beautiful woman dressed in the
+style of Egyptian royalty\ldots
+
+\subsubsection{Statue of Taweret} % Key area 7b
+
+The statue of Taweret, another of Set's wives, appears as a hippo-headed humanoid. Her upper torso is bare\ldots
+
+\vdots
+
+\setcounter{subsection}{13} % Skip areas 8-13
+
+\subsection{Inner Sanctuary} % Key area 14
+\label{inner_sanctuary}
+
+This area is guarded by the priest of Set, Snefru-hotep, and four Minions of Set!
+\begin{statblockfreestyle}
+\begin{ifbasicstats}
+Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 90'\,(30'), Att mace, D 1--6, Save C5, ML 11, AL C.
+He can cast the following spells: Protection from Good, Cause Fear, Snake Charm, Hold Person.
+\end{ifbasicstats}
+\begin{ifadvancedstats}
+Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 9", Att mace, D 2--7, AL LE.
+He can cast the following spells: Protection from Good, Cause Fear, Cause Light Wounds ($\times 2$), Darkness,
+Snake Charm, Hold Person, Slow Poison, Spiritual Hammer, Speak with Animals, Animate Dead, Curse.
+\end{ifadvancedstats}
+\end{statblockfreestyle}
+\statblock{minion_set}{4}{25 each}
+\lipsum[9]
+
+\section{Concluding the Adventure}
+
+\lipsum[10]
+
+\clearpage
 
 %
 % New Monsters part
@@ -533,7 +582,8 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 
 \part{New Monsters}
 
-\includegraphics[width=\linewidth]{minion_of_set.jpg}
+% If you had a picture of a minion of set you could include it here
+%\includegraphics[width=\linewidth]{minion_of_set.jpg}
 
 \begin{newmonster}{minion_set}\label{minion_set}%
 Minions of Set serve their master, the god of evil and the night, with unswerving devotion. In combat, they
@@ -543,8 +593,6 @@ In human form, the Minions of Set wear scaly black plate armour and weild curved
 day, they can polymorph themselves into the form of a giant snake with a poisonous bite. Some minions can
 transform themselves into cave bears, giant crocodiles or giant scorpions.
 \end{newmonster}
-
-Text following the monster block.
 
 \part{License Information}
 
