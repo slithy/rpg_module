@@ -1,0 +1,221 @@
+Label|NAME|Type|AC|HD|MVturn|MVrd|MVspec|MVspec_turn|MVspec_rd|Attack short|Attack long|Dmg short|Dmg long|SV|ML|AL|#APP|TT|XP
+|Ant, Driver||3|4*|180` (60`)|||||1|1|2d6|2d6|Fighter 2|7|N|2-8 (4-24)|U|125
+|Antelope||7|2|240` (80`)|||||1 butt|1 butt|1d6|1d6|Fighter 2|5|N|0 (3-30)|Nil|20
+|Ape, White||6|4|120` (40`)|||||2 claws|2 claws|1d4/1d4|1d4/1d4|Fighter 2|7|N|1-6 (2-8)|Nil|75
+|Baboon, Rock||6|2|120` (40`)|||||1 club/1 bite|1 club/1 bite|1d6/1d3|1d6/1d3|Fighter 2|8|N|2-12 (5-30)|U|20
+|Basilisk||4|6 + 1**|60` (20`)|||||1 bite + gaze|1 bite + gaze|1d10 + petrification|1d10 + petrification|Fighter 6|9|N|1-6 (1-6)|F|950
+|Bat, Giant|Bat|6|2|30` (10`), Fly 180` (60`)|||||1 bite|1 bite|1d4|1d4|Fighter 1|8|N|1-10 (1-10)|Nil|20
+|Bat, Giant Vampire|Bat|6|2|30` (10`), Fly 180` (60`)|||||1 bite|1 bite|Unconsciousness|Unconsciousness|Fighter 1|8|N|1-10 (1-10)|Nil|20
+|Bat|Bat|6|1 hp|9` (3`), Fly 120` (40`)|||||Confusion|Confusion|Nil|Nil|Normal Man|6|N|1-100 (1-100)|Nil|5
+|Bear, Black|Bear|6|4|120` (40`)|||||2 claws/1 bite|2 claws/1 bite|1d3/1d3/1d6|1d3/1d3/1d6|Fighter 2|7|N|1-4 (1-4)|U|75
+|Bear, Cave|Bear|5|7|120` (40`)|||||2 claws/1 bite|2 claws/1 bite|1d8/1d8/2d6|1d8/1d8/2d6|Fighter 3|9|N|1-2 (1-2)|V|450
+|Bear, Grizzly|Bear|6|5|120` (40`)|||||2 claws/1 bite|2 claws/1 bite|1d4/1d4/1d8|1d4/1d4/1d8|Fighter 2|8|N|1 (1-4)|U|175
+|Bear, Polar|Bear|6|6|120` (40`)|||||2 claws/1 bite|2 claws/1 bite|1d6/1d6/1d10|1d6/1d6/1d10|Fighter 3|8|N|1 (1-2)|U|275
+|Bee, Killer||7|\half*|150` (50`)|||||1 sting|1 sting|1d3 + special|1d3 + special|Fighter 1|9|N|1-6 (5-30)|Special|6
+|Beetle, Giant Fire|Beetle|4|1 + 2|120` (40`)|||||1 bite|1 bite|2d4|2d4|Fighter 1|7|N|1-8 (2-12)|Nil|15
+|Beetle, Giant Oil|Beetle|4|2*|120` (40`)|||||1 bite + special|1 bite + special|1d6 + special|1d6 + special|Fighter 1|8|N|1-8 (2-12)|Nil|25
+|Beetle, Giant Tiger|Beetle|3|3 + 1|150` (50`)|||||1 bite|1 bite|2d6|2d6|Fighter 1|9|N|1-6 (2-8)|U|50
+|Black Pudding||6|10*|60` (20`)|||||1|1|3d8|3d8|Fighter 5|12|N|1 (0)|Nil|1,6
+|Blink Dog||5|4*|120` (40`)|||||1 bite|1 bite|1d6|1d6|Fighter 4|6|L|1-6 (1-6)|C|125
+|Boar||7|3|150` (50`)|||||1 tusk|1 tusk|2d4|2d4|Fighter 2|9|N|1-6 (1-6)|Nil|35
+|Bugbear||5|3 + 1|90` (30`)|||||1 weapon|1 weapon|2d4 or weapon+1|2d4 or weapon+1|Fighter 3|9|C|2-8 (5-20)|B|50
+|Caecilia||6|6*|60` (20`)|||||1 bite|1 bite|1d8|1d8|Fighter 3|9|N|1-3 (1-3)|B|500
+|Camel||7|2|150` (50`)|||||1 bite/1 hoof|1 bite/1 hoof|1/1d4|1/1d4|Fighter 1|7|N|0 (2-8)|Nil|20
+|Caribou||7|3|240` (80`)|||||1 butt|1 butt|1d8|1d8|Fighter 2|5|N|0 (3-30)|Nil|35
+|Carrion Crawler||7|3 + 1*|120` (40`)|||||8 tentacles|8 tentacles|Paralysis|Paralysis|Fighter 2|9|N|1-3 (1-3)|B|75
+|Lion|Cat|6|5|150` (50`)|||||2 claws/1 bite|2 claws/1 bite|1d4+1/1d4+1/1d10|1d4+1/1d4+1/1d10|Fighter 3|9|N|1-4 (1-8)|U|175
+|Mountain Lion|Cat|6|3 + 2|150` (50`)|||||2 claws/1 bite|2 claws/1 bite|1d3/1d3/1d6|1d3/1d3/1d6|Fighter 2|8|N|1-4 (1-4)|U|50
+|Panther|Cat|4|4|150` (50`)|||||2 claws/1 bite|2 claws/1 bite|1d4/1d4/1d8|1d4/1d4/1d8|Fighter 2|8|N|1-2 (1-6)|U|75
+|Sabre-tooth Tiger|Cat|6|8|150` (50`)|||||2 claws/1 bite|2 claws/1 bite|1d8/1d8/2d8|1d8/1d8/2d8|Fighter 4|10|N|1-4 (1-4)|V|650
+|Tiger|Cat|6|6|150` (50`)|||||2 claws/1 bite|2 claws/1 bite|1d6/1d6/2d6|1d6/1d6/2d6|Fighter 3|9|N|1 (1-3)|U|275
+|Cave Locust||4|2|60` (20`), Fly 180` (60`)|||||1 bite, 1 bump, or 1 spit|1 bite, 1 bump, or 1 spit|1d2 or 1d4 or special|1d2 or 1d4 or special|Fighter 2|5|N|2-20 (1-10)|Nil|20
+|Centaur||5|4|180` (60`)|||||2 hooves or weapon|2 hooves or weapon|1d6/1d6 or weapon|1d6/1d6 or weapon|Fighter 4|8|N|0 (2-20)|A|75
+|Centipede, Giant||9|\half|60` (20`)|||||1 bite|1 bite|Poison|Poison|Normal Man|7|N|2-8 (1-8)|Nil|5
+|Chimera||4|9**|120` (40`), Fly 180` (60`)|||||2 claws/3 heads + special|2 claws/3 heads + special|1d3/1d3/2d4/2d4/3d4 + special|1d3/1d3/2d4/2d4/3d4 + special|Fighter 9|9|C|1-2 (1-4)|F|2,3
+|Cockatrice||6|5**|90` (30`), Fly 180` (60`)|||||1 beak + special|1 beak + special|1d6 + petrification|1d6 + petrification|Fighter 5|7|N|1-4 (1-8)|D|45
+|Cow||7|3|240` (80`)|||||1 butt|1 butt|1d8|1d8|Fighter 2|5|N|0 (3-30)|Nil|35
+|Crab, Giant||2|3|60` (20`)|||||2 pincers|2 pincers|2d6/2d6|2d6/2d6|Fighter 2|7|N|1-2 (1-6)|Nil|35
+|Crocodile|Crocodile|5|2|90` (30`), Swim 90` (30`)|||||1|1|1d8|1d8|Fighter 1|7|N|0 (1-8)|Nil|20
+|Crocodile, Giant|Crocodile|1|15|90` (30`), Swim 90` (30`)|||||1|1|3d8|3d8|Fighter 8|9|N|0 (1-3)|Nil|1,35
+|Crocodile, Large|Crocodile|3|6|90` (30`), Swim 90` (30`)|||||1|1|1d8|1d8|Fighter 3|7|N|0 (1-4)|Nil|275
+|Cyclops||5|13*|90` (30`)|||||1|1|3d10|3d10|Fighter 13|9|C|1 (1-4)|E + 5,000gp|2,3
+|Deer||7|2|240` (80`)|||||1 butt|1 butt|1d6|1d6|Fighter 2|5|N|0 (3-30)|Nil|20
+|Displacer Beast||4|6*|150` (50`)|||||2 tentacles|2 tentacles|2d4/2d4|2d4/2d4|Fighter 6|8|N|1-4 (1-4)|D|500
+|Djinni, Lesser||5|7 + 1|90` (30`), Fly 240` (80`)|||||1 + special|1 + special|2d8 fists or 2d6 whirlwind|2d8 fists or 2d6 whirlwind|Fighter 14|12|N|1 (1)|Nil|450
+|Doppleganger||5|4*|90` (30`)|||||1|1|1d12|1d12|Fighter 10|10|C|1-6 (1-6)|E|125
+|Dragon Turtle|Dragon|-2|30|30` (10`), Swim 90` (30`)|||||2 claws/1 bite|2 claws/1 bite|1d8/1d8/10d6|1d8/1d8/10d6|Fighter 15|10|C|0 (1)|H|4,75
+|Dragon, Black|Dragon|2|7**|90` (30`), Fly 240` (80`)|||||2 claws/1 bite + breath|2 claws/1 bite + breath|1d4+1/1d4+1/2d10|1d4+1/1d4+1/2d10|Fighter 7|8|C|1-4 (1-4)|H|1,25
+|Dragon, Blue|Dragon|0|9**|90` (30`), Fly 240` (80`)|||||2 claws/1 bite + breath|2 claws/1 bite + breath|1d6+1/1d6+1/3d10|1d6+1/1d6+1/3d10|Fighter 9|9|N|1-4 (1-4)|H|2,3
+|Dragon, Gold|Dragon|-2|11**|90` (30`), Fly 240` (80`)|||||2 claws/1 bite + breath|2 claws/1 bite + breath|2d4/2d4/6d6|2d4/2d4/6d6|Fighter 11|10|L|1-4 (1-4)|H|2,7
+|Dragon, Green|Dragon|1|8**|90` (30`), Fly 240` (80`)|||||2 claws/1 bite + breath|2 claws/1 bite + breath|1d6/1d6/3d8|1d6/1d6/3d8|Fighter 8|9|C|1-4 (1-4)|H|1,75
+|Dragon, Red|Dragon|-1|10**|90` (30`), Fly 240` (80`)|||||2 claws/1 bite + breath|2 claws/1 bite + breath|1d8/1d8/4d8|1d8/1d8/4d8|Fighter 10|10|C|1-4 (1-4)|H|2,3
+|Dragon, Sea|Dragon|1|8**|Fly/Swim 180` (60`)|||||1 bite or 1 spit|1 bite or 1 spit|3d6|3d6|Fighter 8|9|N|0 (1-4)|H|1,75
+|Dragon, White|Dragon|3|6**|90` (30`), Fly 240` (80`)|||||2 claws/1 bite + breath|2 claws/1 bite + breath|1d4/1d4/2d8|1d4/1d4/2d8|Fighter 6|8|N|1-4 (1-4)|H|725
+|Dryad||5|2*|120` (40`)|||||Special|Special|Nil|Nil|Fighter 4|6|N|0 (1-6)|D|25
+|Dwarf||4|1|60` (20`)|||||1 weapon|1 weapon|1d8 or weapon|1d8 or weapon|Dwarf 1|8|L or N|1-6 (5-40)|G|10
+|Efreeti, Lesser||3|10*|90` (30`), Fly 240` (80`)|||||1|1|2d8|2d8|Fighter 15|12|C|1 (1)|Nil|1,6
+|Elemental, Air|Elemental|0|12|Fly 360` (120`)|||||Special|Special|2d8|2d8|Fighter 12|10|N|1 (1)|Nil|1,1
+|Elemental, Air, Greater|Elemental|-2|16|Fly 360` (120`)|||||Special|Special|3d8|3d8|Fighter 16|10|N|1 (1)|Nil|1,35
+|Elemental, Air, Lesser|Elemental|2|8|Fly 360` (120`)|||||Special|Special|1d8|1d8|Fighter 8|10|N|1 (1)|Nil|650
+|Elemental, Earth|Elemental|0|12|60` (20`)|||||Special|Special|2d8|2d8|Fighter 12|10|N|1 (1)|Nil|1,1
+|Elemental, Earth, Greater|Elemental|-2|16|60` (20`)|||||Special|Special|3d8|3d8|Fighter 16|10|N|1 (1)|Nil|1,35
+|Elemental, Earth, Lesser|Elemental|2|8|60` (20`)|||||Special|Special|1d8|1d8|Fighter 8|10|N|1 (1)|Nil|650
+|Elemental, Fire|Elemental|0|12|120` (40`)|||||Special|Special|2d8|2d8|Fighter 12|10|N|1 (1)|Nil|1,1
+|Elemental, Fire, Greater|Elemental|-2|16|120` (40`)|||||Special|Special|3d8|3d8|Fighter 16|10|N|1 (1)|Nil|1,35
+|Elemental, Fire, Lesser|Elemental|2|8|120` (40`)|||||Special|Special|1d8|1d8|Fighter 8|10|N|1 (1)|Nil|650
+|Elemental, Water|Elemental|0|12|60` (20`), Swim 180` (60`)|||||Special|Special|2d8|2d8|Fighter 12|10|N|1 (1)|Nil|1,1
+|Elemental, Water, Greater|Elemental|-2|16|60` (20`), Swim 180` (60`)|||||Special|Special|3d8|3d8|Fighter 16|10|N|1 (1)|Nil|1,35
+|Elemental, Water, Lesser|Elemental|2|8|60` (20`), Swim 180` (60`)|||||Special|Special|1d8|1d8|Fighter 8|10|N|1 (1)|Nil|650
+|Elephant||5|9|120` (40`)|||||2 tusks or 1 trample|2 tusks or 1 trample|2d4/2d4 or 4d8|2d4/2d4 or 4d8|Fighter 5|8|N|0 (1-20)|Special|900
+|Elf||5|1 + 1*|120` (40`)|||||1 weapon|1 weapon|1d8 or weapon|1d8 or weapon|Elf 1|8|N|1-4 (2-24)|E|19
+|Elk||7|4|240` (80`)|||||1 butt|1 butt|1d8|1d8|Fighter 2|5|N|0 (3-30)|Nil|75
+|Ferret, Giant||5|1 + 1|150` (50`)|||||1 bite|1 bite|1d8|1d8|Fighter 1|8|N|1-8 (1-12)|Nil|15
+|Giant Bass|Fish|7|2|Swim 120` (40`)|||||1|1|1d6|1d6|Fighter 1|8|N|0 (1)|Nil|20
+|Giant Catfish|Fish|4|8 + 3*|Swim 90` (30`)|||||1 bite/4 feelers|1 bite/4 feelers|2d8/1d4x4|2d8/1d4x4|Fighter 4|8|N|0 (1-2)|Nil|1,2
+|Giant Piranha|Fish|6|3 + 3|Swim 150` (50`)|||||1 bite|1 bite|1d8|1d8|Fighter 2|7|N|0 (2-8)|Nil|50
+|Giant Rockfish|Fish|7|5 + 5|Swim 180` (60`)|||||4 spines + poison|4 spines + poison|1d4x4 + poison|1d4x4 + poison|Fighter 3|8|N|0 (2-8)|Nil|225
+|Giant Sturgeon|Fish|0|10 + 2*|Swim 180` (60`)|||||1 bite|1 bite|2d10|2d10|Fighter 5|9|N|0 (1)|Nil|1,6
+|Fly, Robber||6|2|90` (30`), Fly 180` (60`)|||||1 bite|1 bite|1d8|1d8|Fighter 1|8|N|1-6 (2-12)|U|20
+|Gargoyle||5|4|90` (30`), Fly 150` (50`)|||||2 claws/1 bite/1 horn|2 claws/1 bite/1 horn|1d3/1d3/1d6/1d4|1d3/1d3/1d6/1d4|Fighter 8|11|C|1-6 (2-8)|C|75
+|Gelatinous Cube||8|4*|60` (20`)|||||1|1|2d8 + special|2d8 + special|Fighter 2|12|N|1 (0)|V|125
+|Ghoul||6|2*|90` (30`)|||||2 claws/1 bite|2 claws/1 bite|1d3/1d3/1d3 + special|1d3/1d3/1d3 + special|Fighter 2|9|C|1-6 (2-16)|B|25
+|Giant, Cloud|Giant|4|12 + 3|120` (40`)|||||1|1|6d6|6d6|Fighter 12|10|N|1-2 (1-3)|E + 5,000gp|1,1
+|Giant, Fire|Giant|4|11 + 2|120` (40`)|||||1|1|5d6|5d6|Fighter 11|9|C|1-2 (1-3)|E + 5,000gp|1,1
+|Giant, Frost|Giant|4|10 + 1|120` (40`)|||||1|1|4d6|4d6|Fighter 10|9|C|1-2 (1-4)|E + 5,000gp|900
+|Giant, Hill|Giant|4|8|120` (40`)|||||1|1|2d8|2d8|Fighter 8|8|C|1-4 (2-8)|E + 5,000gp|650
+|Giant, Stone|Giant|4|9|120` (40`)|||||1|1|3d6|3d6|Fighter 9|9|N|1-2 (1-6)|E + 5,000gp|900
+|Giant, Storm|Giant|2|15|150` (50`)|||||1 + special|1 + special|8d6 + special|8d6 + special|Fighter 15|10|C|1 (1-3)|E + 5,000gp|1,35
+|Gnoll||5|2|90` (30`)|||||1 weapon|1 weapon|2d4 or weapon+1|2d4 or weapon+1|Fighter 2|8|C|1-6 (3-18)|D|20
+|Gnome||5|1|60` (20`)|||||1 weapon|1 weapon|1d6 or weapon|1d6 or weapon|Dwarf 1|8|L or N|1-8 (5-40)|C|10
+|Goat, Young||7|1|240` (80`)|||||1 butt|1 butt|1d4|1d4|Fighter 1|5|N|0 (3-30)|Nil|10
+|Goblin||6|1 -1|60` (20`)|||||1 weapon|1 weapon|1d6 or weapon|1d6 or weapon|Normal Man|7|C|2-8 (6-60)|R (C)|5
+|Golem, Amber|Golem|6|10**|180` (60`)|||||2 claws/1 bite|2 claws/1 bite|2d6/2d6/2d10|2d6/2d6/2d10|Fighter 5|12|N|1 (1)|Nil|2,3
+|Golem, Bone|Golem|2|8|120` (40`)|||||4 weapons|4 weapons|By weapons|By weapons|Fighter 4|12|N|1 (1)|Nil|650
+|Golem, Bronze|Golem|0|20**|240` (80`)|||||1 fist + special|1 fist + special|3d10 + special|3d10 + special|Fighter 10|12|N|1 (1)|Nil|4,3
+|Golem, Wood|Golem|7|2 + 2|120` (40`)|||||1 fist|1 fist|1d8|1d8|Fighter 1|12|N|1 (1)|Nil|25
+|Gorgon||2|8*|120` (40`)|||||1 gore or breath|1 gore or breath|2d6 or petrification|2d6 or petrification|Fighter 8|8|C|1-2 (1-4)|E|1,2
+|Gray Ooze||8|3*|10` (3`)|||||1|1|2d8|2d8|Fighter 2|12|N|1 (1)|Nil|50
+|Green Slime||Always Hit|2*|3` (1`)|||||1|1|Special|Special|Fighter 1|12|N|1 (0)|Nil|25
+|Griffon||5|7|120` (40`), Fly 360` (120`)|||||2 claws/1 bite|2 claws/1 bite|1d4/1d4/2d8|1d4/1d4/2d8|Fighter 4|8|N|0 (2-16)|E|450
+|Halfling||7|1 -1|90` (30`)|||||1 weapon|1 weapon|1d6 or weapon|1d6 or weapon|Halfling 1|7|L|3-18 (5-40)|V (B)|5
+|Harpy||7|3*|60` (20`), Fly 150` (50`)|||||2 claws/1 weapon + special|2 claws/1 weapon + special|1d4/1d4/1d6 + special|1d4/1d4/1d6 + special|Fighter 3|7|C|1-6 (2-8)|C|50
+|Hawk|Hawk|8|\half|480` (160`)|||||1|1|1d2|1d2|Normal Man|7|N|0 (1-6)|Nil|5
+|Hawk, Giant|Hawk|6|3 + 3|450` (150`)|||||1|1|1d6|1d6|Fighter 2|8|N|0 (1-3)|Nil|50
+|Hellhound||4|3 to 7*|120` (40`)|||||bite or breath|bite or breath|1d6 or special|1d6 or special|Fighter 3 to 7|9|C|2-8 (2-8)|C|125
+|Hippogriff||5|3 + 1|180` (60`), Fly 360` (120`)|||||2 claws/1 bite|2 claws/1 bite|1d6/1d6/1d10|1d6/1d6/1d10|Fighter 2|8|N|0 (2-16)|Nil|50
+|Hobgoblin||6|1 + 1|90` (30`)|||||1 weapon|1 weapon|1d8 or weapon|1d8 or weapon|Fighter 1|8|C|1-6 (4-24)|D|15
+|Horse, Draft|Horse|7|3|90` (30`)|||||Nil|Nil|Nil|Nil|Fighter 2|6|N|0 (domestic only)|Nil|35
+|Horse, Riding|Horse|7|2|240` (80`)|||||2 hooves|2 hooves|1d4/1d4|1d4/1d4|Fighter 1|7|N|0 (10-100)|Nil|20
+|Horse, War|Horse|7|3|120` (40`)|||||2 hooves|2 hooves|1d6/1d6|1d6/1d6|Fighter 2|9|N|0 (domestic only)|Nil|35
+|Hydra||5|5 to 12|120` (40`)|||||5 to 12|5 to 12|1d10 per head|1d10 per head|Fighter 5 to 12|9|N|1 (1)|B|650
+|Hydra, Sea||5|5 to 12|120` (40`)|||||5 to 12|5 to 12|1d10 per head|1d10 per head|Fighter 5 to 12|9|N|1 (1)|B|650
+|Insect Swarm||7|2, 3, or 4|30` (10`), Fly 60` (20`)|||||1 swarm|1 swarm|2 points|2 points|Normal Man|11|N|1 swarm (1-3 swarms)|Nil|80
+|Invisible Stalker||3|8*|120` (40`)|||||1|1|4d4|4d4|Fighter 8|12|N|1 (1)|Nil|1,2
+|Kobold||7|\half|60` (20`)|||||1 weapon|1 weapon|1d4 or weapon-1|1d4 or weapon-1|Normal Man|6|C|4-16 (6-60)|P (J)|5
+|Leech, Giant||7|6|90` (30`)|||||blood suck|blood suck|1d6|1d6|Fighter 3|10|N|0 (1-4)|Nil|275
+|Lizard Man||5|2 + 1|60` (20`), Swim 120` (40`)|||||1 weapon|1 weapon|1d6+1 or weapon+1|1d6+1 or weapon+1|Fighter 2|12|N|2-8 (6-36)|D|25
+|Giant Draco|Lizard|5|4 + 2|120` (40`), Fly 210` (70`)|||||1 bite|1 bite|1d10|1d10|Fighter 3|7|N|1-4 (1-8)|U|125
+|Giant Gecko|Lizard|5|3 + 1|120` (40`)|||||1 bite|1 bite|1d8|1d8|Fighter 2|7|N|1-6 (1-10)|U|50
+|Giant Horned Chameleon|Lizard|2|5*|120` (40`)|||||1 bite/1 horn|1 bite/1 horn|2d4/1d6|2d4/1d6|Fighter 3|7|N|1-3 (1-6)|U|35
+|Giant Tuatara|Lizard|4|6|90` (30`)|||||2 claws/1 bite|2 claws/1 bite|1d4/1d4/2d6|1d4/1d4/2d6|Fighter 4|6|N|1-2 (1-4)|V|275
+|Lycanthrope, Devil Swine|Lycanthrope|3 (9 as human)|9*|180` (60`), Human 120` (40`)|||||1 gore or weapon|1 gore or weapon|2d6 or weapon|2d6 or weapon|Fighter 9|10|C|1-3 (1-4)|C|1,6
+|Werebear|Lycanthrope|2 (9 as human)|6*|120` (40`)|||||2 claws/1 bite|2 claws/1 bite|2d4/2d4/2d8|2d4/2d4/2d8|Fighter 6|10|N|1-4 (1-4)|C|500
+|Wereboar|Lycanthrope|4 (9 as human)|4 + 1*|150` (50`)|||||1 tusk-bite|1 tusk-bite|2d6|2d6|Fighter 4|9|N|1-4 (2-8)|C|200
+|Wererat|Lycanthrope|7 (9 as human)|3*|120` (40`)|||||1 bite or weapon|1 bite or weapon|1d4 or weapon|1d4 or weapon|Fighter 3|8|C|1-8 (2-16)|C|50
+|Weretiger|Lycanthrope|3 (9 as human)|5*|150` (50`)|||||2 claws/1 bite|2 claws/1 bite|1d6/1d6/2d6|1d6/1d6/2d6|Fighter 5|9|N|1-4 (1-4)|C|35
+|Werewolf|Lycanthrope|5 (9 as human)|4*|180` (60`)|||||1 bite|1 bite|2d4|2d4|Fighter 4|8|C|1-6 (2-12)|C|125
+|Acolyte|Man|2|1|60` (20`)|||||1 mace|1 mace|1d6|1d6|Cleric 1|7|Any|1-8 (1-20)|U|10
+|Bandit|Man|6|1|120` (40`)|||||1 weapon|1 weapon|1d6 or weapon|1d6 or weapon|Thief 1|8|C or N|1-8 (3-30)|U (A)|10
+|Berserker|Man|7|1 + 1*|120` (40`)|||||1 weapon|1 weapon|1d8 or weapon|1d8 or weapon|Fighter 1|Nil|N|1-6 (3-30)|P (B)|19
+|Brigand|Man|Varies|1|120` (40`)|||||1 weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter 1|8|C|0 (10-40)|A|10
+|Buccaneer|Man|Varies|1|120` (40`)|||||1 weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter 1|6 (7)|N or C|0 (special)|A|10
+|Dervish|Man|Varies|1|120` (40`)|||||1 weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter 1|10|L|0 (20-70)|A|10
+|Human|Man|9|\half|120` (40`)|||||1 weapon|1 weapon|Weapon|Weapon|Normal Man|6|Any|1-4 (1-20)|U|5
+|Medium|Man|9|1**|120` (40`)|||||1 dagger or spell|1 dagger or spell|1d4 or spell|1d4 or spell|Magic-User 1|7|Any|1-4 (1-12)|V|16
+|Merchant|Man|5|1|90` (30`)|||||1 weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter 1|Varies|N|0 (1-20)|A|10
+|Neanderthal|Man|8|2|120` (40`)|||||1 weapon|1 weapon|2d4 or weapon+1|2d4 or weapon+1|Fighter 2|7|L|1-10 (10-40)|C|20
+|Noble|Man|2|3|60` (20`)|||||1 weapon|1 weapon|1d8 or weapon|1d8 or weapon|Varies|8|Any|2-12 (2-12)|Vx3|35
+|Nomad|Man|Varies|1|120` (40`)|||||1 weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter 1|8|N|0 (10-40)|A|10
+|Pirate|Man|Varies|1|120` (40`)|||||1 weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter 1|6 (7)|N or C|0 (special)|A|10
+|Trader|Man|6|1|120` (40`)|||||1 weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter 1|7|Any|1-8 (3-18)|U, V|10
+|Veteran|Man|2|1 to 3|60` (20`)|||||1 weapon|1 weapon|1d8 or weapon|1d8 or weapon|Fighter 1 to 3|9 (Varies)|Any|2-8 (2-12)|V|20
+|Manticore||4|6 + 1|120` (40`), Fly 180` (60`)|||||2 claws/1 bite or spikes|2 claws/1 bite or spikes|1d4/1d4/2d4 or special|1d4/1d4/2d4 or special|Fighter 6|9|C|1-2 (1-4)|D|350
+|Mastadon||3|15|120` (40`)|||||2 tusks or 1 trample|2 tusks or 1 trample|2d6/2d6 or 4d8|2d6/2d6 or 4d8|Fighter 8|8|N|0 (2-16)|Special|1,35
+|Medusa||8|4**|90` (30`)|||||1 snakebite + special|1 snakebite + special|1d6 + poison|1d6 + poison|Fighter 4|8|C|1-3 (1-4)|F|175
+|Mermen||6|1|120` (40`)|||||1 weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter 1|8|N|0 (1-20)|A|10
+|Minotaur||6|6|120` (40`)|||||1 gore/1 bite or weapon|1 gore/1 bite or weapon|1d6/1d6 or weapon+2|1d6/1d6 or weapon+2|Fighter 6|12|C|1-6 (1-8)|C|275
+|Moose||7|4|240` (80`)|||||1 butt|1 butt|1d8|1d8|Fighter 2|5|N|0 (3-30)|Nil|75
+|Mule||7|2|120` (40`)|||||1 kick or 1 bite|1 kick or 1 bite|1d4 or 1d3|1d4 or 1d3|Normal Man|8|N|1-8 (2-12)|Nil|20
+|Mummy||3|5 + 1*|60` (20`)|||||1 touch + disease|1 touch + disease|1d12 + disease|1d12 + disease|Fighter 5|12|C|1-4 (1-12)|D|400
+|Nixie||7|1|120` (40`)|||||1|1|1d4|1d4|Elf 1|6|N|0 (2-40)|B|10
+|Ochre Jelly||8|5*|30` (10`)|||||1|1|2d6|2d6|Fighter 3|12|N|1 (0)|Nil|35
+|Octopus, Giant||7|8|90` (30`)|||||8 tentacles/1 bite|8 tentacles/1 bite|1d3x8/1d6|1d3x8/1d6|Fighter 4|7|N|0 (1-2)|Nil|650
+|Ogre||5|4 + 1|90` (30`)|||||1 club|1 club|1d10|1d10|Fighter 4|10|C|1-6 (2-12)|C + 1,000gp|125
+|Orc||6|1|120` (40`)|||||1 weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter 1|6|C|2-8 (10-60)|D|10
+|Owl Bear||5|5|120` (40`)|||||2 claws/1 bite|2 claws/1 bite|1d8/1d8/1d8|1d8/1d8/1d8|Fighter 3|9|N|1-4 (1-4)|C|175
+|Oxen||7|3|240` (80`)|||||1 butt|1 butt|1d8|1d8|Fighter 2|5|N|0 (3-30)|Nil|35
+|Pegasus||6|2 + 2|240` (80`), Fly 480` (160`)|||||2 hooves|2 hooves|1d6/1d6|1d6/1d6|Fighter 2|8|L|0 (1-12)|Nil|25
+|Pixie||3|1*|90` (30`), Fly 180` (60`)|||||1 dagger|1 dagger|1d4|1d4|Elf 1|7|N|2-8 (10-40)|R, S|13
+|Pteranodon||6|5|Fly 240` (120`)|||||1|1|1d12|1d12|Fighter 3|8|N|0 (1-4)|V|175
+|Pterodactyl||7|1|Fly 180` (60`)|||||1|1|1d3|1d3|Fighter 1|7|N|0 (2-8)|Nil|10
+|Purple Worm||6|15*|60` (20`)|||||1 bite/1 sting|1 bite/1 sting|2d8/1d8 + poison|2d8/1d8 + poison|Fighter 8|10|N|1-2 (1-4)|D|2,3
+|Rat|Rat|9|1 hp|60` (20`), Swim 30` (10`)|||||1 bite per pack|1 bite per pack|1d6 + disease|1d6 + disease|Normal Man|5|N|5-50 (2-20)|L|5
+|Rat, Giant|Rat|7|\half|120` (40`), Swim 60` (20`)|||||1 bite|1 bite|1d3 + disease|1d3 + disease|Fighter 1|8|N|3-18 (3-30)|C|5
+|Rhagodessa||5|4 + 2|150` (50`)|||||1 leg/1 bite|1 leg/1 bite|0/2d8|0/2d8|Fighter 2|9|N|1-4 (1-6)|U|125
+|Rhinoceros|Rhinoceros|5|6|120` (40`)|||||butt or trample|butt or trample|2d4 or 2d8|2d4 or 2d8|Fighter 3|6|N|0 (1-12)|Nil|275
+|Rhinoceros, Woolly|Rhinoceros|4|8|120` (40`)|||||butt or trample|butt or trample|2d6 or 2d12|2d6 or 2d12|Fighter 4|6|N|0 (1-8)|Nil|650
+|Roc, Giant|Roc|0|36|60` (20`), Fly 480` (160`)|||||2 claws/1 bite|2 claws/1 bite|3d6/3d6/8d6|3d6/3d6/8d6|Fighter 15|10|L|0 (1)|I|6,25
+|Roc, Large|Roc|2|12|60` (20`), Fly 480` (160`)|||||2 claws/1 bite|2 claws/1 bite|1d8/1d8/2d10|1d8/1d8/2d10|Fighter 12|9|L|0 (1-8)|I|1,1
+|Roc, Small|Roc|4|6|60` (20`), Fly 480` (160`)|||||2 claws/1 bite|2 claws/1 bite|1d4+1/1d4+1/2d6|1d4+1/1d4+1/2d6|Fighter 3|8|L|0 (1-12)|I|275
+|Rust Monster||2|5|120` (40`)|||||1|1|Special|Special|Fighter 3|7|N|1-4 (1-4)|Nil|175
+|Salamander, Flame||2|8*|120` (40`)|||||2 claws/1 bite|2 claws/1 bite|1d4/1d4/1d8|1d4/1d4/1d8|Fighter 8|8|N|2-5 (2-8)|F|1,2
+|Salamander, Frost||3|12*|120` (40`)|||||4 claws/1 bite|4 claws/1 bite|1d6x4/2d6|1d6x4/2d6|Fighter 12|9|C|1-3 (1-3)|E|1,9
+|Scorpion, Giant||2|4*|150` (50`)|||||2 claws/1 sting|2 claws/1 sting|1d10/1d10/1d4 + poison|1d10/1d10/1d4 + poison|Fighter 2|11|C|1-6 (1-6)|V|125
+|Lesser Sea Serpent||5|6|150` (50`)|||||1 bite or squeeze|1 bite or squeeze|2d6|2d6|Fighter 3|8|N|0 (2-12)|Nil|275
+|Shadow||7|2 + 2*|90` (30`)|||||1|1|1d4 + special|1d4 + special|Fighter 2|12|C|1-8 (1-12)|F|35
+|Shark, Bull|Shark|4|2|180` (60`)|||||1 bite|1 bite|2d4|2d4|Fighter 1|7|N|0 (3-18)|Nil|20
+|Shark, Great White|Shark|4|8|180` (60`)|||||1 bite|1 bite|2d10|2d10|Fighter 4|7|N|0 (1-4)|Nil|650
+|Shark, Mako|Shark|4|4|180` (60`)|||||1 bite|1 bite|2d6|2d6|Fighter 2|7|N|0 (2-12)|Nil|75
+|Shrew, Giant||4|1|180` (60`)|||||2 bites|2 bites|1d6/1d6|1d6/1d6|Fighter 1|10|N|1-4 (1-8)|Nil|10
+|Shrieker||7|3|9` (3`)|||||||Nil|Nil|Fighter 1|12|N|1-8 (0)|Nil|35
+|Skeleton||7|1|60` (20`)|||||1|1|1d6 or weapon|1d6 or weapon|Fighter 1|12|C|3-12 (3-30)|Nil|10
+|Giant Rattler|Snake|5|4*|120` (40`)|||||1 bite x 2|1 bite x 2|1d4/1d4 + poison|1d4/1d4 + poison|Fighter 2|8|N|1-4 (1-4)|U|125
+|Pit Viper|Snake|6|2*|90` (30`)|||||1 bite|1 bite|1d4 + poison|1d4 + poison|Fighter 1|7|N|1-8 (1-8)|Nil|25
+|Rock Python|Snake|6|5*|90` (30`)|||||1 bite/1 squeeze|1 bite/1 squeeze|1d4/2d4|1d4/2d4|Fighter 3|8|N|1-3 (1-3)|U|35
+|Sea Snake|Snake|6|3*|90` (30`)|||||1 bite|1 bite|1 + poison|1 + poison|Fighter 2|7|N|1-8 (1-8)|Nil|50
+|Spitting Cobra|Snake|7|1*|90` (30`)|||||1 bite or spit|1 bite or spit|1d3 + poison|1d3 + poison|Fighter 1|7|N|1-6 (1-6)|Nil|13
+|Spectre||2|6**|150` (50`), Fly 300` (100`)|||||1 touch + special|1 touch + special|1d8 + 2 level drain|1d8 + 2 level drain|Fighter 6|11|C|1-4 (1-8)|E|725
+|Spider, Giant Black Widow|Spider|6|3*|60` (20`), Web 120` (40`)|||||1 bite|1 bite|2d6 + poison|2d6 + poison|Fighter 2|8|N|1-3 (1-3)|U|50
+|Spider, Giant Crab|Spider|7|2*|120` (40`)|||||1 bite|1 bite|1d8 + poison|1d8 + poison|Fighter 1|7|N|1-4 (1-4)|U|25
+|Giant Tarantella|Spider|5|4*|120` (40`)|||||1 bite|1 bite|1d8 + poison|1d8 + poison|Fighter 2|8|N|1-3 (1-3)|U|125
+|Sprite||5|\half*|60` (20`), Fly 180` (60`)|||||1 spell|1 spell|Special|Special|Elf 1|7|N|3-18 (5-40)|S|6
+|Squid, Giant||7|6|120` (40`)|||||8 tentacles/1 beak|8 tentacles/1 beak|1d4 tentacles/1d10 beak|1d4 tentacles/1d10 beak|Fighter 3|7 (9)|N|0 (1-4)|V|275
+|Statue, Living Crystal|Living Statue|4|3|90` (30`)|||||2 fists|2 fists|1d6/1d6|1d6/1d6|Fighter 3|11|L|1-6 (1-6)|Nil|35
+|Statue, Living Iron|Living Statue|2|4|30` (10`)|||||2 fists|2 fists|1d8/1d8 + special|1d8/1d8 + special|Fighter 4|11|N|1-4 (1-4)|Nil|75
+|Statue, Living Rock|Living Statue|4|5**|60` (20`)|||||2 magma|2 magma|2d6/2d6|2d6/2d6|Fighter 5|11|C|1-3 (1-3)|Nil|45
+|Stegosaurus||3|11|60` (20`)|||||Tail or trample|Tail or trample|2d8 or 2d8|2d8 or 2d8|Fighter 6|7|N|0 (1-4)|Nil|1,1
+|Stirge||7|1*|30` (10`), Fly 180` (60`)|||||1|1|1d3|1d3|Fighter 2|9|N|1-10 (3-36)|L|13
+|Termite, Freshwater|Termite|6|2 + 1|120` (40`)|||||Spray or ink or bite|Spray or ink or bite|Bite 1d3 or special|Bite 1d3 or special|Fighter 2|8|N|0 (1-3)|Nil|25
+|Termite, Sea|Termite|5|4|180` (60`)|||||Spray or ink or bite|Spray or ink or bite|Bite 1d3 or special|Bite 1d3 or special|Fighter 3|11|N|0 (2-7)|Nil|75
+|Termite, Swamp|Termite|4|1 + 1|90` (30`)|||||Spray or ink or bite|Spray or ink or bite|Bite 1d3 or special|Bite 1d3 or special|Fighter 1|10|N|0 (1-4)|Nil|15
+|Thoul||6|3**|120` (40`)|||||2 claws or weapon|2 claws or weapon|1d3/1d3 or weapon|1d3/1d3 or weapon|Fighter 3|10|C|1-6 (1-10)|C|65
+|Titanothere||5|12|120` (40`)|||||butt or trample|butt or trample|2d6/3d8|2d6/3d8|Fighter 6|7|N|0 (1-6)|Nil|1,1
+|Toad, Giant||7|2 + 2|90` (30`)|||||1 bite|1 bite|1d4+1|1d4+1|Fighter 1|6|N|1-4 (1-4)|Nil|25
+|Treant||2|8|60` (20`)|||||2 blows|2 blows|2d6/2d6|2d6/2d6|Fighter 8|9|L|0 (1-8)|C|650
+|Triceratops||2|11|90` (30`)|||||gore or trample|gore or trample|3d6/3d6|3d6/3d6|Fighter 6|8|N|0 (1-4)|Nil|1,1
+|Troglodyte||5|2*|120` (40`)|||||2 claws/1 bite|2 claws/1 bite|1d4/1d4/1d4|1d4/1d4/1d4|Fighter 2|9|C|1-8 (5-40)|A|25
+|Troll||4|6 + 3|120` (40`)|||||2 claws/1 bite|2 claws/1 bite|1d6/1d6/1d10|1d6/1d6/1d10|Fighter 6|10 (8)|C|1-8 (1-8)|D|350
+|Tyrannosaurus Rex||3|20|120` (40`)|||||1 bite|1 bite|6d6|6d6|Fighter 10|11|N|0 (1)|Vx3|2
+|Unicorn||2|4*|240` (80`)|||||2 hooves/1 horn|2 hooves/1 horn|1d8/1d8/1d8|1d8/1d8/1d8|Fighter 8|7|L|1-6 (1-8)|Nil|125
+|Vampire||2|7 to 9**|120` (40`), Fly 180` (60`)|||||1 touch + special|1 touch + special|1d10 + energy drain|1d10 + energy drain|Fighter 7 to 9|11|C|1-4 (1-6)|F|1,75
+|Weasel, Giant||7|4 + 4|150` (50`)|||||1 bite + special|1 bite + special|2d4|2d4|Fighter 3|8|N|1-4 (1-6)|V|125
+|Whale, Killer|Whale|6|6|240` (80`)|||||1 bite|1 bite|1d20|1d20|Fighter 3|10|N|0 (1-6)|V|275
+|Narwhal|Whale|7|12|180` (60`)|||||1 horn/1 bite|1 horn/1 bite|2d6/1d8|2d6/1d8|Fighter 12|8|L|0 (1-4)|Special|1,1
+|Whale, Sperm|Whale|6|36|180` (60`)|||||1 bite|1 bite|3d20|3d20|Fighter 15|7|N|0 (1-3)|V|6,25
+|Wight||5|3*|90` (30`)|||||1|1|Energy Drain|Energy Drain|Fighter 3|12|C|1-6 (1-8)|B|50
+|Wolf|Wolf|7|2 + 2|180` (60`)|||||1 bite|1 bite|1d6|1d6|Fighter 1|8|N|2-12 (3-18)|Nil|25
+|Wolf, Dire|Wolf|6|4 + 1|150` (50`)|||||1 bite|1 bite|2d4|2d4|Fighter 2|8|N|1-4 (2-8)|Nil|125
+|Wraith||3|4**|120` (40`)|||||1 touch + special|1 touch + special|1d6 + energy drain|1d6 + energy drain|Fighter 4|12|C|1-4 (1-6)|E|175
+|Wyvern||3|7*|90` (30`), Fly 240` (80`)|||||1 bite/1 sting|1 bite/1 sting|2d8/1d6 + poison|2d8/1d6 + poison|Fighter 4|9|C|1-2 (1-6)|E|850
+|Yellow Mold||Always Hit|2|Nil|||||Spores|Spores|1d6 + special|1d6 + special|Fighter 2|Nil|N|1-8 (1-4)|Nil|20
+|Zombie||8|2|120` (40`)|||||1 weapon|1 weapon|1d8 or weapon|1d8 or weapon|Fighter 1|12|C|2-8 (4-24)|Nil|20

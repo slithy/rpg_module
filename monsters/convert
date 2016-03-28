@@ -1,0 +1,33 @@
+#!/bin/sh
+
+sed "s/\`/\'/g" monster_list_orig.csv |\
+awk 'BEGIN {FS="|"}
+{ NAME=$2
+  LABEL=tolower(NAME)
+  numf=split(NAME,n,", *")
+  NAME=n[numf]
+  for(i=numf-1; i > 0; --i) { NAME=NAME " " n[i] }
+  gsub(/,* /,"_",LABEL)
+  printf("%s|%s", LABEL, NAME)
+  for(i=3; i <= NF; ++i) { printf("|%s", $i) }
+  printf("\n")
+}' |\
+sed 's/ *(/|/g' |\
+sed 's/)|/|/g' |\
+sed 's/), Fly /|Fly|/' |\
+sed 's/), Swim /|Swim|/' |\
+sed 's/), Web /|Web|/' |\
+sed 's/ *+ */+/g' |\
+sed 's/1 -1/1M1/g' |\
+sed 's/-/--/g' |\
+sed 's/|--/|-/g' |\
+sed 's/1M1/1-1/g' |\
+sed 's/Fighter /Fighter: /' |\
+sed 's/Cleric /Cleric: /' |\
+sed 's/Magic-User /Magic-User: /' |\
+sed 's/Thief /Thief: /' |\
+sed 's/Dwarf /Dwarf: /' |\
+sed 's/Elf /Elf: /' |\
+sed 's/Halfling /Halfling: /' |\
+sed 's/Always Hit/---/' |\
+less >monster_list.csv
