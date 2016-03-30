@@ -9,6 +9,7 @@
 % This work consists of the following files:
 %    module.cls
 %    basic_stats.sty
+%    basic_stats.aux
 %    module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
@@ -49,7 +50,7 @@
 % 3. Advanced stat block options
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{module}[2016/03/21 Adventure Module document class]
+\ProvidesClass{module}[2016/03/30 Adventure Module document class]
 
 
 
@@ -264,7 +265,7 @@
 
 \newcommand{\monster}[4][default]{
    \pgfkeys{/#2/SingleName/.initial = {#3}}
-      \ifnum\pdfstrcmp{#1}{default}=\z@
+   \ifnum\pdfstrcmp{#1}{default}=\z@
       \IfEndWith{#3}{y}
       {\pgfkeys{/#2/PluralName/.initial = \StrGobbleRight{#3}{1}ies}}           % Plural names ending in -y change to -ies
       {

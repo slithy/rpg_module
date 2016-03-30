@@ -9,6 +9,7 @@
 % This work consists of the following files:
 %    module.cls
 %    basic_stats.sty
+%    basic_stats.aux
 %    module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
@@ -21,14 +22,6 @@
 % This work has the LPPL maintenance status `author-maintained'.
 % 
 % The Author and Maintainer of this work is Michael C. Davis
-%
-%
-% OPEN GAME LICENSE
-%
-% The monster stats in this file are copyright 2000, Wizards of the Coast, Inc.
-% and are distributed with permission under the terms of the Open Game License v 1.0.
-% See the file module.cls or the compiled file module.pdf for the full text of the
-% license.
 %
 %
 % LICENSE FOR COMPILED WORKS
@@ -97,44 +90,54 @@
 
 \newcommand{\setstatbasic}[2]{%
    \ifcase\thecurrentstat
-      \pgfkeys{/#1/AC/.initial       = \ac@module{#2}}
+      \pgfkeys{/#1/Type/.initial        = {#2}}
    \or
-      \pgfkeys{/#1/HD/.initial       = {#2}}
-      \pgfkeys{/#1/HDlong/.initial   = \hd@module{#2}}
+      \pgfkeys{/#1/AC/.initial          = \ac@module{#2}}
    \or
-      \pgfkeys{/#1/MVturn/.initial   = {#2}}
+      \pgfkeys{/#1/HD/.initial          = {#2}}
+      \pgfkeys{/#1/HDlong/.initial      = \hd@module{#2}}
    \or
-      \pgfkeys{/#1/MVrd/.initial     = {#2}}
+      \pgfkeys{/#1/MVturn/.initial      = {#2}}
    \or
-      \pgfkeys{/#1/Attshort/.initial = {#2}}
+      \pgfkeys{/#1/MVrd/.initial        = {#2}}
    \or
-      \pgfkeys{/#1/Attlong/.initial  = {#2}}
+      \pgfkeys{/#1/MVspec/.initial      = {#2}}
    \or
-      \pgfkeys{/#1/Dmg/.initial      = {#2}}
+      \pgfkeys{/#1/MVspec_turn/.initial = {#2}}
    \or
-      \pgfkeys{/#1/Dmglong/.initial  = {#2}}
+      \pgfkeys{/#1/MVspec_rd/.initial   = {#2}}
    \or
-      \pgfkeys{/#1/SV/.initial       = \sv@module{#2}}
-      \pgfkeys{/#1/SVlong/.initial   = {#2}}
+      \pgfkeys{/#1/Attshort/.initial    = {#2}}
    \or
-      \pgfkeys{/#1/ML/.initial       = \ml@module{#2}}
-      \pgfkeys{/#1/MLlong/.initial   = {#2}}
+      \pgfkeys{/#1/Attlong/.initial     = {#2}}
    \or
-      \pgfkeys{/#1/AL/.initial       = \al@module{#2}}
-      \pgfkeys{/#1/ALlong/.initial   = {#2}}
+      \pgfkeys{/#1/Dmg/.initial         = {#2}}
    \or
-      \pgfkeys{/#1/NoAppear/.initial = {#2}}
+      \pgfkeys{/#1/Dmglong/.initial     = {#2}}
    \or
-      \pgfkeys{/#1/NoInLair/.initial = {#2}}
+      \pgfkeys{/#1/SV/.initial          = \sv@module{#2}}
+      \pgfkeys{/#1/SVlong/.initial      = {#2}}
    \or
-      \pgfkeys{/#1/TT/.initial       = {#2}}
+      \pgfkeys{/#1/ML/.initial          = \ml@module{#2}}
+      \pgfkeys{/#1/MLlong/.initial      = {#2}}
+   \or
+      \pgfkeys{/#1/AL/.initial          = \al@module{#2}}
+      \pgfkeys{/#1/ALlong/.initial      = {#2}}
+   \or
+      \pgfkeys{/#1/NoAppear/.initial    = {#2}}
+   \or
+      \pgfkeys{/#1/NoInLair/.initial    = {#2}}
+   \or
+      \pgfkeys{/#1/TT/.initial          = {#2}}
+   \or
+      \pgfkeys{/#1/XP/.initial          = {#2}}
    \fi
 }
 
 % Define monsters using \setstatbasic
 
 \def\scan@stats#1|{%
-   \ifx#1\relax
+   \ifnum\pdfstrcmp{#1}{\relax}=\z@
       \let\next\relax
    \else
       \setstatbasic{\currentmonster}{#1}\let\next\scan@stats
@@ -264,4 +267,4 @@ Damage:       & \pgfkeys{/#1/Dmglong}                     & Alignment:     & \pg
 % Load pre-defined monster stats
 %
 
-\input{basic_stats.lst}
+\input{basic_stats.def}

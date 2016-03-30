@@ -6,3 +6,5 @@ ls-R
 *.toc
 *.cut
 reference
+test.tex
+basic_stats.def
