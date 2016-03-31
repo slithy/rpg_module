@@ -38,7 +38,6 @@
 % Redefine which environment will be displayed
 \includecomment{ifbasicstats}
 
-
 % Armour class macro
 %
 % The default for Basic stats is to use the same descending AC that is used in
@@ -169,7 +168,8 @@
    D~\pgfkeys{/#2/Dmg},
    Save~\pgfkeys{/#2/SV},
    ML~\pgfkeys{/#2/ML},
-   AL~\pgfkeys{/#2/AL}%
+   AL~\pgfkeys{/#2/AL},
+   XP~\pgfkeys{/#2/XP}%
 }
 
 % Display monster stats in a stat block
@@ -241,9 +241,8 @@
 
 % New Monster environment
 
-
 \newenvironment{newmonster}[1]{%
-\noindent{\Large\filcenter\bfseries \pgfkeys{/#1/SingleName}\phantomsection\addcontentsline{toc}{section}{\pgfkeysvalueof{/#1/SingleName}}}\\[\topskip]
+\noindent{\Large\filcenter\bfseries \pgfkeys{/#1/LongName}\phantomsection\addcontentsline{toc}{section}{\pgfkeysvalueof{/#1/LongName}}}\\[\topskip]
 \begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}Xl>{\raggedright\arraybackslash}X@{}}
 \ArmourClass: & \pgfkeys{/#1/AC}                          & No. Appearing: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})\\
 Hit Dice:     & \pgfkeys{/#1/HDlong}                      & Save As:       & \pgfkeys{/#1/SVlong}\\

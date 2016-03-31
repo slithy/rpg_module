@@ -279,6 +279,15 @@
    \setcounter{currentstat}{0}
    \def\currentmonster{#2}
    \scan@stats#4|\relax|
+   \pgfkeys{/#2/LongName/.initial = {%
+      \ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/Type}}{}=\z@
+         #3
+      \else\ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/Type}}{#3}=\z@
+         #3
+      \else
+         \pgfkeysvalueof{/#2/Type}, #3
+      \fi\fi
+   }}
 }
 
 % Load system-specific stat blocks
