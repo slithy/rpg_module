@@ -13,6 +13,9 @@ all: $(TARGET)
 show: $(TARGET)
 	evince $(TARGET)
 
+monsters: monster_manual.pdf
+	evince monster_manual.pdf
+
 %.pdf: %.tex $(CLASS) $(STYLE_FILE) $(STAT_FILE) %.toc
 	pdflatex $<
 
