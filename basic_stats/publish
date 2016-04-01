@@ -57,7 +57,7 @@ END_OF_HEADER
 awk 'BEGIN{ FS="|"; }
 {
    if(NR == 1) next;
-   printf("\\monster{%s}{%s}{%s", $1, $2, $3);
-   for(i = 4; i <= NF; ++i) printf("|%s", $i);
+   printf("\\monster%s{%s}{%s}{%s", $3, $1, $2, $4);
+   for(i = 5; i <= NF; ++i) printf("|%s", $i);
    printf("}\n");
 }' ${INPUT_FILE}
