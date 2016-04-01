@@ -212,8 +212,11 @@
    }{%
       \ifnum\pdfstrcmp{#3}{1}=\z@\pgfkeys{/#2/SingleName}\else\pgfkeys{/#2/PluralName}\fi & #3 &
    }
-   \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD} & \pgfkeys{/#2/MVrd} & \pgfkeys{/#2/Attshort} &
-   \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML}   & \pgfkeys{/#2/AL}\\
+   \pgfkeys{/#2/AC} & \pgfkeys{/#2/HD} & \pgfkeys{/#2/MVrd}%
+\ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/MVspec}}{}=\z@\else
+   /\pgfkeys{/#2/MVspec_rd}%
+\fi
+   & \pgfkeys{/#2/Attshort} & \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \pgfkeys{/#2/AL}\\
 }
 
 
@@ -236,8 +239,11 @@
    \else
       \pgfkeys{/#2/PluralName} &
    \fi
-   #3 & \pgfkeys{/#2/AC}  & \pgfkeys{/#2/HD} & #4               & \pgfkeys{/#2/MVrd} & \pgfkeys{/#2/Attshort} &
-        \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \pgfkeys{/#2/AL}\\
+   #3 & \pgfkeys{/#2/AC} & \pgfkeys{/#2/HD} & #4 & \pgfkeys{/#2/MVrd}%
+\ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/MVspec}}{}=\z@\else
+   /\pgfkeys{/#2/MVspec_rd}%
+\fi
+   & \pgfkeys{/#2/Attshort} & \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \pgfkeys{/#2/AL}\\
 }
 
 
