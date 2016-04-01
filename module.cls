@@ -279,15 +279,6 @@
    \setcounter{currentstat}{0}
    \def\currentmonster{#2}
    \scan@stats#4|\relax|
-   \pgfkeys{/#2/LongName/.initial = {%
-      \ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/Type}}{}=\z@
-         #3
-      \else\ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/Type}}{#3}=\z@
-         #3
-      \else
-         \pgfkeysvalueof{/#2/Type}, #3
-      \fi\fi
-   }}
 }
 
 % Load system-specific stat blocks
@@ -366,23 +357,23 @@
 \renewcommand\thesubsubsection{\arabic{subsection}\alph{subsubsection}}
 
 \titleformat{\part}[block]
-{\LARGE\filcenter\bfseries}
+{\LARGE\bfseries\filcenter}
 {\LARGE PART \thepart:}{0.5em}{\MakeUppercase{#1}}
 
 \titleformat{\section}[hang]
-{\Large\bfseries}
+{\Large\bfseries\filright}
 {}{0em}{\MakeUppercase{#1}}
 
 \titleformat{name=\section,numberless}[block]                                   % how to handle \section*
-{\Large\filcenter\bfseries}
+{\Large\bfseries\filcenter}
 {}{0em}{#1\phantomsection\addcontentsline{toc}{section}{#1}}
 
 \titleformat{\subsection}[hang]
-{\normalfont\bfseries}
+{\normalfont\bfseries\filright}
 {\thesubsection.}{0.5em}{\MakeUppercase{#1}}
 
 \titleformat{\subsubsection}[hang]                                              % \subsubsection is indentical to \subsection except for the numbering
-{\normalfont\bfseries}
+{\normalfont\bfseries\filright}
 {\thesubsubsection.}{0.5em}{\MakeUppercase{#1}}
 
 % Default section spacing, for reference

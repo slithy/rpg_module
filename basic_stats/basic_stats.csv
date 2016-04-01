@@ -1,5 +1,5 @@
 name|NAME|Type|AC|HD|MVturn|MVrd|MVspec|MVspec_turn|MVspec_rd|Attack short|Attack long|Dmg short|Dmg long|SV|ML|AL|#APP|In Lair|TT|XP
-ant|Driver Ant||3|4*|180'|60'||||mandibles|mandibles|2d6|2d6|Fighter: 2|7|Neutral|2--8|4--24|U|125
+ant|Driver Ant|Ant|3|4*|180'|60'||||mandibles|mandibles|2d6|2d6|Fighter: 2|7|Neutral|2--8|4--24|U|125
 antelope|Antelope||7|2|240'|80'||||butt|1 butt|1d6|1d6|Fighter: 2|5|Neutral|0|3--30|Nil|20
 ape_white|White Ape||6|4|120'|40'||||2 claws|2 claws|1d4/1d4|1d4/1d4|Fighter: 2|7|Neutral|1--6|2--8|Nil|75
 baboon_rock|Rock Baboon||6|2|120'|40'||||club/bite|1 club/1 bite|1d6/1d3|1d6/1d3|Fighter: 2|8|Neutral|2--12|5--30|U|20
@@ -111,14 +111,14 @@ hobgoblin|Hobgoblin||6|1+1|90'|30'||||weapon|1 weapon|1d8 or weapon|1d8 or weapo
 horse_draft|Draft Horse|Horse|7|3|90'|30'||||Nil|Nil|Nil|Nil|Fighter: 2|6|Neutral|0|domestic only|Nil|35
 horse_riding|Riding Horse|Horse|7|2|240'|80'||||2 hooves|2 hooves|1d4/1d4|1d4/1d4|Fighter: 1|7|Neutral|0|10--100|Nil|20
 horse_war|War Horse|Horse|7|3|120'|40'||||2 hooves|2 hooves|1d6/1d6|1d6/1d6|Fighter: 2|9|Neutral|0|domestic only|Nil|35
-hydra5|Hydra||5|5|120'|40'||||5 heads|5 heads|1d10 each|1d10 each|Fighter: 5|9|Neutral|1|1|B|175
-hydra6|Hydra||5|6|120'|40'||||6 heads|6 heads|1d10 each|1d10 each|Fighter: 6|9|Neutral|1|1|B|275
-hydra7|Hydra||5|7|120'|40'||||7 heads|7 heads|1d10 each|1d10 each|Fighter: 7|9|Neutral|1|1|B|450
-hydra8|Hydra||5|8|120'|40'||||8 heads|8 heads|1d10 each|1d10 each|Fighter: 8|9|Neutral|1|1|B|650
-hydra9|Hydra||5|9|120'|40'||||9 heads|9 heads|1d10 each|1d10 each|Fighter: 9|9|Neutral|1|1|B|900
-hydra10|Hydra||5|10|120'|40'||||10 heads|10 heads|1d10 each|1d10 each|Fighter: 10|9|Neutral|1|1|B|900
-hydra11|Hydra||5|11|120'|40'||||11 heads|11 heads|1d10 each|1d10 each|Fighter: 11|9|Neutral|1|1|B|1100
-hydra12|Hydra||5|12|120'|40'||||12 heads|12 heads|1d10 each|1d10 each|Fighter: 12|9|Neutral|1|1|B|1100
+hydra5|Five-Headed Hydra|Hydra|5|5|120'|40'||||5 heads|5 heads|1d10 each|1d10 each|Fighter: 5|9|Neutral|1|1|B|175
+hydra6|Six-Headed Hydra|Hydra|5|6|120'|40'||||6 heads|6 heads|1d10 each|1d10 each|Fighter: 6|9|Neutral|1|1|B|275
+hydra7|Seven-Headed Hydra|Hydra|5|7|120'|40'||||7 heads|7 heads|1d10 each|1d10 each|Fighter: 7|9|Neutral|1|1|B|450
+hydra8|Eight-Headed Hydra|Hydra|5|8|120'|40'||||8 heads|8 heads|1d10 each|1d10 each|Fighter: 8|9|Neutral|1|1|B|650
+hydra9|Nine-Headed Hydra|Hydra|5|9|120'|40'||||9 heads|9 heads|1d10 each|1d10 each|Fighter: 9|9|Neutral|1|1|B|900
+hydra10|Ten-Headed Hydra|Hydra|5|10|120'|40'||||10 heads|10 heads|1d10 each|1d10 each|Fighter: 10|9|Neutral|1|1|B|900
+hydra11|Eleven-Headed Hydra|Hydra|5|11|120'|40'||||11 heads|11 heads|1d10 each|1d10 each|Fighter: 11|9|Neutral|1|1|B|1100
+hydra12|Twelve-Headed Hydra|Hydra|5|12|120'|40'||||12 heads|12 heads|1d10 each|1d10 each|Fighter: 12|9|Neutral|1|1|B|1100
 insect_swarm2|Insect Swarm||7|2|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1 swarm|1--3 swarms|Nil|20
 insect_swarm3|Insect Swarm||7|3|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1 swarm|1--3 swarms|Nil|35
 insect_swarm4|Insect Swarm||7|4|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1 swarm|1--3 swarms|Nil|75

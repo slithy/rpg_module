@@ -241,9 +241,19 @@
 
 % New Monster environment
 
+\newcommand{\longname}[1]{%
+   \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/Type}}{}=\z@
+      \pgfkeysvalueof{/#1/SingleName}%
+   \else\ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SingleName}}=\z@
+      \pgfkeysvalueof{/#1/SingleName}%
+   \else
+      \pgfkeysvalueof{/#1/Type}, \texorpdfstring{\protect\StrDel{\pgfkeysvalueof{/#1/SingleName}}{ \pgfkeysvalueof{/#1/Type}}}{}%
+   \fi\fi
+}
+
 \newenvironment{newmonster}[1]{%
-\noindent{\Large\filcenter\bfseries \pgfkeys{/#1/LongName}\phantomsection\addcontentsline{toc}{section}{\pgfkeysvalueof{/#1/LongName}}}\\[\topskip]
-\begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}Xl>{\raggedright\arraybackslash}X@{}}
+\vspace{\topskip}\begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}Xl>{\raggedright\arraybackslash}X@{}}
+\multicolumn{4}{l}{\hspace{-\tabcolsep}\Large\bfseries\longname{#1}\phantomsection\addcontentsline{toc}{section}{\longname{#1}}}\\[\topskip]
 \ArmourClass: & \pgfkeys{/#1/AC}                          & No. Appearing: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})\\
 Hit Dice:     & \pgfkeys{/#1/HDlong}                      & Save As:       & \pgfkeys{/#1/SVlong}\\
 Move:         & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd}) & Morale:        & \pgfkeys{/#1/MLlong}\\
