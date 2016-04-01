@@ -164,6 +164,9 @@
    HD~\pgfkeys{/#2/HD},
    hp~#4,
    MV~\pgfkeys{/#2/MVturn}\thinspacebrk(\pgfkeys{/#2/MVrd}),
+\ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/MVspec}}{}=\z@\else
+   \pgfkeys{/#2/MVspec}~\pgfkeys{/#2/MVspec_turn}\thinspacebrk(\pgfkeys{/#2/MVspec_rd}),
+\fi
    Att~\pgfkeys{/#2/Attlong},
    D~\pgfkeys{/#2/Dmg},
    Save~\pgfkeys{/#2/SV},
@@ -257,6 +260,9 @@
 \ArmourClass: & \pgfkeys{/#1/AC}                          & No. Appearing: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})\\
 Hit Dice:     & \pgfkeys{/#1/HDlong}                      & Save As:       & \pgfkeys{/#1/SVlong}\\
 Move:         & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd}) & Morale:        & \pgfkeys{/#1/MLlong}\\
+\ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/MVspec}}{}=\z@\else
+\hspace{1em}\pgfkeys{/#1/MVspec}: & \pgfkeys{/#1/MVspec_turn} (\pgfkeys{/#1/MVspec_rd})\\
+\fi
 Attacks:      & \pgfkeys{/#1/Attlong}                     & Treasure Type: & \pgfkeys{/#1/TT}\\
 Damage:       & \pgfkeys{/#1/Dmglong}                     & Alignment:     & \pgfkeys{/#1/ALlong}\\
 \end{tabularx}\par\vspace{\topskip}\noindent\ignorespaces}{\vspace{\topskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
