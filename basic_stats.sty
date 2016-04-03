@@ -81,7 +81,7 @@
 
 % Alignment macro : convert long form to short form for stat blocks
 
-\newcommand\al@module[1]{\StrLeft{#1}{1}}
+\newcommand\al@module[1]{X} %\StrLeft{#1}{1}}
 
 
 
@@ -120,8 +120,7 @@
       \pgfkeys{/#1/ML/.initial          = \ml@module{#2}}
       \pgfkeys{/#1/MLlong/.initial      = {#2}}
    \or
-      \pgfkeys{/#1/AL/.initial          = \al@module{#2}}
-      \pgfkeys{/#1/ALlong/.initial      = {#2}}
+      \pgfkeys{/#1/AL/.initial          = {#2}}
    \or
       \pgfkeys{/#1/NoAppear/.initial    = {#2}}
    \or
@@ -171,7 +170,7 @@
    D~\pgfkeys{/#2/Dmglong},
    Save~\pgfkeys{/#2/SV},
    ML~\pgfkeys{/#2/ML},
-   AL~\pgfkeys{/#2/AL},
+   AL~\al@module{#2},
    XP~\pgfkeys{/#2/XP}%
 }
 
@@ -216,7 +215,7 @@
 \ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/MVspec}}{}=\z@\else
    /\pgfkeys{/#2/MVspec_rd}%
 \fi
-   & \pgfkeys{/#2/Attshort} & \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \pgfkeys{/#2/AL}\\
+   & \pgfkeys{/#2/Attshort} & \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \al@module{#2}\\
 }
 
 
@@ -243,7 +242,7 @@
 \ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/MVspec}}{}=\z@\else
    /\pgfkeys{/#2/MVspec_rd}%
 \fi
-   & \pgfkeys{/#2/Attshort} & \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \pgfkeys{/#2/AL}\\
+   & \pgfkeys{/#2/Attshort} & \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \al@module{#2}\\
 }
 
 
@@ -270,7 +269,7 @@ Move:         & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd}) & Morale:        & \pg
 \hspace{1em}\pgfkeys{/#1/MVspec}: & \pgfkeys{/#1/MVspec_turn} (\pgfkeys{/#1/MVspec_rd})\\
 \fi
 Attacks:      & \pgfkeys{/#1/Attlong}                     & Treasure Type: & \pgfkeys{/#1/TT}\\
-Damage:       & \pgfkeys{/#1/Dmglong}                     & Alignment:     & \pgfkeys{/#1/ALlong}\\
+Damage:       & \pgfkeys{/#1/Dmglong}                     & Alignment:     & \pgfkeys{/#1/AL}\\
 \end{tabularx}\par\vspace{\topskip}\noindent\ignorespaces}{\vspace{\topskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
 

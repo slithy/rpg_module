@@ -397,9 +397,13 @@ You can see an example of what this looks like on p.\pageref{minion_set}.
 
 If you want to redefine an existing monster, you can do so using exactly the same commands.
 
-Finally, there is the \verb|statblockfreestyle| environment, which is provided for monsters which don't fit easily into the standard
-template. This may be suitable for NPCs or other non-standard encounters. The module class includes additional \verb|ifbasicstats|
-and \verb|ifadvancedstats| macros to allow you to create stats for your NPCs across several RPG systems. Here is an example:
+Finally, there is the \verb|statblockfreestyle| environment. This should be used sparingly; for most monsters, you should use
+the standard macros to ensure consistency. However, sometimes you may want to include extra information which does not
+fit into the standard stat blocks, such as the attributes of NPCs or spell lists:
+
+% Define the standard stat block as well for use in tables
+
+\monster{snefru_hotep}{Snefru-Hotep}{|5|C5|90'|30'||||1|mace or spell|1--6 or spell|1--6 or spell|Cleric: 5|11|Chaotic|1|1|Nil|300}
 
 \begin{statblockfreestyle}
 \begin{ifbasicstats}
@@ -413,6 +417,8 @@ Snake Charm, Hold Person, Slow Poison, Spiritual Hammer, Speak with Animals, Ani
 \end{ifadvancedstats}
 \end{statblockfreestyle}
 
+When using \verb|statblockfreestyle|, the module class provides \verb|ifbasicstats| and \verb|ifadvancedstats| macros to specify separate
+stat blocks for different RPG systems.
 
 %%%%% Level One %%%%%
 
@@ -528,6 +534,7 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 \renewcommand{\Alignment}{Chaotic}% Change the alignment of Acolytes from ``Any'' to ``Chaotic''
 \wanderitem{acolyte}{}
 \wanderitem{minion_set}{1}
+\wanderitem{snefru_hotep}{}
 \wanderitem{harpy}{}
 \wanderitem{kobold}{}
 \wanderitem{bat}{}
@@ -538,7 +545,7 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 
 \begin{monsterroster}
 \rosteritem{\ref{portico}}{gnoll}{6}{9 each}
-\ref{inner_sanctuary} & Snefru-hotep & 1 & 5 & C5 & 21 & 30' & mace & 1--6 & C5 & 11 & C\\
+\rosteritem{\ref{inner_sanctuary}}{snefru_hotep}{1}{21}
 \rosteritem{\ref{inner_sanctuary}}{minion_set}{4}{25 each}
 \rosteritem{test}{bat}{4}{25 each}
 \end{monsterroster}
