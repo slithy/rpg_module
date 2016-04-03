@@ -101,6 +101,8 @@
    \ifcase\thecurrentstat
       \pgfkeys{/#1/Type/.initial        = {#2}}
    \or
+      \pgfkeys{/#1/SilverMagic/.initial = {#2}}
+   \or
       \pgfkeys{/#1/AC/.initial          = \ac@module{#2}}
    \or
       \pgfkeys{/#1/HD/.initial          = {#2}}
@@ -271,7 +273,8 @@
 
 \newenvironment{newmonster}[1]{%
 \vspace{\topskip}\begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}Xl>{\raggedright\arraybackslash}X@{}}
-\multicolumn{4}{l}{\hspace{-\tabcolsep}\Large\bfseries\longname{#1}\phantomsection\addcontentsline{toc}{section}{\longname{#1}}}\\[\topskip]
+\multicolumn{4}{l}{\hspace{-\tabcolsep}\Large\bfseries\longname{#1}\pgfkeys{/#1/SilverMagic}%
+\phantomsection\addcontentsline{toc}{section}{\longname{#1}}}\\[\topskip]
 \ArmourClass: & \pgfkeys{/#1/AC}                          & No. Appearing: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})\\
 Hit Dice:     & \pgfkeys{/#1/HDlong}                      & Save As:       & \pgfkeys{/#1/SVlong}\\
 Move:         & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd}) & Morale:        & \pgfkeys{/#1/MLlong}\\

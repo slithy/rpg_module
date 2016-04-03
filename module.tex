@@ -350,7 +350,8 @@ you can specify it in the optional \verb|pluralname| field. For example, if you 
 \noindent The \verb|stats| field is a list of the monster stats, separated by ``\verb:|:''. It should contain the following items in order:
 \renewcommand{\labelitemi}{$\bullet$}
 \begin{itemize}\setlength{\itemsep}{0pt}
-\item Type, e.g. ``Dragon'', ``Lycanthrope'' or ``Man''. Leave blank for monsters which don't have a type.
+\item Type, e.g. ``Dragon'', ``Lycanthrope'' or ``Man''. Leave empty for monsters which don't have a type.
+\item Put an asterisk (*) in this column if the monster requires silver or magic weapons to hit it. Leave empty otherwise.
 \item \ArmourClass. This should be in descending AC format; use the \verb|acasc| option to the class if you want to convert it to ascending AC.
 \item Hit Dice
 \item Movement per Turn
@@ -374,11 +375,11 @@ here, and use the \verb|\changealignment| macro to specify as needed in the text
 
 \noindent For example, suppose we create the following definition:\\[0.1em]
 
-\monster[Minions of Set]{minion_set}{Minion of Set}{|0|5**|120'|40'||||1|weapon or bite or by form|1--8 or 1--12+poison|1--8 or 1--12+poison or by form|Fighter: 10|12|Chaotic|1--6|1--20|Nil|425}
+\monster[Minions of Set]{minion_set}{Minion of Set}{||0|5**|120'|40'||||1/1|weapon or bite or by form|1d8/1d12+poison|1d8 or 1d12+poison or by form|Fighter: 10|12|Chaotic|1--6|1--20|Nil|425}
 
-\noindent\texttt{\textbackslash monster[Minions~of~Set]\{minion\_set\}\{Minion~of~Set\}\{|0|
-5**|120'|40'||||1|weapon~or~bite~or~by~form|
-1--8~or~1--12+poison|1--8~or~1--12+poison~or~by~form|
+\noindent\texttt{\textbackslash monster[Minions~of~Set]\{minion\_set\}\{Minion~of~Set\}\{||0|
+5**|120'|40'||||1/1|weapon~or~bite~or~by~form|
+1d8/1d12+poison|1d8~or~1d12+poison~or~by~form|
 Fighter:~10|12|Chaotic|1--6|1--20|Nil|425\}}\\[0.1em]
 
 \noindent Now any time we want to put stats for a Minion of Set in our text, we can use a definition like this:
@@ -403,7 +404,7 @@ fit into the standard stat blocks, such as the attributes of NPCs or spell lists
 
 % Define the standard stat block as well for use in tables
 
-\monster{snefru_hotep}{Snefru-Hotep}{|5|C5|90'|30'||||1|mace or spell|1--6 or spell|1--6 or spell|Cleric: 5|11|Chaotic|1|1|Nil|300}
+\monster{snefru_hotep}{Snefru-Hotep}{||5|C5|90'|30'||||1|mace or spell|1d6/spell|1d6 or spell|Cleric: 5|11|Chaotic|1|1|Nil|300}
 
 \begin{statblockfreestyle}
 \begin{ifbasicstats}
@@ -417,7 +418,7 @@ Snake Charm, Hold Person, Slow Poison, Spiritual Hammer, Speak with Animals, Ani
 \end{ifadvancedstats}
 \end{statblockfreestyle}
 
-When using \verb|statblockfreestyle|, the module class provides \verb|ifbasicstats| and \verb|ifadvancedstats| macros to specify separate
+\noindent When using \verb|statblockfreestyle|, the module class provides \verb|ifbasicstats| and \verb|ifadvancedstats| macros to specify separate
 stat blocks for different RPG systems.
 
 %%%%% Level One %%%%%
@@ -541,7 +542,7 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 \wanderitem{harpy}{}
 \wanderitem{kobold}{}
 \wanderitem{bat}{}
-\wanderitem{bat_giant}{}
+\wanderitem{giant_bat}{}
 \end{wanderingmonsters}
 
 \section*{Monster Roster}
