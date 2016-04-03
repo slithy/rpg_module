@@ -350,36 +350,42 @@ you can specify it in the optional \verb|pluralname| field. For example, if you 
 \noindent The \verb|stats| field is a list of the monster stats, separated by ``\verb:|:''. It should contain the following items in order:
 \renewcommand{\labelitemi}{$\bullet$}
 \begin{itemize}\setlength{\itemsep}{0pt}
-\item \ArmourClass
+\item Type, e.g. ``Dragon'', ``Lycanthrope'' or ``Man''. Leave blank for monsters which don't have a type.
+\item \ArmourClass. This should be in descending AC format; use the \verb|acasc| option to the class if you want to convert it to ascending AC.
 \item Hit Dice
 \item Movement per Turn
 \item Movement per Round
-\item Attacks (short form)
-\item Attacks (long form)
-\item Damage (short form)
-\item Damage (long form)
-\item Save As
+\item Special Movement class, e.g. ``Fly'' or ``Swim''. Leave blank if not applicable.
+\item Special Movement per Turn
+\item Special Movement per Round
+\item Attacks (short form). Usually just the number of attacks, or ``3+special''. This format is used only in Wandering Monster and Monster Roster tables.
+\item Attacks (long form). More verbose description of attacks, used in New Monster listing and stat blocks, e.g. ``2 claws/bite+breath''.
+\item Damage (short form). Used in Wandering Monster and Monster Roster tables.
+\item Damage (long form). Used in New Monster listing and stat blocks.
+\item Save As. List the long form, e.g. ``Fighter: 3''. The short form is computed where required.
 \item Morale
-\item Alignment
-\item No. Appearing (wandering monster)
-\item No. Appearing in Lair
+\item Alignment. List the long form, e.g. ``Chaotic''. The short form is computed where required. In case of monsters with variable alignment, use the
+\verb|\Alignment| macro here and redefine the macro as needed in the text.
+\item No. Appearing. List the range when encountered as a wandering monster.
+\item No. Appearing in Lair. List the range when encountered in the monster's lair.
 \item Treasure Type
+\item XP
 \end{itemize}
 
 \noindent For example, suppose we create the following definition:\\[0.1em]
 
-\monster[Minions of Set]{minion_set}{Minion of Set}{|0|5**|120'|40'||||weapon/bite|1 weapon or by form|1--8/1--12 + poison|1--8 or 1--12 + poison or by form|Fighter: 10|12|Chaotic|1--6|1--20|Nil|425}
+\monster[Minions of Set]{minion_set}{Minion of Set}{|0|5**|120'|40'||||1|weapon or bite or by form|1--8 or 1--12+poison|1--8 or 1--12+poison or by form|Fighter: 10|12|Chaotic|1--6|1--20|Nil|425}
 
-\noindent\texttt{\textbackslash monster[Minions~of~Set]\{minion\_set\}\{Minion~of~Set\}\{0|
-5*|120'|40'|weapon/bite|1~weapon~or~by~form|
-1--8/1--12~+~poison|1--8~or~1--12~+~poison~or~by~form|
-Fighter:~10|12|Chaotic|1--6|1--20|Nil\}}\\[0.1em]
+\noindent\texttt{\textbackslash monster[Minions~of~Set]\{minion\_set\}\{Minion~of~Set\}\{|0|
+5**|120'|40'||||1|weapon~or~bite~or~by~form|
+1--8~or~1--12+poison|1--8~or~1--12+poison~or~by~form|
+Fighter:~10|12|Chaotic|1--6|1--20|Nil|425\}}\\[0.1em]
 
-\noindent Now we can use definitions like this:
+\noindent Now any time we want to put stats for a Minion of Set in our text, we can use a definition like this:
 \begin{quote}
 \verb|\statblock{minion_set}{4}{25 each}|
 \end{quote}
-to produce stat blocks like this:
+which produces a stat block like this:
 \statblock{minion_set}{4}{25 each}
 You can add details of your new monster with the environment:
 \begin{quote}
@@ -518,10 +524,12 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 \label{wanderingmonsters}
 
 \begin{wanderingmonsters}[b]
+\wanderitem{gnoll}{}
+\renewcommand{\Alignment}{Chaotic}% Change the alignment of Acolytes from ``Any'' to ``Chaotic''
+\wanderitem{acolyte}{}
 \wanderitem{minion_set}{1}
 \wanderitem{harpy}{}
 \wanderitem{kobold}{}
-\wanderitem{gnoll}{}
 \wanderitem{bat}{}
 \wanderitem{bat_giant}{}
 \end{wanderingmonsters}
