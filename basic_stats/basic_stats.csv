@@ -68,57 +68,57 @@ greater_water_elemental|Greater Water Elemental||Elemental|*|-2|16|60'|20'|Swim|
 elephant|Elephant||||5|9|120'|40'||||2/1|2 tusks or 1 trample|2d4$\times$2/4d8|2d4/2d4 or 4d8|Fighter: 5|8|Neutral|0|1--20|Special|900
 elf|Elf|[Elves]|||5|1+1*|120'|40'||||1|1 weapon|1d8|1d8 or by weapon|Elf: 1|8|Neutral|1--4|2--24|E|19
 ferret|Giant Ferret||Ferret||5|1+1|150'|50'||||1|1 bite|1d8|1d8|Fighter: 1|8|Neutral|1--8|1--12|Nil|15
-bass|Giant Bass|[Giant Bass]|Fish||7|2|Swim 120'|40'||||1|1 bite|1d6|1d6|Fighter: 1|8|Neutral|0|1|Nil|20
 catfish|Giant Catfish|[Giant Catfish]|Fish||4|8+3*|Swim 90'|30'||||5|1 bite/4 feelers|2d8/1d4$\times$4|2d8/1d4$\times$4|Fighter: 4|8|Neutral|0|1--2|Nil|1200
 piranha|Giant Piranha||Fish||6|3+3|Swim 150'|50'||||1|1 bite|1d8|1d8|Fighter: 2|7|Neutral|0|2--8|Nil|50
 rockfish|Giant Rockfish|[Giant Rockfish]|Fish||7|5+5|Swim 180'|60'||||4|4 spines+poison|1d4$\times$4+poison|1d4$\times$4+poison|Fighter: 3|8|Neutral|0|2--8|Nil|225
 sturgeon|Giant Sturgeon|[Giant Sturgeon]|Fish||0|10+2*|Swim 180'|60'||||1|1 bite|2d10+swallow|2d10+swallow whole|Fighter: 5|9|Neutral|0|1|Nil|1600
-fly_robber|Robber Fly||||6|2|90'|30'|Fly|180'|60'|1|1 bite|1d8|1d8|Fighter: 1|8|Neutral|1--6|2--12|U|20
+robber_fly|Robber Fly||||6|2|90'|30'|Fly|180'|60'|1|1 bite|1d8|1d8|Fighter: 1|8|Neutral|1--6|2--12|U|20
 gargoyle|Gargoyle|||*|5|4|90'|30'|Fly|150'|50'|4|2 claws/1 bite/1 horn|1d3$\times$2/1d6/1d4|1d3/1d3/1d6/1d4|Fighter: 8|11|Chaotic|1--6|2--8|C|75
 gelatinous_cube|Gelatinous Cube||||8|4*|60'|20'||||1|1|2d8+special|2d8+special|Fighter: 2|12|Neutral|1|0|V|125
 ghoul|Ghoul||||6|2*|90'|30'||||3|2 claws/1 bite|1d3$\times$3+special|1d3/1d3/1d3+special|Fighter: 2|9|Chaotic|1--6|2--16|B|25
-giant_cloud|Cloud Giant||Giant||4|12+3|120'|40'||||1|1|6d6|6d6|Fighter: 12|10|Neutral|1--2|1--3|E+5,000gp|1100
-giant_fire|Fire Giant||Giant||4|11+2|120'|40'||||1|1|5d6|5d6|Fighter: 11|9|Chaotic|1--2|1--3|E+5,000gp|1100
-giant_frost|Frost Giant||Giant||4|10+1|120'|40'||||1|1|4d6|4d6|Fighter: 10|9|Chaotic|1--2|1--4|E+5,000gp|900
-giant_hill|Hill Giant||Giant||4|8|120'|40'||||1|1|2d8|2d8|Fighter: 8|8|Chaotic|1--4|2--8|E+5,000gp|650
-giant_stone|Stone Giant||Giant||4|9|120'|40'||||1|1|3d6|3d6|Fighter: 9|9|Neutral|1--2|1--6|E+5,000gp|900
-giant_storm|Storm Giant||Giant||2|15|150'|50'||||1+special|1+special|8d6+special|8d6+special|Fighter: 15|10|Chaotic|1|1--3|E+5,000gp|1350
+cloud_giant|Cloud Giant||Giant||4|12+3|120'|40'||||1|1|6d6|6d6|Fighter: 12|10|Neutral|1--2|1--3|E+5,000gp|1100
+fire_giant|Fire Giant||Giant||4|11+2|120'|40'||||1|1|5d6|5d6|Fighter: 11|9|Chaotic|1--2|1--3|E+5,000gp|1100
+frost_giant|Frost Giant||Giant||4|10+1|120'|40'||||1|1|4d6|4d6|Fighter: 10|9|Chaotic|1--2|1--4|E+5,000gp|900
+hill_giant|Hill Giant||Giant||4|8|120'|40'||||1|1|2d8|2d8|Fighter: 8|8|Chaotic|1--4|2--8|E+5,000gp|650
+stone_giant|Stone Giant||Giant||4|9|120'|40'||||1|1|3d6|3d6|Fighter: 9|9|Neutral|1--2|1--6|E+5,000gp|900
+storm_giant|Storm Giant||Giant||2|15|150'|50'||||1+special|1+special|8d6+special|8d6+special|Fighter: 15|10|Chaotic|1|1--3|E+5,000gp|1350
 gnoll|Gnoll||||5|2|90'|30'||||1|1 weapon|2d4|2d4 or by weapon+1|Fighter: 2|8|Chaotic|1--6|3--18|D|20
 gnome|Gnome||||5|1|60'|20'||||1|1 weapon|1d6|1d6 or by weapon|Dwarf: 1|8|Any|1--8|5--40|C|10
 goblin|Goblin||||6|1-1|60'|20'||||1|1 weapon|1d6|1d6 or by weapon|Normal Man|7|Chaotic|2--8|6--60|R (C)|5
-golem_amber|Amber Golem||Golem|*|6|10**|180'|60'||||3|2 claws/1 bite|2d6$\times$2/2d10|2d6/2d6/2d10|Fighter: 5|12|Neutral|1|1|Nil|2300
-golem_bone|Bone Golem||Golem|*|2|8|120'|40'||||4|4 weapons|1d8$\times$4|1d8$\times$4 or by weapons|Fighter: 4|12|Neutral|1|1|Nil|650
-golem_bronze|Bronze Golem||Golem|*|0|20**|240'|80'||||1+special|1 fist+special|3d10+special|3d10+special|Fighter: 10|12|Neutral|1|1|Nil|4300
-golem_wood|Wood Golem||Golem|*|7|2+2|120'|40'||||1|1 fist|1d8|1d8|Fighter: 1|12|Neutral|1|1|Nil|25
+amber_golem|Amber Golem||Golem|*|6|10**|180'|60'||||3|2 claws/1 bite|2d6$\times$2/2d10|2d6/2d6/2d10|Fighter: 5|12|Neutral|1|1|Nil|2300
+bone_golem|Bone Golem||Golem|*|2|8|120'|40'||||4|4 weapons|1d8$\times$4|1d8$\times$4 or by weapons|Fighter: 4|12|Neutral|1|1|Nil|650
+bronze_golem|Bronze Golem||Golem|*|0|20**|240'|80'||||1+special|1 fist+special|3d10+special|3d10+special|Fighter: 10|12|Neutral|1|1|Nil|4300
+wood_golem|Wood Golem||Golem|*|7|2+2|120'|40'||||1|1 fist|1d8|1d8|Fighter: 1|12|Neutral|1|1|Nil|25
 gorgon|Gorgon||||2|8*|120'|40'||||1+breath|1 gore or breath|2d6/special|2d6 or petrification|Fighter: 8|8|Chaotic|1--2|1--4|E|1200
 gray_ooze|Gray Ooze||||8|3*|10'|3'||||1|1|2d8|2d8|Fighter: 2|12|Neutral|1|1|Nil|50
+grey_ooze|Grey Ooze||||8|3*|10'|3'||||1|1|2d8|2d8|Fighter: 2|12|Neutral|1|1|Nil|50
 green_slime|Green Slime|||*|---|2*|3'|1'||||1|1|special|Special|Fighter: 1|12|Neutral|1|0|Nil|25
 griffon|Griffon||||5|7|120'|40'|Fly|360'|120'|3|2 claws/1 bite|1d4$\times$2/2d8|1d4/1d4/2d8|Fighter: 4|8|Neutral|0|2--16|E|450
 halfling|Halfling||||7|1-1|90'|30'||||1|1 weapon|1d6|1d6 or by weapon|Halfling: 1|7|Lawful|3--18|5--40|V (B)|5
 harpy|Harpy||||7|3*|60'|20'|Fly|150'|50'|3+charm|2 claws/1 weapon+charm|1d4$\times$2/1d6|1d4/1d4/1d6|Fighter: 3|7|Chaotic|1--6|2--8|C|50
 hawk|Hawk||Hawk||8|\half|480'|160'||||1|1|1d2|1d2|Normal Man|7|Neutral|0|1--6|Nil|5
 hawk_giant|Giant Hawk||Hawk||6|3+3|450'|150'||||1|1|1d6|1d6|Fighter: 2|8|Neutral|0|1--3|Nil|50
-hellhound3|Minor Hellhound||Hellhound||4|3*|120'|40'||||1+breath|bite or breath|1d6/3d6|1d6 or 3d6|Fighter: 3|9|Chaotic|2--8|2--8|C|50
-hellhound4|Lesser Hellhound||Hellhound||4|4*|120'|40'||||1+breath|bite or breath|1d6/4d6|1d6 or 4d6|Fighter: 4|9|Chaotic|2--8|2--8|C|125
-hellhound5|Hellhound||Hellhound||4|5*|120'|40'||||1+breath|bite or breath|1d6/5d6|1d6 or 5d6|Fighter: 5|9|Chaotic|2--8|2--8|C|300
-hellhound6|Greater Hellhound||Hellhound||4|6*|120'|40'||||1+breath|bite or breath|1d6/6d6|1d6 or 6d6|Fighter: 6|9|Chaotic|2--8|2--8|C|500
-hellhound7|Monstrous Hellhound||Hellhound||4|7*|120'|40'||||1+breath|bite or breath|1d6/7d6|1d6 or 7d6|Fighter: 7|9|Chaotic|2--8|2--8|C|850
+hellhound_3|Minor Hellhound||Hellhound||4|3*|120'|40'||||1+breath|bite or breath|1d6/3d6|1d6 or 3d6|Fighter: 3|9|Chaotic|2--8|2--8|C|50
+hellhound_4|Lesser Hellhound||Hellhound||4|4*|120'|40'||||1+breath|bite or breath|1d6/4d6|1d6 or 4d6|Fighter: 4|9|Chaotic|2--8|2--8|C|125
+hellhound_5|Hellhound||Hellhound||4|5*|120'|40'||||1+breath|bite or breath|1d6/5d6|1d6 or 5d6|Fighter: 5|9|Chaotic|2--8|2--8|C|300
+hellhound_6|Greater Hellhound||Hellhound||4|6*|120'|40'||||1+breath|bite or breath|1d6/6d6|1d6 or 6d6|Fighter: 6|9|Chaotic|2--8|2--8|C|500
+hellhound_7|Monstrous Hellhound||Hellhound||4|7*|120'|40'||||1+breath|bite or breath|1d6/7d6|1d6 or 7d6|Fighter: 7|9|Chaotic|2--8|2--8|C|850
 hippogriff|Hippogriff||||5|3+1|180'|60'|Fly|360'|120'|3|2 claws/1 bite|1d6$\times$2/1d10|1d6/1d6/1d10|Fighter: 2|8|Neutral|0|2--16|Nil|50
 hobgoblin|Hobgoblin||||6|1+1|90'|30'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 1|8|Chaotic|1--6|4--24|D|15
-horse_draft|Draft Horse||Horse||7|3|90'|30'||||0|Nil|Nil|Nil|Fighter: 2|6|Neutral|0|domestic only|Nil|35
-horse_riding|Riding Horse||Horse||7|2|240'|80'||||2|2 hooves|1d4$\times$2|1d4/1d4|Fighter: 1|7|Neutral|0|10--100|Nil|20
-horse_war|War Horse||Horse||7|3|120'|40'||||2|2 hooves|1d6$\times$2|1d6/1d6|Fighter: 2|9|Neutral|0|domestic only|Nil|35
-hydra5|Five-Headed Hydra|[Five-Headed Hydrae]|Hydra||5|5|120'|40'||||5|5 heads|1d10$\times$5|1d10 each|Fighter: 5|9|Neutral|1|1|B|175
-hydra6|Six-Headed Hydra|[Six-Headed Hydrae]|Hydra||5|6|120'|40'||||6|6 heads|1d10$\times$6|1d10 each|Fighter: 6|9|Neutral|1|1|B|275
-hydra7|Seven-Headed Hydra|[Seven-Headed Hydrae]|Hydra||5|7|120'|40'||||7|7 heads|1d10$\times$7|1d10 each|Fighter: 7|9|Neutral|1|1|B|450
-hydra8|Eight-Headed Hydra|[Eight-Headed Hydrae]|Hydra||5|8|120'|40'||||8|8 heads|1d10$\times$8|1d10 each|Fighter: 8|9|Neutral|1|1|B|650
-hydra9|Nine-Headed Hydra|[Nine-Headed Hydrae]|Hydra||5|9|120'|40'||||9|9 heads|1d10$\times$9|1d10 each|Fighter: 9|9|Neutral|1|1|B|900
-hydra10|Ten-Headed Hydra|[Ten-Headed Hydrae]|Hydra||5|10|120'|40'||||10|10 heads|1d10$\times$10|1d10 each|Fighter: 10|9|Neutral|1|1|B|900
-hydra11|Eleven-Headed Hydra|[Eleven-Headed Hydrae]|Hydra||5|11|120'|40'||||11|11 heads|1d10$\times$11|1d10 each|Fighter: 11|9|Neutral|1|1|B|1100
-hydra12|Twelve-Headed Hydra|[Twelve-Headed Hydrae]|Hydra||5|12|120'|40'||||12|12 heads|1d10$\times$12|1d10 each|Fighter: 12|9|Neutral|1|1|B|1100
-insect_swarm2|Small Insect Swarm||Insect Swarm||7|2|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1 swarm|1--3 swarms|Nil|20
-insect_swarm3|Insect Swarm||Insect Swarm||7|3|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1 swarm|1--3 swarms|Nil|35
-insect_swarm4|Large Insect Swarm||Insect Swarm||7|4|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1 swarm|1--3 swarms|Nil|75
+draft_horse|Draft Horse||Horse||7|3|90'|30'||||0|Nil|Nil|Nil|Fighter: 2|6|Neutral|0|domestic only|Nil|35
+riding_horse|Riding Horse||Horse||7|2|240'|80'||||2|2 hooves|1d4$\times$2|1d4/1d4|Fighter: 1|7|Neutral|0|10--100|Nil|20
+war_horse|War Horse||Horse||7|3|120'|40'||||2|2 hooves|1d6$\times$2|1d6/1d6|Fighter: 2|9|Neutral|0|domestic only|Nil|35
+hydra_5|Five-Headed Hydra|[Five-Headed Hydrae]|Hydra||5|5|120'|40'||||5|5 heads|1d10$\times$5|1d10 each|Fighter: 5|9|Neutral|1|1|B|175
+hydra_6|Six-Headed Hydra|[Six-Headed Hydrae]|Hydra||5|6|120'|40'||||6|6 heads|1d10$\times$6|1d10 each|Fighter: 6|9|Neutral|1|1|B|275
+hydra_7|Seven-Headed Hydra|[Seven-Headed Hydrae]|Hydra||5|7|120'|40'||||7|7 heads|1d10$\times$7|1d10 each|Fighter: 7|9|Neutral|1|1|B|450
+hydra_8|Eight-Headed Hydra|[Eight-Headed Hydrae]|Hydra||5|8|120'|40'||||8|8 heads|1d10$\times$8|1d10 each|Fighter: 8|9|Neutral|1|1|B|650
+hydra_9|Nine-Headed Hydra|[Nine-Headed Hydrae]|Hydra||5|9|120'|40'||||9|9 heads|1d10$\times$9|1d10 each|Fighter: 9|9|Neutral|1|1|B|900
+hydra_10|Ten-Headed Hydra|[Ten-Headed Hydrae]|Hydra||5|10|120'|40'||||10|10 heads|1d10$\times$10|1d10 each|Fighter: 10|9|Neutral|1|1|B|900
+hydra_11|Eleven-Headed Hydra|[Eleven-Headed Hydrae]|Hydra||5|11|120'|40'||||11|11 heads|1d10$\times$11|1d10 each|Fighter: 11|9|Neutral|1|1|B|1100
+hydra_12|Twelve-Headed Hydra|[Twelve-Headed Hydrae]|Hydra||5|12|120'|40'||||12|12 heads|1d10$\times$12|1d10 each|Fighter: 12|9|Neutral|1|1|B|1100
+insect_swarm_2|Small Insect Swarm||Insect Swarm||7|2|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1 swarm|1--3 swarms|Nil|20
+insect_swarm_3|Insect Swarm||Insect Swarm||7|3|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1 swarm|1--3 swarms|Nil|35
+insect_swarm_4|Large Insect Swarm||Insect Swarm||7|4|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1 swarm|1--3 swarms|Nil|75
 invisible_stalker|Invisible Stalker||||3|8*|120'|40'||||1|1|4d4|4d4|Fighter: 8|12|Neutral|1|1|Nil|1200
 kobold|Kobold||||7|\half|60'|20'||||1|1 weapon|1d4|1d4 or by weapon-1|Normal Man|6|Chaotic|4--16|6--60|P (J)|5
 leech|Giant Leech|[Giant Leeches]|Leech||7|6|90'|30'||||1|blood suck|1d6|1d6|Fighter: 3|10|Neutral|0|1--4|Nil|275
