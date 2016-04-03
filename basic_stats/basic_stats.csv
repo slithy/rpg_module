@@ -142,7 +142,7 @@ buccaneer|Buccaneer||Men||7|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighte
 buccaneer_chain|Buccaneer||Men||5|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|6|Neutral|0|special|A|10
 dervish|Dervish||Men||6|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|10|Lawful|0|20--70|A|10
 dervish_chain|Dervish|[Dervishes]|Men||4|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|10|Lawful|0|20--70|A|10
-human|Human||Men||9|\half|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Normal Man|6|Any|1--4|1--20|U|5
+normal_human|Normal Human||Men||9|\half|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Normal Man|6|Any|1--4|1--20|U|5
 medium|Medium||Men||9|1**|120'|40'||||1/spell|1 dagger or spell|1d4|1d4 or spell|Magic--User 1|7|Any|1--4|1--12|V|16
 merchant|Merchant||Men||5|1|90'|30'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|6 or variable|Neutral|0|1--20|A|10
 noble|Noble||Men||2|3|60'|20'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 3|8|Any|2--12|2--12|V$\times$3|35

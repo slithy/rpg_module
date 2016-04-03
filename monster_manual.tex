@@ -457,14 +457,29 @@
 
 % Men
 
+\begin{newmonster}{normal_human}\end{newmonster}
+\statblock{normal_human}{3}{4 each}
+
 \begin{newmonster}{acolyte}\end{newmonster}
 \statblock{acolyte}{3}{4 each}
 
-\begin{newmonster}{bandit}\end{newmonster}
-\statblock{bandit}{3}{4 each}
+\begin{newmonster}{medium}\end{newmonster}
+\statblock{medium}{3}{4 each}
+
+\begin{newmonster}{veteran_1}\end{newmonster}
+\statblock{veteran_1}{3}{4 each}
+
+\begin{newmonster}{veteran_2}\end{newmonster}
+\statblock{veteran_2}{3}{4 each}
+
+\begin{newmonster}{veteran_3}\end{newmonster}
+\statblock{veteran_3}{3}{4 each}
 
 \begin{newmonster}{berserker}\end{newmonster}
 \statblock{berserker}{3}{4 each}
+
+\begin{newmonster}{bandit}\end{newmonster}
+\statblock{bandit}{3}{4 each}
 
 \begin{newmonster}{brigand}\end{newmonster}
 \statblock{brigand}{3}{4 each}
@@ -478,23 +493,11 @@
 \begin{newmonster}{buccaneer_chain}\end{newmonster}
 \statblock{buccaneer_chain}{3}{4 each}
 
-\begin{newmonster}{dervish}\end{newmonster}
-\statblock{dervish}{3}{4 each}
+\begin{newmonster}{pirate}\end{newmonster}
+\statblock{pirate}{3}{4 each}
 
-\begin{newmonster}{dervish_chain}\end{newmonster}
-\statblock{dervish_chain}{3}{4 each}
-
-\begin{newmonster}{human}\end{newmonster}
-\statblock{human}{3}{4 each}
-
-\begin{newmonster}{medium}\end{newmonster}
-\statblock{medium}{3}{4 each}
-
-\begin{newmonster}{merchant}\end{newmonster}
-\statblock{merchant}{3}{4 each}
-
-\begin{newmonster}{noble}\end{newmonster}
-\statblock{noble}{3}{4 each}
+\begin{newmonster}{pirate_chain}\end{newmonster}
+\statblock{pirate_chain}{3}{4 each}
 
 \begin{newmonster}{nomad}\end{newmonster}
 \statblock{nomad}{3}{4 each}
@@ -502,23 +505,20 @@
 \begin{newmonster}{nomad_chain}\end{newmonster}
 \statblock{nomad_chain}{3}{4 each}
 
-\begin{newmonster}{pirate}\end{newmonster}
-\statblock{pirate}{3}{4 each}
+\begin{newmonster}{dervish}\end{newmonster}
+\statblock{dervish}{3}{4 each}
 
-\begin{newmonster}{pirate_chain}\end{newmonster}
-\statblock{pirate_chain}{3}{4 each}
+\begin{newmonster}{dervish_chain}\end{newmonster}
+\statblock{dervish_chain}{3}{4 each}
+
+\begin{newmonster}{merchant}\end{newmonster}
+\statblock{merchant}{3}{4 each}
 
 \begin{newmonster}{trader}\end{newmonster}
 \statblock{trader}{3}{4 each}
 
-\begin{newmonster}{veteran_1}\end{newmonster}
-\statblock{veteran_1}{3}{4 each}
-
-\begin{newmonster}{veteran_2}\end{newmonster}
-\statblock{veteran_2}{3}{4 each}
-
-\begin{newmonster}{veteran_3}\end{newmonster}
-\statblock{veteran_3}{3}{4 each}
+\begin{newmonster}{noble}\end{newmonster}
+\statblock{noble}{3}{4 each}
 
 \begin{newmonster}{merman}\end{newmonster}
 \statblock{merman}{3}{4 each}
@@ -770,6 +770,247 @@
 \label{wanderingmonsters}
 
 \begin{wanderingmonsters}
+\wanderitem{ant}{}
+\wanderitem{antelope}{}
+\wanderitem{white_ape}{}
+\wanderitem{basilisk}{}
+\wanderitem{bat}{}
+\wanderitem{giant_bat}{}
+\wanderitem{vampire_bat}{}
+\wanderitem{black_bear}{}
+\wanderitem{grizzly_bear}{}
+\wanderitem{polar_bear}{}
+\wanderitem{cave_bear}{}
+\wanderitem{bee}{}
+\wanderitem{fire_beetle}{}
+\wanderitem{oil_beetle}{}
+\wanderitem{tiger_beetle}{}
+\wanderitem{black_pudding}{}
+\wanderitem{blink_dog}{}
+\wanderitem{boar}{}
+\wanderitem{bugbear}{}
+\wanderitem{caecilia}{}
+\wanderitem{camel}{}
+\wanderitem{carrion_crawler}{}
+\wanderitem{mountain_lion}{}
+\wanderitem{panther}{}
+\wanderitem{lion}{}
+\wanderitem{tiger}{}
+\wanderitem{sabre_tooth_tiger}{}
+\wanderitem{cave_locust}{}
+\wanderitem{centaur}{}
+\wanderitem{centipede}{}
+\wanderitem{chimera}{}
+\wanderitem{cockatrice}{}
+\wanderitem{crab}{}
+\wanderitem{crocodile}{}
+\wanderitem{crocodile_large}{}
+\wanderitem{crocodile_giant}{}
+\wanderitem{cyclops}{}
+\wanderitem{stegosaurus}{}
+\wanderitem{triceratops}{}
+\wanderitem{tyrannosaurus_rex}{}
+\wanderitem{displacer_beast}{}
+\wanderitem{djinn}{}
+\wanderitem{doppleganger}{}
+\wanderitem{white_dragon}{}
+\wanderitem{black_dragon}{}
+\wanderitem{green_dragon}{}
+\wanderitem{blue_dragon}{}
+\wanderitem{red_dragon}{}
+\wanderitem{gold_dragon}{}
+\wanderitem{dragon_turtle}{}
+\end{wanderingmonsters}
+\begin{wanderingmonsters}
+\wanderitem[51]{dryad}{}
+\wanderitem{dwarf}{}
+\wanderitem{efreet}{}
+\wanderitem{lesser_air_elemental}{}
+\wanderitem{air_elemental}{}
+\wanderitem{greater_air_elemental}{}
+\wanderitem{lesser_earth_elemental}{}
+\wanderitem{earth_elemental}{}
+\wanderitem{greater_earth_elemental}{}
+\wanderitem{lesser_fire_elemental}{}
+\wanderitem{fire_elemental}{}
+\wanderitem{greater_fire_elemental}{}
+\wanderitem{lesser_water_elemental}{}
+\wanderitem{water_elemental}{}
+\wanderitem{greater_water_elemental}{}
+\wanderitem{elephant}{}
+\wanderitem{elf}{}
+\wanderitem{ferret}{}
+\wanderitem{piranha}{}
+\wanderitem{rockfish}{}
+\wanderitem{catfish}{}
+\wanderitem{sturgeon}{}
+\wanderitem{gargoyle}{}
+\wanderitem{gelatinous_cube}{}
+\wanderitem{ghoul}{}
+\wanderitem{hill_giant}{}
+\wanderitem{stone_giant}{}
+\wanderitem{frost_giant}{}
+\wanderitem{fire_giant}{}
+\wanderitem{cloud_giant}{}
+\wanderitem{storm_giant}{}
+\wanderitem{gnoll}{}
+\wanderitem{gnome}{}
+\wanderitem{goblin}{}
+\wanderitem{wood_golem}{}
+\wanderitem{bone_golem}{}
+\wanderitem{amber_golem}{}
+\wanderitem{bronze_golem}{}
+\wanderitem{gorgon}{}
+\wanderitem{gray_ooze}{}
+\wanderitem{grey_ooze}{}
+\wanderitem{green_slime}{}
+\wanderitem{griffon}{}
+\wanderitem{halfling}{}
+\wanderitem{harpy}{}
+\wanderitem{hawk}{}
+\wanderitem{hawk_giant}{}
+\wanderitem{hellhound_3}{}
+\wanderitem{hellhound_4}{}
+\wanderitem{hellhound_5}{}
+\wanderitem{hellhound_6}{}
+\wanderitem{hellhound_7}{}
+\end{wanderingmonsters}
+\begin{wanderingmonsters}
+\wanderitem{hippogriff}{}
+\wanderitem{hobgoblin}{}
+\wanderitem{draft_horse}{}
+\wanderitem{riding_horse}{}
+\wanderitem{war_horse}{}
+\wanderitem{hydra_5}{}
+\wanderitem{hydra_6}{}
+\wanderitem{hydra_7}{}
+\wanderitem{hydra_8}{}
+\wanderitem{hydra_9}{}
+\wanderitem{hydra_10}{}
+\wanderitem{hydra_11}{}
+\wanderitem{hydra_12}{}
+\wanderitem{insect_swarm_2}{}
+\wanderitem{insect_swarm_3}{}
+\wanderitem{insect_swarm_4}{}
+\wanderitem{invisible_stalker}{}
+\wanderitem{kobold}{}
+\wanderitem{leech}{}
+\wanderitem{living_crystal_statue}{}
+\wanderitem{living_iron_statue}{}
+\wanderitem{living_rock_statue}{}
+\wanderitem{gecko}{}
+\wanderitem{draco}{}
+\wanderitem{horned_chameleon}{}
+\wanderitem{tuatara}{}
+\wanderitem{lizard_man}{}
+\wanderitem{wererat}{}
+\wanderitem{werewolf}{}
+\wanderitem{wereboar}{}
+\wanderitem{weretiger}{}
+\wanderitem{werebear}{}
+\wanderitem{devil_swine}{}
+\wanderitem{manticore}{}
+\wanderitem{mastodon}{}
+\wanderitem{medusa}{}
+\end{wanderingmonsters}
+\begin{wanderingmonsters}
+\wanderitem{normal_human}{}
+\wanderitem{acolyte}{}
+\wanderitem{medium}{}
+\wanderitem{veteran_1}{}
+\wanderitem{veteran_2}{}
+\wanderitem{veteran_3}{}
+\wanderitem{berserker}{}
+\wanderitem{bandit}{}
+\wanderitem{brigand}{}
+\wanderitem{brigand_chain}{}
+\wanderitem{buccaneer}{}
+\wanderitem{buccaneer_chain}{}
+\wanderitem{pirate}{}
+\wanderitem{pirate_chain}{}
+\wanderitem{nomad}{}
+\wanderitem{nomad_chain}{}
+\wanderitem{dervish}{}
+\wanderitem{dervish_chain}{}
+\wanderitem{merchant}{}
+\wanderitem{trader}{}
+\wanderitem{noble}{}
+\wanderitem{merman}{}
+\wanderitem{minotaur}{}
+\wanderitem{mule}{}
+\wanderitem{mummy}{}
+\wanderitem{neanderthal}{}
+\wanderitem{nixie}{}
+\wanderitem{ochre_jelly}{}
+\wanderitem{octopus}{}
+\wanderitem{ogre}{}
+\wanderitem{orc}{}
+\wanderitem{owl_bear}{}
+\wanderitem{pegasus}{}
+\wanderitem{pixie}{}
+\wanderitem{pterodactyl}{}
+\wanderitem{pteranodon}{}
+\wanderitem{purple_worm}{}
+\wanderitem{rat}{}
+\wanderitem{giant_rat}{}
+\wanderitem{rhagodessa}{}
+\wanderitem{rhinoceros}{}
+\wanderitem{wooly_rhinoceros}{}
+\wanderitem{robber_fly}{}
+\wanderitem{small_roc}{}
+\wanderitem{large_roc}{}
+\wanderitem{giant_roc}{}
+\wanderitem{rock_baboon}{}
+\wanderitem{rust_monster}{}
+\wanderitem{flame_salamander}{}
+\wanderitem{frost_salamander}{}
+\wanderitem{scorpion}{}
+\wanderitem{sea_dragon}{}
+\wanderitem{sea_serpent}{}
+\end{wanderingmonsters}
+\begin{wanderingmonsters}
+\wanderitem{shadow}{}
+\wanderitem{bull_shark}{}
+\wanderitem{mako_shark}{}
+\wanderitem{great_white_shark}{}
+\wanderitem{shrew}{}
+\wanderitem{shrieker}{}
+\wanderitem{skeleton}{}
+\wanderitem{spitting_cobra}{}
+\wanderitem{pit_viper}{}
+\wanderitem{sea_snake}{}
+\wanderitem{rattlesnake}{}
+\wanderitem{rock_python}{}
+\wanderitem{spectre}{}
+\wanderitem{black_widow}{}
+\wanderitem{crab_spider}{}
+\wanderitem{tarantella}{}
+\wanderitem{sprite}{}
+\wanderitem{squid}{}
+\wanderitem{stirge}{}
+\wanderitem{swamp_termite}{}
+\wanderitem{freshwater_termite}{}
+\wanderitem{sea_termite}{}
+\wanderitem{thoul}{}
+\wanderitem{titanothere}{}
+\wanderitem{toad}{}
+\wanderitem{treant}{}
+\wanderitem{troglodyte}{}
+\wanderitem{troll}{}
+\wanderitem{unicorn}{}
+\wanderitem{vampire}{}
+\wanderitem{weasel}{}
+\wanderitem{killer_whale}{}
+\wanderitem{narwhal}{}
+\wanderitem{sperm_whale}{}
+\wanderitem{wight}{}
+\wanderitem{wolf}{}
+\wanderitem{dire_wolf}{}
+\wanderitem{wraith}{}
+\wanderitem{wyvern}{}
+\wanderitem{yellow_mold}{}
+\wanderitem{yellow_mould}{}
+\wanderitem{zombie}{}
 \end{wanderingmonsters}
 
 \twocolumn
