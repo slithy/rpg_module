@@ -364,8 +364,8 @@ you can specify it in the optional \verb|pluralname| field. For example, if you 
 \item Damage (long form). Used in New Monster listing and stat blocks.
 \item Save As. List the long form, e.g. ``Fighter: 3''. The short form is computed where required.
 \item Morale
-\item Alignment. List the long form, e.g. ``Chaotic''. The short form is computed where required. In case of monsters with variable alignment, use the
-\verb|\Alignment| macro here and redefine the macro as needed in the text.
+\item Alignment. List the long form, e.g. ``Chaotic''. The short form is computed where required. In case of monsters with variable alignment, specify ``Any''
+here, and use the \verb|\changealignment| macro to specify as needed in the text.
 \item No. Appearing. List the range when encountered as a wandering monster.
 \item No. Appearing in Lair. List the range when encountered in the monster's lair.
 \item Treasure Type
@@ -529,9 +529,12 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 \section*{Wandering Monsters}
 \label{wanderingmonsters}
 
+% Change the alignment of Acolytes from ``Any'' to ``Chaotic''
+
+\changealignment{acolyte}{Chaotic}
+
 \begin{wanderingmonsters}[b]
 \wanderitem{gnoll}{}
-\renewcommand{\Alignment}{Chaotic}% Change the alignment of Acolytes from ``Any'' to ``Chaotic''
 \wanderitem{acolyte}{}
 \wanderitem{minion_set}{1}
 \wanderitem{snefru_hotep}{}

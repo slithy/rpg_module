@@ -81,7 +81,17 @@
 
 % Alignment macro : convert long form to short form for stat blocks
 
-\newcommand\al@module[1]{X} %\StrLeft{#1}{1}}
+\newcommand\al@module[1]{%
+   \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/AL}}{Any}=\z@
+      N % For monsters with variable alignment, assume Neutral unless we specify with changealignment
+   \else
+      \StrLeft{\pgfkeysvalueof{/#1/AL}}{1}
+   \fi
+}
+
+% Change alignment macro, for monsters with Alignment ``Any'' or ``Variable''
+
+\newcommand{\changealignment}[2]{\pgfkeys{/#1/AL = {#2}}}
 
 
 
@@ -271,15 +281,6 @@ Move:         & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd}) & Morale:        & \pg
 Attacks:      & \pgfkeys{/#1/Attlong}                     & Treasure Type: & \pgfkeys{/#1/TT}\\
 Damage:       & \pgfkeys{/#1/Dmglong}                     & Alignment:     & \pgfkeys{/#1/AL}\\
 \end{tabularx}\par\vspace{\topskip}\noindent\ignorespaces}{\vspace{\topskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
-
-
-
-%
-% Alignment macro
-%
-% Used for monsters with variable alignment. Redefine this just before the monster stat block to set a specific alignment
-
-\newcommand\Alignment{Any}
 
 
 

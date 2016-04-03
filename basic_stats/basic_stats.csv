@@ -54,7 +54,7 @@ dragon_red|Red Dragon||Dragon|-1|10**|90'|30'|Fly|240'|80'|2 claws/bite+breath|2
 dragon_sea|Sea Dragon||Dragon|1|8**|Swim 180'|60'|Fly|180'|60'|bite or spit|1 bite or 1 spit|3d8 or poison|3d8 or poison|Fighter: 8|9|Neutral|0|1--4|H|1750
 dragon_white|White Dragon||Dragon|3|6**|90'|30'|Fly|240'|80'|2 claws/bite+breath|2 claws/1 bite+breath|1d4/1d4/2d8|1d4/1d4/2d8|Fighter: 6|8|Neutral|1--4|1--4|H|725
 dryad|Dryad|||5|2*|120'|40'||||Special|Special|Nil|Nil|Fighter: 4|6|Neutral|0|1--6|D|25
-dwarf|Dwarf|||4|1|60'|20'||||weapon|1 weapon|1d8 or weapon|1d8 or weapon|Dwarf: 1|8|\Alignment|1--6|5--40|G|10
+dwarf|Dwarf|||4|1|60'|20'||||weapon|1 weapon|1d8 or weapon|1d8 or weapon|Dwarf: 1|8|Any|1--6|5--40|G|10
 efreeti_lesser|Lesser Efreeti||Efreeti|3|10*|90'|30'|Fly|240'|80'|flame|flame|2d8|2d8|Fighter: 15|12|Chaotic|1|1|Nil|1600
 elemental_air|Air Elemental||Elemental|0|12|Fly 360'|120'||||whirlwind|whirlwind|2d8|2d8|Fighter: 12|10|Neutral|1|1|Nil|1100
 elemental_air_greater|Greater Air Elemental||Elemental|-2|16|Fly 360'|120'||||whirlwind|whirlwind|3d8|3d8|Fighter: 16|10|Neutral|1|1|Nil|1350
@@ -88,7 +88,7 @@ giant_hill|Hill Giant||Giant|4|8|120'|40'||||1|1|2d8|2d8|Fighter: 8|8|Chaotic|1-
 giant_stone|Stone Giant||Giant|4|9|120'|40'||||1|1|3d6|3d6|Fighter: 9|9|Neutral|1--2|1--6|E+5,000gp|900
 giant_storm|Storm Giant||Giant|2|15|150'|50'||||1+special|1+special|8d6+special|8d6+special|Fighter: 15|10|Chaotic|1|1--3|E+5,000gp|1350
 gnoll|Gnoll|||5|2|90'|30'||||weapon|1 weapon|2d4 or weapon+1|2d4 or weapon+1|Fighter: 2|8|Chaotic|1--6|3--18|D|20
-gnome|Gnome|||5|1|60'|20'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Dwarf: 1|8|\Alignment|1--8|5--40|Chaotic|10
+gnome|Gnome|||5|1|60'|20'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Dwarf: 1|8|Any|1--8|5--40|Chaotic|10
 goblin|Goblin|||6|1-1|60'|20'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Normal Man|7|Chaotic|2--8|6--60|R (C)|5
 golem_amber|Amber Golem||Golem|6|10**|180'|60'||||2 claws/bite|2 claws/1 bite|2d6/2d6/2d10|2d6/2d6/2d10|Fighter: 5|12|Neutral|1|1|Nil|2300
 golem_bone|Bone Golem||Golem|2|8|120'|40'||||4 weapons|4 weapons|By weapons|By weapons|Fighter: 4|12|Neutral|1|1|Nil|650
@@ -137,7 +137,7 @@ wereboar|Wereboar||Lycanthrope|4\,(9)|4+1*|150'|50'||||gore|1 tusk-bite|2d6|2d6|
 wererat|Wererat||Lycanthrope|7\,(9)|3*|120'|40'||||bite or weapon|1 bite or weapon|1d4 or weapon|1d4 or weapon|Fighter: 3|8|Chaotic|1--8|2--16|C|50
 weretiger|Weretiger||Lycanthrope|3\,(9)|5*|150'|50'||||2 claws/bite|2 claws/1 bite|1d6/1d6/2d6|1d6/1d6/2d6|Fighter: 5|9|Neutral|1--4|1--4|Chaotic|35
 werewolf|Werewolf||Lycanthrope|5\,(9)|4*|180'|60'||||bite|1 bite|2d4|2d4|Fighter: 4|8|Chaotic|1--6|2--12|C|125
-acolyte|Acolyte||Man|2|1|60'|20'||||mace|1 mace|1d6|1d6|Cleric: 1|7|\Alignment|1--8|1--20|U|10
+acolyte|Acolyte||Man|2|1|60'|20'||||mace|1 mace|1d6|1d6|Cleric: 1|7|Any|1--8|1--20|U|10
 bandit|Bandit||Man|6|1|120'|40'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Thief: 1|8|Neutral|1--8|3--30|U (A)|10
 berserker|Berserker||Man|7|1+1*|120'|40'||||weapon|1 weapon|1d8 or weapon|1d8 or weapon|Fighter: 1|12|Neutral|1--6|3--30|P (B)|19
 brigand|Brigand||Man|6|1|120'|40'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter: 1|8|Chaotic|0|10--40|A|10
@@ -146,19 +146,19 @@ buccaneer|Buccaneer||Man|7|1|120'|40'||||weapon|1 weapon|1d6 or weapon|1d6 or we
 buccaneer_chain|Buccaneer||Man|5|1|120'|40'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter: 1|6|Neutral|0|special|A|10
 dervish|Dervish||Man|6|1|120'|40'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter: 1|10|Lawful|0|20--70|A|10
 dervish_chain|Dervish||Man|4|1|120'|40'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter: 1|10|Lawful|0|20--70|A|10
-human|Human||Man|9|\half|120'|40'||||weapon|1 weapon|Weapon|Weapon|Normal Man|6|\Alignment|1--4|1--20|U|5
-medium|Medium||Man|9|1**|120'|40'||||dagger or spell|1 dagger or spell|1d4|1d4 or spell|Magic--User 1|7|\Alignment|1--4|1--12|V|16
+human|Human||Man|9|\half|120'|40'||||weapon|1 weapon|Weapon|Weapon|Normal Man|6|Any|1--4|1--20|U|5
+medium|Medium||Man|9|1**|120'|40'||||dagger or spell|1 dagger or spell|1d4|1d4 or spell|Magic--User 1|7|Any|1--4|1--12|V|16
 merchant|Merchant||Man|5|1|90'|30'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter: 1|6 or variable|Neutral|0|1--20|A|10
 neanderthal|Neanderthal||Man|8|2|120'|40'||||weapon|1 weapon|2d4 or weapon+1|2d4 or weapon+1|Fighter: 2|7|Lawful|1--10|10--40|Chaotic|20
-noble|Noble||Man|2|3|60'|20'||||weapon|1 weapon|1d8 or weapon|1d8 or weapon|Varies|8|\Alignment|2--12|2--12|V$\times$3|35
+noble|Noble||Man|2|3|60'|20'||||weapon|1 weapon|1d8 or weapon|1d8 or weapon|Varies|8|Any|2--12|2--12|V$\times$3|35
 nomad|Nomad||Man|6|1|120'|40'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter: 1|8|Neutral|0|10--40|A|10
 nomad_chain|Nomad||Man|4|1|120'|40'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter: 1|8|Neutral|0|10--40|A|10
 pirate|Pirate||Man|7|1|120'|40'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter: 1|7|Chaotic|0|special|A|10
 pirate_chain|Pirate||Man|5|1|120'|40'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter: 1|7|Chaotic|0|special|A|10
-trader|Trader||Man|6|1|120'|40'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter: 1|7|\Alignment|1--8|3--18|U, V|10
-veteran1|Veteran||Man|2|1|60'|20'||||weapon|1 weapon|1d8|1d8 or weapon|Fighter: 1|9 or variable|\Alignment|2--8|2--12|V|10
-veteran2|Veteran||Man|2|2|60'|20'||||weapon|1 weapon|1d8|1d8 or weapon|Fighter: 2|9 or variable|\Alignment|2--8|2--12|V|20
-veteran3|Veteran||Man|2|3|60'|20'||||weapon|1 weapon|1d8|1d8 or weapon|Fighter: 3|9 or variable|\Alignment|2--8|2--12|V|35
+trader|Trader||Man|6|1|120'|40'||||weapon|1 weapon|1d6 or weapon|1d6 or weapon|Fighter: 1|7|Any|1--8|3--18|U, V|10
+veteran1|Veteran||Man|2|1|60'|20'||||weapon|1 weapon|1d8|1d8 or weapon|Fighter: 1|9 or variable|Any|2--8|2--12|V|10
+veteran2|Veteran||Man|2|2|60'|20'||||weapon|1 weapon|1d8|1d8 or weapon|Fighter: 2|9 or variable|Any|2--8|2--12|V|20
+veteran3|Veteran||Man|2|3|60'|20'||||weapon|1 weapon|1d8|1d8 or weapon|Fighter: 3|9 or variable|Any|2--8|2--12|V|35
 manticore|Manticore|||4|6+1|120'|40'|Fly|180'|60'|2 claws/bite or spikes|2 claws/1 bite or spikes|1d4/1d4/2d4 or special|1d4/1d4/2d4 or special|Fighter: 6|9|Chaotic|1--2|1--4|D|350
 mastodon|Mastodon|||3|15|120'|40'||||2 tusks or trample|2 tusks or 1 trample|2d6/2d6 or 4d8|2d6/2d6 or 4d8|Fighter: 8|8|Neutral|0|2--16|Special|1350
 medusa|Medusa|[Medusae]||8|4**|90'|30'||||bite+special|1 snakebite+special|1d6+poison|1d6+poison|Fighter: 4|8|Chaotic|1--3|1--4|F|175
