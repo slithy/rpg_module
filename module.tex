@@ -144,9 +144,11 @@ in an ordinary text editor, you will see the markup commands and some explanator
 \LaTeX~converts your source text, combined with the markup and the module class, into a high quality PDF document.
 
 You can find numerous tutorials online to get you started with the basics of document preparation using \LaTeX.
-The rest of this document explains the features of the module class and provides examples of how to use them.
+Part~\ref{using_the_module_class} of this document explains the features of the module class. Part~\ref{example_dungeon}
+is an example of how to create a dungeon module using the class.
 
 \part{Using the Module Class}
+\label{using_the_module_class}
 
 \section{Class Options}
 
@@ -421,6 +423,10 @@ Snake Charm, Hold Person, Slow Poison, Spiritual Hammer, Speak with Animals, Ani
 \noindent When using \verb|statblockfreestyle|, the module class provides \verb|ifbasicstats| and \verb|ifadvancedstats| macros to specify separate
 stat blocks for different RPG systems.
 
+The rest of this document shows a full example of how an adventure can be typeset using the module class.
+
+\newpage
+
 %%%%% Level One %%%%%
 
 % Float the map on a page on its own
@@ -435,8 +441,7 @@ stat blocks for different RPG systems.
 \end{figure*}
 
 \part{First Dungeon Level}
-
-The rest of this document shows a full example of how an adventure can be typeset using the module class.
+\label{example_dungeon}
 
 \section*{Key to Dungeon Level One}
 
@@ -507,16 +512,54 @@ On the porch, behind the pillars and not visible from below, are eight statues\l
 
 % Floating image
 
-\begin{figure}[ht]
+\begin{figure}[t]
 \includegraphics[width=\columnwidth]{module_art_interior.png}
 \center{Tomb It May Concern.\\
 Image Copyright \copyright 1987, 2016 Michael Davis. All rights reserved.}
 \label{img:tomb}
 \end{figure}
 
+\lipsum[7-8]
+
+\subsection{The Court of Set's Wives} % Key area 7
+
+\lipsum[9]
+
+\subsubsection{Statue of Nephthys} % Key area 7a
+\label{west_court}
+
+The statue of Nephthys, Set's first wife, is 20' tall. She is styled as a very beautiful woman dressed in the
+style of Egyptian royalty\ldots
+
+\subsubsection{Statue of Taweret} % Key area 7b
+
+The statue of Taweret, another of Set's wives, appears as a hippo-headed humanoid. Her upper torso is bare\ldots
+
+\vdots
+
+\setcounter{subsection}{13} % Skip areas 8-13
+
+\subsection{Inner Sanctuary} % Key area 14
+\label{inner_sanctuary}
+
+This area is guarded by the priest of Set, Snefru-hotep, and four Minions of Set!
+\begin{statblockfreestyle}
+\begin{ifbasicstats}
+Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 90'\,(30'), Att mace, D 1--6, Save C5, ML 11, AL C.
+He can cast the following spells: Protection from Good, Cause Fear, Snake Charm, Hold Person.
+\end{ifbasicstats}
+\begin{ifadvancedstats}
+Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 9", Att mace, D 2--7, AL LE.
+He can cast the following spells: Protection from Good, Cause Fear, Cause Light Wounds ($\times 2$), Darkness,
+Snake Charm, Hold Person, Slow Poison, Spiritual Hammer, Speak with Animals, Animate Dead, Curse.
+\end{ifadvancedstats}
+\end{statblockfreestyle}
+\statblock{minion_set}{4}{25 each}
+\lipsum[10-11]
+
 %%%%% Floating half-page %%%%%
 
-\begin{onecolumnfloat}[t]
+\begin{onecolumnfloat}[ht]
 \part{Second Dungeon Level}
 
 If you want to have some pages with a single column of text, you can use \verb|\onecolumn| to switch
@@ -555,49 +598,15 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 \end{monsterroster}
 \end{onecolumnfloat}
 
-\lipsum[7]
+\newpage
 
-\subsection{The Court of Set's Wives} % Key area 7
-
-\lipsum[8]
-
-\subsubsection{Statue of Nephthys} % Key area 7a
-\label{west_court}
-
-The statue of Nephthys, Set's first wife, is 20' tall. She is styled as a very beautiful woman dressed in the
-style of Egyptian royalty\ldots
-
-\subsubsection{Statue of Taweret} % Key area 7b
-
-The statue of Taweret, another of Set's wives, appears as a hippo-headed humanoid. Her upper torso is bare\ldots
-
-\vdots
-
-\setcounter{subsection}{13} % Skip areas 8-13
-
-\subsection{Inner Sanctuary} % Key area 14
-\label{inner_sanctuary}
-
-This area is guarded by the priest of Set, Snefru-hotep, and four Minions of Set!
-\begin{statblockfreestyle}
-\begin{ifbasicstats}
-Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 90'\,(30'), Att mace, D 1--6, Save C5, ML 11, AL C.
-He can cast the following spells: Protection from Good, Cause Fear, Snake Charm, Hold Person.
-\end{ifbasicstats}
-\begin{ifadvancedstats}
-Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 9", Att mace, D 2--7, AL LE.
-He can cast the following spells: Protection from Good, Cause Fear, Cause Light Wounds ($\times 2$), Darkness,
-Snake Charm, Hold Person, Slow Poison, Spiritual Hammer, Speak with Animals, Animate Dead, Curse.
-\end{ifadvancedstats}
-\end{statblockfreestyle}
-\statblock{minion_set}{4}{25 each}
-\lipsum[9]
+\lipsum[12-14]
 
 \section{Concluding the Adventure}
 
-\lipsum[10]
+\lipsum[12-13]
 
-\clearpage
+\newpage
 
 %
 % New Monsters part
@@ -626,7 +635,8 @@ You are free to use the class to generate works for your own private use and/or 
 Clause 3 of the license. There is no restriction on commercial use.
 
 An acknowledgement is much appreciated: you can use the \verb|\modulecopyright| macro to insert an acknowledgement
-block. No payment is required or expected, but if you wish to express your appreciation you are welcome to do so via
+block. No payment is required or expected, but if you become extremely wealthy from the sales of a module
+you typeset using this class and wish to express your appreciation you are welcome to do so via
 \href{https://paypal.me/slithy}{PayPal}.
 
 %

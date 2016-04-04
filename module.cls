@@ -39,15 +39,16 @@
 % TO DO
 %
 % 1. Running page header option in A4 paper size only
-% 2. Convert all monsters from B/X into stat block format
-% 3. Create a DF thread for support requests and set up a watch on it. Create a link to the thread into the document.
-% 4. Host the class online on CTAN.
+% 2. Add option for noindent/space between paras
+% 3. Convert all new monsters from B/X modules into stat block format
+% 4. New monster section: multi-column version for monster variants
+% 5. Create a couple of "clone" demo pages from modules/rulebook to test closeness to original typesetting
+% 6. Create a DF thread for support requests and set up a watch on it. Create a link to the thread into the document.
+% 7. Host the class online on CTAN.
 %
 % WISH LIST
 %
-% 1. New monster section: allow different movement types (flying, swimming, in web, etc.)
-% 2. New monster section: multi-column version for monster variants
-% 3. Advanced stat block options
+% 1. Advanced edition stat block options
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{module}[2016/03/30 Adventure Module document class]

@@ -272,7 +272,8 @@
 }
 
 \newenvironment{newmonster}[1]{%
-\vspace{\topskip}\begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}Xl>{\raggedright\arraybackslash}X@{}}
+\@afterindentfalse\@afterheading\vspace{\topskip}
+\begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}Xl>{\raggedright\arraybackslash}X@{}}
 \multicolumn{4}{l}{\hspace{-\tabcolsep}\Large\bfseries\longname{#1}\pgfkeys{/#1/SilverMagic}%
 \phantomsection\addcontentsline{toc}{section}{\longname{#1}}}\\[\topskip]
 \ArmourClass: & \pgfkeys{/#1/AC}                          & No. Appearing: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})\\

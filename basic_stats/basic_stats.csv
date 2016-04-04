@@ -1,4 +1,4 @@
-Label|Name|Plural|Type|SIlver/Magic|AC|HD|MVturn|MVrd|MVspec|MVspec_turn|MVspec_rd|Attack short|Attack long|Dmg short|Dmg long|SV|ML|AL|#APP|In Lair|TT|XP
+Label|Name|Plural|Type|Silver/Magic|AC|HD|MVturn|MVrd|MVspec|MVspec_turn|MVspec_rd|Attack short|Attack long|Dmg short|Dmg long|SV|ML|AL|#APP|In Lair|TT|XP
 ant|Driver Ant||Ant||3|4*|180'|60'||||1|mandibles|2d6|2d6|Fighter: 2|7|Neutral|2--8|4--24|U|125
 antelope|Antelope||||7|2|240'|80'||||1|1 butt|1d6|1d6|Fighter: 2|5|Neutral|0|3--30|Nil|20
 white_ape|White Ape||Ape||6|4|120'|40'||||2|2 claws|1d4$\times$2|1d4/1d4|Fighter: 2|7|Neutral|1--6|2--8|Nil|75
@@ -40,7 +40,7 @@ stegosaurus|Stegosaurus||Dinosaur||3|11|60'|20'||||1/1|tail or trample|2d8|2d8 o
 triceratops|Triceratops|[Triceratops]|Dinosaur||2|11|90'|30'||||1/1|gore or trample|3d6$\times$2|3d6/3d6|Fighter: 6|8|Neutral|0|1--4|Nil|1100
 tyrannosaurus_rex|Tyrannosaurus Rex|[Tyrannosaurus Rexes]|Dinosaur||3|20|120'|40'||||1|1 bite|6d6|6d6|Fighter: 10|11|Neutral|0|1|V$\times$3|2
 displacer_beast|Displacer Beast||||4|6*|150'|50'||||2|2 tentacles|2d4$\times$2|2d4/2d4|Fighter: 6|8|Neutral|1--4|1--4|D|500
-djinn|Lesser Djinn|[Lesser Djinni]|Djinn|*|5|7+1|90'|30'|Fly|240'|80'|1+special|1+special|2d8/2d6|fists 2d8 or whirlwind 2d6|Fighter: 14|12|Neutral|1|1|Nil|450
+djinni|Lesser Djinni|[Lesser Djinn]|Djinni|*|5|7+1|90'|30'|Fly|240'|80'|1+special|1+special|2d8/2d6|fists 2d8 or whirlwind 2d6|Fighter: 14|12|Neutral|1|1|Nil|450
 doppleganger|Doppleganger||||5|4*|90'|30'||||1|1|1d12|1d12|Fighter: 10|10|Chaotic|1--6|1--6|E|125
 dragon_turtle|Dragon Turtle||||-2|30|30'|10'|Swim|90'|30'|3|2 claws/1 bite|1d8$\times$2/10d6|1d8/1d8/10d6|Fighter: 15|10|Chaotic|0|1|H|4750
 black_dragon|Black Dragon||Dragon||2|7**|90'|30'|Fly|240'|80'|3+breath|2 claws/1 bite+breath|1d4+1$\times$2/2d10|1d4+1/1d4+1/2d10|Fighter: 7|8|Chaotic|1--4|1--4|H|1250
@@ -51,7 +51,7 @@ red_dragon|Red Dragon||Dragon||-1|10**|90'|30'|Fly|240'|80'|3+breath|2 claws/1 b
 white_dragon|White Dragon||Dragon||3|6**|90'|30'|Fly|240'|80'|3+breath|2 claws/1 bite+breath|1d4$\times$2/2d8|1d4/1d4/2d8|Fighter: 6|8|Neutral|1--4|1--4|H|725
 dryad|Dryad||||5|2*|120'|40'||||1|Special|charm|Charm|Fighter: 4|6|Neutral|0|1--6|D|25
 dwarf|Dwarf|[Dwarves]|||4|1|60'|20'||||1|1 weapon|1d8|1d8 or by weapon|Dwarf: 1|8|Any|1--6|5--40|G|10
-efreet|Lesser Efreet|[Lesser Efreeti]|Efreet|*|3|10*|90'|30'|Fly|240'|80'|1|flame|2d8|2d8|Fighter: 15|12|Chaotic|1|1|Nil|1600
+efreeti|Lesser Efreeti|[Lesser Efreet]|Efreeti|*|3|10*|90'|30'|Fly|240'|80'|1|flame|2d8|2d8|Fighter: 15|12|Chaotic|1|1|Nil|1600
 air_elemental|Air Elemental||Elemental|*|0|12|Fly 360'|120'||||1|whirlwind|2d8|2d8|Fighter: 12|10|Neutral|1|1|Nil|1100
 earth_elemental|Earth Elemental||Elemental|*|0|12|60'|20'||||1|fists|2d8|2d8|Fighter: 12|10|Neutral|1|1|Nil|1100
 fire_elemental|Fire Elemental||Elemental|*|0|12|120'|40'||||1|flame|2d8|2d8|Fighter: 12|10|Neutral|1|1|Nil|1100
@@ -146,7 +146,7 @@ buccaneer|Buccaneer||Men||7|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighte
 buccaneer_chain|Buccaneer||Men||5|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|6|Neutral|0|special|A|10
 dervish|Dervish||Men||6|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|10|Lawful|0|20--70|A|10
 dervish_chain|Dervish|[Dervishes]|Men||4|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|10|Lawful|0|20--70|A|10
-medium|Medium||Men||9|1**|120'|40'||||1/spell|1 dagger or spell|1d4|1d4 or spell|Magic--User 1|7|Any|1--4|1--12|V|16
+medium|Medium||Men||9|1**|120'|40'||||1/spell|1 dagger or spell|1d4|1d4 or spell|Magic-User: 1|7|Any|1--4|1--12|V|16
 merchant|Merchant||Men||5|1|90'|30'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|6 or variable|Neutral|0|1--20|A|10
 noble|Noble||Men||2|3|60'|20'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 3|8|Any|2--12|2--12|V$\times$3|35
 nomad|Nomad||Men||6|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|8|Neutral|0|10--40|A|10
@@ -232,3 +232,21 @@ wyvern|Wyvern||||3|7*|90'|30'|Fly|240'|80'|2|1 bite/1 sting|2d8/1d6+poison|2d8/1
 yellow_mold|Yellow Mold|||*|---|2|Nil|Nil||||1|spores|1d6+special|1d6+special|Fighter: 2|---|Neutral|1--8|1--4|Nil|20
 yellow_mould|Yellow Mould|||*|---|2|Nil|Nil||||1|spores|1d6+special|1d6+special|Fighter: 2|---|Neutral|1--8|1--4|Nil|20
 zombie|Zombie||||8|2|120'|40'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 1|12|Chaotic|2--8|4--24|Nil|20
+archer_bush|Archer Bush|[Archer Bushes]|||9|1|Nil|Nil||||1|1d4$\times$10 needles|1d4|1 hp per 10 needles|Fighter: 1|12|Neutral|0|1-100|Nil|
+baric|Baric||||7|5|120'|40'||||3|2 claws/1 bite|1d4$\times$2/1d10|1d4/1d4/1d10|Fighter: 5|8|Neutral|1-8|1-8|Nil|
+bubble|Bubble||||9|\half|90'|30'||||1|1|1d4+special|1d4+paralysis|Fighter: 1|9|Neutral|3-18|3-18|J|
+decapus|Decapus||||5|3|12'|4'||||9|3 per opponent (9 total)|1d6|1d6|Fighter: 3|9|Chaotic|1|1|B|
+diger|Diger||||9|2|9'|3'|Fly/Swim|90'/120'|30'/40'|1|paralysis|1|Paralysis|Magic-User: 2|8|Neutral|0|1|O|
+ghost|Ghost||||1|5|50'|15'|Fly|150'|50'|1|1 touch|1d6+aging|1d6+aging|Fighter: 5|12|Chaotic|1-4|1-4|C|
+marble_snake|Giant Marble Snake||Snake||8|3|150'|50'||||1+charm|1+charm|1d6|1d6|Fighter: 3|8|Neutral|1-4|1-4|C|
+jupiter_blood_sucker|Jupiter Blood Sucker||||5|3|9'|3'||||1|1|1d6+blood drain|1d6+blood drain|Fighter: 3|12|Neutral|1-10|1-10|Nil|
+marmoset|Giant Marmoset||Monkey||5|3|180'|60'||||4|4|1d6$\times$2/1d8/1d4|1d6/1d6/1d8/1d4|Fighter: 3|8|Neutral|2-8|2-8|J|
+poltergeist|Poltergeist||||---|---||||||||||||||||
+protector|Protector||||2|7|210'|70'||||1|1|1d6|1d6|Magic-User: 7|10|Lawful|1-10|1-10|B|
+purple_moss|Purple Moss||||9|1|9'|3'||||1|1|Special|Special|Fighter: 1|12|Neutral|1-8|1-8|Nil|
+ubue|Ubue||||7|3|60'|20'||||3|3|1d6$\times$2/1d4|1d6/1d6/1d4|Fighter: 3|3|Chaotic|3-30|3-30|Q, U, V|
+banshee|Banshee|||*|3|5*|150'|50'||||wail|wail|1d4/rd|1d4/round|Fighter: 5|12|Neutral|1|1|C|
+cynidicean|Cynidicean||||9|1|120'|40'||||1|1|1d6|1d6|Fighter: 1|7 or see below|Chaotic|1-6|1-6|A|
+werefox|Werefox|[Werefoxes]|Lycanthrope||6\,(9)|3+2*|180'|60'||||1+charm|1+charm|1d6|1d6|Fighter: 3|8|Neutral|1-4|1-6|C|
+polymar|Polymar||||9|10*|60'|20'||||3|3|1d6$\times$3|1d6/1d6/1d6|Fighter: 5|10|Chaotic|1-2|1-3|B|
+zargon|Zargon||||0|12*|90'|30'||||7|7|1d8$\times$6/3d8|1d8$\times$6/3d8|Fighter: 12|12|Chaotic|0|1|Special|
