@@ -288,10 +288,11 @@ Damage:       & \pgfkeys{/#1/Dmglong}                     & Alignment:     & \pg
 
 
 
-% Discretionary line break macros for stat blocks
+% A few special macros for stat blocks
 
-\newcommand{\?}{\discretionary{/}{}{/}}
-\newcommand{\+}{\discretionary{\,+}{}{\,+\,}}
+\newcommand\x{$\times$}                                                         % Text-mode multiplication symbol
+\newcommand{\?}{\discretionary{/}{}{/}}                                         % Breaking slash
+\newcommand{\+}{\discretionary{\,+}{}{\,+\,}}                                   % Breaking + with 1/6 em space either side
 
 
 
