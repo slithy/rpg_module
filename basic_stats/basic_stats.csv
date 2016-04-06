@@ -96,27 +96,30 @@ halfling|Halfling||||7|1-1|90'|30'||||1|1 weapon|1d6|1d6 or by weapon|Halfling: 
 harpy|Harpy||||7|3*|60'|20'|Fly|150'|50'|3+charm|2 claws\?1 weapon\+charm|1d4$\times$2/1d6|1d4\?1d4\?1d6|Fighter: 3|7|Chaotic|1--6|2--8|C|50
 hawk_giant|Giant Hawk||Hawk||6|3+3|450'|150'||||1|1|1d6|1d6|Fighter: 2|8|Neutral|0|1--3|Nil|50
 hawk|Hawk||Hawk||8|\half|480'|160'||||1|1|1d2|1d2|Normal Man|7|Neutral|0|1--6|Nil|5
-hellhound_6|Greater Hellhound||Hellhound||4|6*|120'|40'||||1+breath|bite or breath|1d6/6d6|1d6 or 6d6|Fighter: 6|9|Chaotic|2--8|2--8|C|500
-hellhound_5|Hellhound||Hellhound||4|5*|120'|40'||||1+breath|bite or breath|1d6/5d6|1d6 or 5d6|Fighter: 5|9|Chaotic|2--8|2--8|C|300
-hellhound_4|Lesser Hellhound||Hellhound||4|4*|120'|40'||||1+breath|bite or breath|1d6/4d6|1d6 or 4d6|Fighter: 4|9|Chaotic|2--8|2--8|C|125
+hellhound|Hellhound||Hellhound||4|3*|120'|40'||||1+breath|bite or breath|1d6/3d6|1d6 or 3d6|Fighter: 3|9|Chaotic|2--8|2--8|C|50
 hellhound_3|Minor Hellhound||Hellhound||4|3*|120'|40'||||1+breath|bite or breath|1d6/3d6|1d6 or 3d6|Fighter: 3|9|Chaotic|2--8|2--8|C|50
+hellhound_4|Lesser Hellhound||Hellhound||4|4*|120'|40'||||1+breath|bite or breath|1d6/4d6|1d6 or 4d6|Fighter: 4|9|Chaotic|2--8|2--8|C|125
+hellhound_5|Hellhound||Hellhound||4|5*|120'|40'||||1+breath|bite or breath|1d6/5d6|1d6 or 5d6|Fighter: 5|9|Chaotic|2--8|2--8|C|300
+hellhound_6|Greater Hellhound||Hellhound||4|6*|120'|40'||||1+breath|bite or breath|1d6/6d6|1d6 or 6d6|Fighter: 6|9|Chaotic|2--8|2--8|C|500
 hellhound_7|Monstrous Hellhound||Hellhound||4|7*|120'|40'||||1+breath|bite or breath|1d6/7d6|1d6 or 7d6|Fighter: 7|9|Chaotic|2--8|2--8|C|850
 hippogriff|Hippogriff||||5|3+1|180'|60'|Fly|360'|120'|3|2 claws\?1 bite|1d6$\times$2/1d10|1d6\?1d6\?1d10|Fighter: 2|8|Neutral|0|2--16|Nil|50
 hobgoblin|Hobgoblin||||6|1+1|90'|30'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 1|8|Chaotic|1--6|4--24|D|15
 draft_horse|Draft Horse||Horse||7|3|90'|30'||||0|Nil|Nil|Nil|Fighter: 2|6|Neutral|0|domestic only|Nil|35
 riding_horse|Riding Horse||Horse||7|2|240'|80'||||2|2 hooves|1d4$\times$2|1d4\?1d4|Fighter: 1|7|Neutral|0|10--100|Nil|20
 war_horse|War Horse||Horse||7|3|120'|40'||||2|2 hooves|1d6$\times$2|1d6\?1d6|Fighter: 2|9|Neutral|0|domestic only|Nil|35
-hydra_8|Eight-Headed Hydra|[Eight-Headed Hydrae]|Hydra||5|8|120'|40'||||8|8 heads|1d10$\times$8|1d10 each|Fighter: 8|9|Neutral|1|1|B|650
-hydra_11|Eleven-Headed Hydra|[Eleven-Headed Hydrae]|Hydra||5|11|120'|40'||||11|11 heads|1d10$\times$11|1d10 each|Fighter: 11|9|Neutral|1|1|B|1100
+hydra|Five-Headed Hydra|[Five-Headed Hydrae]|Hydra||5|5|120'|40'||||5|5 heads|1d10$\times$5|1d10 each|Fighter: 5|9|Neutral|1|1|B|175
 hydra_5|Five-Headed Hydra|[Five-Headed Hydrae]|Hydra||5|5|120'|40'||||5|5 heads|1d10$\times$5|1d10 each|Fighter: 5|9|Neutral|1|1|B|175
-hydra_9|Nine-Headed Hydra|[Nine-Headed Hydrae]|Hydra||5|9|120'|40'||||9|9 heads|1d10$\times$9|1d10 each|Fighter: 9|9|Neutral|1|1|B|900
-hydra_7|Seven-Headed Hydra|[Seven-Headed Hydrae]|Hydra||5|7|120'|40'||||7|7 heads|1d10$\times$7|1d10 each|Fighter: 7|9|Neutral|1|1|B|450
 hydra_6|Six-Headed Hydra|[Six-Headed Hydrae]|Hydra||5|6|120'|40'||||6|6 heads|1d10$\times$6|1d10 each|Fighter: 6|9|Neutral|1|1|B|275
+hydra_7|Seven-Headed Hydra|[Seven-Headed Hydrae]|Hydra||5|7|120'|40'||||7|7 heads|1d10$\times$7|1d10 each|Fighter: 7|9|Neutral|1|1|B|450
+hydra_8|Eight-Headed Hydra|[Eight-Headed Hydrae]|Hydra||5|8|120'|40'||||8|8 heads|1d10$\times$8|1d10 each|Fighter: 8|9|Neutral|1|1|B|650
+hydra_9|Nine-Headed Hydra|[Nine-Headed Hydrae]|Hydra||5|9|120'|40'||||9|9 heads|1d10$\times$9|1d10 each|Fighter: 9|9|Neutral|1|1|B|900
 hydra_10|Ten-Headed Hydra|[Ten-Headed Hydrae]|Hydra||5|10|120'|40'||||10|10 heads|1d10$\times$10|1d10 each|Fighter: 10|9|Neutral|1|1|B|900
+hydra_11|Eleven-Headed Hydra|[Eleven-Headed Hydrae]|Hydra||5|11|120'|40'||||11|11 heads|1d10$\times$11|1d10 each|Fighter: 11|9|Neutral|1|1|B|1100
 hydra_12|Twelve-Headed Hydra|[Twelve-Headed Hydrae]|Hydra||5|12|120'|40'||||12|12 heads|1d10$\times$12|1d10 each|Fighter: 12|9|Neutral|1|1|B|1100
-insect_swarm_3|Insect Swarm||Insect Swarm||7|3|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1 swarm|1--3 swarms|Nil|35
-insect_swarm_4|Large Insect Swarm||Insect Swarm||7|4|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1 swarm|1--3 swarms|Nil|75
-insect_swarm_2|Small Insect Swarm||Insect Swarm||7|2|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1 swarm|1--3 swarms|Nil|20
+insect_swarm|Insect Swarm||Insect Swarm||7|2|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1|1--3|Nil|20
+insect_swarm_2|Small Insect Swarm||Insect Swarm||7|2|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1|1--3|Nil|20
+insect_swarm_3|Insect Swarm||Insect Swarm||7|3|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1|1--3|Nil|35
+insect_swarm_4|Large Insect Swarm||Insect Swarm||7|4|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1|1--3|Nil|75
 invisible_stalker|Invisible Stalker||||3|8*|120'|40'||||1|1|4d4|4d4|Fighter: 8|12|Neutral|1|1|Nil|1200
 kobold|Kobold||||7|\half|60'|20'||||1|1 weapon|1d4|1d4 or by weapon-1|Normal Man|6|Chaotic|4--16|6--60|P (J)|5
 leech|Giant Leech|[Giant Leeches]|Leech||7|6|90'|30'||||1|blood suck|1d6|1d6|Fighter: 3|10|Neutral|0|1--4|Nil|275
@@ -155,6 +158,7 @@ normal_human|Normal Human||Men||9|\half|120'|40'||||1|1 weapon|1d6|1d6 or by wea
 pirate|Pirate||Men||7|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|7|Chaotic|0|special|A|10
 pirate_chain|Pirate||Men||5|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|7|Chaotic|0|special|A|10
 trader|Trader||Men||6|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|7|Any|1--8|3--18|U, V|10
+veteran|Veteran||Men||2|1|60'|20'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 1|9 or variable|Any|2--8|2--12|V|10
 veteran_1|Veteran||Men||2|1|60'|20'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 1|9 or variable|Any|2--8|2--12|V|10
 veteran_2|Veteran||Men||2|2|60'|20'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 2|9 or variable|Any|2--8|2--12|V|20
 veteran_3|Veteran||Men||2|3|60'|20'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 3|9 or variable|Any|2--8|2--12|V|35
@@ -219,7 +223,10 @@ treant|Treant||||2|8|60'|20'||||2|2 blows|2d6$\times$2|2d6\?2d6|Fighter: 8|9|Law
 troglodyte|Troglodyte||||5|2*|120'|40'||||3|2 claws\?1 bite|1d4$\times$3|1d4\?1d4\?1d4|Fighter: 2|9|Chaotic|1--8|5--40|A|25
 troll|Troll||||4|6+3|120'|40'||||3|2 claws\?1 bite|1d6$\times$2/1d10|1d6\?1d6\?1d10|Fighter: 6|10 or 8|Chaotic|1--8|1--8|D|350
 unicorn|Unicorn||||2|4*|240'|80'||||3|2 hooves\?1 horn|1d8$\times$3|1d8\?1d8\?1d8|Fighter: 8|7|Lawful|1--6|1--8|Nil|125
-vampire|Vampire|||*|2|7 to 9**|120'|40'|Fly|180'|60'|1|1 touch|1d10+energy drain|1d10\+drain 2 levels|Fighter: 7 to 9|11|Chaotic|1--4|1--6|F|1750
+vampire|Vampire|||*|2|7**|120'|40'|Fly|180'|60'|1|1 touch|1d10+energy drain|1d10\+drain 2 levels|Fighter: 7|11|Chaotic|1--4|1--6|F|1250
+vampire_7|Vampire|||*|2|7**|120'|40'|Fly|180'|60'|1|1 touch|1d10+energy drain|1d10\+drain 2 levels|Fighter: 7|11|Chaotic|1--4|1--6|F|1250
+vampire_8|Vampire|||*|2|8**|120'|40'|Fly|180'|60'|1|1 touch|1d10+energy drain|1d10\+drain 2 levels|Fighter: 8|11|Chaotic|1--4|1--6|F|1750
+vampire_9|Vampire|||*|2|9**|120'|40'|Fly|180'|60'|1|1 touch|1d10+energy drain|1d10\+drain 2 levels|Fighter: 9|11|Chaotic|1--4|1--6|F|2300
 weasel|Giant Weasel||Weasel||7|4+4|150'|50'||||1|1 bite|2d4+special|2d4\+special|Fighter: 3|8|Neutral|1--4|1--6|V|125
 killer_whale|Killer Whale||Whale||6|6|240'|80'||||1|1 bite|1d20|1d20|Fighter: 3|10|Neutral|0|1--6|V|275
 narwhal|Narwhal||Whale||7|12|180'|60'||||2|1 horn\?1 bite|2d6/1d8|2d6\?1d8|Fighter: 12|8|Lawful|0|1--4|Special|1100
@@ -250,3 +257,19 @@ cynidicean|Cynidicean||||9|1|120'|40'||||1|1|1d6|1d6|Fighter: 1|7 or see below|C
 werefox|Werefox|[Werefoxes]|Lycanthrope||6\,(9)|3+2*|180'|60'||||1+charm|1+charm|1d6|1d6|Fighter: 3|8|Neutral|1--4|1--6|C|
 polymar|Polymar||||9|10*|60'|20'||||3|3|1d6$\times$3|1d6\?1d6\?1d6|Fighter: 5|10|Chaotic|1--2|1--3|B|
 zargon|Zargon||||0|12*|90'|30'||||7|7|1d8$\times$6/3d8|1d8$\times$6\?3d8|Fighter: 12|12|Chaotic|0|1|Special|
+allosaurus|Allosaurus||Dinosaur||5|13|150'|50'||||1|1 bite|4d6|4d6|Fighter: 7|9|Neutral|0|1-4|V|
+ankylosaurus|Ankylosaurus||Dinosaur||0|7||||||||||||Neutral|0|1-8|Nil|
+aranea|Aranea|[Araneae]||||||||||||||||Chaotic|1-3|1-6|D|
+brontosaurus|Brontosaurus||Dinosaur|||||||||||||||Neutral|0|1-3|Nil|
+dimetrodon|Dimetrodon||Dinosaur|||||||||||||||Neutral|0|1-6|V|
+elk|Giant Elk||Elk|||||||||||||||Neutral|0|1-6|Nil|
+grangeri|Grangeri|[Grangeri]||||||||||||||||Neutral|0|1-6|Nil|
+kopru|Kopru|[Kopru]||||||||||||||||Chaotic|1-3|1-3|I+N|
+megatherium|Megatherium|[Megatheria]||||||||||||||||Neutral|0|1-6|Nil|
+native|Native||Men|||||||||||||||Any|0|3-30/30-300|A|
+oyster|Giant Oyster||Oyster|||||||||||||||Neutral|0|1-4|E|
+phanaton|Phanaton|||||||||||||||||Lawful|0|3-30/30-300|Nil|
+phororhacos|Phororhacos|||||||||||||||||Neutral|0|1-8|U|
+plesiosaurus|Plesiosaurus||Dinosaur|||||||||||||||Neutral|0|1-3|Nil|
+rakasta|Rakasta|[Rakasta]||||||||||||||||Neutral|0|3-30|M (special)|
+trachodon|Trachodon||Dinosaur|||||||||||||||Neutral|0|1-6|Nil|
