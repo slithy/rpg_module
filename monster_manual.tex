@@ -25,13 +25,18 @@
 
 % Bat
 
-\begin{newmonster}{bat}\end{newmonster}
+% Shorten the Vampire Bat name so it fits in the tabular format
+\pgfkeys{/vampire_bat/SingleName/.initial = {Vampire Bat}}
+
+\begin{newmonster3}{bat}{giant_bat}{vampire_bat}
+\lipsum[1]
+\end{newmonster3}
+
+% Restore the name to Giant Vampire Bat
+\pgfkeys{/vampire_bat/SingleName/.initial = {Giant Vampire Bat}}
+
 \statblock{bat}{3}{4 each}
-
-\begin{newmonster}{giant_bat}\end{newmonster}
 \statblock{giant_bat}{3}{4 each}
-
-\begin{newmonster}{vampire_bat}\end{newmonster}
 \statblock{vampire_bat}{3}{4 each}
 
 % Bear

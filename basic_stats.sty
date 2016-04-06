@@ -292,12 +292,12 @@ Damage:       & \pgfkeys{/#1/Dmglong}                     & Alignment:     & \pg
 
 \newenvironment{newmonster2}[2]{%
 \@afterindentfalse\@afterheading\vspace{\topskip}
-\begin{tabularx}{\linewidth}{@{}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\begin{tabularx}{\linewidth}{@{}X>{\raggedright\arraybackslash}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
 \multicolumn{3}{l}{\hspace{-\tabcolsep}\Large\bfseries\pgfkeysvalueof{/#1/Type}\pgfkeysvalueof{/#1/SilverMagic}%
 \phantomsection\addcontentsline{toc}{section}{\pgfkeysvalueof{/#1/Type}}}\\[\topskip]
  & \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SingleName}}=\z@
    Normal
-\fi\pgfkeys{/#1/SingleName}                        & \pgfkeys{/#2/SingleName}\\
+\fi\pgfkeys{/#1/SingleName}                                      & \pgfkeys{/#2/SingleName}\\
 \cmidrule(l{\tabcolsep}r{\tabcolsep}){2-2}
 \cmidrule(l{\tabcolsep}r{\tabcolsep}){3-3}
 \ArmourClass:  & \pgfkeys{/#1/AC}                                & \pgfkeys{/#2/AC}\\
@@ -313,6 +313,40 @@ Save As:       & \pgfkeys{/#1/SVlong}                            & \pgfkeys{/#2/
 Morale:        & \pgfkeys{/#1/MLlong}                            & \pgfkeys{/#2/MLlong}\\
 Treasure Type: & \pgfkeys{/#1/TT}                                & \pgfkeys{/#2/TT}\\
 Alignment:     & \pgfkeys{/#1/AL}                                & \pgfkeys{/#2/AL}\\
+\end{tabularx}\par\vspace{\topskip}\noindent\ignorespaces}{\vspace{\topskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
+
+% Three-column version
+
+\newenvironment{newmonster3}[3]{%
+\@afterindentfalse\@afterheading\vspace{\topskip}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\multicolumn{4}{l}{\hspace{-\tabcolsep}\Large\bfseries\pgfkeysvalueof{/#1/Type}\pgfkeysvalueof{/#1/SilverMagic}%
+\phantomsection\addcontentsline{toc}{section}{\pgfkeysvalueof{/#1/Type}}}\\[\topskip]
+ & \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SingleName}}=\z@
+   Normal
+\fi\pgfkeys{/#1/SingleName}                                      & \pgfkeys{/#2/SingleName} & \pgfkeys{/#3/SingleName}\\
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){2-2}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){3-3}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){4-4}
+\ArmourClass:  & \pgfkeys{/#1/AC}                                & \pgfkeys{/#2/AC}         & \pgfkeys{/#3/AC}\\
+Hit Dice:      & \pgfkeys{/#1/HDlong}                            & \pgfkeys{/#2/HDlong}     & \pgfkeys{/#3/HDlong}\\
+Move:          & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd})
+               & \pgfkeys{/#2/MVturn} (\pgfkeys{/#2/MVrd})
+               & \pgfkeys{/#3/MVturn} (\pgfkeys{/#3/MVrd})\\
+\ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/MVspec}}{}=\z@\else
+\hspace{1em}\pgfkeys{/#1/MVspec}: & \pgfkeys{/#1/MVspec_turn} (\pgfkeys{/#1/MVspec_rd})
+                                  & \pgfkeys{/#2/MVspec_turn} (\pgfkeys{/#2/MVspec_rd})
+                                  & \pgfkeys{/#3/MVspec_turn} (\pgfkeys{/#3/MVspec_rd})\\
+\fi
+Attacks:       & \pgfkeys{/#1/Attlong}                           & \pgfkeys{/#2/Attlong}    & \pgfkeys{/#3/Attlong}\\
+Damage:        & \pgfkeys{/#1/Dmglong}                           & \pgfkeys{/#2/Dmglong}    & \pgfkeys{/#3/Dmglong}\\
+No. Appearing: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})
+               & \pgfkeys{/#2/NoAppear} (\pgfkeys{/#2/NoInLair})
+               & \pgfkeys{/#3/NoAppear} (\pgfkeys{/#3/NoInLair})\\
+Save As:       & \pgfkeys{/#1/SVlong}                            & \pgfkeys{/#2/SVlong}     & \pgfkeys{/#3/SVlong}\\
+Morale:        & \pgfkeys{/#1/MLlong}                            & \pgfkeys{/#2/MLlong}     & \pgfkeys{/#3/MLlong}\\
+Treasure Type: & \pgfkeys{/#1/TT}                                & \pgfkeys{/#2/TT}         & \pgfkeys{/#3/TT}\\
+Alignment:     & \pgfkeys{/#1/AL}                                & \pgfkeys{/#2/AL}         & \pgfkeys{/#3/AL}\\
 \end{tabularx}\par\vspace{\topskip}\noindent\ignorespaces}{\vspace{\topskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
 
