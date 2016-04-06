@@ -1,6 +1,5 @@
 Label|Name|Plural|Type|Silver/Magic|AC|HD|MVturn|MVrd|MVspec|MVspec_turn|MVspec_rd|Attack short|Attack long|Dmg short|Dmg long|SV|ML|AL|#APP|In Lair|TT|XP
-ant|Driver Ant||Ant||3|4*|180'|60'||||1|mandibles|2d6|2d6|Fighter: 2|7|Neutral|2--8|4--24|U|125
-antelope|Antelope||||7|2|240'|80'||||1|1 butt|1d6|1d6|Fighter: 2|5|Neutral|0|3--30|Nil|20
+ant|Driver Ant||Ant||3|4*|180'|60'||||1|mandibles|2d6|2d6|Fighter: 2|7 (12)|Neutral|2--8|4--24|U|125
 white_ape|White Ape||Ape||6|4|120'|40'||||2|2 claws|1d4\x 2|1d4\?1d4|Fighter: 2|7|Neutral|1--6|2--8|Nil|75
 basilisk|Basilisk||||4|6+1**|60'|20'||||1+gaze|1 bite\+gaze|1d10+special|1d10\+petrification|Fighter: 6|9|Neutral|1--6|1--6|F|950
 bat|Bat||Bat||6|1 hp|9'|3'|Fly|120'|40'|1|Confusion|Nil|Nil|Normal Man|6|Neutral|1--100|1--100|Nil|5
@@ -102,6 +101,13 @@ hellhound_4|Lesser Hellhound||Hellhound||4|4*|120'|40'||||1+breath|bite or breat
 hellhound_5|Hellhound||Hellhound||4|5*|120'|40'||||1+breath|bite or breath|1d6/5d6|1d6 or 5d6|Fighter: 5|9|Chaotic|2--8|2--8|C|300
 hellhound_6|Greater Hellhound||Hellhound||4|6*|120'|40'||||1+breath|bite or breath|1d6/6d6|1d6 or 6d6|Fighter: 6|9|Chaotic|2--8|2--8|C|500
 hellhound_7|Monstrous Hellhound||Hellhound||4|7*|120'|40'||||1+breath|bite or breath|1d6/7d6|1d6 or 7d6|Fighter: 7|9|Chaotic|2--8|2--8|C|850
+antelope|Antelope||Herd Animal||7|1|240'|80'||||1|1 butt|1d4|1d4|Fighter: 1|5|Neutral|0|3--30|Nil|10
+goat|Goat||Herd Animal||7|1|240'|80'||||1|1 butt|1d6|1d6|Fighter: 1|5|Neutral|0|3--30|Nil|10
+deer|Deer|[Deer]|Herd Animal||7|2|240'|80'||||1|1 butt|1d4|1d4|Fighter: 2|5|Neutral|0|3--30|Nil|20
+caribou|Caribou|[Caribou]|Herd Animal||7|3|240'|80'||||1|1 butt|1d6|1d6|Fighter: 2|5|Neutral|0|3--30|Nil|35
+ox|Ox|[Oxen]|Herd Animal||7|3|240'|80'||||1|1 butt|1d8|1d8|Fighter: 2|5|Neutral|0|3--30|Nil|35
+elk|Elk|[Elk]|Herd Animal||7|4|240'|80'||||1|1 butt|1d8|1d8|Fighter: 2|5|Neutral|0|3--30|Nil|75
+moose|Moose|[Moose]|Herd Animal||7|4|240'|80'||||1|1 butt|1d8|1d8|Fighter: 2|5|Neutral|0|3--30|Nil|75
 hippogriff|Hippogriff||||5|3+1|180'|60'|Fly|360'|120'|3|2 claws\?1 bite|1d6\x 2/1d10|1d6\?1d6\?1d10|Fighter: 2|8|Neutral|0|2--16|Nil|50
 hobgoblin|Hobgoblin||||6|1+1|90'|30'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 1|8|Chaotic|1--6|4--24|D|15
 draft_horse|Draft Horse||Horse||7|3|90'|30'||||0|Nil|Nil|Nil|Fighter: 2|6|Neutral|0|domestic only|Nil|35
@@ -262,7 +268,7 @@ ankylosaurus|Ankylosaurus||Dinosaur||0|7|60'|20'||||1|1 tail|2d6|2d6|Fighter: 4|
 aranea|Aranea|[Araneae]|||7|3**|60'|20'|Web|120'|40'|1|1|1d6+poison|1d6\+poison|Magic-User: 3|7|Chaotic|1--3|1--6|D|
 brontosaurus|Brontosaurus||Dinosaur||5|26|60'|20'||||2|1 bite\?1tail|2d6/3d6|2d6\?3d6|Fighter: 13|8|Neutral|0|1--3|Nil|
 dimetrodon|Dimetrodon||Dinosaur||5|7|120'|40'||||1|1 bite|2d8|2d8|Fighter: 4|8|Neutral|0|1--6|V|
-elk|Giant Elk||Elk||6|8|120'|40'||||1|1 butt|1d12|1d12|Fighter: 4|7|Neutral|0|1--6|Nil|
+giant_elk|Giant Elk||Elk||6|8|120'|40'||||1|1 butt|1d12|1d12|Fighter: 4|7|Neutral|0|1--6|Nil|
 grangeri|Grangeri|[Grangeri]|||5|13|120'|40'||||1/1|1 bite or trample|2d6/3d6|2d6 or 3d6|Fighter: 7|7|Neutral|0|1--6|Nil|
 kopru|Kopru|[Kopru]|||3|8+4|30'|10'|Swim|150'|50'|2+charm|1 bite\?1 tail or charm|1d4/3d6|1d4\?3d6|Fighter: 9|9|Chaotic|1--3|1--3|I, N|
 megatherium|Megatherium|[Megatheria]|||6|11|90'|30'||||2|2 claws|2d6\x 2|2d6\?2d6|Fighter: 6|7|Neutral|0|1--6|Nil|
