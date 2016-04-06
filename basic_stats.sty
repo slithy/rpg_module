@@ -259,7 +259,9 @@
 
 
 
+%
 % New Monster environment
+%
 
 \newcommand{\longname}[1]{%
    \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/Type}}{}=\z@
@@ -286,11 +288,39 @@ Attacks:      & \pgfkeys{/#1/Attlong}                     & Treasure Type: & \pg
 Damage:       & \pgfkeys{/#1/Dmglong}                     & Alignment:     & \pgfkeys{/#1/AL}\\
 \end{tabularx}\par\vspace{\topskip}\noindent\ignorespaces}{\vspace{\topskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
+% Two-column version
+
+\newenvironment{newmonster2}[2]{%
+\@afterindentfalse\@afterheading\vspace{\topskip}
+\begin{tabularx}{\linewidth}{@{}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\multicolumn{3}{l}{\hspace{-\tabcolsep}\Large\bfseries\pgfkeysvalueof{/#1/Type}\pgfkeysvalueof{/#1/SilverMagic}%
+\phantomsection\addcontentsline{toc}{section}{\pgfkeysvalueof{/#1/Type}}}\\[\topskip]
+ & \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SingleName}}=\z@
+   Normal
+\fi\pgfkeys{/#1/SingleName}                        & \pgfkeys{/#2/SingleName}\\
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){2-2}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){3-3}
+\ArmourClass:  & \pgfkeys{/#1/AC}                                & \pgfkeys{/#2/AC}\\
+Hit Dice:      & \pgfkeys{/#1/HDlong}                            & \pgfkeys{/#2/HDlong}\\
+Move:          & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd})       & \pgfkeys{/#2/MVturn} (\pgfkeys{/#2/MVrd})\\
+\ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/MVspec}}{}=\z@\else
+\hspace{1em}\pgfkeys{/#1/MVspec}: & \pgfkeys{/#1/MVspec_turn} (\pgfkeys{/#1/MVspec_rd}) & \pgfkeys{/#2/MVspec_turn} (\pgfkeys{/#2/MVspec_rd})\\
+\fi
+Attacks:       & \pgfkeys{/#1/Attlong}                           & \pgfkeys{/#2/Attlong}\\
+Damage:        & \pgfkeys{/#1/Dmglong}                           & \pgfkeys{/#2/Dmglong}\\
+No. Appearing: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair}) & \pgfkeys{/#2/NoAppear} (\pgfkeys{/#2/NoInLair})\\
+Save As:       & \pgfkeys{/#1/SVlong}                            & \pgfkeys{/#2/SVlong}\\
+Morale:        & \pgfkeys{/#1/MLlong}                            & \pgfkeys{/#2/MLlong}\\
+Treasure Type: & \pgfkeys{/#1/TT}                                & \pgfkeys{/#2/TT}\\
+Alignment:     & \pgfkeys{/#1/AL}                                & \pgfkeys{/#2/AL}\\
+\end{tabularx}\par\vspace{\topskip}\noindent\ignorespaces}{\vspace{\topskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
+
 
 
 % A few special macros for stat blocks
 
 \newcommand\x{$\times$}                                                         % Text-mode multiplication symbol
+\newcommand\minus{$-$}                                                          % Text-mode minus sign
 \newcommand{\?}{\discretionary{/}{}{/}}                                         % Breaking slash
 \newcommand{\+}{\discretionary{\,+}{}{\,+\,}}                                   % Breaking + with 1/6 em space either side
 
