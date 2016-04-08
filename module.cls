@@ -38,7 +38,6 @@
 
 % TO DO
 %
-% 1. Running page header option in A4 paper size only
 % 3. Convert all new monsters from B/X modules into stat block format
 % 5. Create a couple of "clone" demo pages from modules/rulebook to test closeness to original typesetting
 % 6. Create a DF thread for support requests and set up a watch on it. Create a link to the thread into the document.
@@ -149,6 +148,7 @@
    \newcommand{\ArmourClass}{Armor Class}                                       % Concession to US spelling of Armour
 \else
    \PassOptionsToClass{a4paper}{article}
+   \PassOptionsToClass{twoside}{article}
    \newcommand{\ArmourClass}{Armour Class}
 \fi
 
@@ -166,8 +166,6 @@
 \setlength{\evensidemargin}{1cm}
 
 \setlength{\topmargin}{2.6cm}
-\setlength{\headheight}{0cm}
-\setlength{\headsep}{0cm}
 
 \setlength{\textheight}{25.4cm}
 \setlength{\textwidth}{19cm}
@@ -180,6 +178,24 @@
 \setlength{\columnsep}{0.75cm}
 
 \pagenumbering{arabic}
+
+\ifmodule@letterpaper
+   \setlength{\headheight}{0cm}
+   \setlength{\headsep}{0cm}
+\else
+   \addtolength{\topmargin}{-\headheight}
+   \addtolength{\topmargin}{-\headsep}
+   \RequirePackage{fancyhdr}                                                    % Add headers and footers
+   \fancypagestyle{plain}{%
+      \fancyhf{} % clear all header and footer fields
+      \fancyhead[LO,RE]{\slshape \leftmark}
+      \fancyhead[RO,LE]{\slshape \rightmark}
+      \fancyfoot[C]{\thepage} % except the center
+      \renewcommand{\headrulewidth}{0pt}
+      \renewcommand{\footrulewidth}{0pt}
+   }
+   \pagestyle{plain}
+\fi
 
 
 
@@ -346,6 +362,21 @@
 \end{tabular}
 }}
 
+
+
+% Running heads (used on A4 paper size only)
+
+\newcommand\titlerunning[1]{%
+   \gdef\runningtitle{\MakeUppercase{#1}}
+}
+
+\ifmodule@letterpaper\else
+   \renewcommand{\partmark}[1]{\markright{\MakeUppercase{#1}}{}}
+   \renewcommand{\sectionmark}[1]{}
+   \renewcommand{\subsectionmark}[1]{}
+   \renewcommand{\leftmark}{\runningtitle}
+   \titlerunning{\@title}
+\fi
 
 
 % Headings
