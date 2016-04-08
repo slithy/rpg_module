@@ -38,6 +38,7 @@
 
 % TO DO
 %
+% 1. Replace floating 2-column with non-floating version
 % 3. Convert all new monsters from B/X modules into stat block format
 % 5. Create a couple of "clone" demo pages from modules/rulebook to test closeness to original typesetting
 % 6. Create a DF thread for support requests and set up a watch on it. Create a link to the thread into the document.
