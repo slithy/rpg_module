@@ -39,9 +39,7 @@
 % TO DO
 %
 % 1. Running page header option in A4 paper size only
-% 2. Add option for noindent/space between paras
 % 3. Convert all new monsters from B/X modules into stat block format
-% 4. Define starred versions of multi-column monster listings, with no heading or TOC links
 % 5. Create a couple of "clone" demo pages from modules/rulebook to test closeness to original typesetting
 % 6. Create a DF thread for support requests and set up a watch on it. Create a link to the thread into the document.
 % 7. Host the class online on CTAN.
