@@ -290,11 +290,13 @@ Damage:       & \pgfkeys{/#1/Dmglong}                     & Alignment:     & \pg
 
 % Two-column version
 
-\newenvironment{newmonster2}[2]{%
+\newenvironment{newmonster2*}[4]{%
 \@afterindentfalse\@afterheading\vspace{\topskip}
 \begin{tabularx}{\linewidth}{@{}X>{\raggedright\arraybackslash}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
-\multicolumn{3}{l}{\hspace{-\tabcolsep}\Large\bfseries\pgfkeysvalueof{/#1/Type}\pgfkeysvalueof{/#1/SilverMagic}%
-\phantomsection\addcontentsline{toc}{section}{\pgfkeysvalueof{/#1/Type}}}\\[\topskip]
+\ifnum\pdfstrcmp{#3}{}=\z@\else
+\multicolumn{3}{l}{\hspace{-\tabcolsep}\Large\bfseries#3#4%
+\phantomsection\addcontentsline{toc}{section}{#3}}\\[\topskip]
+\fi
  & \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SingleName}}=\z@
    Normal
 \fi\pgfkeys{/#1/SingleName}                                      & \pgfkeys{/#2/SingleName}\\
@@ -315,13 +317,17 @@ Treasure Type: & \pgfkeys{/#1/TT}                                & \pgfkeys{/#2/
 Alignment:     & \pgfkeys{/#1/AL}                                & \pgfkeys{/#2/AL}\\
 \end{tabularx}\par\vspace{\topskip}\noindent\ignorespaces}{\vspace{\topskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
+\newenvironment{newmonster2}[2]{\begin{newmonster2*}{#1}{#2}{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SilverMagic}}}{\end{newmonster2*}}
+
 % Three-column version
 
-\newenvironment{newmonster3}[3]{%
+\newenvironment{newmonster3*}[5]{%
 \@afterindentfalse\@afterheading\vspace{\topskip}
 \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
-\multicolumn{4}{l}{\hspace{-\tabcolsep}\Large\bfseries\pgfkeysvalueof{/#1/Type}\pgfkeysvalueof{/#1/SilverMagic}%
-\phantomsection\addcontentsline{toc}{section}{\pgfkeysvalueof{/#1/Type}}}\\[\topskip]
+\ifnum\pdfstrcmp{#4}{}=\z@\else
+\multicolumn{4}{l}{\hspace{-\tabcolsep}\Large\bfseries#4#5%
+\phantomsection\addcontentsline{toc}{section}{#4}}\\[\topskip]
+\fi
  & \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SingleName}}=\z@
    Normal
 \fi\pgfkeys{/#1/SingleName}                                      & \pgfkeys{/#2/SingleName} & \pgfkeys{/#3/SingleName}\\
@@ -348,6 +354,8 @@ Morale:        & \pgfkeys{/#1/MLlong}                            & \pgfkeys{/#2/
 Treasure Type: & \pgfkeys{/#1/TT}                                & \pgfkeys{/#2/TT}         & \pgfkeys{/#3/TT}\\
 Alignment:     & \pgfkeys{/#1/AL}                                & \pgfkeys{/#2/AL}         & \pgfkeys{/#3/AL}\\
 \end{tabularx}\par\vspace{\topskip}\noindent\ignorespaces}{\vspace{\topskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
+
+\newenvironment{newmonster3}[3]{\begin{newmonster3*}{#1}{#2}{#3}{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SilverMagic}}}{\end{newmonster3*}}
 
 
 
