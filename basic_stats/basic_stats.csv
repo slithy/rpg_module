@@ -1,17 +1,17 @@
 Label|Name|Plural|Type|Silver/Magic|AC|HD|MVturn|MVrd|MVspec|MVspec_turn|MVspec_rd|Attack short|Attack long|Dmg short|Dmg long|SV|ML|AL|#APP|In Lair|TT|XP
-ant|Driver Ant||Ant||3|4*|180'|60'||||1|mandibles|2d6|2d6|Fighter: 2|7 (12)|Neutral|2--8|4--24|U|125
+ant|Driver Ant||Ant||3|4*|180'|60'||||1|1 mandibles|2d6|2d6|Fighter: 2|7 (12)|Neutral|2--8|4--24|U or special|125
 white_ape|White Ape||Ape||6|4|120'|40'||||2|2 claws|1d4\x 2|1d4\?1d4|Fighter: 2|7|Neutral|1--6|2--8|Nil|75
 basilisk|Basilisk||||4|6+1**|60'|20'||||1+gaze|1 bite\+gaze|1d10+special|1d10\+petrification|Fighter: 6|9|Neutral|1--6|1--6|F|950
-bat|Bat||Bat||6|1 hp|9'|3'|Fly|120'|40'|1|Confusion|Nil|Nil|Normal Man|6|Neutral|1--100|1--100|Nil|5
+bat|Bat||Bat||6|1 hp|9'|3'|Fly|120'|40'|special|Confusion|Nil|Nil|Normal Man|6|Neutral|1--100|1--100|Nil|5
 giant_bat|Giant Bat||Bat||6|2|30'|10'|Fly|180'|60'|1|1 bite|1d4|1d4|Fighter: 1|8|Neutral|1--10|1--10|Nil|20
-vampire_bat|Giant Vampire Bat||Bat||6|2|30'|10'|Fly|180'|60'|1|1 bite|1d4+special|1d4\+special|Fighter: 1|8|Neutral|1--10|1--10|Nil|20
+vampire_bat|Giant Vampire Bat||Bat||6|2|30'|10'|Fly|180'|60'|1|1 bite|1d4+special|1d4\+blood drain|Fighter: 1|8|Neutral|1--10|1--10|Nil|20
 black_bear|Black Bear||Bear||6|4|120'|40'||||3|2 claws\?1 bite|1d3\x 2/1d6|1d3\?1d3\?1d6|Fighter: 2|7|Neutral|1--4|1--4|U|75
 cave_bear|Cave Bear||Bear||5|7|120'|40'||||3|2 claws\?1 bite|1d8\x 2/2d6|1d8\?1d8\?2d6|Fighter: 3|9|Neutral|1--2|1--2|V|450
 grizzly_bear|Grizzly Bear||Bear||6|5|120'|40'||||3|2 claws\?1 bite|1d4\x 2/1d8|1d4\?1d4\?1d8|Fighter: 2|8|Neutral|1|1--4|U|175
 polar_bear|Polar Bear||Bear||6|6|120'|40'||||3|2 claws\?1 bite|1d6\x 2/1d10|1d6\?1d6\?1d10|Fighter: 3|8|Neutral|1|1--2|U|275
 bee|Killer Bee||Bee||7|\half*|150'|50'||||1|1 sting|1d3+special|1d3\+special|Fighter: 1|9|Neutral|1--6|5--30|Special|6
 fire_beetle|Giant Fire Beetle||Beetle||4|1+2|120'|40'||||1|1 bite|2d4|2d4|Fighter: 1|7|Neutral|1--8|2--12|Nil|15
-oil_beetle|Giant Oil Beetle||Beetle||4|2*|120'|40'||||1+special|1 bite\+special|1d6+special|1d6\+special|Fighter: 1|8|Neutral|1--8|2--12|Nil|25
+oil_beetle|Giant Oil Beetle||Beetle||4|2*|120'|40'||||1+special|1~bite\+special|1d6+special|1d6\+special|Fighter: 1|8|Neutral|1--8|2--12|Nil|25
 tiger_beetle|Giant Tiger Beetle||Beetle||3|3+1|150'|50'||||1|1 bite|2d6|2d6|Fighter: 1|9|Neutral|1--6|2--8|U|50
 black_pudding|Black Pudding|||*|6|10*|60'|20'||||1|1|3d8|3d8|Fighter: 5|12|Neutral|1|0|Nil|1600
 blink_dog|Blink Dog||||5|4*|120'|40'||||1|1 bite|1d6|1d6|Fighter: 4|6|Lawful|1--6|1--6|C|125
@@ -128,7 +128,7 @@ insect_swarm_3|Insect Swarm||Insect Swarm||7|3|30'|10'|Fly|60'|20'|swarm|1 swarm
 insect_swarm_4|Large Insect Swarm||Insect Swarm||7|4|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1|1--3|Nil|75
 invisible_stalker|Invisible Stalker||||3|8*|120'|40'||||1|1|4d4|4d4|Fighter: 8|12|Neutral|1|1|Nil|1200
 kobold|Kobold||||7|\half|60'|20'||||1|1 weapon|1d4|1d4 or by weapon\minus 1|Normal Man|6|Chaotic|4--16|6--60|P (J)|5
-leech|Giant Leech|[Giant Leeches]|Leech||7|6|90'|30'||||1|blood suck|1d6|1d6|Fighter: 3|10|Neutral|0|1--4|Nil|275
+leech|Giant Leech|[Giant Leeches]|Leech||7|6|90'|30'||||1|1 bite|1d6+special|1d6\+blood drain|Fighter: 3|10|Neutral|0|1--4|Nil|275
 living_crystal_statue|Crystal Living Statue||Living Statue||4|3|90'|30'||||2|2 fists|1d6\x 2|1d6\?1d6|Fighter: 3|11|Lawful|1--6|1--6|Nil|35
 living_iron_statue|Iron Living Statue||Living Statue||2|4|30'|10'||||2|2 fists|1d8\x 2+special|1d8\?1d8\+special|Fighter: 4|11|Neutral|1--4|1--4|Nil|75
 living_rock_statue|Rock Living Statue||Living Statue||4|5**|60'|20'||||2|2 magma|2d6\x 2|2d6\?2d6|Fighter: 5|11|Chaotic|1--3|1--3|Nil|45
@@ -218,7 +218,7 @@ crab_spider|Giant Crab Spider||Spider||7|2*|120'|40'||||1|1 bite|1d8+poison|1d8\
 tarantella|Giant Tarantella||Spider||5|4*|120'|40'||||1|1 bite|1d8+poison|1d8\+poison|Fighter: 2|8|Neutral|1--3|1--3|U|125
 sprite|Sprite||||5|\half*|60'|20'|Fly|180'|60'|spell|1 spell|Special|Special|Elf: 1|7|Neutral|3--18|5--40|S|6
 squid|Giant Squid||Squid||7|6|120'|40'||||9|8 tentacles\?1 beak|1d4\x 8/1d10|1d4\x 8\?1d10|Fighter: 3|7 or 9|Neutral|0|1--4|V|275
-stirge|Stirge||||7|1*|30'|10'|Fly|180'|60'|1|1|1d3+special|1d3\+special|Fighter: 2|9|Neutral|1--10|3--36|L|13
+stirge|Stirge||||7|1*|30'|10'|Fly|180'|60'|1|1|1d3+special|1d3\+blood drain|Fighter: 2|9|Neutral|1--10|3--36|L|13
 freshwater_termite|Freshwater Termite||Termite||6|2+1|120'|40'||||1/1/1|Spray or ink or bite|1d3/special|Bite 1d3 or special|Fighter: 2|8|Neutral|0|1--3|Nil|25
 sea_termite|Sea Termite||Termite||5|4|180'|60'||||1/1/1|Spray or ink or bite|1d3/special|Bite 1d3 or special|Fighter: 3|11|Neutral|0|2--7|Nil|75
 swamp_termite|Swamp Termite||Termite||4|1+1|90'|30'||||1/1/1|Spray or ink or bite|1d3/special|Bite 1d3 or special|Fighter: 1|10|Neutral|0|1--4|Nil|15
@@ -248,17 +248,17 @@ zombie|Zombie||||8|2|120'|40'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 1|12|C
 archer_bush_orange|Archer Bush|[Archer Bushes]|||9|1|Nil|Nil||||1|1 thorn spray|1d4|1d4|Fighter: 1|12|Neutral|0|1--100|Nil|10
 archer_bush|Archer Bush|[Archer Bushes]|||7|2|3'|1'||||1|1 thorn spray|1d4|1d4|Fighter: 1|12|Neutral|1--20|1--100|V|20
 baric|Baric||||7|5|120'|40'||||3|2 claws\?1 bite|1d4\x 2/1d10|1d4\?1d4\?1d10|Fighter: 5|8|Neutral|1--8|1--8|Nil|175
-bubble|Bubble||||9|\half|90'|30'||||1|1|1d4+special|1d4\+paralysis|Fighter: 1|9|Neutral|3--18|3--18|J|5
-decapus_orange|Decapus||||5|3|12'|4'||||9|9 tentacles|1d6\x 9|1d6 each|Fighter: 3|9|Chaotic|1|1|B|35
+bubble|Bubble||||9|\half*|90'|30'||||1|1|1d4+special|1d4\+paralysis|Fighter: 1|9|Neutral|3--18|3--18|J|6
+decapus_orange|Decapus||||5|3*|12'|4'||||9|9 tentacles|1d6\x 9|1d6 each|Fighter: 3|9|Chaotic|1|1|B|50
 decapus|Decapus||||5|4|3'|1'|Brachiation|90'|30'|9|9 tentacles|1d6\x 9|1d6 each|Fighter: 2|9|Chaotic|1|1|C|75
-diger|Diger||||9|2|9'|3'|Fly/Swim|90'/120'|30'/40'|1|paralysis|1|Paralysis|Magic-User: 2|8|Neutral|0|1|O|20
-ghost|Ghost||||1|5|50'|15'|Fly|150'|50'|1|1 touch|1d6+aging|1d6\+aging|Fighter: 5|12|Chaotic|1--4|1--4|C|175
-marble_snake|Giant Marble Snake||Snake||8|3|150'|50'||||1+charm|1+charm|1d6|1d6|Fighter: 3|8|Neutral|1--4|1--4|C|35
-jupiter_blood_sucker|Jupiter Blood Sucker||||5|3|9'|3'||||1|1|1d6+blood drain|1d6\+blood drain|Fighter: 3|12|Neutral|1--10|1--10|Nil|35
+diger|Diger||||9|2*|9'|3'|Fly/Swim|90'/120'|30'/40'|1|paralysis|1|Paralysis|Magic-User: 2|8|Neutral|0|1|O|25
+ghost|Ghost|||*|1|5*|50'|15'|Fly|150'|50'|1|1 touch|1d6+aging|1d6\+aging|Fighter: 5|12|Chaotic|1--4|1--4|C|300
+marble_snake|Giant Marble Snake||Snake||8|3*|150'|50'||||1+charm|1+charm|1d6|1d6|Fighter: 3|8|Neutral|1--4|1--4|C|50
+jupiter_blood_sucker|Jupiter Blood Sucker||||5|3|9'|3'||||1|1|1d6+special|1d6\+blood drain|Fighter: 3|12|Neutral|1--10|1--10|Nil|35
 vampire_rose|Vampire Rose||||7|4|30'|10'||||1|1 thorn|1d8+special|1d8\+blood drain|Fighter: 2|12|Chaotic|0|1--8|Nil|75
 marmoset|Giant Marmoset||Monkey||5|3|180'|60'||||4|4|1d6\x 2/1d8/1d4|1d6\?1d6\?1d8\?1d4|Fighter: 3|8|Neutral|2--8|2--8|J|35
 protector|Protector||||2|7|210'|70'||||1|1|1d6|1d6|Magic-User: 7|10|Lawful|1--10|1--10|B|450
-purple_moss|Purple Moss|[Patches of Purple Moss]|||9|1|9'|3'||||1|1|Special|Special|Fighter: 1|12|Neutral|1--8|1--8|Nil|10
+purple_moss|Purple Moss|[Patches of Purple Moss]|||9|1*|9'|3'||||1|1|special|Special|Fighter: 1|12|Neutral|1--8|1--8|Nil|13
 ubue|Ubue||||7|3|60'|20'||||3|3|1d6\x 2/1d4|1d6\?1d6\?1d4|Fighter: 3|3|Chaotic|3--30|3--30|Q, U, V|35
 banshee|Banshee|||*|3|5*|150'|50'||||wail|wail|1d4/rd|1d4\?round|Fighter: 5|12|Neutral|1|1|C|300
 cynidicean|Cynidicean||||9|1|120'|40'||||1|1|1d6|1d6|Fighter: 1|7 or see below|Chaotic|1--6|1--6|A|10
@@ -290,10 +290,10 @@ amoeba_13|Giant Amoeba|[Giant Amoebae]|Amoeba||9|13|30'|10'||||1|envelop|2d6\?rd
 amoeba_14|Giant Amoeba|[Giant Amoebae]|Amoeba||9|14|30'|10'||||1|envelop|2d6\?rd|acid 2d6\?round|Fighter: 7|10|Neutral|1|1|Nil|1350
 amoeba_15|Giant Amoeba|[Giant Amoebae]|Amoeba||9|15|30'|10'||||1|envelop|2d6\?rd|acid 2d6\?round|Fighter: 7|10|Neutral|1|1|Nil|1350
 brain_collector|Brain Collector||||2|10*|180'|60'||||1+spells|1 bite+spells|1d10|1d10|Fighter: 10|10|Chaotic|1|1|C|1600
-death_demon|Death Demon||Demon||4|7**|90'|30'|Fly|180'|60'|3|2 claws\?1 bite|1d4\x 2/2d4+special|1d4\?1d4\?2d8\+ special|Fighter: 7|10|Chaotic|1--4|1--4|E|1250
+death_demon|Death Demon||Demon||4|7**|90'|30'|Fly|180'|60'|3|2 claws\?1 bite|1d4\x 2/2d4+special|1d4\?1d4\?2d8\+special|Fighter: 7|10|Chaotic|1--4|1--4|E|1250
 mud_golem|Mud Golem||Golem||9|8*|90'|30'||||1|1 hug|2d12+special|2d12\+smothering|Fighter: 8|12|Neutral|1|1|Nil|1200
-grab_grass|Grab Grass|[Patches of Grab Grass]|||9|1|Nil|Nil||||1|grab|Special|Special|Normal Man|12|Neutral|0|special|Nil|10
-gremlin|Gremlin||||7|1**|120'|40'||||special|special|Special|Special|Elf: 1|12|Chaotic|1--6|1--6|Nil|16
+grab_grass|Grab Grass|[Patches of Grab Grass]|||9|1|Nil|Nil||||1|grab|special|Special|Normal Man|12|Neutral|0|special|Nil|10
+gremlin|Gremlin||||7|1**|120'|40'||||special|special|special|Special|Elf: 1|12|Chaotic|1--6|1--6|Nil|16
 killer_tree|Killer Tree||Tree||5|6|Nil|Nil||||5|4 limbs\?1 mouth|0\x 4/3d6|grab\x 4\?3d6|Fighter: 3|12|Neutral|0|2--12|Nil|275
 lupin|Lupin||||6|2|120'|40'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 2|8|Lawful|2--12|'5--40|C|20
 hypnos_magen|Hypnos Magen|[Hypnos Magen]|Magen||7|2*|120'|40'||||1|1|charm|charm|Magic-User: 2|12|Neutral|1|0|U|25
