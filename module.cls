@@ -38,11 +38,15 @@
 
 % TO DO
 %
-% 1. Ascending AC for negative ACs
 % 1. Create a couple of "clone" demo pages from modules to compare closeness to original typesetting
 % 2. Create a DF thread for support requests and set up a watch on it. Create a link to the thread into the document.
 % 3. Upload to DF
 % 4. Upload to CTAN
+%
+% KNOWN BUGS
+%
+% 1. Ascending AC for negative ACs
+% 2. Special movement in multi-column listings
 %
 % WISH LIST
 %

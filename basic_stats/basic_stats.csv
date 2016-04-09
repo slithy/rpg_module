@@ -109,7 +109,7 @@ ox|Ox|[Oxen]|Herd Animal||7|3|240'|80'||||1|1 butt|1d8|1d8|Fighter: 2|5|Neutral|
 elk|Elk|[Elk]|Herd Animal||7|4|240'|80'||||1|1 butt|1d8|1d8|Fighter: 2|5|Neutral|0|3--30|Nil|75
 moose|Moose|[Moose]|Herd Animal||7|4|240'|80'||||1|1 butt|1d8|1d8|Fighter: 2|5|Neutral|0|3--30|Nil|75
 hippogriff|Hippogriff||||5|3+1|180'|60'|Fly|360'|120'|3|2 claws\?1 bite|1d6\x 2/1d10|1d6\?1d6\?1d10|Fighter: 2|8|Neutral|0|2--16|Nil|50
-hobgoblin|Hobgoblin||||6|1+1|90'|30'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 1|8|Chaotic|1--6|4--24|D|15
+hobgoblin|Hobgoblin||||6|1+1|90'|30'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 1|8 (10)|Chaotic|1--6|4--24|D|15
 draft_horse|Draft Horse||Horse||7|3|90'|30'||||0|Nil|Nil|Nil|Fighter: 2|6|Neutral|0|domestic only|Nil|35
 riding_horse|Riding Horse||Horse||7|2|240'|80'||||2|2 hooves|1d4\x 2|1d4\?1d4|Fighter: 1|7|Neutral|0|10--100|Nil|20
 war_horse|War Horse||Horse||7|3|120'|40'||||2|2 hooves|1d6\x 2|1d6\?1d6|Fighter: 2|9|Neutral|0|domestic only|Nil|35
@@ -127,8 +127,8 @@ insect_swarm_2|Small Insect Swarm||Insect Swarm||7|2|30'|10'|Fly|60'|20'|swarm|1
 insect_swarm_3|Insect Swarm||Insect Swarm||7|3|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1|1--3|Nil|35
 insect_swarm_4|Large Insect Swarm||Insect Swarm||7|4|30'|10'|Fly|60'|20'|swarm|1 swarm|2|2 points|Normal Man|11|Neutral|1|1--3|Nil|75
 invisible_stalker|Invisible Stalker||||3|8*|120'|40'||||1|1|4d4|4d4|Fighter: 8|12|Neutral|1|1|Nil|1200
-kobold|Kobold||||7|\half|60'|20'||||1|1 weapon|1d4|1d4 or by weapon\minus 1|Normal Man|6|Chaotic|4--16|6--60|P (J)|5
-leech|Giant Leech|[Giant Leeches]|Leech||7|6|90'|30'||||1|1 bite|1d6+special|1d6\+blood drain|Fighter: 3|10|Neutral|0|1--4|Nil|275
+kobold|Kobold||||7|\half|60'|20'||||1|1 weapon|1d4|1d4 or by weapon\minus 1|Normal Man|6 (8)|Chaotic|4--16|6--60|P (J)|5
+leech|Giant Leech|[Giant Leeches]|Leech||7|6|90'|30'||||1|blood suck|1d6+special|1d6\+blood drain|Fighter: 3|10|Neutral|0|1--4|Nil|275
 living_crystal_statue|Crystal Living Statue||Living Statue||4|3|90'|30'||||2|2 fists|1d6\x 2|1d6\?1d6|Fighter: 3|11|Lawful|1--6|1--6|Nil|35
 living_iron_statue|Iron Living Statue||Living Statue||2|4|30'|10'||||2|2 fists|1d8\x 2+special|1d8\?1d8\+special|Fighter: 4|11|Neutral|1--4|1--4|Nil|75
 living_rock_statue|Rock Living Statue||Living Statue||4|5**|60'|20'||||2|2 magma|2d6\x 2|2d6\?2d6|Fighter: 5|11|Chaotic|1--3|1--3|Nil|45
@@ -137,15 +137,15 @@ draco|Giant Draco||Lizard||5|4+2|120'|40'|Fly|210'|70'|1|1 bite|1d10|1d10|Fighte
 gecko|Giant Gecko||Lizard||5|3+1|120'|40'||||1|1 bite|1d8|1d8|Fighter: 2|7|Neutral|1--6|1--10|U|50
 horned_chameleon|Giant Horned Chameleon||Lizard||2|5*|120'|40'||||2|1 bite\?1 horn|2d4/1d6|2d4\?1d6|Fighter: 3|7|Neutral|1--3|1--6|U|35
 tuatara|Giant Tuatara||Lizard||4|6|90'|30'||||3|2 claws\?1 bite|1d4\x 2/2d6|1d4\?1d4\?2d6|Fighter: 4|6|Neutral|1--2|1--4|V|275
-devil_swine|Devil Swine|[Devil Swine]|Lycanthrope|*|3\,(9)|9*|180'|60'|As human|120'|40'|1/1|1 gore or weapon|2d6/1d8|2d6 or by weapon|Fighter: 9|10|Chaotic|1--3|1--4|C|1600
-werebear|Werebear||Lycanthrope|*|2\,(9)|6*|120'|40'||||3|2 claws\?1 bite|2d4\x 2/2d8|2d4\?2d4\?2d8|Fighter: 6|10|Neutral|1--4|1--4|C|500
+devil_swine|Devil Swine|[Devil Swine]|Lycanthrope|*|3\,(9)|9*|180'|60'|as human|120'|40'|1/1+charm|1 gore or weapon\+charm|2d6/1d8|2d6 or by weapon|Fighter: 9|10|Chaotic|1--3|1--4|C|1600
+werebear|Werebear||Lycanthrope|*|2\,(8)|6*|120'|40'||||3|2 claws\?1 bite|2d4\x 2/2d8|2d4\?2d4\?2d8|Fighter: 6|10|Neutral|1--4|1--4|C|500
 wereboar|Wereboar||Lycanthrope|*|4\,(9)|4+1*|150'|50'||||1|1 tusk-bite|2d6|2d6|Fighter: 4|9|Neutral|1--4|2--8|C|200
 wererat|Wererat||Lycanthrope|*|7\,(9)|3*|120'|40'||||1/1|1 bite or weapon|1d4/1d6|1d4 or by weapon|Fighter: 3|8|Chaotic|1--8|2--16|C|50
 weretiger|Weretiger||Lycanthrope|*|3\,(9)|5*|150'|50'||||3|2 claws\?1 bite|1d6\x 2/2d6|1d6\?1d6\?2d6|Fighter: 5|9|Neutral|1--4|1--4|C|35
 werewolf|Werewolf|[Werewolves]|Lycanthrope|*|5\,(9)|4*|180'|60'||||1|1 bite|2d4|2d4|Fighter: 4|8|Chaotic|1--6|2--12|C|125
 manticore|Manticore||||4|6+1|120'|40'|Fly|180'|60'|3/1|2 claws\?1 bite or spikes|1d4\x 2/2d4/special|1d4\?1d4\?2d4 or special|Fighter: 6|9|Chaotic|1--2|1--4|D|350
 mastodon|Mastodon||||3|15|120'|40'||||2/1|2 tusks or 1 trample|2d6\x 2/4d8|2d6\?2d6 or 4d8|Fighter: 8|8|Neutral|0|2--16|Special|1350
-medusa|Medusa|[Medusae]|||8|4**|90'|30'||||1+special|1 snakebite+special|1d6+poison|1d6\+poison|Fighter: 4|8|Chaotic|1--3|1--4|F|175
+medusa|Medusa|[Medusae]|||8|4**|90'|30'||||1+special|1 snakebite\+special|1d6+poison|1d6\+poison|Fighter: 4|8|Chaotic|1--3|1--4|F|175
 acolyte|Acolyte||Men||2|1|60'|20'||||1|1 mace|1d6|1d6|Cleric: 1|7|Any|1--8|1--20|U|10
 bandit|Bandit||Men||6|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Thief: 1|8|Neutral|1--8|3--30|U (A)|10
 berserker|Berserker||Men||7|1+1*|120'|40'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 1|12|Neutral|1--6|3--30|P (B)|19
@@ -153,7 +153,7 @@ brigand|Brigand||Men||6|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1
 brigand_chain|Brigand||Men||4|1|90'|30'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|8|Chaotic|0|10--40|A|10
 buccaneer|Buccaneer||Men||7|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|6|Neutral|0|special|A|10
 buccaneer_chain|Buccaneer||Men||5|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|6|Neutral|0|special|A|10
-dervish|Dervish||Men||6|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|10|Lawful|0|20--70|A|10
+dervish|Dervish|[Dervishes]|Men||6|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|10|Lawful|0|20--70|A|10
 dervish_chain|Dervish|[Dervishes]|Men||4|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|10|Lawful|0|20--70|A|10
 medium|Medium||Men||9|1**|120'|40'||||1/spell|1 dagger or spell|1d4|1d4 or spell|Magic-User: 1|7|Any|1--4|1--12|V|16
 merchant|Merchant||Men||5|1|90'|30'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|6 or variable|Neutral|0|1--20|A|10
@@ -169,6 +169,10 @@ veteran_1|Veteran||Men||2|1|60'|20'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 
 veteran_2|Veteran||Men||2|2|60'|20'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 2|9 or variable|Any|2--8|2--12|V|20
 veteran_3|Veteran||Men||2|3|60'|20'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 3|9 or variable|Any|2--8|2--12|V|35
 merman|Merman|[Mermen]|||6|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|8|Neutral|0|1--20|A|10
+merman_1|Merman|[Mermen]|||6|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|8|Neutral|0|1--20|A|10
+merman_2|Merman|[Mermen]|||6|2|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 2|8|Neutral|0|1--20|A|20
+merman_3|Merman|[Mermen]|||6|3|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 3|8|Neutral|0|1--20|A|35
+merman_4|Merman|[Mermen]|||6|4|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 4|8|Neutral|0|1--20|A|75
 minotaur|Minotaur||||6|6|120'|40'||||2/1|1 gore\?1 bite or weapon|1d6\x 2/1d6+2|1d6\?1d6 or by weapon\+2|Fighter: 6|12|Chaotic|1--6|1--8|C|275
 mule|Mule||||7|2|120'|40'||||1/1|1 kick or 1 bite|1d4/1d3|1d4 or 1d3|Normal Man|8|Neutral|1--8|2--12|Nil|20
 mummy|Mummy|||*|3|5+1*|60'|20'||||1|1 touch|1d12+disease|1d12\+disease|Fighter: 5|12|Chaotic|1--4|1--12|D|400
@@ -177,7 +181,7 @@ nixie|Nixie||||7|1|120'|40'||||1|1|1d4|1d4|Elf: 1|6|Neutral|0|2--40|B|10
 ochre_jelly|Ochre Jelly|||*|8|5*|30'|10'||||1|1|2d6|2d6|Fighter: 3|12|Neutral|1|0|Nil|35
 octopus|Giant Octopus|[Giant Octopodes]|Octopus||7|8|90'|30'||||9|8 tentacles\?1 bite|1d3\x 8/1d6|1d3\x 8\?1d6|Fighter: 4|7|Neutral|0|1--2|Nil|650
 ogre|Ogre||||5|4+1|90'|30'||||1|1 club|1d10|1d10|Fighter: 4|10|Chaotic|1--6|2--12|C\+1,000gp|125
-orc|Orc||||6|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|6|Chaotic|2--8|10--60|D|10
+orc|Orc||||6|1|120'|40'||||1|1 weapon|1d6|1d6 or by weapon|Fighter: 1|8 (6)|Chaotic|2--8|10--60|D|10
 owl_bear|Owl Bear||||5|5|120'|40'||||3|2 claws\?1 bite|1d8\x 3|1d8\?1d8\?1d8|Fighter: 3|9|Neutral|1--4|1--4|C|175
 pegasus|Pegasus|[Pegasi]|||6|2+2|240'|80'|Fly|480'|160'|2|2 hooves|1d6\x 2|1d6\?1d6|Fighter: 2|8|Lawful|0|1--12|Nil|25
 pixie|Pixie||||3|1*|90'|30'|Fly|180'|60'|1|1 dagger|1d4|1d4|Elf: 1|7|Neutral|2--8|10--40|R, S|13
@@ -190,22 +194,29 @@ rhagodessa|Rhagodessa|[Rhagodessae]|||5|4+2|150'|50'||||2|1 leg\?1 bite|0/2d8|0\
 rhinoceros|Rhinoceros||Rhinoceros||5|6|120'|40'||||1|butt or trample|2d4/2d8|2d4 or 2d8|Fighter: 3|6|Neutral|0|1--12|Nil|275
 wooly_rhinoceros|Woolly Rhinoceros||Rhinoceros||4|8|120'|40'||||1|butt or trample|2d6/2d12|2d6 or 2d12|Fighter: 4|6|Neutral|0|1--8|Nil|650
 robber_fly|Robber Fly||||6|2|90'|30'|Fly|180'|60'|1|1 bite|1d8|1d8|Fighter: 1|8|Neutral|1--6|2--12|U|20
-giant_roc|Giant Roc||Roc||0|36|60'|20'|Fly|480'|160'|3|2 claws\?1 bite|3d6\x 2/8d6|3d6\?3d6\?8d6|Fighter: 15|10|Lawful|0|1|I|6250
 rock_baboon|Rock Baboon||||6|2|120'|40'||||2|1 club\?1 bite|1d6/1d3|1d6\?1d3|Fighter: 2|8|Neutral|2--12|5--30|U|20
+small_roc|Small Roc||Roc||4|6|60'|20'|Fly|480'|160'|3|2 claws\?1 bite|1d4+1\x 2/2d6|1d4+1\?1d4+1\?2d6|Fighter: 6|8|Lawful|0|1--12|I|275
 large_roc|Large Roc||Roc||2|12|60'|20'|Fly|480'|160'|3|2 claws\?1 bite|1d8\x 2/2d10|1d8\?1d8\?2d10|Fighter: 12|9|Lawful|0|1--8|I|1100
-small_roc|Small Roc||Roc||4|6|60'|20'|Fly|480'|160'|3|2 claws\?1 bite|1d4+1\x 2/2d6|1d4+1\?1d4+1\?2d6|Fighter: 3|8|Lawful|0|1--12|I|275
+giant_roc|Giant Roc||Roc||0|36|60'|20'|Fly|480'|160'|3|2 claws\?1 bite|3d6\x 2/8d6|3d6\?3d6\?8d6|Fighter: 15|10|Lawful|0|1|I|6250
 rust_monster|Rust Monster|||*|2|5|120'|40'||||1|1|Special|Special|Fighter: 3|7|Neutral|1--4|1--4|Nil|175
 flame_salamander|Flame Salamander||Salamander|*|2|8*|120'|40'||||3|2 claws\?1 bite|1d4\x 2/1d8|1d4\?1d4\?1d8|Fighter: 8|8|Neutral|2--5|2--8|F|1200
 frost_salamander|Frost Salamander||Salamander|*|3|12*|120'|40'||||5|4 claws\?1 bite|1d6\x 4/2d6|1d6\x 4\?2d6|Fighter: 12|9|Chaotic|1--3|1--3|E|1900
 scorpion|Giant Scorpion||Scorpion||2|4*|150'|50'||||3|2 claws\?1 sting|1d10\x 2/1d4+poison|1d10\?1d10\?1d4\+poison|Fighter: 2|11|Chaotic|1--6|1--6|V|125
 sea_dragon|Sea Dragon||||1|8**|Swim 180'|60'|Fly|180'|60'|1/1|1 bite or 1 spit|3d8/poison|3d8 or poison|Fighter: 8|9|Neutral|0|1--4|H|1750
+sea_dragon_5|Sea Dragon||||1|5**|Swim 180'|60'|Fly|180'|60'|1/1|1 bite or 1 spit|3d8/poison|3d8 or poison|Fighter: 5|9|Neutral|0|1--4|H|425
+sea_dragon_6|Sea Dragon||||1|6**|Swim 180'|60'|Fly|180'|60'|1/1|1 bite or 1 spit|3d8/poison|3d8 or poison|Fighter: 6|9|Neutral|0|1--4|H|775
+sea_dragon_7|Sea Dragon||||1|7**|Swim 180'|60'|Fly|180'|60'|1/1|1 bite or 1 spit|3d8/poison|3d8 or poison|Fighter: 7|9|Neutral|0|1--4|H|1250
+sea_dragon_8|Sea Dragon||||1|8**|Swim 180'|60'|Fly|180'|60'|1/1|1 bite or 1 spit|3d8/poison|3d8 or poison|Fighter: 8|9|Neutral|0|1--4|H|1750
+sea_dragon_9|Sea Dragon||||1|9**|Swim 180'|60'|Fly|180'|60'|1/1|1 bite or 1 spit|3d8/poison|3d8 or poison|Fighter: 9|9|Neutral|0|1--4|H|2300
+sea_dragon_10|Sea Dragon||||1|10**|Swim 180'|60'|Fly|180'|60'|1/1|1 bite or 1 spit|3d8/poison|3d8 or poison|Fighter: 10|9|Neutral|0|1--4|H|2300
+sea_dragon_11|Sea Dragon||||1|11**|Swim 180'|60'|Fly|180'|60'|1/1|1 bite or 1 spit|3d8/poison|3d8 or poison|Fighter: 11|9|Neutral|0|1--4|H|2700
 sea_serpent|Lesser Sea Serpent||Sea Serpent||5|6|150'|50'||||1/1|1 bite or squeeze|2d6|2d6|Fighter: 3|8|Neutral|0|2--12|Nil|275
 shadow|Shadow|||*|7|2+2*|90'|30'||||1|1|1d4+special|1d4\+special|Fighter: 2|12|Chaotic|1--8|1--12|F|35
 bull_shark|Bull Shark||Shark||4|2|180'|60'||||1|1 bite|2d4|2d4|Fighter: 1|7|Neutral|0|3--18|Nil|20
 great_white_shark|Great White Shark||Shark||4|8|180'|60'||||1|1 bite|2d10|2d10|Fighter: 4|7|Neutral|0|1--4|Nil|650
 mako_shark|Mako Shark||Shark||4|4|180'|60'||||1|1 bite|2d6|2d6|Fighter: 2|7|Neutral|0|2--12|Nil|75
 shrew|Giant Shrew||Shrew||4|1|180'|60'||||2|2 bites|1d6\x 2|1d6\?1d6|Fighter: 1|10|Neutral|1--4|1--8|Nil|10
-shrieker|Shrieker||||7|3|9'|3'||||shriek|shriek|Nil|Nil|Fighter: 1|12|Neutral|1--8|0|Nil|35
+shrieker|Shrieker||||7|3|9'|3'||||shriek|Shriek|Nil|Nil|Fighter: 1|12|Neutral|1--8|0|Nil|35
 skeleton|Skeleton||||7|1|60'|20'||||1|1|1d6|1d6 or by weapon|Fighter: 1|12|Chaotic|3--12|3--30|Nil|10
 rattlesnake|Giant Rattlesnake||Snake||5|4*|120'|40'||||2|2 bites|1d4\x 2+poison|1d4\?1d4\+poison|Fighter: 2|8|Neutral|1--4|1--4|U|125
 pit_viper|Pit Viper||Snake||6|2*|90'|30'||||1|1 bite|1d4+poison|1d4\+poison|Fighter: 1|7|Neutral|1--8|1--8|Nil|25
@@ -217,17 +228,17 @@ black_widow|Giant Black Widow Spider||Spider||6|3*|60'|20'|Web|120'|40'|1|1 bite
 crab_spider|Giant Crab Spider||Spider||7|2*|120'|40'||||1|1 bite|1d8+poison|1d8\+poison|Fighter: 1|7|Neutral|1--4|1--4|U|25
 tarantella|Giant Tarantella||Spider||5|4*|120'|40'||||1|1 bite|1d8+poison|1d8\+poison|Fighter: 2|8|Neutral|1--3|1--3|U|125
 sprite|Sprite||||5|\half*|60'|20'|Fly|180'|60'|spell|1 spell|Special|Special|Elf: 1|7|Neutral|3--18|5--40|S|6
-squid|Giant Squid||Squid||7|6|120'|40'||||9|8 tentacles\?1 beak|1d4\x 8/1d10|1d4\x 8\?1d10|Fighter: 3|7 or 9|Neutral|0|1--4|V|275
+squid|Giant Squid||Squid||7|6|120'|40'||||9|8 tentacles\?1 beak|1d4\x 8/1d10|1d4\x 8\?1d10|Fighter: 3|7 (9)|Neutral|0|1--4|V|275
 stirge|Stirge||||7|1*|30'|10'|Fly|180'|60'|1|1|1d3+special|1d3\+blood drain|Fighter: 2|9|Neutral|1--10|3--36|L|13
-freshwater_termite|Freshwater Termite||Termite||6|2+1|120'|40'||||1/1/1|Spray or ink or bite|1d3/special|Bite 1d3 or special|Fighter: 2|8|Neutral|0|1--3|Nil|25
-sea_termite|Sea Termite||Termite||5|4|180'|60'||||1/1/1|Spray or ink or bite|1d3/special|Bite 1d3 or special|Fighter: 3|11|Neutral|0|2--7|Nil|75
-swamp_termite|Swamp Termite||Termite||4|1+1|90'|30'||||1/1/1|Spray or ink or bite|1d3/special|Bite 1d3 or special|Fighter: 1|10|Neutral|0|1--4|Nil|15
-thoul|Thoul||||6|3**|120'|40'||||2/1|2 claws or weapon|1d3\x 2 or weapon|1d3\?1d3\?1d6|Fighter: 3|10|Chaotic|1--6|1--10|C|65
+swamp_termite|Swamp Termite||Termite||4|1+1|90'|30'||||1/1/1|1 bite or spray or ink|1d3/special|1d3 or stun or blindness|Fighter: 1|10|Neutral|0|1--4|Nil|15
+freshwater_termite|Freshwater Termite||Termite||6|2+1|120'|40'||||1/1/1|1 bite or spray or ink|1d4/special|1d4 or stun or blindness|Fighter: 2|8|Neutral|0|1--3|Nil|25
+sea_termite|Sea Termite||Termite||5|4|180'|60'||||1/1/1|1 bite or spray or ink|1d6/special|1d6 or stun or blindness|Fighter: 3|11|Neutral|0|2--7|Nil|75
+thoul|Thoul||||6|3**|120'|40'||||2/1|2 claws or weapon|1d3\x 2/1d8|1d3\?1d3 or by weapon|Fighter: 3|10|Chaotic|1--6|1--10|C|65
 titanothere|Titanothere||||5|12|120'|40'||||1/1|butt or trample|2d6/3d8|2d6\?3d8|Fighter: 6|7|Neutral|0|1--6|Nil|1100
 toad|Giant Toad||Toad||7|2+2|90'|30'||||1|1 bite|1d4+1|1d4+1|Fighter: 1|6|Neutral|1--4|1--4|Nil|25
 treant|Treant||||2|8|60'|20'||||2|2 blows|2d6\x 2|2d6\?2d6|Fighter: 8|9|Lawful|0|1--8|C|650
 troglodyte|Troglodyte||||5|2*|120'|40'||||3|2 claws\?1 bite|1d4\x 3|1d4\?1d4\?1d4|Fighter: 2|9|Chaotic|1--8|5--40|A|25
-troll|Troll||||4|6+3|120'|40'||||3|2 claws\?1 bite|1d6\x 2/1d10|1d6\?1d6\?1d10|Fighter: 6|10 or 8|Chaotic|1--8|1--8|D|350
+troll|Troll||||4|6+3|120'|40'||||3|2 claws\?1 bite|1d6\x 2/1d10|1d6\?1d6\?1d10|Fighter: 6|10 (8)|Chaotic|1--8|1--8|D|350
 unicorn|Unicorn||||2|4*|240'|80'||||3|2 hooves\?1 horn|1d8\x 3|1d8\?1d8\?1d8|Fighter: 8|7|Lawful|1--6|1--8|Nil|125
 vampire|Vampire|||*|2|7**|120'|40'|Fly|180'|60'|1|1 touch|1d10+energy drain|1d10\+drain 2 levels|Fighter: 7|11|Chaotic|1--4|1--6|F|1250
 vampire_7|Vampire|||*|2|7**|120'|40'|Fly|180'|60'|1|1 touch|1d10+energy drain|1d10\+drain 2 levels|Fighter: 7|11|Chaotic|1--4|1--6|F|1250
@@ -240,10 +251,10 @@ sperm_whale|Sperm Whale||Whale||6|36|180'|60'||||1|1 bite|3d20|3d20|Fighter: 15|
 wight|Wight|||*|5|3*|90'|30'||||1|1|energy drain|Drain 1 level|Fighter: 3|12|Chaotic|1--6|1--8|B|50
 dire_wolf|Dire Wolf|[Dire Wolves]|Wolf||6|4+1|150'|50'||||1|1 bite|2d4|2d4|Fighter: 2|8|Neutral|1--4|2--8|Nil|125
 wolf|Wolf|[Wolves]|Wolf||7|2+2|180'|60'||||1|1 bite|1d6|1d6|Fighter: 1|8 (6)|Neutral|2--12|3--18|Nil|25
-wraith|Wraith|||*|3|4**|120'|40'||||1|1 touch|1d6+energy drain|1d6\+drain 1 level|Fighter: 4|12|Chaotic|1--4|1--6|E|175
+wraith|Wraith|||*|3|4**|120'|40'|Fly|240'|80'|1|1 touch|1d6+energy drain|1d6\+drain 1 level|Fighter: 4|12|Chaotic|1--4|1--6|E|175
 wyvern|Wyvern||||3|7*|90'|30'|Fly|240'|80'|2|1 bite\?1 sting|2d8/1d6+poison|2d8\?1d6\+poison|Fighter: 4|9|Chaotic|1--2|1--6|E|850
-yellow_mold|Yellow Mold|[Patches of Yellow Mold]||*|---|2|Nil|Nil||||1|spores|1d6+special|1d6\+special|Fighter: 2|---|Neutral|1--8|1--4|Nil|20
-yellow_mould|Yellow Mould|[Patches of Yellow Mould]||*|---|2|Nil|Nil||||1|spores|1d6+special|1d6\+special|Fighter: 2|---|Neutral|1--8|1--4|Nil|20
+yellow_mold|Yellow Mold|[Patches of Yellow Mold]||*|---|2|Nil|Nil||||1|Spores|1d6+special|1d6\+special|Fighter: 2|---|Neutral|1--8|1--4|Nil|20
+yellow_mould|Yellow Mould|[Patches of Yellow Mould]||*|---|2|Nil|Nil||||1|Spores|1d6+special|1d6\+special|Fighter: 2|---|Neutral|1--8|1--4|Nil|20
 zombie|Zombie||||8|2|120'|40'||||1|1 weapon|1d8|1d8 or by weapon|Fighter: 1|12|Chaotic|2--8|4--24|Nil|20
 archer_bush_orange|Archer Bush|[Archer Bushes]|||9|1|Nil|Nil||||1|1 thorn spray|1d4|1d4|Fighter: 1|12|Neutral|0|1--100|Nil|10
 archer_bush|Archer Bush|[Archer Bushes]|||7|2|3'|1'||||1|1 thorn spray|1d4|1d4|Fighter: 1|12|Neutral|1--20|1--100|V|20
