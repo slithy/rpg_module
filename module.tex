@@ -439,8 +439,8 @@ The rest of this document shows a full example of how an adventure can be typese
 \begin{figure*}[p]
 \centering
 \includegraphics[width=0.75\textwidth]{module_map.png}
-\vspace{2em}
-\center{Map Copyright \copyright 2008, 2016 Tim Hartin of
+\vspace{5ex}
+\caption*{Map Copyright \copyright 2008, 2016 Tim Hartin of
 \href{http://paratime.ca}{Paratime Design}. Used with permission. All rights reserved.}
 \label{img:map}
 \end{figure*}
@@ -562,18 +562,24 @@ Snake Charm, Hold Person, Slow Poison, Spiritual Hammer, Speak with Animals, Ani
 \statblock{minion_set}{4}{25 each}
 \lipsum[10-11]
 
-%%%%% Floating half-page %%%%%
+%%%%% Page break and switch to one-column mode %%%%%
 
-\begin{onecolumnfloat}[ht]
-\part{Second Dungeon Level}
+\onecolumninline{\part{Second Dungeon Level}
 
-If you want to have some pages with a single column of text, you can use \verb|\onecolumn| to switch
-into one-column mode and \verb|\twocolumn| to switch back to two-column mode. These commands cause
-a page break.
+The module class allows you to switch between double- and single- column modes within your document. The
+\texttt{\textbackslash onecolumn} command will cause a page break and switch to one-column mode. Likewise,
+the \texttt{\textbackslash twocolumn} command will cause a page break and switch back to two-column mode.
 
-If you want to mix single and double-column text on the same page, use the \verb|onecolumnfloat| environment
-to create a float which is the full width of the page. You can do the same thing with graphics using
-the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
+To mix one- and two-column text on the same page, you have two options. The \texttt{\textbackslash onecolumninline}
+command takes one parameter, which is the text to typeset in single-column mode. This command causes a page
+break, typesets the single-column text at the top of the page, then continues in two-column mode as before. This
+text has been set using \texttt{\textbackslash onecolumninline}.
+
+The second option is to use the \texttt{onecolumnfloat} environment, which creates a \LaTeX~float the full width
+of a page. This can be positioned using the usual float parameters, e.g. \texttt{[t]} for the top of the page
+and \texttt{[b]} for the bottom. This option is most suitable where you want to have a table or ``sidebar'' text
+which is separate from your main text body. You can float graphics in the same way using the
+\texttt{figure*} environment, as we do for the map on p.\pageref{img:map}.
 
 \section*{Wandering Monsters}
 \label{wanderingmonsters}
@@ -601,11 +607,9 @@ the \verb|figure*| environment, as we do for the map on p.\pageref{img:map}.
 \rosteritem{\ref{inner_sanctuary}}{snefru_hotep}{1}{21}
 \rosteritem{\ref{inner_sanctuary}}{minion_set}{4}{25 each}
 \end{monsterroster}
-\end{onecolumnfloat}
+} % end of \onecolumninline
 
-\newpage
-
-\lipsum[12-14]
+\noindent\lipsum[12-14]
 
 \section{Concluding the Adventure}
 

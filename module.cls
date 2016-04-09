@@ -38,18 +38,17 @@
 
 % TO DO
 %
-% 1. Replace floating 2-column with non-floating version
 % 3. Convert all new monsters from B/X modules into stat block format
 % 5. Create a couple of "clone" demo pages from modules/rulebook to test closeness to original typesetting
 % 6. Create a DF thread for support requests and set up a watch on it. Create a link to the thread into the document.
-% 7. Host the class online on CTAN.
+% 7. Host the class online on DF and CTAN.
 %
 % WISH LIST
 %
 % 1. Advanced edition stat block options
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{module}[2016/03/30 Adventure Module document class]
+\ProvidesClass{module}[2016/04/09 Adventure Module document class]
 
 
 
@@ -238,13 +237,14 @@
 
 
 
-% Required packages
+% Load the rest of the required packages
 
 \RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry} % Page size
 \RequirePackage[explicit,newparttoc]{titlesec}                                  % Redefine section headings
 \RequirePackage{titletoc}                                                       % Redefine table of contents
 \RequirePackage{array}                                                          % Format table headings
 \RequirePackage{booktabs}                                                       % Underline table headings
+\RequirePackage{caption}                                                        % Allow non-numbered figure and table captions
 \RequirePackage{framed}                                                         % Boxed text
 \RequirePackage{graphicx}                                                       % Allow images and text across two columns
 \RequirePackage{dblfloatfix}                                                    % Allow positioning of figure* at bottom of page
@@ -442,6 +442,20 @@
 
 
 % Single-column text
+
+\newcommand\onecolumninline[1]{%
+\newlength{\tmpparindent}
+\newlength{\tmpparskip}
+\setlength{\tmpparindent}{\parindent}
+\setlength{\tmpparskip}{\parskip}
+\twocolumn[{
+\setlength{\parindent}{\tmpparindent}
+\setlength{\parskip}{\tmpparskip}
+\fussy
+#1
+\vspace{2ex}
+}]
+}
 
 \newenvironment{onecolumnfloat}[1][t]{%
 \let\@floatboxreset\relax%
