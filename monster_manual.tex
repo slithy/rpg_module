@@ -28,10 +28,8 @@
 \begin{newmonster3}{bat}{giant_bat}{vampire_bat}
 \lipsum[1]
 \end{newmonster3}
-
 % Restore the name to Giant Vampire Bat
 \pgfkeys{/vampire_bat/SingleName/.initial = {Giant Vampire Bat}}
-
 \statblock{bat}{3}{4 each}
 \statblock{giant_bat}{3}{4 each}
 \statblock{vampire_bat}{3}{4 each}
@@ -78,19 +76,12 @@
 
 % Great Cat
 
-\begin{newmonster}{mountain_lion}\end{newmonster}
+\begin{newmonster3}{mountain_lion}{panther}{lion}\end{newmonster3}
+\begin{newmonster2*}{tiger}{sabre_tooth_tiger}{}{}\lipsum[4]\end{newmonster2*}
 \statblock{mountain_lion}{3}{4 each}
-
-\begin{newmonster}{panther}\end{newmonster}
 \statblock{panther}{3}{4 each}
-
-\begin{newmonster}{lion}\end{newmonster}
 \statblock{lion}{3}{4 each}
-
-\begin{newmonster}{tiger}\end{newmonster}
 \statblock{tiger}{3}{4 each}
-
-\begin{newmonster}{sabre_tooth_tiger}\end{newmonster}
 \statblock{sabre_tooth_tiger}{3}{4 each}
 
 \begin{newmonster}{cave_locust}\end{newmonster}
@@ -113,27 +104,19 @@
 
 % Crocodile
 
-\begin{newmonster}{crocodile}\end{newmonster}
+\begin{newmonster3}{crocodile}{large_crocodile}{giant_crocodile}\end{newmonster3}
 \statblock{crocodile}{3}{4 each}
-
-\begin{newmonster}{crocodile_large}\end{newmonster}
-\statblock{crocodile_large}{3}{4 each}
-
-\begin{newmonster}{crocodile_giant}\end{newmonster}
-\statblock{crocodile_giant}{3}{4 each}
+\statblock{large_crocodile}{3}{4 each}
+\statblock{giant_crocodile}{3}{4 each}
 
 \begin{newmonster}{cyclops}\end{newmonster}
 \statblock{cyclops}{3}{4 each}
 
 % Dinosaur
 
-\begin{newmonster}{stegosaurus}\end{newmonster}
+\begin{newmonster3}{stegosaurus}{triceratops}{tyrannosaurus_rex}\end{newmonster3}
 \statblock{stegosaurus}{3}{4 each}
-
-\begin{newmonster}{triceratops}\end{newmonster}
 \statblock{triceratops}{3}{4 each}
-
-\begin{newmonster}{tyrannosaurus_rex}\end{newmonster}
 \statblock{tyrannosaurus_rex}{3}{4 each}
 
 \begin{newmonster}{displacer_beast}\end{newmonster}
@@ -226,16 +209,11 @@
 
 % Giant Fish
 
-\begin{newmonster}{piranha}\end{newmonster}
+\begin{newmonster2}{piranha}{rockfish}\end{newmonster2}
+\begin{newmonster2*}{catfish}{sturgeon}{}{}\end{newmonster2*}
 \statblock{piranha}{3}{4 each}
-
-\begin{newmonster}{rockfish}\end{newmonster}
 \statblock{rockfish}{3}{4 each}
-
-\begin{newmonster}{catfish}\end{newmonster}
 \statblock{catfish}{3}{4 each}
-
-\begin{newmonster}{sturgeon}\end{newmonster}
 \statblock{sturgeon}{3}{4 each}
 
 \begin{newmonster}{gargoyle}\end{newmonster}
@@ -249,22 +227,13 @@
 
 % Giant
 
-\begin{newmonster}{hill_giant}\end{newmonster}
+\begin{newmonster3}{hill_giant}{stone_giant}{frost_giant}\end{newmonster3}
+\begin{newmonster3*}{fire_giant}{cloud_giant}{storm_giant}{}{}\end{newmonster3*}
 \statblock{hill_giant}{3}{4 each}
-
-\begin{newmonster}{stone_giant}\end{newmonster}
 \statblock{stone_giant}{3}{4 each}
-
-\begin{newmonster}{frost_giant}\end{newmonster}
 \statblock{frost_giant}{3}{4 each}
-
-\begin{newmonster}{fire_giant}\end{newmonster}
 \statblock{fire_giant}{3}{4 each}
-
-\begin{newmonster}{cloud_giant}\end{newmonster}
 \statblock{cloud_giant}{3}{4 each}
-
-\begin{newmonster}{storm_giant}\end{newmonster}
 \statblock{storm_giant}{3}{4 each}
 
 \begin{newmonster}{gnoll}\end{newmonster}
@@ -278,16 +247,11 @@
 
 % Golem
 
-\begin{newmonster}{wood_golem}\end{newmonster}
+\begin{newmonster2}{wood_golem}{bone_golem}\end{newmonster2}
+\begin{newmonster2*}{amber_golem}{bronze_golem}{}{}\end{newmonster2*}
 \statblock{wood_golem}{3}{4 each}
-
-\begin{newmonster}{bone_golem}\end{newmonster}
 \statblock{bone_golem}{3}{4 each}
-
-\begin{newmonster}{amber_golem}\end{newmonster}
 \statblock{amber_golem}{3}{4 each}
-
-\begin{newmonster}{bronze_golem}\end{newmonster}
 \statblock{bronze_golem}{3}{4 each}
 
 \begin{newmonster}{gorgon}\end{newmonster}
@@ -968,8 +932,8 @@ Appeared in X1 and also in X2 (Castle Amber).
 \wanderitem{cockatrice}{}
 \wanderitem{crab}{}
 \wanderitem{crocodile}{}
-\wanderitem{crocodile_large}{}
-\wanderitem{crocodile_giant}{}
+\wanderitem{large_crocodile}{}
+\wanderitem{giant_crocodile}{}
 \wanderitem{cyclops}{}
 \wanderitem{stegosaurus}{}
 \wanderitem{triceratops}{}
