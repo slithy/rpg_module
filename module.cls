@@ -217,7 +217,8 @@
    \IfFileExists{souvenir.sty}{                                                 % If ITC Souvenir font is installed in this LaTeX distribution
       \RequirePackage{souvenir}                                                 % Use ITC Souvenir as serifed font
       \renewcommand{\bfdefault}{d}                                              % Use demi-bold instead of bold
-      \renewcommand*\copyright{{\usefont{T1}{lmr}{m}{n}\textcopyright}}         % Get a good-looking copyright symbol
+      \renewcommand*\copyright{{\usefont{T1}{lmr}{m}{n}\textcopyright}}         % Get a good-looking copyright (C) symbol
+      \newcommand*\registered{{\usefont{T1}{lmr}{m}{n}\textregistered}}         % Registered trademark (R) symbol
       \renewcommand\half{{\usefont{T1}{lmr}{m}{n}\sfrac{1}{2}}}                 % Redefine font for 1/2 symbol
    }{
       \ClassWarning{module}{%
@@ -274,6 +275,11 @@
 % Define a narrow breaking space
 
 \newcommand*{\thinspacebrk}{\hskip0.16667em\relax}
+
+% Footnote options
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}                               % Use footnote symbols instead of numbers
+\renewcommand\@makefntext[1]{\leftskip=0.5em\hskip-0.5em\makebox[0.5em]{\@makefnmark}#1}             % Footnote indentation
 
 % The freestyle (system-independent) stat block
 %
