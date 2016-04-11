@@ -6,7 +6,8 @@ STYLE_FILE=$(STYLE).sty
 STAT_FILE=$(STYLE).def
 
 ZIP_TARGET=/tmp/module.zip
-ZIPFILES=module.tex $(TARGET) $(CLASS) $(STYLE_FILE) $(STAT_FILE) module_art_cover.png module_art_interior.png module_logo.pdf module_map.png LICENSE
+ZIPFILES=module.tex $(TARGET) $(CLASS) $(STYLE_FILE) $(STAT_FILE) module_art_cover.png module_art_interior.png module_logo.pdf module_map.png LICENSE \
+	monster_manual.tex monster_manual.pdf
 
 all: $(TARGET)
 

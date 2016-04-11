@@ -62,16 +62,16 @@
 
 %% TITLE PAGE %%
 %
-% It is required to define \title, even without a title page, as it is used for running heads for A4 paper size.
+% If you want a title page, define the elements you want, then use \maketitle (see below).
 %
-% If you want a title page, the minimum requirement is to define \title and \author, then use \maketitle
+% It is required to define \title, even without a title page, as it is used for running heads for A4 paper size.
 
 \title{Dungeon Module X2$\varepsilon$\\
 An Adventure Module Class and Template}
 
-\author{Michael C. Davis}
-
 % The rest of the title page elements are optional
+
+\author{Michael C. Davis}
 
 \titlerunning{Dungeon Module X2$\varepsilon$ : Module Class}                     % Shorter title for running heads (A4 paper option only)
 
@@ -589,15 +589,13 @@ which is separate from your main text body. You can float graphics in the same w
 \changealignment{acolyte}{Chaotic}
 
 \begin{wanderingmonsters}[b]
-\wanderitem{gnoll}{}
-\wanderitem{acolyte}{}
-\wanderitem{minion_set}{1}
+\wanderitem{crocodile}{1--2}
+\wanderitem{rock_baboon}{}
+\wanderitem{pit_viper}{}
+\wanderitem[4-6]{gnoll}{}
+\wanderitem[7-8]{acolyte}{}
+\wanderitem[9]{minion_set}{1}
 \wanderitem{snefru_hotep}{}
-\wanderitem{hydra}{}
-\wanderitem{hellhound}{}
-\wanderitem{insect_swarm}{}
-\wanderitem{vampire}{}
-\wanderitem{veteran}{}
 \end{wanderingmonsters}
 
 \section*{Monster Roster}
@@ -689,6 +687,8 @@ Used with permission. All rights reserved.
 \begin{opengamecontent}
 \item The monster statistics from the SRD are Open Game Content.
 \end{opengamecontent}
+
+\newpage
 
 %
 % Table of Contents

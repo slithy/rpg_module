@@ -53,8 +53,17 @@
    \@ifundefined{acstyle@module}{\gdef\acstyle@module{desc}}{}%                 % Default AC style is descending
    \ifnum\pdfstrcmp{\acstyle@module}{desc}=\z@                                  % Display descending AC
       #1\ignorespaces
-   \else
-      \setcounter{acasc@module}{19}\addtocounter{acasc@module}{-#1}%
+   \else\ifnum\pdfstrcmp{#1}{---}=\z@
+      #1\ignorespaces
+   \else%
+      \setcounter{acasc@module}{19}%
+      \IfSubStr{#1}{\,}{\StrBefore{#1}{\,}[\tmpac]}{\def\tmpac{#1}}%
+      \IfBeginWith{\tmpac}{\minus}{%
+         \StrBehind{\tmpac}{\minus}[\tmpac]%
+         \addtocounter{acasc@module}{\tmpac}%
+      }{%
+         \addtocounter{acasc@module}{-\tmpac}%
+      }%
       \ifnum\pdfstrcmp{\acstyle@module}{asc}=\z@                                % Display ascending AC
          \theacasc@module\ignorespaces
       \else\ifnum\pdfstrcmp{\acstyle@module}{b1}=\z@                            % Display AC using B1 notation
@@ -64,7 +73,7 @@
       \else
          Unknown AC style \acstyle@module
       \fi\fi\fi
-   \fi
+   \fi\fi
 }
 
 % Hit Dice : convert short form to long form for stat blocks

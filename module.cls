@@ -45,8 +45,8 @@
 %
 % KNOWN BUGS
 %
-% 1. Ascending AC for negative ACs
-% 2. Special movement in multi-column listings
+% 1. Special movement doesn't appear correctly in multi-column New Monster listings if not all monsters share that movement type
+% 2. S&W AC format doesn't handle Lycanthrope ACs very well
 %
 % WISH LIST
 %
@@ -320,8 +320,7 @@
 \vspace*{\fill}
 \begin{center}
 \Huge \textbf{\@title} \par
-\vskip 0.5em
-\LARGE \textbf{by \@author}
+\@author
 \@subtitle
 \@coverimg
 \end{center}
@@ -346,6 +345,9 @@
 \LARGE\textbf{#1}
 \end{center}
 \let\if@afterindentfalse}
+
+\renewcommand\@author{\relax}
+\renewcommand{\author}[1]{\gdef\@author{\vskip 0.5em\LARGE \textbf{by #1}}}
 
 \newcommand\@subtitle{\relax}
 \newcommand\@coverimg{\relax}
