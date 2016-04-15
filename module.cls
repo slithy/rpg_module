@@ -77,9 +77,12 @@
 
 \newif\ifmodule@letterpaper
 \newif\ifmodule@seriffont
+\newif\ifmodule@tightsqueeze
 
 \DeclareOption{letterpaper}{\module@letterpapertrue\stepcounter{papersizeoption}}
 \DeclareOption{a4paper}{\module@letterpaperfalse\stepcounter{papersizeoption}}
+
+\DeclareOption{tightsqueeze}{\module@tightsqueezetrue}
 
 \DeclareOption{serif}{\module@seriffonttrue\stepcounter{fontoption}}
 \DeclareOption{sansserif}{\module@seriffontfalse\stepcounter{fontoption}}
@@ -98,7 +101,7 @@
 
 \DeclareOption*{
    \ClassError{dnd_module}{Unrecognised option '\CurrentOption'}{Valid options are:\MessageBreak
-      a4paper,letterpaper,\MessageBreak serif,sansserif,\MessageBreak basic,advanced,\MessageBreak acdesc,acac,acb1,acsw}
+      a4paper,letterpaper,tightsqueeze\MessageBreak serif,sansserif,\MessageBreak basic,advanced,\MessageBreak acdesc,acac,acb1,acsw}
 }
 
 \ExecuteOptions{a4paper}                                                        % default paper size is A4
@@ -275,6 +278,18 @@
 % Define a narrow breaking space
 
 \newcommand*{\thinspacebrk}{\hskip0.16667em\relax}
+
+% Tightsqueeze option for reduced spacing
+
+\ifmodule@tightsqueeze
+   \titlespacing*{\part}{0pt}{0pt}{0pt}
+   \titlespacing*{\section}{0pt}{0.5ex plus .2ex}{0.5ex plus .2ex}
+   \titlespacing*{\subsection}{0pt}{0.5ex plus .2ex}{0.5ex plus .2ex}
+   \FrameSep5pt
+   \renewcommand{\arraystretch}{1}
+\else
+   \renewcommand{\arraystretch}{1.2}                                            % Default: increase the table row spacing a little
+\fi
 
 % Footnote options
 
@@ -482,7 +497,6 @@
 
 \newcolumntype{b}{>{\bfseries}c}                                                % New column type 'b' for bold, centred headings
 \newcounter{numcols@module}                                                     % Counter to keep track of how many columns are in the table
-\renewcommand{\arraystretch}{1.2}                                               % Increase the table row spacing a little
 
 % Underline table headers
 
