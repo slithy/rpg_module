@@ -27,8 +27,19 @@
 
 \monster{veteran}{Veteran}{||2|1--3|60'|20'||||1|1 weapon|1d8|1d8~or~weapon|Fighter: 1--3|9 (varies)|Any|2--8|2--12|V|10}
 
+% 3/4 symbol
+
+\newcommand{\threequarters}{{\usefont{T1}{lmr}{m}{n}\sfrac{3}{4}} }
+
+
 
 \begin{document}
+
+\onecolumn
+
+Page intentionally left blank
+
+\twocolumn
 
 \begin{newmonster}{troglodyte}
 A troglodyte is an intelligent human-like reptile with a short tail,
@@ -108,151 +119,37 @@ sight, but can be destroyed by normal weapons. They are slow
 fighters, and always strike last (no initiative roll needed).
 \end{newmonster}
 
-\onecolumninline{\part{Treasure}}
-
-\begin{onecolumnfloat}[b]
-1000's of
-Copper
-25\% 1--6
-50\% 1--8
-20\% 1--12
-10\% 1--8
-5\% 1--10
-Nil
-Nil
-25\% 3--24
-Nil
-25\% 1--4
-Nil
-Nil
-Nil
-Nil
-Nil
-1000'sof
-Silver
-30\% 1--6
-25\% 1--6
-30\% 1--4
-15\% 1--12
-30\% 1--12
-10\% 2--20
-Nil
-50\% 1--100
-Nil
-10\% 1--3
-30\% 1--6
-Nil
-Nil
-Nil
-Nil
-2, above)
-subtables
-the actual types.
-1000's of
-Electrum
-20\% 1--4
-25\% 1--4
-10\% 1--4
-Nil
-25\% 1--4
-20\% 1--8
-Nil
-50\% 10--40
-Nil
-Nil
-10\% 1--2
-Nil
-Nil
-Nil
-Nil
-TREASURE
-1000's of
-Gold
-35\% 2--12
-25\% 1--3
-Nil
-60\% 1--6
-25\% 1--8
-45\% 1--12
-50\% 10--40
-50\% 10--60
-Nil
-Nil
-Nil
-Nil
-40\% 2--8
-Nil
-Nil
-ABC
-DE TYPES
-1000's of
-Platinum
-25\% 1--2
-Nil
-Nil
-Nil
-Nil
-30\% 1--3
-50\% 1--6
-25\% 5--20
-30\% 1--8
-Nil
-Nil
-Nil
-50\% 5--30
-Nil
-Nil
-17,000 F
-2,000 G
-1,000 H
-4,000 I
-2,500
-'Gems and
-Jewelry
-50\% 6--36
-25\% 1--6
-25\% 1--4
-30\% 1--8
-10\% 1--10
-20\% 2--24/
-10\% 1--12
-25\% 3--18/
-25\% 1--10
-50\% 1--100
-50\% 10--40
-50\% 2--12
-Nil
-Nil
-50\% 1--4
-Nil
-55\% 5--20/
-45\% 2--12
-Nil
-Nil
-5,000 J 25
-25,000 K 125
-50,000 L 250
-8,000 M 15,000
-Magic Items
-30\% Any 3
-10\% 1 sword, armor, or weapon
-10\% Any 2
-15\% Any 2 + 1 potion
-25\% Any 3 + 1 scroll
-30\% Any 3 except weapons,
-+ 1 potion + 1 scroll
-35\% Any 4 + 1 scroll
-15\% Any 4 + 1 potion + 1 scroll
-15\% Any 1
-Nil
-Nil
-Nil
-Nil
-40\% 2--8 potions
-50\% 1--4 scrolls
-Roll twice, once for each category (Gems and Jewelry). The
-chances are the same unless two notations are made, in which
-case the order given is for ``Gems/Jewelry''.
+\begin{onecolumnfloat}[t]
+\part{Treasure}
+\end{onecolumnfloat}
+\begin{onecolumnfloat}[hb!]
+\section*{TREASURE TYPES}
+\addtolength{\tabcolsep}{0.6mm}
+\begin{tabularx}{\linewidth}{clllll>{\raggedright\arraybackslash\hsize=1.9cm}X>{\raggedright\arraybackslash\hsize=4.5cm}X}
+% Need a bit of a hack to get table headers spanning 2 rows unfortunately
+& \multicolumn{1}{b}{1000's of} & \multicolumn{1}{b}{1000's of} & \multicolumn{1}{b}{1000's of} &
+  \multicolumn{1}{b}{1000's of} & \multicolumn{1}{b}{1000's of} & \multicolumn{1}{b}{*Gems and}\\[-0.7ex]
+\tableheader[b]{Type & Copper & Silver & Electrum & Gold & Platinum & Jewelry & Magic Items}
+A & 25\% 1--6  & 30\% 1--6   & 20\% 1--4   & 35\% 2--12  & 25\% 1--2  & 50\% 6--36               & 30\% Any 3\\
+B & 50\% 1--8  & 25\% 1--6   & 25\% 1--4   & 25\% 1--3   & Nil        & 25\% 1--6                & 10\% 1 sword, armor, or weapon\\
+C & 20\% 1--12 & 30\% 1--4   & 10\% 1--4   & Nil         & Nil        & 25\% 1--4                & 10\% Any 2\\
+D & 10\% 1--8  & 15\% 1--12  & Nil         & 60\% 1--6   & Nil        & 30\% 1--8                & 15\% Any 2 + 1 potion\\
+E & 5\% 1--10  & 30\% 1--12  & 25\% 1--4   & 25\% 1--8   & Nil        & 10\% 1--10               & 25\% Any 3 + 1 scroll\\
+F & Nil        & 10\% 2--20  & 20\% 1--8   & 45\% 1--12  & 30\% 1--3  & 20\% 2--24\?10\%~1--12   & 30\% Any 3 except weapons + 1 potion + 1 scroll\\
+G & Nil        & Nil         & Nil         & 50\% 10--40 & 50\% 1--6  & 25\% 3--18\?25\%~1--10   & 35\% Any 4 + 1 scroll\\
+H & 25\% 3--24 & 50\% 1--100 & 50\% 10--40 & 50\% 10--60 & 25\% 5--20 & 50\% 1--100\?50\%~10--40 & 15\% Any 4 + 1 potion + 1 scroll\\
+I & Nil        & Nil         & Nil         & Nil         & 30\% 1--8  & 50\% 2--12               & 15\% Any 1\\
+J & 25\% 1--4  & 10\% 1--3   & Nil         & Nil         & Nil        & Nil                      & Nil\\
+K & Nil        & 30\% 1--6   & 10\% 1--2   & Nil         & Nil        & Nil                      & Nil\\
+L & Nil        & Nil         & Nil         & Nil         & Nil        & 50\% 1--4\?Nil           & Nil\\
+M & Nil        & Nil         & Nil         & 40\% 2--8   & 50\% 5--30 & 55\% 5--20\?45\%~2--12   & Nil\\
+N & Nil        & Nil         & Nil         & Nil         & Nil        & Nil                      & 40\% 2--8 potions\\
+O & Nil        & Nil         & Nil         & Nil         & Nil        & Nil                      & 50\% 1--4 scrolls\\
+\end{tabularx}
+% Can't have a footnote inside a float, here is a workaround
+\begin{enumerate}[leftmargin=5cm,rightmargin=5cm]
+\item[*] Roll twice, once for each category (Gems and Jewelry). The chances are the same unless two notations are made, in which case the order given is for ``Gems/Jewelry''.
+\end{enumerate}
 \end{onecolumnfloat}
 
 The coins, gems, jewelry and magic items that a party finds during
@@ -287,20 +184,20 @@ make a note of what types are present.
 \item Roll dice (the type depends on the range given) to find the
 amount of each type of treasure (found in step 2, above) which is present.
 \item If any magic items are present, the magic item subtables (page B46)
-must be used to find the actual types
+must be used to find the actual types.
 \end{enumerate}
 
 PLACED TREASURES: The DM may choose treasures instead of
 rolling for them randomly, or may choose a result if rolls give too
 much or too little treasure. The choices should be made carefully,
 since most of the experience the characters will get will be from
-treasure (usually 3A or more). It will often be easier for the DM to
+treasure (usually \threequarters or more). It will often be easier for the DM to
 decide how much experience to give out (considering the size and
 levels of experience in the party) and place the treasures to give
 this result. However, the monsters should be tough enough to
 make sure that the characters earn their treasure!
 
-ADJUSTMENTS TO TREASURE: Treasures A through 0 are
+ADJUSTMENTS TO TREASURE: Treasures A through O are
 large, and generally only for use when large numbers or fairly difficult
 monsters are encountered. The lairs of most human-like
 monsters contain at least the number of creatures given as the
@@ -321,16 +218,12 @@ magic in the treasures. After rolling for treasures, the DM may refer
 to this list to see whether the treasure is larger or smaller than
 average and may then adjust the treasure as desired.
 
-Type
-AB
-C
-DEF
-G
-H
-I
-JKL
-M
-N
-0
+\begin{tabular}{>{\hfill}p{1cm} r >{\hfill}p{1cm} r >{\hfill}p{1cm} r}
+A & 17,000 & F &  5,000 & J &     25\\
+B &  2,000 & G & 25,000 & K &    125\\
+C &  1,000 & H & 50,000 & L &    250\\
+D &  4,000 & I &  8,000 & M & 15,000\\
+E &  2,500\\
+\end{tabular}
 
 \end{document}

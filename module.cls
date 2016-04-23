@@ -171,20 +171,20 @@
 
 % Set page margins
 
-\setlength{\oddsidemargin}{1cm}
-\setlength{\evensidemargin}{1cm}
+\setlength{\oddsidemargin}{0.8cm}
+\setlength{\evensidemargin}{0.8cm}
 
 \setlength{\topmargin}{2.6cm}
 
 \setlength{\textheight}{25.4cm}
-\setlength{\textwidth}{19cm}
+\setlength{\textwidth}{19.4cm}
 
 \setlength{\marginparsep}{0cm}
 \setlength{\marginparwidth}{0cm}
 
 \setlength{\footskip}{0.7cm}
 
-\setlength{\columnsep}{0.75cm}
+\setlength{\columnsep}{1.15cm}
 
 \pagenumbering{arabic}
 
@@ -205,6 +205,30 @@
    }
    \pagestyle{plain}
 \fi
+
+
+
+% Float placement options
+% See p.199-200 of Lamport's "LaTeX" book for details and p.105 of "TeX Unbound" for suggested values
+
+\renewcommand{\topfraction}{0.9}                                                % max fraction of floats at top
+\renewcommand{\bottomfraction}{0.8}                                             % max fraction of floats at bottom
+
+% Parameters for TEXT pages (not float pages)
+
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\setcounter{dbltopnumber}{2}                                                    % for 2-column pages
+\renewcommand{\dbltopfraction}{0.9}                                             % fit big float above 2-column text
+\renewcommand{\textfraction}{0.07}                                              % allow minimal text
+
+% Parameters for FLOAT pages (not text pages)
+%
+% Note: \floatpagefraction must be less than \topfraction above
+
+\renewcommand{\floatpagefraction}{0.7}                                          % require fuller float pages
+\renewcommand{\dblfloatpagefraction}{0.7}                                       % require fuller float pages
 
 
 
