@@ -161,16 +161,17 @@ At the beginning of your document, load the module class with \verb|\documentcla
 specify the following options:
 
 \begin{tabularx}{\linewidth}{lX}
-\verb|a4paper|     & Use A4 paper size (default)\\
-\verb|letterpaper| & Use US letter paper size\\
-\verb|sansserif|   & Use a sans-serif font, URW Gothic (default).\\
-\verb|serif|       & Use a serifed font. This option will use ITC Souvenir if available, URW Bookman otherwise.\\
-\verb|acdesc|      & Use descending AC in stat blocks (default for Basic stats)\\
-\verb|acasc|       & Use ascending AC in stat blocks\\
-\verb|acb1|        & Use \href{http://zenopusarchives.blogspot.com/2014/02/ascending-ac-in-holmes-basic.html}{the B1 AC style} in stat blocks\\
-\verb|acsw|        & Use \href{http://www.swordsandwizardry.com/}{Swords \& Wizardry} AC style in stat blocks\\
-\verb|basic|       & Use Basic monster stat blocks (default)\\
-\verb|advanced|    & Use Advanced monster stat blocks (not currently implemented, planned for a future release)\\
+\verb|a4paper|      & Use A4 paper size (default)\\
+\verb|letterpaper|  & Use US letter paper size\\
+\verb|sansserif|    & Use a sans-serif font, URW Gothic (default).\\
+\verb|serif|        & Use a serifed font. This option will use ITC Souvenir if available, URW Bookman otherwise.\\
+\verb|tightsqueeze| & Reduce the spacing between table rows and around headings for a more compact layout.\\
+\verb|acdesc|       & Use descending AC in stat blocks (default for Basic stats)\\
+\verb|acasc|        & Use ascending AC in stat blocks\\
+\verb|acb1|         & Use \href{http://zenopusarchives.blogspot.com/2014/02/ascending-ac-in-holmes-basic.html}{the B1 AC style} in stat blocks\\
+\verb|acsw|         & Use \href{http://www.swordsandwizardry.com/}{Swords \& Wizardry} AC style in stat blocks\\
+\verb|basic|        & Use Basic monster stat blocks (default)\\
+\verb|advanced|     & Use Advanced monster stat blocks (not currently implemented, planned for a future release)\\
 \end{tabularx}
 
 \subsection*{Paper Size}
@@ -179,7 +180,8 @@ The module supports the letter paper size (used in USA) and A4 (used in Europe a
 does not scale the text on the page; rather it adjusts the margins so the pages will be typeset identically regardless
 of which size is selected. This allows module writers to easily create two almost identical PDFs for use in different regions.
 
-As A4 pages are slightly taller, you have the option of a running header if you select \verb|a4paper|.
+As A4 pages are slightly taller, you have the option of a running header if you select \verb|a4paper|. This option is not available
+in Letter paper size.
 
 \subsection*{Fonts}
 
@@ -187,19 +189,20 @@ You can select a serifed or sans-serif font. The default font is URW Gothic (san
 ITC Avant Garde Gothic. Avant Garde was used in many early TSR modules, including B1 and B2.
 
 If you choose the serif option, the module class will try to use ITC Souvenir. Souvenir is used for the 1981 Basic rulebook
-and modules including B3, X1 and X2. However, it is a commercial font which is not distributed with \LaTeX. If you don't have
-Souvenir installed, the module class will use URW Bookman instead, which is included in the standard \TeX Live distribution.
+and modules including B3 (Green cover), X1 and X2. However, it is a commercial font which is
+not distributed with \LaTeX. If you don't have Souvenir installed, the module class will use URW Bookman instead, which is
+included in the standard \TeX Live distribution.
 
-If you want to obtain the Souvenir font, take note that it was bundled with some versions of CorelDraw.
-It is almost certainly more economical to buy CorelDraw with its bundled font license than to buy the font directly from the foundry.
-To configure the font for use with \LaTeX, you will need the Adobe Type 1 font definitions (.pfb and .afm files) from CorelDraw
+If you want to obtain the Souvenir font, note that it was bundled with some versions of CorelDraw. It is more economical to buy
+CorelDraw with its bundled font license than to buy the font directly from the foundry.
+To configure the font for use with \LaTeX, you need the Adobe Type 1 font definitions (.pfb and .afm files) from CorelDraw
 and the corresponding LaTeX .tfm and .vf files, which you can obtain from the \href{https://www.ctan.org/pkg/corelpak}{Corelpak} package. The
 \href{https://www.ctan.org/pkg/corelpak-contrib}{Corelpak-contrib} package may also be useful to help with installation.
 
 \subsection*{Stat Blocks}
 
-The module class is designed to be extensible.
-This version of the class includes Basic-style monster stat blocks (\verb|basic|). See p.\pageref{stat_blocks} for more detail.
+The module class is designed to be extensible.  This version of the class includes Basic-style monster stat blocks
+(\verb|basic|). See p.\pageref{stat_blocks} for more detail.
 
 \verb|advanced| stat blocks are planned for the next version of the class. In principle it is possible to define a new stat
 block format for any RPG system. If several systems are defined, authors can compile the same work with stats for different
@@ -213,7 +216,7 @@ The defined heading styles are listed in Table~\ref{tab:heading_styles}.
 If you want a table of contents in your document, simply place a \verb|\tableofcontents| command where you would like it to appear.
 
 \begin{table}[ht]
-\begin{tabularx}{\linewidth}{lp{0.25\linewidth}X}
+\begin{tabularx}{\linewidth}{lp{0.25\linewidth}>{\raggedright\arraybackslash}X}
 \tableheader{Style                     & Description                 & Features}
 \texttt{\textbackslash part}           & Chapter heading             & Numbered, included in table of contents (ToC)\\
 \texttt{\textbackslash section}        & Section heading             & Not numbered, left justified, upper case, included in ToC\\
@@ -227,9 +230,9 @@ If you want a table of contents in your document, simply place a \verb|\tableofc
 \label{tab:heading_styles}
 \end{table}
 
-Location keys are numbered automatically starting from 1, but you can change the numbering using the \verb|\setcounter| command. For example,
-to reset the location key numbering on the second level of your dungeon, insert \verb|\setcounter{subsection}{0}|
-before the first subsection heading on level 2.
+Location keys are numbered automatically starting from 1, and numbering is restarted after each section heading. You can override
+the default numbering using the \verb|\setcounter| macro. For example, to continue the location key numbering starting at 20 on the
+second level of your dungeon, insert \verb|\setcounter{subsection}{19}| before the first subsection heading on level 2.
 
 \subsection*{Boxed Text}
 
@@ -348,8 +351,11 @@ monsters above. The format for a new monster definition is:
 where \verb|label| is the key you want to use for the monster (\verb|gnoll| in the examples above) and
 \verb|name| is the (singular) name of the monster that will be displayed in the text, ``Gnoll''. The module
 class can usually work out the plural form by following some simple rules, but if the plural is unusual,
-you can specify it in the optional \verb|pluralname| field. For example, if you decide that the plural of
-``Octopus'' is ``Octopodes'', you would define this using:
+you can specify it in the optional \verb|pluralname| field. For example, if you define:
+\begin{quote}
+\verb|\monster{octopus}{Octopus}{|\ldots
+\end{quote}
+you will get the default plural, ``Octopuses''. If you decide that the plural should instead be ``Octopodes'', you can override the default definition:
 \begin{quote}
 \verb|\monster[Octopodes]{octopus}{Octopus}{|\ldots
 \end{quote}
@@ -357,25 +363,31 @@ you can specify it in the optional \verb|pluralname| field. For example, if you 
 \noindent The \verb|stats| field is a list of the monster stats, separated by ``\verb:|:''. It should contain the following items in order:
 \renewcommand{\labelitemi}{$\bullet$}
 \begin{itemize}\setlength{\itemsep}{0pt}
-\item Type, e.g. ``Dragon'', ``Lycanthrope'' or ``Man''. Leave empty for monsters which don't have a type.
+\item Type. This is only required where the monster is a subspecies of a general type, e.g. ``Dragon'', ``Lycanthrope'' or ``Man''. In all other cases
+it should be left blank.
 \item Put an asterisk (*) in this column if the monster requires silver, magic or special weapons to hit it. Leave empty otherwise.
 \item \ArmourClass. This should be in descending AC format; use the \verb|acasc| option to the class if you want to convert it to ascending AC.
-\item Hit Dice
+\item Hit Dice (including * or ** if applicable)
 \item Movement per Turn
 \item Movement per Round
-\item Special Movement class, e.g. ``Fly'' or ``Swim''. Leave blank if not applicable.
+\item Special Movement class, e.g. ``Fly'' or ``Swim''. Leave blank in most cases.
 \item Special Movement per Turn
 \item Special Movement per Round
 \item Attacks (short form). Usually just the number of attacks, or ``3+special''. This format is used only in Wandering Monster and Monster Roster tables.
-\item Attacks (long form). More verbose description of attacks, used in New Monster listing and stat blocks, e.g. ``2 claws/bite+breath''.
+\item Attacks (long form). More verbose description of attacks, used in New Monster listing and stat blocks, e.g. ``2 claws\?bite\+breath''.
+\footnote{Note that the slash character \texttt{/} is non-breaking (\LaTeX~will not place a line break after \texttt{/}). The module class provides a breaking
+slash \texttt{\textbackslash ?} to overcome this problem. The class also provides \texttt{\textbackslash +}, which is a breaking version of +. Use of
+\texttt{\textbackslash ?} and \texttt{\textbackslash +} in the long attack and damage fields prevents awkward line breaks in stat blocks.}
 \item Damage (short form). Used in Wandering Monster and Monster Roster tables.
 \item Damage (long form). Used in New Monster listing and stat blocks.
 \item Save As. List the long form, e.g. ``Fighter: 3''. The short form is computed where required.
 \item Morale
 \item Alignment. List the long form, e.g. ``Chaotic''. The short form is computed where required. In case of monsters with variable alignment, specify ``Any''
-here, and use the \verb|\changealignment| macro to specify as needed in the text.
+here, and use the \verb|\changealignment| macro to specify as needed in the text. (For example, the Acolyte is defined with alignment Any but is given a specific
+alignment in the Wandering Monster table on p.\pageref{wanderingmonsters}.)
+
 \item No. Appearing. List the range when encountered as a wandering monster.
-\item No. Appearing in Lair. List the range when encountered in the monster's lair.
+\item No. Appearing in Lair. List the range when encountered in the monster's lair or in the wilderness.
 \item Treasure Type
 \item XP
 \end{itemize}
@@ -580,6 +592,9 @@ of a page. This can be positioned using the usual float parameters, e.g. \texttt
 and \texttt{[b]} for the bottom. This option is most suitable where you want to have a table or ``sidebar'' text
 which is separate from your main text body. You can float graphics in the same way using the
 \texttt{figure*} environment, as we do for the map on p.\pageref{img:map}.
+
+It is not possible to mix \texttt{\textbackslash onecolumninline} and \texttt{\textbackslash onecolumnfloat} on
+the same page.
 
 \section*{Wandering Monsters}
 \label{wanderingmonsters}
