@@ -1,17 +1,16 @@
-%% module.tex
+%% rpg_module.tex
 %
-% An Adventure Module class for LaTeX: Example template
+% Documentation and worked example for the Role-Playing Game Module class
 %
 % Copyright 2016 Michael C. Davis
 %
 % LICENSE FOR THE WORK
 %
 % This work consists of the following files:
-%    module.cls
+%    rpg_module.cls
 %    basic_stats.sty
 %    basic_stats.def
-%    module.tex
-%    monster_manual.tex
+%    doc/rpg_module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
 % Project Public License, either version 1.3 of this license or (at your option)
@@ -25,6 +24,14 @@
 % The Author and Maintainer of this work is Michael C. Davis
 %
 %
+% OPEN GAME LICENSE
+%
+% The monster stats in this file are copyright 2000, Wizards of the Coast, Inc.
+% and are distributed with permission under the terms of the Open Game License v 1.0.
+% See the file rpg_module.cls or the compiled documentation file rpg_module.pdf for
+% the full text of the license.
+%
+%
 % LICENSE FOR COMPILED WORKS
 %
 % You may distribute compiled works generated using the work as specified in
@@ -35,15 +42,16 @@
 %
 % USAGE
 %
-% This file is a worked example of how to use the module class.
+% In addition to this documentation, there are a number of worked examples in the
+% examples/ directory.
 %
-% Technical support is provided on Dragonsfoot:
+% Technical support is provided on Dragonsfoot Forums:
 %
 % http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
 
 %% Start here!
 %
-% Load the module class. The following options are available:
+% Load the rpg_module class. The following options are available:
 %
 % a4paper         Use A4 paper size (default)
 % letterpaper     Use US letter paper size
@@ -59,7 +67,7 @@
 % In principle, stat blocks can be defined for any RPG system by defining the appropriate style file.
 % In this release of the class, only basic_stats.sty is defined.
 
-\documentclass[a4paper,serif]{module}
+\documentclass[a4paper,serif]{rpg_module}
 
 \usepackage{lipsum}                                                             % This package generates filler text for
                                                                                 % the example file, not needed in a real project
@@ -87,14 +95,14 @@ An Adventure Module Class and Template}
 
 \subtitle{Introductory module for character levels 1--3}
 
-\coverimage{module_art_cover.png}
+\coverimage{rpg_module_cover_art.png}
 
 \abstract{This template is inspired by the old-school modules of the 1980s. It is an attempt to recapture the look and feel
 of those classic adventures using the power and beauty of the \LaTeX~typesetting system. The template is designed to allow
 authors to typeset their adventures with a minimum of effort. Write your adventure, add some simple markup notation as shown
 in the example file, and in a few clicks you will have a beautifully-formatted PDF.}
 
-\copyrightblock{The \LaTeX~module class is Copyright \copyright 2016 Michael Davis and is distributed under the terms
+\copyrightblock{The \LaTeX~rpg\_module class is Copyright \copyright 2016 Michael Davis and is distributed under the terms
 of the \href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License} (LPPL) Version 1.3c. You are free to use this
 class to generate works for distribution, for free or commercially, as detailed in Clause 3 of the license.
 
@@ -109,7 +117,7 @@ The images and maps in this example template are not covered by the LPPL. See th
 
 \contactblock[p{2.9cm} p{5.0cm} p{9.8cm}]{% column 1 : logo
 \begin{center}
-\includegraphics[width=1.5cm]{module_logo.pdf}
+\includegraphics[width=1.5cm]{rpg_module_logo.pdf}
 \end{center}
 }{% column 2 : empty in this example
 }{% column 3 : contact details
@@ -118,7 +126,7 @@ The images and maps in this example template are not covered by the LPPL. See th
 The author can be contacted on Dragonsfoot (user:
 \href{http://www.dragonsfoot.org/forums/ucp.php?i=pm&mode=compose&u=7317}{slithy}).\\[0.5em]
 
-Support for the module class and this template will be provided on the
+Support for the rpg\_module class and this template will be provided on the
 \href{http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823}{Dragonsfoot Computer Gaming \& Utilities} forum.
 \end{flushright}
 }
@@ -136,30 +144,30 @@ Support for the module class and this template will be provided on the
 
 \showtitle
 
-This file is both a short tutorial and example of how to use the module class to typeset your fantasy role-playing game adventure.
+This file is a tutorial and example of how to use the rpg\_module class to typeset your fantasy role-playing game adventure.
 
 \part{Introduction}
 
-The module class is a free resource for authors of adventure modules for fantasy roleplaying games.
+The rpg\_module class is a free resource for authors of adventure modules for fantasy roleplaying games.
 It is inspired by the look and feel of the 1981 ``Red Book'' Basic incarnation of the world's most popular FRPG.
 
 To prepare your work using this class, you will need \LaTeX, a free document preparation system for high-quality
-typesetting. The module class was developed and tested using \TeX Live, which you can download from
+typesetting. The rpg\_module class was developed and tested using \TeX Live, which you can download from
 \href{https://latex-project.org/ftp.html}{the \LaTeX~Project website}.
 
 Unlike a conventional word processor, the \LaTeX~philosophy is to separate the job of writing and editing content
 from the job of typesetting it for publication. Authors can concentrate on writing their text without fussing
-about what fonts to choose or what size the page margins or table columns should be. The module class takes care
+about what fonts to choose or what size the page margins or table columns should be. The rpg\_module class takes care
 of all that. Another advantage is that all documents produced using this template will have a similar look and
 feel, so if you want to publish a series of works they will appear consistent.
 
 \LaTeX~uses a markup language in order to describe document structure and presentation. This
-file---\verb|module.pdf|---was created from the markup file \verb|module.tex|. If you open \verb|module.tex|
+file---\verb|rpg_module.pdf|---was created from the markup file \verb|rpg_module.tex|. If you open \verb|rpg_module.tex|
 in an ordinary text editor, you will see the markup commands and some explanatory comments (prefixed by \%).
-\LaTeX~converts your source text, combined with the markup and the module class, into a high quality PDF document.
+\LaTeX~converts your source text, combined with the markup and the rpg\_module class, into a high quality PDF document.
 
 You can find numerous tutorials online to get you started with the basics of document preparation using \LaTeX.
-Part~\ref{using_the_module_class} of this document explains the features of the module class. Part~\ref{example_dungeon}
+Part~\ref{using_the_module_class} of this document explains the features of the rpg\_module class. Part~\ref{example_dungeon}
 is an example of how to create a dungeon module using the class.
 
 \part{Using the Module Class}
@@ -167,7 +175,7 @@ is an example of how to create a dungeon module using the class.
 
 \section{Class Options}
 
-At the beginning of your document, load the module class with \verb|\documentclass[<options>]{module}|. You can
+At the beginning of your document, load the rpg\_module class with \verb|\documentclass[<options>]{rpg_module}|. You can
 specify the following options:
 
 \begin{tabularx}{\linewidth}{lX}
@@ -181,12 +189,12 @@ specify the following options:
 \verb|acb1|         & Use \href{http://zenopusarchives.blogspot.com/2014/02/ascending-ac-in-holmes-basic.html}{the B1 AC style} in stat blocks\\
 \verb|acsw|         & Use \href{http://www.swordsandwizardry.com/}{Swords \& Wizardry} AC style in stat blocks\\
 \verb|basic|        & Use Basic monster stat blocks (default)\\
-\verb|advanced|     & Use Advanced monster stat blocks (not currently implemented, planned for a future release)\\
+\verb|advanced|     & Use Advanced monster stat blocks (not yet implemented, planned for a future release)\\
 \end{tabularx}
 
 \subsection*{Paper Size}
 
-The module supports the letter paper size (used in USA) and A4 (used in Europe and the rest of the world). Changing the paper size
+rpg\_module supports the letter paper size (used in USA) and A4 (used in Europe and the rest of the world). Changing the paper size
 does not scale the text on the page; rather it adjusts the margins so the pages will be typeset identically regardless
 of which size is selected. This allows module writers to easily create two almost identical PDFs for use in different regions.
 
@@ -198,9 +206,9 @@ in Letter paper size.
 You can select a serifed or sans-serif font. The default font is URW Gothic (sans-serif), a free font which is similar to
 ITC Avant Garde Gothic. Avant Garde was used in many early TSR modules, including B1 and B2.
 
-If you choose the serif option, the module class will try to use ITC Souvenir. Souvenir is used for the 1981 Basic rulebook
+If you choose the serif option, the rpg\_module class will try to use ITC Souvenir. Souvenir is used for the 1981 Basic rulebook
 and modules including B3 (Green cover), X1 and X2. However, it is a commercial font which is
-not distributed with \LaTeX. If you don't have Souvenir installed, the module class will use URW Bookman instead, which is
+not distributed with \LaTeX. If you don't have Souvenir installed, the rpg\_module class will use URW Bookman instead, which is
 included in the standard \TeX Live distribution.
 
 If you want to obtain the Souvenir font, note that it was bundled with some versions of CorelDraw. It is more economical to buy
@@ -211,7 +219,7 @@ and the corresponding LaTeX .tfm and .vf files, which you can obtain from the \h
 
 \subsection*{Stat Blocks}
 
-The module class is designed to be extensible.  This version of the class includes Basic-style monster stat blocks
+The rpg\_module class is designed to be extensible.  This version of the class includes Basic-style monster stat blocks
 (\verb|basic|). See p.\pageref{stat_blocks} for more detail.
 
 \verb|advanced| stat blocks are planned for the next version of the class. In principle it is possible to define a new stat
@@ -256,7 +264,7 @@ Curabitur dictum gravida mauris. Nam arcu libero, nonummy
 
 \subsection*{Tables}
 
-The module class uses the standard \verb|tabular| environment for tables. It defines a new \verb|\tableheader| macro which centres
+The rpg\_module class uses the standard \verb|tabular| environment for tables. It defines a new \verb|\tableheader| macro which centres
 the table headings and writes a horizontal rule of the correct width under each one, in the same style as the Basic rulebook.
 
 You need to specify the number and format of each column in your table as usual: \verb|l| for left-aligned, \verb|c| for centred
@@ -295,7 +303,7 @@ Normal man & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 20 & 20 & 20\\
 \addtolength{\tabcolsep}{4.1pt}
 \end{center}
 
-\vspace{1ex}\noindent The module class also defines two special-purpose tables: the Wandering Monster table and Monster Roster table. These tables
+\vspace{1ex}\noindent The rpg\_module class also defines two special-purpose tables: the Wandering Monster table and Monster Roster table. These tables
 have pre-defined headings and each line is populated using a monster stat block (see the next section).
 
 \noindent Wandering Monster tables are defined with:
@@ -314,7 +322,7 @@ consecutively. Or if you want to use ranges, you can specify the range for each 
 of dash to use for numeric ranges. For parenthetical dashes use three hyphens to get the longer em-dash, ``---'').
 
 \verb|{monstername}| is the key for the stat block; see the next section for an explanation.
-\verb|{no. appearing}| is optional; if you leave it empty, the module class will use the default number appearing as defined in the stat block.
+\verb|{no. appearing}| is optional; if you leave it empty, the rpg\_module class will use the default number appearing as defined in the stat block.
 
 The Monster Roster table is similar, but the table headings are slightly different. Define the table with:
 \begin{quote}
@@ -332,12 +340,12 @@ You can see examples of Wandering Monster and Monster Roster tables on p.\pagere
 \section{Monster Stat Blocks}
 \label{stat_blocks}
 
-The Basic stats style included with the module class has stats for all of the monsters in the Basic and Expert rulebooks.
+The Basic stats style included with the rpg\_module class has stats for all of the monsters in the Basic and Expert rulebooks.
 To typeset a statblock, simply use:
 \begin{quote}
 \verb|\statblock{monstername}{noappearing}{hitpoints}|
 \end{quote}
-The module class will work out the correct singular or plural forms automatically, so
+The rpg\_module class will work out the correct singular or plural forms automatically, so
 \verb|\statblock{gnoll}{1}{10}| gives:
 \statblock{gnoll}{1}{10}
 while \verb|\statblock{gnoll}{5}{16,14,12,9,8}| gives:
@@ -359,7 +367,7 @@ monsters above. The format for a new monster definition is:
 \verb|\monster[pluralname]{label}{name}{stats}|
 \end{quote}
 where \verb|label| is the key you want to use for the monster (\verb|gnoll| in the examples above) and
-\verb|name| is the (singular) name of the monster that will be displayed in the text, ``Gnoll''. The module
+\verb|name| is the (singular) name of the monster that will be displayed in the text, ``Gnoll''. The rpg\_module
 class can usually work out the plural form by following some simple rules, but if the plural is unusual,
 you can specify it in the optional \verb|pluralname| field. For example, if you define:
 \begin{quote}
@@ -385,7 +393,7 @@ it should be left blank.
 \item Special Movement per Round
 \item Attacks (short form). Usually just the number of attacks, or ``3+special''. This format is used only in Wandering Monster and Monster Roster tables.
 \item Attacks (long form). More verbose description of attacks, used in New Monster listing and stat blocks, e.g. ``2 claws\?bite\+breath''.
-\footnote{Note that the slash character \texttt{/} is non-breaking (\LaTeX~will not place a line break after \texttt{/}). The module class provides a breaking
+\footnote{Note that the slash character \texttt{/} is non-breaking (\LaTeX~will not place a line break after \texttt{/}). The rpg\_module class provides a breaking
 slash \texttt{\textbackslash ?} to overcome this problem. The class also provides \texttt{\textbackslash +}, which is a breaking version of +. Use of
 \texttt{\textbackslash ?} and \texttt{\textbackslash +} in the long attack and damage fields prevents awkward line breaks in stat blocks.}
 \item Damage (short form). Used in Wandering Monster and Monster Roster tables.
@@ -447,10 +455,10 @@ Snake Charm, Hold Person, Slow Poison, Spiritual Hammer, Speak with Animals, Ani
 \end{ifadvancedstats}
 \end{statblockfreestyle}
 
-\noindent When using \verb|statblockfreestyle|, the module class provides \verb|ifbasicstats| and \verb|ifadvancedstats| macros to specify separate
+\noindent When using \verb|statblockfreestyle|, the rpg\_module class provides \verb|ifbasicstats| and \verb|ifadvancedstats| macros to specify separate
 stat blocks for different RPG systems.
 
-The rest of this document shows a full example of how an adventure can be typeset using the module class.
+The rest of this document shows a full example of how an adventure can be typeset using the rpg\_module class.
 
 \newpage
 
@@ -460,7 +468,7 @@ The rest of this document shows a full example of how an adventure can be typese
 
 \begin{figure*}[p]
 \centering
-\includegraphics[width=0.75\textwidth]{module_map.png}
+\includegraphics[width=0.75\textwidth]{rpg_module_map.png}
 \vspace{5ex}
 \caption*{Map Copyright \copyright 2008, 2016 Tim Hartin of
 \href{http://paratime.ca}{Paratime Design}. Used with permission. All rights reserved.}
@@ -540,7 +548,7 @@ On the porch, behind the pillars and not visible from below, are eight statues\l
 % Floating image
 
 \begin{figure}[t]
-\includegraphics[width=\columnwidth]{module_art_interior.png}
+\includegraphics[width=\columnwidth]{rpg_module_interior_art.png}
 \center{Tomb It May Concern.\\
 Image Copyright \copyright 1987, 2016 Michael Davis. All rights reserved.}
 \label{img:tomb}
@@ -588,7 +596,7 @@ Snake Charm, Hold Person, Slow Poison, Spiritual Hammer, Speak with Animals, Ani
 
 \onecolumninline{\part{Second Dungeon Level}
 
-The module class allows you to switch between double- and single- column modes within your document. The
+The rpg\_module class allows you to switch between double- and single- column modes within your document. The
 \texttt{\textbackslash onecolumn} command will cause a page break and switch to one-column mode. Likewise,
 the \texttt{\textbackslash twocolumn} command will cause a page break and switch back to two-column mode.
 
@@ -660,7 +668,7 @@ transform themselves into cave bears, giant crocodiles or giant scorpions.
 
 \part{License Information}
 
-The \LaTeX~module class is Copyright \copyright 2016 Michael Davis and is distributed under the terms of the
+The \LaTeX~rpg\_module class is Copyright \copyright 2016 Michael Davis and is distributed under the terms of the
 \href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License} (LPPL) Version 1.3c.
 
 You are free to use the class to generate works for your own private use and/or for distribution as detailed in
@@ -679,8 +687,8 @@ you typeset using this class and wish to express your appreciation you are welco
 \label{ogl}
 
 The template includes three macros to make it easy to distribute your work under the Open Game License
-from Wizards of the Coast: \verb|\ogl|, \verb|\productidentity| and \verb|\opengamecontent|. You can see
-an example below:
+from Wizards of the Coast: \verb|\ogl|, \verb|\productidentity| and \verb|\opengamecontent|. These three
+macros produce the license text below:
 
 \begin{ogl}
 % This environment includes the complete text of the OGL v1.0A. Within the environment, you should include
@@ -692,7 +700,7 @@ Wyatt, based on original material by E. Gary Gygax and Dave Arneson.
 \end{ogl}
 
 \begin{productidentity}
-\item The text of this \LaTeX~module class and example template, which comprises all typesetting elements and all text which
+\item The text of this \LaTeX~rpg\_module class and example template, which comprises all typesetting elements and all text which
 is not explitly Open Game Content, is Product Identity.
 \modulecopyright
 

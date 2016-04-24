@@ -1,32 +1,48 @@
 STYLE=basic_stats
-
-TARGET=module.pdf
-CLASS=module.cls
-STYLE_FILE=$(STYLE).sty
 STAT_FILE=$(STYLE).def
 
-ZIP_TARGET=/tmp/module.zip
-ZIPFILES=module.tex $(TARGET) $(CLASS) $(STYLE_FILE) $(STAT_FILE) module_art_cover.png module_art_interior.png module_logo.pdf module_map.png LICENSE examples/*
+TARGET=rpg_module.pdf
+CLASS=rpg_module.cls
+STYLE_FILE=$(STYLE).sty
 
-all: $(TARGET)
+ZIP_TARGET=/tmp/rpg_module.zip
+ZIPFILES=README LICENSE $(TARGET) $(CLASS) $(STYLE_FILE) $(STAT_FILE) LICENSE doc/ examples/
+
+all: $(TARGET) examples
+
+$(TARGET): $(STAT_FILE)
+	cd doc; make install
+
+examples: $(STAT_FILE)
+	cd examples_src/monster_manual; make install
+	cd examples_src/b1;             make install
+	cd examples_src/b3;             make install
+	cd examples_src/x2;             make install
+	cd examples_src/basic;          make install
+	cp examples_src/README examples
 
 show: $(TARGET)
 	evince $(TARGET)
-
-%.pdf: %.tex $(CLASS) $(STYLE_FILE) $(STAT_FILE) %.toc
-	pdflatex $<
-
-%.toc: %.tex $(CLASS) $(STYLE_FILE) $(STAT_FILE)
-	pdflatex $<
 
 $(STAT_FILE): $(STYLE)/publish $(STYLE)/$(STYLE).csv
 	$(STYLE)/publish $(STYLE)/$(STYLE).csv > $@
 
 zip: $(ZIPFILES)
-	zip $(ZIP_TARGET) $(ZIPFILES)
+	rm -f $(ZIP_TARGET)
+	rm -rf /tmp/rpg_module
+	mkdir /tmp/rpg_module
+	cp -r $(ZIPFILES) /tmp/rpg_module
+	cd /tmp; zip -r $(ZIP_TARGET) rpg_module/
 
 clean:
 	rm -f *.aux *.bbl *.blg *.log *.dvi *.bak *.lof *.log *.lol *.lot *.out *.toc *.cut
+	cd examples_src/monster_manual; make clean
+	cd doc;                         make clean
+	cd examples_src/b1;             make clean
+	cd examples_src/b3;             make clean
+	cd examples_src/x2;             make clean
+	cd examples_src/basic;          make clean
 
 clobber: clean
 	rm -f $(TARGET) $(STAT_FILE)
+	rm -rf examples/*

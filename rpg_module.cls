@@ -1,17 +1,16 @@
-%% module.cls
+%% rpg_module.cls
 %
-% An Adventure Module class for LaTeX
+% A Role-Playing Game Module class for LaTeX
 %
 % Copyright 2016 Michael C. Davis
 %
 % LICENSE FOR THE WORK
 %
 % This work consists of the following files:
-%    module.cls
+%    rpg_module.cls
 %    basic_stats.sty
 %    basic_stats.def
-%    module.tex
-%    monster_manual.tex
+%    doc/rpg_module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
 % Project Public License, either version 1.3 of this license or (at your option)
@@ -35,26 +34,28 @@
 %
 % USAGE
 %
-% See the file module.tex for an example of how to use this class.
+% See the file rpg_module.pdf (source file doc/rpg_module.tex) for documentation. 
+% There are a number of worked examples in the examples/ directory.
 %
-% Technical support is provided on Dragonsfoot:
+% Technical support is provided on Dragonsfoot Forums:
 %
 % http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
 %
 %
 % KNOWN BUGS
 %
-% 1. Special movement doesn't appear correctly in multi-column New Monster listings if not all monsters share that movement type
+% 1. Special movement doesn't appear correctly in multi-column New Monster listings
+%    if not all monsters share that movement type
 % 2. S&W AC format doesn't handle Lycanthrope ACs very well
 %
 %
-% WISH LIST
+% TO DO
 %
 % 1. Advanced edition stat block options
 % 2. Holmes Basic stat block options
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{module}[2016/04/24 Adventure Module document class]
+\ProvidesClass{rpg_module}[2016/04/24 Adventure Module document class]
 
 
 
@@ -100,7 +101,7 @@
 \DeclareOption{acsw}{\def\acstyle@module{sw}\stepcounter{acoption}}
 
 \DeclareOption*{
-   \ClassError{dnd_module}{Unrecognised option '\CurrentOption'}{Valid options are:\MessageBreak
+   \ClassError{rpg_module}{Unrecognised option '\CurrentOption'}{Valid options are:\MessageBreak
       a4paper,letterpaper,tightsqueeze\MessageBreak serif,sansserif,\MessageBreak basic,advanced,\MessageBreak acdesc,acac,acb1,acsw}
 }
 
@@ -111,34 +112,34 @@
 \ProcessOptions\relax
 
 \ifcase\thepapersizeoption\or\or\else
-   \ClassError{module}{a4paper and letterpaper options are mutually exclusive}
+   \ClassError{rpg_module}{a4paper and letterpaper options are mutually exclusive}
    {The input file contains a statement like:\MessageBreak
-    \protect\documentclass[letterpaper,a4paper]{module}\MessageBreak
+    \protect\documentclass[letterpaper,a4paper]{rpg_module}\MessageBreak
     You can only select one paper size, either letterpaper or a4paper.\MessageBreak
     The default is a4paper.}
 \fi
 
 \ifcase\thefontoption\or\or\else
-   \ClassError{module}{serif and sanserif options are mutually exclusive}
+   \ClassError{rpg_module}{serif and sanserif options are mutually exclusive}
    {The input file contains a statement like:\MessageBreak
-    \protect\documentclass[serif,sansserif]{module}.\MessageBreak
+    \protect\documentclass[serif,sansserif]{rpg_module}.\MessageBreak
     You can only select one font style, either serif or sans serif.\MessageBreak
     The default is sans serif.}
 \fi
 
 \ifcase\thestatsoption\or\or\else
-   \ClassError{module}{you can only select one style}
+   \ClassError{rpg_module}{you can only select one style}
    {The input file contains a statement like:
-    \protect\documentclass[basic,advanced]{module}.
+    \protect\documentclass[basic,advanced]{rpg_module}.
     You can only select one style for stat blocks.\MessageBreak
     The recognised styles are basic and advanced.\MessageBreak
-    The default is basic. Advanced will be defined in a future version of the module class.}
+    The default is basic. Advanced will be defined in a future version of the rpg_module class.}
 \fi
 
 \ifcase\theacoption\or\else
-   \ClassError{module}{you can only select one AC style}
+   \ClassError{rpg_module}{you can only select one AC style}
    {The input file contains a statement like:\MessageBreak
-    \protect\documentclass[acasc,acdesc]{module}.\MessageBreak
+    \protect\documentclass[acasc,acdesc]{rpg_module}.\MessageBreak
     You can only select one style for armour class.\MessageBreak
     The recognised styles are acasc, acdesc, acb1 and acsw.}
 \fi
@@ -248,7 +249,7 @@
       \newcommand*\registered{{\usefont{T1}{lmr}{m}{n}\textregistered}}         % Registered trademark (R) symbol
       \renewcommand\half{{\usefont{T1}{lmr}{m}{n}\sfrac{1}{2}}}                 % Redefine font for 1/2 symbol
    }{
-      \ClassWarning{module}{%
+      \ClassWarning{rpg_module}{%
          ITC Souvenir not detected, substituting Bookman as default serifed font.}
       \RequirePackage{bookman}                                                  % Use Bookman as serifed font
    }
@@ -351,9 +352,9 @@
 % Load system-specific stat blocks
 
 \InputIfFileExists{\statstyle@module}{%
-   \ClassInfo{module}{Loading monster stats from \statstyle@module}
+   \ClassInfo{rpg_module}{Loading monster stats from \statstyle@module}
 }{%
-   \ClassWarning{module}{Monster stats style \statstyle@module\space not found,\MessageBreak
+   \ClassWarning{rpg_module}{Monster stats style \statstyle@module\space not found,\MessageBreak
    defaulting to basic_stats.sty}
    \input{basic_stats.sty}
 }
@@ -562,9 +563,9 @@
 % Copyright and license macros
 
 \newcommand{\modulecopyright}{%
-The \LaTeX~module class is copyright \copyright 2016 Michael Davis and is distributed under the conditions of the
+The \LaTeX~rpg\_module class is copyright \copyright 2016 Michael Davis and is distributed under the conditions of the
 \href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License}, either version 1.3 or (at your option)
-any later version. Compiled Works generated using the module class can be distributed as specified in Clause 3 of the license.}
+any later version. Compiled Works generated using the rpg\_module class can be distributed as specified in Clause 3 of the license.}
 
 \newenvironment{ogl}{%
 \footnotesize

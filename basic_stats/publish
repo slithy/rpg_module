@@ -11,20 +11,19 @@ INPUT_FILE=$1
 [ -r ${INPUT_FILE} ] || error "Can't read ${INPUT_FILE}"
 
 cat <<'END_OF_HEADER'
-%% basic_stats.aux
+%% basic_stats.def
 %
-% Basic stat blocks for the Adventure Module class
+% Basic stats for the Role-Playing Game Module class
 %
 % Copyright 2016 Michael C. Davis
 %
 % LICENSE FOR THE WORK
 %
 % This work consists of the following files:
-%    module.cls
+%    rpg_module.cls
 %    basic_stats.sty
 %    basic_stats.def
-%    module.tex
-%    monster_manual.tex
+%    doc/rpg_module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
 % Project Public License, either version 1.3 of this license or (at your option)
@@ -38,6 +37,14 @@ cat <<'END_OF_HEADER'
 % The Author and Maintainer of this work is Michael C. Davis
 %
 %
+% OPEN GAME LICENSE
+%
+% The monster stats in this file are copyright 2000, Wizards of the Coast, Inc.
+% and are distributed with permission under the terms of the Open Game License v 1.0.
+% See the file rpg_module.cls or the compiled documentation file rpg_module.pdf for
+% the full text of the license.
+%
+%
 % LICENSE FOR COMPILED WORKS
 %
 % You may distribute compiled works generated using the work as specified in
@@ -46,19 +53,12 @@ cat <<'END_OF_HEADER'
 % license.
 %
 %
-% OPEN GAME LICENSE
-%
-% The monster stats in this file are copyright 2000, Wizards of the Coast, Inc.
-% and are distributed with permission under the terms of the Open Game License v 1.0.
-% See the file module.cls or the compiled file module.pdf for the full text of the
-% license.
-%
-%
 % USAGE
 %
-% See the files module.tex and monster_manual.tex for an example of how to use the basic_stats style.
+% See the file rpg_module.pdf (source file doc/rpg_module.tex) for documentation. 
+% There are a number of worked examples in the examples/ directory.
 %
-% Technical support is provided on Dragonsfoot:
+% Technical support is provided on Dragonsfoot Forums:
 %
 % http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
 
