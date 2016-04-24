@@ -6,16 +6,12 @@ STYLE_FILE=$(STYLE).sty
 STAT_FILE=$(STYLE).def
 
 ZIP_TARGET=/tmp/module.zip
-ZIPFILES=module.tex $(TARGET) $(CLASS) $(STYLE_FILE) $(STAT_FILE) module_art_cover.png module_art_interior.png module_logo.pdf module_map.png LICENSE \
-	monster_manual.tex monster_manual.pdf
+ZIPFILES=module.tex $(TARGET) $(CLASS) $(STYLE_FILE) $(STAT_FILE) module_art_cover.png module_art_interior.png module_logo.pdf module_map.png LICENSE examples/*
 
 all: $(TARGET)
 
 show: $(TARGET)
 	evince $(TARGET)
-
-monsters: monster_manual.pdf
-	evince monster_manual.pdf
 
 %.pdf: %.tex $(CLASS) $(STYLE_FILE) $(STAT_FILE) %.toc
 	pdflatex $<
@@ -33,4 +29,4 @@ clean:
 	rm -f *.aux *.bbl *.blg *.log *.dvi *.bak *.lof *.log *.lol *.lot *.out *.toc *.cut
 
 clobber: clean
-	rm -f $(TARGET) monster_manual.pdf $(STAT_FILE)
+	rm -f $(TARGET) $(STAT_FILE)
