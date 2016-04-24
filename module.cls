@@ -9,8 +9,9 @@
 % This work consists of the following files:
 %    module.cls
 %    basic_stats.sty
-%    basic_stats.aux
+%    basic_stats.def
 %    module.tex
+%    monster_manual.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
 % Project Public License, either version 1.3 of this license or (at your option)
@@ -35,26 +36,25 @@
 % USAGE
 %
 % See the file module.tex for an example of how to use this class.
-
-% TO DO
 %
-% 1. Create a couple of "clone" demo pages from modules to compare closeness to original typesetting
-% 2. Create a DF thread for support requests and set up a watch on it. Create a link to the thread into the document.
-% 3. Upload to DF
-% 4. Upload to CTAN
+% Technical support is provided on Dragonsfoot:
+%
+% http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
+%
 %
 % KNOWN BUGS
 %
 % 1. Special movement doesn't appear correctly in multi-column New Monster listings if not all monsters share that movement type
 % 2. S&W AC format doesn't handle Lycanthrope ACs very well
 %
+%
 % WISH LIST
 %
 % 1. Advanced edition stat block options
-% 2. Holmes stat block options
+% 2. Holmes Basic stat block options
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{module}[2016/04/09 Adventure Module document class]
+\ProvidesClass{module}[2016/04/24 Adventure Module document class]
 
 
 

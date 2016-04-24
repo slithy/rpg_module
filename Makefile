@@ -33,4 +33,4 @@ clean:
 	rm -f *.aux *.bbl *.blg *.log *.dvi *.bak *.lof *.log *.lol *.lot *.out *.toc *.cut
 
 clobber: clean
-	rm -f $(TARGET) $(STAT_FILE)
+	rm -f $(TARGET) monster_manual.pdf $(STAT_FILE)
