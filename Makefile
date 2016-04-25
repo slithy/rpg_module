@@ -1,11 +1,11 @@
-STYLE=basic_stats
+STYLE=basic-stats
 STAT_FILE=$(STYLE).def
 
-TARGET=rpg_module.pdf
-CLASS=rpg_module.cls
+TARGET=rpg-module.pdf
+CLASS=rpg-module.cls
 STYLE_FILE=$(STYLE).sty
 
-ZIP_TARGET=/tmp/rpg_module.zip
+ZIP_TARGET=/tmp/rpg-module.zip
 ZIPFILES=README LICENSE $(TARGET) $(CLASS) $(STYLE_FILE) $(STAT_FILE) LICENSE doc/ examples/
 
 all: $(TARGET) examples
@@ -19,7 +19,7 @@ examples: $(STAT_FILE)
 	cd examples_src/b3;             make install
 	cd examples_src/x2;             make install
 	cd examples_src/basic;          make install
-	cp examples_src/README examples
+	cp examples_src/README examples/README.examples
 
 show: $(TARGET)
 	evince $(TARGET)
@@ -27,12 +27,13 @@ show: $(TARGET)
 $(STAT_FILE): $(STYLE)/publish $(STYLE)/$(STYLE).csv
 	$(STYLE)/publish $(STYLE)/$(STYLE).csv > $@
 
-zip: $(ZIPFILES)
+zip: $(ZIPFILES) clean
 	rm -f $(ZIP_TARGET)
-	rm -rf /tmp/rpg_module
-	mkdir /tmp/rpg_module
-	cp -r $(ZIPFILES) /tmp/rpg_module
-	cd /tmp; zip -r $(ZIP_TARGET) rpg_module/
+	rm -rf /tmp/rpg-module
+	mkdir /tmp/rpg-module
+	cp -r $(ZIPFILES) /tmp/rpg-module
+	find /tmp/rpg-module -name Makefile -exec rm -f {} \;
+	cd /tmp; zip -r $(ZIP_TARGET) rpg-module/
 
 clean:
 	rm -f *.aux *.bbl *.blg *.log *.dvi *.bak *.lof *.log *.lol *.lot *.out *.toc *.cut

@@ -1,4 +1,4 @@
-TARGET=rpg_module.pdf
+TARGET=rpg-module.pdf
 
 all: $(TARGET)
 

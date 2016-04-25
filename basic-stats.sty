@@ -1,4 +1,4 @@
-%% basic_stats.sty
+%% basic-stats.sty
 %
 % Basic stat blocks for the Role-Playing Game Module class
 %
@@ -7,10 +7,10 @@
 % LICENSE FOR THE WORK
 %
 % This work consists of the following files:
-%    rpg_module.cls
-%    basic_stats.sty
-%    basic_stats.def
-%    doc/rpg_module.tex
+%    rpg-module.cls
+%    basic-stats.sty
+%    basic-stats.def
+%    doc/rpg-module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
 % Project Public License, either version 1.3 of this license or (at your option)
@@ -34,12 +34,14 @@
 %
 % USAGE
 %
-% See the file rpg_module.pdf (source file doc/rpg_module.tex) for documentation. 
+% See the file rpg-module.pdf (source file doc/rpg-module.tex) for documentation. 
 % There are a number of worked examples in the examples/ directory.
 %
 % Technical support is provided on Dragonsfoot Forums:
 %
 % http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
+
+\ProvidesPackage{basic-stats}[2016/04/25 Basic Stat Blocks for the Role-Playing Game Module class]
 
 \RequirePackage{tabularx}
 
@@ -394,4 +396,4 @@ Alignment:     & \pgfkeys{/#1/AL}                                & \pgfkeys{/#2/
 % Load pre-defined monster stats
 %
 
-\input{basic_stats.def}
+\input{basic-stats.def}

@@ -11,7 +11,7 @@ INPUT_FILE=$1
 [ -r ${INPUT_FILE} ] || error "Can't read ${INPUT_FILE}"
 
 cat <<'END_OF_HEADER'
-%% basic_stats.def
+%% basic-stats.def
 %
 % Basic stats for the Role-Playing Game Module class
 %
@@ -20,10 +20,10 @@ cat <<'END_OF_HEADER'
 % LICENSE FOR THE WORK
 %
 % This work consists of the following files:
-%    rpg_module.cls
-%    basic_stats.sty
-%    basic_stats.def
-%    doc/rpg_module.tex
+%    rpg-module.cls
+%    basic-stats.sty
+%    basic-stats.def
+%    doc/rpg-module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
 % Project Public License, either version 1.3 of this license or (at your option)
@@ -41,7 +41,7 @@ cat <<'END_OF_HEADER'
 %
 % The monster stats in this file are copyright 2000, Wizards of the Coast, Inc.
 % and are distributed with permission under the terms of the Open Game License v 1.0.
-% See the file rpg_module.cls or the compiled documentation file rpg_module.pdf for
+% See the file rpg-module.cls or the compiled documentation file rpg-module.pdf for
 % the full text of the license.
 %
 %
@@ -55,7 +55,7 @@ cat <<'END_OF_HEADER'
 %
 % USAGE
 %
-% See the file rpg_module.pdf (source file doc/rpg_module.tex) for documentation. 
+% See the file rpg-module.pdf (source file doc/rpg-module.tex) for documentation. 
 % There are a number of worked examples in the examples/ directory.
 %
 % Technical support is provided on Dragonsfoot Forums:

@@ -1,4 +1,4 @@
-%% rpg_module.cls
+%% rpg-module.cls
 %
 % A Role-Playing Game Module class for LaTeX
 %
@@ -7,10 +7,10 @@
 % LICENSE FOR THE WORK
 %
 % This work consists of the following files:
-%    rpg_module.cls
-%    basic_stats.sty
-%    basic_stats.def
-%    doc/rpg_module.tex
+%    rpg-module.cls
+%    basic-stats.sty
+%    basic-stats.def
+%    doc/rpg-module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
 % Project Public License, either version 1.3 of this license or (at your option)
@@ -34,7 +34,7 @@
 %
 % USAGE
 %
-% See the file rpg_module.pdf (source file doc/rpg_module.tex) for documentation. 
+% See the file rpg-module.pdf (source file doc/rpg-module.tex) for documentation. 
 % There are a number of worked examples in the examples/ directory.
 %
 % Technical support is provided on Dragonsfoot Forums:
@@ -55,7 +55,7 @@
 % 2. Holmes Basic stat block options
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{rpg_module}[2016/04/24 Adventure Module document class]
+\ProvidesClass{rpg-module}[2016/04/25 Role-Playing Game Module document class]
 
 
 
@@ -88,8 +88,8 @@
 \DeclareOption{serif}{\module@seriffonttrue\stepcounter{fontoption}}
 \DeclareOption{sansserif}{\module@seriffontfalse\stepcounter{fontoption}}
 
-\DeclareOption{basic}{\def\statstyle@module{basic_stats.sty}\stepcounter{statsoption}}
-\DeclareOption{advanced}{\def\statstyle@module{advanced_stats.sty}\stepcounter{statsoption}}
+\DeclareOption{basic}{\def\statstyle@module{basic-stats.sty}\stepcounter{statsoption}}
+\DeclareOption{advanced}{\def\statstyle@module{advanced-stats.sty}\stepcounter{statsoption}}
 % \DeclareOption{next_system}{...
 
 % Note: the class does not define a default AC display option. The default is handled by the
@@ -101,7 +101,7 @@
 \DeclareOption{acsw}{\def\acstyle@module{sw}\stepcounter{acoption}}
 
 \DeclareOption*{
-   \ClassError{rpg_module}{Unrecognised option '\CurrentOption'}{Valid options are:\MessageBreak
+   \ClassError{rpg-module}{Unrecognised option '\CurrentOption'}{Valid options are:\MessageBreak
       a4paper,letterpaper,tightsqueeze\MessageBreak serif,sansserif,\MessageBreak basic,advanced,\MessageBreak acdesc,acac,acb1,acsw}
 }
 
@@ -112,34 +112,34 @@
 \ProcessOptions\relax
 
 \ifcase\thepapersizeoption\or\or\else
-   \ClassError{rpg_module}{a4paper and letterpaper options are mutually exclusive}
+   \ClassError{rpg-module}{a4paper and letterpaper options are mutually exclusive}
    {The input file contains a statement like:\MessageBreak
-    \protect\documentclass[letterpaper,a4paper]{rpg_module}\MessageBreak
+    \protect\documentclass[letterpaper,a4paper]{rpg-module}\MessageBreak
     You can only select one paper size, either letterpaper or a4paper.\MessageBreak
     The default is a4paper.}
 \fi
 
 \ifcase\thefontoption\or\or\else
-   \ClassError{rpg_module}{serif and sanserif options are mutually exclusive}
+   \ClassError{rpg-module}{serif and sanserif options are mutually exclusive}
    {The input file contains a statement like:\MessageBreak
-    \protect\documentclass[serif,sansserif]{rpg_module}.\MessageBreak
+    \protect\documentclass[serif,sansserif]{rpg-module}.\MessageBreak
     You can only select one font style, either serif or sans serif.\MessageBreak
     The default is sans serif.}
 \fi
 
 \ifcase\thestatsoption\or\or\else
-   \ClassError{rpg_module}{you can only select one style}
+   \ClassError{rpg-module}{you can only select one style}
    {The input file contains a statement like:
-    \protect\documentclass[basic,advanced]{rpg_module}.
+    \protect\documentclass[basic,advanced]{rpg-module}.
     You can only select one style for stat blocks.\MessageBreak
     The recognised styles are basic and advanced.\MessageBreak
-    The default is basic. Advanced will be defined in a future version of the rpg_module class.}
+    The default is basic. Advanced will be defined in a future version of the rpg-module class.}
 \fi
 
 \ifcase\theacoption\or\else
-   \ClassError{rpg_module}{you can only select one AC style}
+   \ClassError{rpg-module}{you can only select one AC style}
    {The input file contains a statement like:\MessageBreak
-    \protect\documentclass[acasc,acdesc]{rpg_module}.\MessageBreak
+    \protect\documentclass[acasc,acdesc]{rpg-module}.\MessageBreak
     You can only select one style for armour class.\MessageBreak
     The recognised styles are acasc, acdesc, acb1 and acsw.}
 \fi
@@ -249,7 +249,7 @@
       \newcommand*\registered{{\usefont{T1}{lmr}{m}{n}\textregistered}}         % Registered trademark (R) symbol
       \renewcommand\half{{\usefont{T1}{lmr}{m}{n}\sfrac{1}{2}}}                 % Redefine font for 1/2 symbol
    }{
-      \ClassWarning{rpg_module}{%
+      \ClassWarning{rpg-module}{%
          ITC Souvenir not detected, substituting Bookman as default serifed font.}
       \RequirePackage{bookman}                                                  % Use Bookman as serifed font
    }
@@ -352,11 +352,11 @@
 % Load system-specific stat blocks
 
 \InputIfFileExists{\statstyle@module}{%
-   \ClassInfo{rpg_module}{Loading monster stats from \statstyle@module}
+   \ClassInfo{rpg-module}{Loading monster stats from \statstyle@module}
 }{%
-   \ClassWarning{rpg_module}{Monster stats style \statstyle@module\space not found,\MessageBreak
-   defaulting to basic_stats.sty}
-   \input{basic_stats.sty}
+   \ClassWarning{rpg-module}{Monster stats style \statstyle@module\space not found,\MessageBreak
+   defaulting to basic-stats.sty}
+   \input{basic-stats.sty}
 }
 
 % Title Page
@@ -563,9 +563,9 @@
 % Copyright and license macros
 
 \newcommand{\modulecopyright}{%
-The \LaTeX~rpg\_module class is copyright \copyright 2016 Michael Davis and is distributed under the conditions of the
+The \LaTeX~rpg-module class is copyright \copyright 2016 Michael Davis and is distributed under the conditions of the
 \href{http://www.latex-project.org/lppl.txt}{LaTeX Project Public License}, either version 1.3 or (at your option)
-any later version. Compiled Works generated using the rpg\_module class can be distributed as specified in Clause 3 of the license.}
+any later version. Compiled Works generated using the rpg-module class can be distributed as specified in Clause 3 of the license.}
 
 \newenvironment{ogl}{%
 \footnotesize

@@ -1,5 +1,7 @@
 --------------------------------------------------------------------------------
-rpg_module: A Role-Playing Game Module class for LaTeX
+rpg_module: A Role-Playing Game Module document class for LaTeX
+
+Version 1.0 2016/04/25
 
 Includes basic_stats.sty, a package to typeset monster stat blocks from the
 1981 Basic/Expert version of Dungeons and Dragons (Moldvay/Cook/Marsh)
@@ -24,7 +26,7 @@ game. A future version of this class will include monster stats for Advanced
 Dungeons & Dragons/OSRIC.
 
 
-Usage: \documentclass[options]{rpg_module}
+Usage: \documentclass[options]{rpg-module}
 
 See rpg_module.pdf for detailed documentation and a worked example. See
 the examples directory for further examples.
