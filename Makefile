@@ -14,7 +14,7 @@ $(TARGET): $(STAT_FILE)
 	cd doc; make install
 
 examples: $(STAT_FILE)
-	cd examples_src/monster_manual; make install
+	cd examples_src/monster-manual; make install
 	cd examples_src/b1;             make install
 	cd examples_src/b3;             make install
 	cd examples_src/x2;             make install
@@ -37,7 +37,7 @@ zip: $(ZIPFILES) clean
 
 clean:
 	rm -f *.aux *.bbl *.blg *.log *.dvi *.bak *.lof *.log *.lol *.lot *.out *.toc *.cut
-	cd examples_src/monster_manual; make clean
+	cd examples_src/monster-manual; make clean
 	cd doc;                         make clean
 	cd examples_src/b1;             make clean
 	cd examples_src/b3;             make clean

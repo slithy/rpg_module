@@ -1,11 +1,22 @@
 --------------------------------------------------------------------------------
-rpg_module: A Role-Playing Game Module document class for LaTeX
+rpg-module: A Role-Playing Game Module document class for LaTeX
 
 Version 1.0 2016/04/25
 
-Includes basic_stats.sty, a package to typeset monster stat blocks from the
+Includes basic-stats.sty, a package to typeset monster stat blocks from the
 1981 Basic/Expert version of Dungeons and Dragons (Moldvay/Cook/Marsh)
 --------------------------------------------------------------------------------
+
+The rpg-module class is inspired by the old-school Dungeons and Dragons modules
+of the 1980s and attempts to recapture the look and feel of those classic
+adventures. In the examples directory, you will find several pages from D&D
+modules from 1981 which have been typeset with this class and which you can
+compare to the original documents.
+
+This package also includes the basic-stats style, which contains stat blocks
+for every monster from the Moldvay/Cook/Marsh Basic/Expert version of the
+game. A future version of this class will include monster stats for Advanced
+Dungeons & Dragons/OSRIC.
 
 Copyright 2016 Michael C. Davis
 
@@ -13,24 +24,12 @@ This work may be distributed and/or modified under the conditions of the LaTeX
 Project Public License version 1.3 or later. The Basic Stats style contains
 material which is licensed under the Open Gaming License version 1.0A.
 
-
-The rpg_module class is inspired by the old-school Dungeons and Dragons modules
-of the 1980s and attempts to recapture the look and feel of those classic
-adventures. In the examples directory, you will find several pages from D&D
-modules from 1981 which have been typeset with this class and which you can
-compare to the original documents.
-
-This package also includes the Basic Stats style, which contains stat blocks
-for every monster from the Moldvay/Cook/Marsh Basic/Expert version of the
-game. A future version of this class will include monster stats for Advanced
-Dungeons & Dragons/OSRIC.
-
+--------------------------------------------------------------------------------
 
 Usage: \documentclass[options]{rpg-module}
 
-See rpg_module.pdf for detailed documentation and a worked example. See
+See rpg-module.pdf for detailed documentation and a worked example. See
 the examples directory for further examples.
-
 
 The author can be contacted at Dragonsfoot, user: slithy
 
@@ -39,3 +38,9 @@ http://www.dragonsfoot.org/forums/memberlist.php?mode=viewprofile&u=7317
 Technical support is provided on Dragonsfoot Forums:
 
 http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
+
+--------------------------------------------------------------------------------
+
+REVISION HISTORY
+
+2016/04/25 c1e8b6c     Initial release
