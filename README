@@ -3,7 +3,7 @@ rpg-module: A Role-Playing Game Module document class for LaTeX
 
 Version 1.0 2016/04/25
 
-Includes basic-stats.sty, a package to typeset monster stat blocks from the
+Includes rpg-basic-stats.sty, a package to typeset monster stat blocks from the
 1981 Basic/Expert version of Dungeons and Dragons (Moldvay/Cook/Marsh)
 --------------------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ adventures. In the examples directory, you will find several pages from D&D
 modules from 1981 which have been typeset with this class and which you can
 compare to the original documents.
 
-This package also includes the basic-stats style, which contains stat blocks
+This package also includes the rpg-basic-stats style, which contains stat blocks
 for every monster from the Moldvay/Cook/Marsh Basic/Expert version of the
 game. A future version of this class will include monster stats for Advanced
 Dungeons & Dragons/OSRIC.
@@ -42,5 +42,12 @@ http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
 --------------------------------------------------------------------------------
 
 REVISION HISTORY
+
+                       Added minimal example (haunted-keep.tex)
+
+                       Renamed basic-stats.sty to rpg-basic-stats.sty to ensure
+                       it is globally unique
+
+                       Renamed all filenames to use hyphen instead of underscore
 
 2016/04/25 c1e8b6c     Initial release

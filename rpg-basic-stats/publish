@@ -11,7 +11,7 @@ INPUT_FILE=$1
 [ -r ${INPUT_FILE} ] || error "Can't read ${INPUT_FILE}"
 
 cat <<'END_OF_HEADER'
-%% basic-stats.def
+%% rpg-basic-stats.def
 %
 % Basic stats for the Role-Playing Game Module class
 %
@@ -21,8 +21,8 @@ cat <<'END_OF_HEADER'
 %
 % This work consists of the following files:
 %    rpg-module.cls
-%    basic-stats.sty
-%    basic-stats.def
+%    rpg-basic-stats.sty
+%    rpg-basic-stats.def
 %    doc/rpg-module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX

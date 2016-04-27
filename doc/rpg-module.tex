@@ -8,8 +8,8 @@
 %
 % This work consists of the following files:
 %    rpg-module.cls
-%    basic-stats.sty
-%    basic-stats.def
+%    rpg-basic-stats.sty
+%    rpg-basic-stats.def
 %    doc/rpg-module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
@@ -65,7 +65,7 @@
 % advanced        Use Advanced stat blocks (not currently implemented, planned for a future release)
 %
 % In principle, stat blocks can be defined for any RPG system by defining the appropriate style file.
-% In this release of the class, only basic-stats.sty is defined.
+% In this release of the class, only rpg-basic-stats.sty is defined.
 
 \documentclass[a4paper,serif]{rpg-module}
 
@@ -95,7 +95,7 @@ An Adventure Module Class and Template}
 
 \subtitle{Introductory module for character levels 1--3}
 
-\coverimage{rpg_module_cover_art.png}
+\coverimage{rpg-module-cover-art.png}
 
 \abstract{This template is inspired by the old-school modules of the 1980s. It is an attempt to recapture the look and feel
 of those classic adventures using the power and beauty of the \LaTeX~typesetting system. The template is designed to allow
@@ -117,7 +117,7 @@ The images and maps in this example template are not covered by the LPPL. See th
 
 \contactblock[p{2.9cm} p{5.0cm} p{9.8cm}]{% column 1 : logo
 \begin{center}
-\includegraphics[width=1.5cm]{rpg_module_logo.pdf}
+\includegraphics[width=1.5cm]{rpg-module-logo.pdf}
 \end{center}
 }{% column 2 : empty in this example
 }{% column 3 : contact details
@@ -468,7 +468,7 @@ The rest of this document shows a full example of how an adventure can be typese
 
 \begin{figure*}[p]
 \centering
-\includegraphics[width=0.75\textwidth]{rpg_module_map.png}
+\includegraphics[width=0.75\textwidth]{rpg-module-map.png}
 \vspace{5ex}
 \caption*{Map Copyright \copyright 2008, 2016 Tim Hartin of
 \href{http://paratime.ca}{Paratime Design}. Used with permission. All rights reserved.}
@@ -548,7 +548,7 @@ On the porch, behind the pillars and not visible from below, are eight statues\l
 % Floating image
 
 \begin{figure}[t]
-\includegraphics[width=\columnwidth]{rpg_module_interior_art.png}
+\includegraphics[width=\columnwidth]{rpg-module-interior-art.png}
 \center{Tomb It May Concern.\\
 Image Copyright \copyright 1987, 2016 Michael Davis. All rights reserved.}
 \label{img:tomb}

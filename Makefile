@@ -1,4 +1,4 @@
-STYLE=basic-stats
+STYLE=rpg-basic-stats
 STAT_FILE=$(STYLE).def
 
 TARGET=rpg-module.pdf
@@ -14,11 +14,7 @@ $(TARGET): $(STAT_FILE)
 	cd doc; make install
 
 examples: $(STAT_FILE)
-	cd examples_src/monster-manual; make install
-	cd examples_src/b1;             make install
-	cd examples_src/b3;             make install
-	cd examples_src/x2;             make install
-	cd examples_src/basic;          make install
+	cd examples_src; for dir in *; do if [ -d $$dir ]; then cd $$dir; make install; cd ..; fi; done
 	cp examples_src/README examples/README.examples
 
 show: $(TARGET)
@@ -37,12 +33,8 @@ zip: $(ZIPFILES) clean
 
 clean:
 	rm -f *.aux *.bbl *.blg *.log *.dvi *.bak *.lof *.log *.lol *.lot *.out *.toc *.cut
-	cd examples_src/monster-manual; make clean
-	cd doc;                         make clean
-	cd examples_src/b1;             make clean
-	cd examples_src/b3;             make clean
-	cd examples_src/x2;             make clean
-	cd examples_src/basic;          make clean
+	cd doc; make clean
+	cd examples_src; for dir in *; do if [ -d $$dir ]; then cd $$dir; make clean; cd ..; fi; done
 
 clobber: clean
 	rm -f $(TARGET) $(STAT_FILE)

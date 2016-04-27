@@ -8,8 +8,8 @@
 %
 % This work consists of the following files:
 %    rpg-module.cls
-%    basic-stats.sty
-%    basic-stats.def
+%    rpg-basic-stats.sty
+%    rpg-basic-stats.def
 %    doc/rpg-module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
@@ -88,8 +88,8 @@
 \DeclareOption{serif}{\module@seriffonttrue\stepcounter{fontoption}}
 \DeclareOption{sansserif}{\module@seriffontfalse\stepcounter{fontoption}}
 
-\DeclareOption{basic}{\def\statstyle@module{basic-stats.sty}\stepcounter{statsoption}}
-\DeclareOption{advanced}{\def\statstyle@module{advanced-stats.sty}\stepcounter{statsoption}}
+\DeclareOption{basic}{\def\statstyle@module{rpg-basic-stats.sty}\stepcounter{statsoption}}
+\DeclareOption{advanced}{\def\statstyle@module{rpg-advanced-stats.sty}\stepcounter{statsoption}}
 % \DeclareOption{next_system}{...
 
 % Note: the class does not define a default AC display option. The default is handled by the
@@ -355,8 +355,8 @@
    \ClassInfo{rpg-module}{Loading monster stats from \statstyle@module}
 }{%
    \ClassWarning{rpg-module}{Monster stats style \statstyle@module\space not found,\MessageBreak
-   defaulting to basic-stats.sty}
-   \input{basic-stats.sty}
+   defaulting to rpg-basic-stats.sty}
+   \input{rpg-basic-stats.sty}
 }
 
 % Title Page

@@ -1,0 +1,193 @@
+%% haunted-keep.tex
+%
+% A minimal example of how to use the rpg-module class. Replace the text of the
+% module with your own adventure and compile with LaTeX!
+%
+% Lines which begin with '%' are comments, for explanatory purposes only. They
+% are ignored by LaTeX and will not appear in the final document.
+
+
+
+% First, tell LaTeX you want to format your document with the rpg-module class.
+% We pass some options here: use US Letter paper size and use a serifed font.
+
+\documentclass[letterpaper,serif]{rpg-module}
+
+% You can add more packages here as required
+
+\usepackage{parskip}                    % Don't indent paragraphs and add spacing between paragraphs
+
+% The document text starts here
+
+\begin{document}
+
+% The title page is optional. If you want a title page, this is the minimum 
+% amount of information required.
+
+\title{The Haunted Keep}
+\author{Tom Moldvay}
+\maketitle
+
+% Repeat the module title at the top of the first page
+
+\showtitle
+
+This is an example of the \LaTeX~rpg-module class, which shows how you might
+format the example dungeon from p.B55--B60 of the D\&D Basic rulebook by Tom
+Moldvay (1981).
+
+% Part 1: Introduction. LaTeX takes care of formatting and numbering.
+
+\part{Introduction}
+
+% Put text to read out to the players inside the boxtext environment:
+
+\begin{boxtext}
+In the distant past, the Haunted Keep was the castle of the Rodemus family. It
+was abandoned many years ago when the family mysteriously disappeared. It is
+now rumored to be haunted. Strange lights and sounds are often seen and heard
+in the ruins by passing townspeople.
+
+Recently, a tribe of goblins has been raiding the countryside. On
+their last raid they captured a dozen prisoners. The prisoners are all
+relatives of the player characters, who have banded together to
+rescue their relatives. The party has tracked the goblins to the Keep
+or castle, right up to the only door to the east tower.
+
+Most of the Haunted Keep is in ruins. Only two towers remain,
+connected by a gatehouse, and only the first floors of these towers
+are still intact. The Keep was built with rough granite blocks, now
+pitted with age. The door into the east tower is wooden and one
+hinge is rusted through.
+\end{boxtext}
+
+What the players do not know is that the Rodemus family has become
+a family of wererats, and still live in tunnels under their old
+castle. The family has joined the goblin raiders and are using them
+to find the strengths of the surrounding countryside. If the raids
+show the country folk to be weak, the family plans to raise a goblin
+army and attack. The players will slowly discover this information,
+little by little, as the adventure proceeds.
+
+\part{The Gatehouse}
+
+% Your document should be structured into parts, sections, subsections
+
+\section*{DUNGEON KEY}
+
+% Use subsections for rooms or locations in your adventure
+
+\subsection{Bedroom}
+
+This room appears to have once been a bedroom. It is filled with rotting, moldy
+bedroom furniture, but is empty of monsters, treasure, and traps. The dust on
+the floor has obviously been brushed to remove any footprints.
+
+\subsection{Guard Post}
+
+This room was once a guard post (when the Haunted Keep was a castle, before
+becoming ruins). A faded, ragged tapestry showing a hunt divides the room in
+half. Clinging to the side of the tapestry away from the characters (no
+matter which door they use, unless they enter through both at
+once) is a crab spider.
+
+% Use the statblock macro to format monster stat blocks
+% The format is \statblock{monster_name}{no_appearing}{hit_points}
+
+\statblock{crab_spider}{1}{10}
+
+On the north side of the tapestry is a wooden table and 3 wooden
+chairs. A few moldy cards lie on the tabletop. Against the west wall
+is a wooden chest. Any attempt to disturb the chest will bring an
+immediate attack by the crab spider. The chest contains 99 sp
+(silver pieces).
+
+\subsection{Room of Faces}
+
+The walls of this room are carved with leering human faces along their length.
+A close examination of the north wall will reveal a crack around one particularly
+sinister face. The face is on a swivel and can be pried open. Behind it is a
+small iron safe cemented into the wall. The safe is trapped with
+sleep gas which will billow out unless the trap is deactivated. The
+sleep gas will fill a circular area 10' in diameter, but otherwise has
+the same effects as a sleep spell; however, any creature who saves
+vs. Poison will not be affected. Inside the safe are 400 sp and an
+unmarked bottle of clear liquid (a potion of healing).
+
+\subsection{Commander's Room}
+
+This was the office of the tower commander, though all furnishings have been
+removed. Two terrified prisoners huddle in one corner, their hands and feet in
+chains. Guarding the prisoners are 4 hobgoblins who will fight anyone
+who tries to rescue the prisoners.
+
+\statblock{hobgoblin}{4}{7,9,4,5}
+
+The largest hobgoblin has a locked iron box which contains 500 sp
+and a jeweled necklace worth 1100 gp. Underneath a rug in the middle
+of the floor is a trapdoor to the 2nd level.
+
+\subsection{Chapel}
+
+Once this room was a chapel, but now the altar is covered with dust. On the altar
+is a grime-covered statuette depicting a muscular man with a rat's head. Most of
+the twelve goblins are either sleeping on crude bunks along the walls or playing
+dice games in a corner while two of them watch the door.
+
+\statblock{goblin}{12}{5 each}
+
+If loud noises are made in the corridor outside, all the goblins will be awake
+when the party enters. They have no treasure.
+
+\subsection{Empty Room}
+% We put a cross-reference here from the next room
+\label{empty_room}
+
+It is difficult to determine what this room was used for. It is empty except for
+a few splinters of wood, which may mean that the furniture was broken up (probably
+to serve as firewood). The room is empty of monsters, treasure, and traps.
+
+\subsection{Slime Room}
+
+This room is similar to \ref{empty_room}, but there is a green slime clinging to the
+ceiling. A cautious party will see the slime, but an unwary party will not see it
+until it falls on one of them.
+
+\statblock{green_slime}{1}{13}
+
+\subsection{Guard Barracks}
+
+This room was once a guard barracks. The floor has collapsed and the ceiling leaks.
+The result is a 3' deep pool filled with scummy water. A partially waterlogged bunk
+floats in the water. A rusted iron statue of a beautiful warrior maiden lies at the
+bottom of the pool. The water is safe to walk through, and the statue is harmless
+and worthless.
+
+\subsection{Cubbyhole}
+
+This cubbyhole has a secret door and was used to spy on those walking down the
+corridor. There are now 4 goblins in the room, spying on anyone approaching in the
+corridor. They have no treasure.
+
+\statblock{goblin}{4}{5,3,4,1}
+
+% Add some vertical space
+
+\vspace{10ex}
+
+% Table of Contents
+
+\tableofcontents
+
+% License information
+
+\section{Open Game Content}
+\label{ogl}
+
+\begin{ogl}
+\item System Reference Document, Copyright \copyright 2000--2003, Wizards of the Coast, Inc., by Jonathan Tweet, Monte Cook,
+Skip Williams, Rich Baker, Andy Collins, David Noonan, Rich Redman, Bruce R. Cordell, John D. Rateliff, Thomas Reid, James
+Wyatt, based on original material by E. Gary Gygax and Dave Arneson.
+\end{ogl}
+
+\end{document}

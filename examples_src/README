@@ -1,8 +1,16 @@
 This directory contains the following examples of how to use the rpg_module class:
 
+haunted_keep.tex            A minimal example of how to use the rpg-module class, based
+                            on "An Example of Dungeon Design: The Haunted Keep", Tom
+                            Moldvay, Dungeons & Dragons Basic Rulebook, p.B55-B60.
+                            Copyright 1981 TSR Hobbies, Inc.
+
 monster_manual.tex          A complete listing of all the monsters from basic_stats.sty,
                             in new monster format, stat block format and wandering monster
                             table format.
+
+basic.tex                   Reproduction of p.B45-B46 of the Dungeons & Dragons Basic
+                            Rulebook by Tom Moldvay. Copyright 1981 TSR Hobbies, Inc.
 
 b1.tex                      Reproduction of p.21-22 of B1: In Search of the Unknown, by
                             Mike Carr. Copyright 1979, 1981 TSR Hobbies, Inc.
@@ -12,9 +20,6 @@ b3.tex                      Reproduction of p.22-23 of B3: Palace of the Silver 
 
 x2.tex                      Reproduction of p.1-2 of X2: Castle Amber by Tom Moldvay.
                             Copyright 1981 TSR Hobbies, Inc.
-
-basic.tex                   Reproduction of p.B45-B46 of the Dungeons & Dragons Basic
-                            Rulebook by Tom Moldvay. Copyright 1981 TSR Hobbies, Inc.
 
 Copyright for the original works reproduced above originally belonged to TSR Hobbies, Inc.
 and now belongs to Wizards of the Coast, Inc. The text and artwork in these examples is
