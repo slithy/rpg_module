@@ -558,6 +558,10 @@
 \tableul{\thenumcols@module}
 }
 
+% Table captions
+
+\captionsetup[table]{font=bf}
+
 
 
 % Copyright and license macros
