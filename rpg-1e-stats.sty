@@ -58,12 +58,9 @@
 
 % Armour class macro
 %
-% The default for Basic stats is to use the same descending AC that is used in
-% the Basic rulebook. However, three alternative styles are defined: ascending
-% AC style, B1 style and Swords & Wizardry style. Thanks to Zenopus archives
-% for pointing out that the B1 style is an early form of ascending AC, see:
-%
-% http://zenopusarchives.blogspot.com/2014/02/ascending-ac-in-holmes-basic.html
+% The default for Advanced First Edition stats is to use descending AC as in the
+% First Edition/OSRIC rulebooks. However, three alternative styles are defined:
+% ascending AC style, B1 style and Swords & Wizardry style.
 
 \newcounter{acasc@module}                                                       % Counter for AC calculations
 
@@ -74,7 +71,7 @@
    \else\ifnum\pdfstrcmp{#1}{---}=\z@
       #1\ignorespaces
    \else%
-      \setcounter{acasc@module}{19}%
+      \setcounter{acasc@module}{20}%
       \IfSubStr{#1}{\,}{\StrBefore{#1}{\,}[\tmpac]}{\def\tmpac{#1}}%
       \IfBeginWith{\tmpac}{\minus}{%
          \StrBehind{\tmpac}{\minus}[\tmpac]%
@@ -96,15 +93,7 @@
 
 % Hit Dice : convert short form to long form for stat blocks
 
-\newcommand\hd@module[1]{\IfBeginWith{#1}{\half}{#1 (1-4 hp)}{#1}}
-
-% Saving throws : convert long form to short form for stat blocks
-
-\newcommand\sv@module[1]{\StrLeft{#1}{1}[\first]\StrBehind{#1}{ }[\second]\IfInteger{\second}{}{\StrLeft{\second}{1}[\second]}\first\second}
-
-% Morale macro : convert long form to short form for stat blocks
-
-\newcommand\ml@module[1]{\IfSubStr{#1}{ }{\StrBefore{#1}{ }}{#1}}
+\newcommand\hd@module[1]{\IfBeginWith{#1}{\half}{#1 (1--4 hit points)}{#1}}
 
 % Alignment macro : convert long form to short form for stat blocks
 
@@ -122,62 +111,70 @@
 
 
 
-% Basic stat block key-value pairs
+% Advanced stat block key-value pairs
+%
+% Format is:
+%
+% \monster{key}[Name, Plural]{Name, Singular}{Type|THAC0|AC|MV|HD|Attacks|Dmg|Dmglong|SA|SD|MR|SZ|Int|AL|Psi|PsiAtt|Frequency|NoAppear|InLair|TT|Level|XP}
 
-\newcommand{\setstatbasic}[2]{%
+\newcommand{\setstatadvanced}[2]{%
    \ifcase\thecurrentstat
       \pgfkeys{/#1/Type/.initial        = {#2}}
    \or
-      \pgfkeys{/#1/SilverMagic/.initial = {#2}}
+      \pgfkeys{/#1/THAC0/.initial       = {#2}}
    \or
       \pgfkeys{/#1/AC/.initial          = \ac@module{#2}}
+   \or
+      \pgfkeys{/#1/MV/.initial          = {#2}}
    \or
       \pgfkeys{/#1/HD/.initial          = {#2}}
       \pgfkeys{/#1/HDlong/.initial      = \hd@module{#2}}
    \or
-      \pgfkeys{/#1/MVturn/.initial      = {#2}}
-   \or
-      \pgfkeys{/#1/MVrd/.initial        = {#2}}
-   \or
-      \pgfkeys{/#1/MVspec/.initial      = {#2}}
-   \or
-      \pgfkeys{/#1/MVspec_turn/.initial = {#2}}
-   \or
-      \pgfkeys{/#1/MVspec_rd/.initial   = {#2}}
-   \or
-      \pgfkeys{/#1/Attshort/.initial    = {#2}}
-   \or
-      \pgfkeys{/#1/Attlong/.initial     = {#2}}
+      \pgfkeys{/#1/Attacks/.initial     = {#2}}
    \or
       \pgfkeys{/#1/Dmg/.initial         = {#2}}
    \or
       \pgfkeys{/#1/Dmglong/.initial     = {#2}}
    \or
-      \pgfkeys{/#1/SV/.initial          = \sv@module{#2}}
-      \pgfkeys{/#1/SVlong/.initial      = {#2}}
+      \pgfkeys{/#1/SA/.initial          = {#2}}
    \or
-      \pgfkeys{/#1/ML/.initial          = \ml@module{#2}}
-      \pgfkeys{/#1/MLlong/.initial      = {#2}}
+      \pgfkeys{/#1/SD/.initial          = {#2}}
+   \or
+      \pgfkeys{/#1/MR/.initial          = {#2}}
+   \or
+      \pgfkeys{/#1/SZ/.initial          = {#2}}
+      \pgfkeys{/#1/SZlong/.initial      = {#2}}
+   \or
+      \pgfkeys{/#1/Int/.initial         = {#2}}
    \or
       \pgfkeys{/#1/AL/.initial          = {#2}}
+      \pgfkeys{/#1/ALlong/.initial      = \al@module{#2}}
+   \or
+      \pgfkeys{/#1/Psi/.initial         = {#2}}
+   \or
+      \pgfkeys{/#1/PsiAtt/.initial      = {#2}}
+   \or
+      \pgfkeys{/#1/Frequency/.initial   = {#2}}
    \or
       \pgfkeys{/#1/NoAppear/.initial    = {#2}}
    \or
-      \pgfkeys{/#1/NoInLair/.initial    = {#2}}
+      \pgfkeys{/#1/InLair/.initial      = {#2}}
    \or
       \pgfkeys{/#1/TT/.initial          = {#2}}
+   \or
+      \pgfkeys{/#1/Level/.initial       = {#2}}
    \or
       \pgfkeys{/#1/XP/.initial          = {#2}}
    \fi
 }
 
-% Define monsters using \setstatbasic
+% Define monsters using \setstat1e
 
 \def\scan@stats#1|{%
    \ifnum\pdfstrcmp{#1}{\relax}=\z@
       \let\next\relax
    \else
-      \setstatbasic{\currentmonster}{#1}\let\next\scan@stats
+      \setstatadvanced{\currentmonster}{#1}\let\next\scan@stats
       \stepcounter{currentstat}
   \fi\next
 }
@@ -305,17 +302,27 @@
 
 \newenvironment{newmonster}[1]{%
 \@afterindentfalse\@afterheading\vspace{\topskip}
-\begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}Xl>{\raggedright\arraybackslash}X@{}}
-\multicolumn{4}{l}{\hspace{-\tabcolsep}\newmonsterfont\longname{#1}\pgfkeys{/#1/SilverMagic}%
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xl@{}}
+\multicolumn{2}{l}{\hspace{-\tabcolsep}\newmonsterfont\longname{#1}%
 \phantomsection\addcontentsline{toc}{section}{\longname{#1}}}\\[\topskip]
-\ArmourClass: & \pgfkeys{/#1/AC}                          & No. Appearing: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})\\
-Hit Dice:     & \pgfkeys{/#1/HDlong}                      & Save As:       & \pgfkeys{/#1/SVlong}\\
-Move:         & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd}) & Morale:        & \pgfkeys{/#1/MLlong}\\
-\ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/MVspec}}{}=\z@\else
-\hspace{1em}\pgfkeys{/#1/MVspec}: & \pgfkeys{/#1/MVspec_turn} (\pgfkeys{/#1/MVspec_rd})\\
-\fi
-Attacks:      & \pgfkeys{/#1/Attlong}                     & Treasure Type: & \pgfkeys{/#1/TT}\\
-Damage:       & \pgfkeys{/#1/Dmglong}                     & Alignment:     & \pgfkeys{/#1/AL}\\
+FREQUENCY: \pgfkeys{/#1/Frequency}\\
+NO.\,APPEARING: \pgfkeys{/#1/NoAppear}\\
+\ArmourClass: \pgfkeys{/#1/AC}\\
+MOVE: \pgfkeys{/#1/MV}\\
+HIT DICE: \pgfkeys{/#1/HDlong}\\
+\% IN LAIR: \pgfkeys{/#1/InLair}\\
+TREASURE TYPE: \pgfkeys{/#1/TT}\\
+NO.\,OF ATTACKS: \pgfkeys{/#1/Attacks}\\
+DAMAGE/ATTACK: \pgfkeys{/#1/Dmglong}\\
+SPECIAL ATTACKS: \pgfkeys{/#1/SA}\\
+SPECIAL DEFENSES: \pgfkeys{/#1/SD}\\
+MAGIC RESISTANCE: \pgfkeys{/#1/MR}\\
+INTELLIGENCE: \pgfkeys{/#1/Int}\\
+ALIGNMENT: \pgfkeys{/#1/ALlong}\\
+SIZE: \pgfkeys{/#1/SZlong}\\
+PSIONIC ABILITY: \pgfkeys{/#1/Psi}\\
+\qquad Attack/Defense Modes: \pgfkeys{/#1/PsiAtt}\\
+LEVEL/X.P.\,VALUE: \pgfkeys{/#1/Level}/\pgfkeys{/#1/XP}\\
 \end{tabularx}\par\vspace{\newmonsterbottomskip}\noindent\ignorespaces}{\vspace{\newmonsterbottomskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
 % Two-column version
