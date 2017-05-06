@@ -5,7 +5,9 @@ ls-R
 *.out
 *.toc
 *.cut
-reference
-test.tex
+*.swp
 rpg-basic-stats.def
-examples
+rpg-1e-stats.def
+reference/
+examples/
+test/
