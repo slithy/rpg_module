@@ -355,7 +355,7 @@ INTELLIGENCE:                & \pgfkeys{/#1/Int}                    & \pgfkeys{/
 ALIGNMENT:                   & \pgfkeys{/#1/ALlong}                 & \pgfkeys{/#2/ALlong}\\
 SIZE:                        & \pgfkeys{/#1/SZlong}                 & \pgfkeys{/#2/SZlong}\\
 PSIONIC ABILITY:             & \pgfkeys{/#1/Psi}                    & \pgfkeys{/#2/Psi}\\
-\qquad Attack/Defense Modes: & \pgfkeys{/#1/PsiAtt}                 & \pgfkeys{/#2/PsiAtt}\\
+\quad Attack/Defense:        & \pgfkeys{/#1/PsiAtt}                 & \pgfkeys{/#2/PsiAtt}\\
 LEVEL/X.P.\,VALUE:           & \pgfkeys{/#1/Level}/\pgfkeys{/#1/XP} & \pgfkeys{/#2/Level}/\pgfkeys{/#1/XP}\\
 \end{tabularx}\par\vspace{\newmonsterbottomskip}\noindent\ignorespaces}{\vspace{\newmonsterbottomskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
@@ -363,11 +363,11 @@ LEVEL/X.P.\,VALUE:           & \pgfkeys{/#1/Level}/\pgfkeys{/#1/XP} & \pgfkeys{/
 
 % Three-column version
 
-\newenvironment{newmonster3*}[5]{%
+\newenvironment{newmonster3*}[4]{%
 \@afterindentfalse\@afterheading\vspace{\topskip}
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\begin{tabularx}{\linewidth}{@{}l>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X@{}}
 \ifnum\pdfstrcmp{#4}{}=\z@\else
-\multicolumn{4}{l}{\hspace{-\tabcolsep}\newmonsterfont#4#5%
+\multicolumn{4}{l}{\hspace{-\tabcolsep}\newmonsterfont#4%
 \phantomsection\addcontentsline{toc}{section}{#4}}\\[\newmonsterbottomskip]
 \fi
  & \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SingleName}}=\z@
@@ -376,25 +376,24 @@ LEVEL/X.P.\,VALUE:           & \pgfkeys{/#1/Level}/\pgfkeys{/#1/XP} & \pgfkeys{/
 \cmidrule(l{\tabcolsep}r{\tabcolsep}){2-2}
 \cmidrule(l{\tabcolsep}r{\tabcolsep}){3-3}
 \cmidrule(l{\tabcolsep}r{\tabcolsep}){4-4}
-\ArmourClass:  & \pgfkeys{/#1/AC}                                & \pgfkeys{/#2/AC}         & \pgfkeys{/#3/AC}\\
-Hit Dice:      & \pgfkeys{/#1/HDlong}                            & \pgfkeys{/#2/HDlong}     & \pgfkeys{/#3/HDlong}\\
-Move:          & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd})
-               & \pgfkeys{/#2/MVturn} (\pgfkeys{/#2/MVrd})
-               & \pgfkeys{/#3/MVturn} (\pgfkeys{/#3/MVrd})\\
-\ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/MVspec}}{}=\z@\else
-\hspace{1em}\pgfkeys{/#1/MVspec}: & \pgfkeys{/#1/MVspec_turn} (\pgfkeys{/#1/MVspec_rd})
-                                  & \pgfkeys{/#2/MVspec_turn} (\pgfkeys{/#2/MVspec_rd})
-                                  & \pgfkeys{/#3/MVspec_turn} (\pgfkeys{/#3/MVspec_rd})\\
-\fi
-Attacks:       & \pgfkeys{/#1/Attlong}                           & \pgfkeys{/#2/Attlong}    & \pgfkeys{/#3/Attlong}\\
-Damage:        & \pgfkeys{/#1/Dmglong}                           & \pgfkeys{/#2/Dmglong}    & \pgfkeys{/#3/Dmglong}\\
-No. Appearing: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})
-               & \pgfkeys{/#2/NoAppear} (\pgfkeys{/#2/NoInLair})
-               & \pgfkeys{/#3/NoAppear} (\pgfkeys{/#3/NoInLair})\\
-Save As:       & \pgfkeys{/#1/SVlong}                            & \pgfkeys{/#2/SVlong}     & \pgfkeys{/#3/SVlong}\\
-Morale:        & \pgfkeys{/#1/MLlong}                            & \pgfkeys{/#2/MLlong}     & \pgfkeys{/#3/MLlong}\\
-Treasure Type: & \pgfkeys{/#1/TT}                                & \pgfkeys{/#2/TT}         & \pgfkeys{/#3/TT}\\
-Alignment:     & \pgfkeys{/#1/AL}                                & \pgfkeys{/#2/AL}         & \pgfkeys{/#3/AL}\\
+FREQUENCY:                   & \pgfkeys{/#1/Frequency} & \pgfkeys{/#2/Frequency} & \pgfkeys{/#3/Frequency}\\
+NO.\,APPEARING:              & \pgfkeys{/#1/NoAppear}  & \pgfkeys{/#2/NoAppear}  & \pgfkeys{/#3/NoAppear}\\
+\ArmourClass:                & \pgfkeys{/#1/AC}        & \pgfkeys{/#2/AC}        & \pgfkeys{/#3/AC}\\
+MOVE:                        & \pgfkeys{/#1/MV}        & \pgfkeys{/#2/MV}        & \pgfkeys{/#3/MV}\\
+HIT DICE:                    & \pgfkeys{/#1/HDlong}    & \pgfkeys{/#2/HDlong}    & \pgfkeys{/#3/HDlong}\\
+\% IN LAIR:                  & \pgfkeys{/#1/InLair}    & \pgfkeys{/#2/InLair}    & \pgfkeys{/#3/InLair}\\
+TREASURE TYPE:               & \pgfkeys{/#1/TT}        & \pgfkeys{/#2/TT}        & \pgfkeys{/#3/TT}\\
+NO.\,OF ATTACKS:             & \pgfkeys{/#1/Attacks}   & \pgfkeys{/#2/Attacks}   & \pgfkeys{/#3/Attacks}\\
+DAMAGE/ATTACK:               & \pgfkeys{/#1/Dmglong}   & \pgfkeys{/#2/Dmglong}   & \pgfkeys{/#3/Dmglong}\\
+SPECIAL ATTACKS:             & \pgfkeys{/#1/SA}        & \pgfkeys{/#2/SA}        & \pgfkeys{/#3/SA}\\
+SPECIAL DEFENSES:            & \pgfkeys{/#1/SD}        & \pgfkeys{/#2/SD}        & \pgfkeys{/#3/SD}\\
+MAGIC RESISTANCE:            & \pgfkeys{/#1/MR}        & \pgfkeys{/#2/MR}        & \pgfkeys{/#3/MR}\\
+INTELLIGENCE:                & \pgfkeys{/#1/Int}       & \pgfkeys{/#2/Int}       & \pgfkeys{/#3/Int}\\
+ALIGNMENT:                   & \pgfkeys{/#1/ALlong}    & \pgfkeys{/#2/ALlong}    & \pgfkeys{/#3/ALlong}\\
+SIZE:                        & \pgfkeys{/#1/SZlong}    & \pgfkeys{/#2/SZlong}    & \pgfkeys{/#3/SZlong}\\
+PSIONIC ABILITY:             & \pgfkeys{/#1/Psi}       & \pgfkeys{/#2/Psi}       & \pgfkeys{/#3/Psi}\\
+\quad Attack/Defense:        & \pgfkeys{/#1/PsiAtt}    & \pgfkeys{/#2/PsiAtt}    & \pgfkeys{/#3/PsiAtt}\\
+LEVEL/X.P.\,VALUE:           & \pgfkeys{/#1/Level}/\pgfkeys{/#1/XP} & \pgfkeys{/#2/Level}/\pgfkeys{/#1/XP} & \pgfkeys{/#3/Level}/\pgfkeys{/#1/XP}\\
 \end{tabularx}\par\vspace{\newmonsterbottomskip}\noindent\ignorespaces}{\vspace{\newmonsterbottomskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
 \newenvironment{newmonster3}[3]{\begin{newmonster3*}{#1}{#2}{#3}{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SilverMagic}}}{\end{newmonster3*}}
