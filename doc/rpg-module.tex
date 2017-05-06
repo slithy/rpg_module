@@ -2,7 +2,7 @@
 %
 % Documentation and worked example for the Role-Playing Game Module class
 %
-% Copyright 2016 Michael C. Davis
+% Copyright 2017 Michael C. Davis
 %
 % LICENSE FOR THE WORK
 %
@@ -10,6 +10,8 @@
 %    rpg-module.cls
 %    rpg-basic-stats.sty
 %    rpg-basic-stats.def
+%    rpg-1e-stats.sty
+%    rpg-1e-stats.def
 %    doc/rpg-module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
@@ -45,9 +47,13 @@
 % In addition to this documentation, there are a number of worked examples in the
 % examples/ directory.
 %
-% Technical support is provided on Dragonsfoot Forums:
+% Technical support is provided on GitHub:
 %
-% http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
+%    https://github.com/slithy/rpg_module
+%
+% and on the Dragonsfoot Forums:
+%
+%    http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
 
 %% Start here!
 %
@@ -62,12 +68,13 @@
 % acb1            Use B1-style AC in stat blocks (inspired by http://zenopusarchives.blogspot.com/2014/02/ascending-ac-in-holmes-basic.html)
 % acsw            Use Swords & Wizardry style AC in stat blocks
 % basic           Use Basic stat blocks (default)
-% advanced        Use Advanced stat blocks (not currently implemented, planned for a future release)
+% 1e              Use Advanced stat blocks (not currently implemented, planned for a future release)
 %
 % In principle, stat blocks can be defined for any RPG system by defining the appropriate style file.
 % In this release of the class, only rpg-basic-stats.sty is defined.
 
-\documentclass[a4paper,serif]{rpg-module}
+%\documentclass[a4paper,serif]{rpg-module}
+\documentclass[a4paper,sansserif,1e]{rpg-module}
 
 \usepackage{lipsum}                                                             % This package generates filler text for
                                                                                 % the example file, not needed in a real project
@@ -126,7 +133,8 @@ The images and maps in this example template are not covered by the LPPL. See th
 The author can be contacted on Dragonsfoot (user:
 \href{http://www.dragonsfoot.org/forums/ucp.php?i=pm&mode=compose&u=7317}{slithy}).\\[0.5em]
 
-Support for the rpg-module class and this template will be provided on the
+Support for the rpg-module class and this template is provided on
+\href{https://github.com/slithy/rpg_module}{GitHub} and the
 \href{http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823}{Dragonsfoot Computer Gaming \& Utilities} forum.
 \end{flushright}
 }
@@ -189,7 +197,7 @@ specify the following options:
 \verb|acb1|         & Use \href{http://zenopusarchives.blogspot.com/2014/02/ascending-ac-in-holmes-basic.html}{the B1 AC style} in stat blocks\\
 \verb|acsw|         & Use \href{http://www.swordsandwizardry.com/}{Swords \& Wizardry} AC style in stat blocks\\
 \verb|basic|        & Use Basic monster stat blocks (default)\\
-\verb|advanced|     & Use Advanced monster stat blocks (not yet implemented, planned for a future release)\\
+\verb|1e|           & Use Advanced 1st Edition monster stat blocks\\
 \end{tabularx}
 
 \subsection*{Paper Size}
@@ -219,12 +227,11 @@ and the corresponding LaTeX .tfm and .vf files, which you can obtain from the \h
 
 \subsection*{Stat Blocks}
 
-The rpg-module class is designed to be extensible.  This version of the class includes Basic-style monster stat blocks
-(\verb|basic|). See p.\pageref{stat_blocks} for more detail.
+The rpg-module class is designed to be extensible. This version of the class includes Basic-style monster stat blocks
+(\verb|basic|) and Advanced 1st Edition-style monster stat blocks (\verb|1e|). See p.\pageref{stat_blocks} for more detail.
 
-\verb|advanced| stat blocks are planned for the next version of the class. In principle it is possible to define a new stat
-block format for any RPG system. If several systems are defined, authors can compile the same work with stats for different
-systems simply by changing the option passed to \verb|documentclass|.
+In principle it is possible to define a new stat block format for any RPG system. If several systems are defined, authors
+can compile the same work with stats for different systems simply by changing the option passed to \verb|documentclass|.
 
 \section{Layout Options}
 
@@ -448,14 +455,14 @@ fit into the standard stat blocks, such as the attributes of NPCs or spell lists
 Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 90'\,(30'), Att mace, D 1--6, Save C5, ML 11, AL C.
 He can cast the following spells: Protection from Good, Cause Fear, Snake Charm, Hold Person.
 \end{ifbasicstats}
-\begin{ifadvancedstats}
+\begin{if1estats}
 Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 9", Att mace, D 2--7, AL LE.
 He can cast the following spells: Protection from Good, Cause Fear, Cause Light Wounds ($\times 2$), Darkness,
 Snake Charm, Hold Person, Slow Poison, Spiritual Hammer, Speak with Animals, Animate Dead, Curse.
-\end{ifadvancedstats}
+\end{if1estats}
 \end{statblockfreestyle}
 
-\noindent When using \verb|statblockfreestyle|, the rpg-module class provides \verb|ifbasicstats| and \verb|ifadvancedstats| macros to specify separate
+\noindent When using \verb|statblockfreestyle|, the rpg-module class provides \verb|ifbasicstats| and \verb|if1estats| macros to specify separate
 stat blocks for different RPG systems.
 
 The rest of this document shows a full example of how an adventure can be typeset using the rpg-module class.
@@ -583,11 +590,11 @@ This area is guarded by the priest of Set, Snefru-hotep, and four Minions of Set
 Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 90'\,(30'), Att mace, D 1--6, Save C5, ML 11, AL C.
 He can cast the following spells: Protection from Good, Cause Fear, Snake Charm, Hold Person.
 \end{ifbasicstats}
-\begin{ifadvancedstats}
+\begin{if1estats}
 Snefru-hotep, Cleric of Set, S9 I15 W17 D10 C8 Ch15. AC 5 (chain mail), C5, hp 21, MV 9", Att mace, D 2--7, AL LE.
 He can cast the following spells: Protection from Good, Cause Fear, Cause Light Wounds ($\times 2$), Darkness,
 Snake Charm, Hold Person, Slow Poison, Spiritual Hammer, Speak with Animals, Animate Dead, Curse.
-\end{ifadvancedstats}
+\end{if1estats}
 \end{statblockfreestyle}
 \statblock{minion_set}{4}{25 each}
 \lipsum[10-11]

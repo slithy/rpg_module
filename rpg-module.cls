@@ -2,7 +2,7 @@
 %
 % A Role-Playing Game Module class for LaTeX
 %
-% Copyright 2016 Michael C. Davis
+% Copyright 2017 Michael C. Davis
 %
 % LICENSE FOR THE WORK
 %
@@ -10,6 +10,8 @@
 %    rpg-module.cls
 %    rpg-basic-stats.sty
 %    rpg-basic-stats.def
+%    rpg-1e-stats.sty
+%    rpg-1e-stats.def
 %    doc/rpg-module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
@@ -37,9 +39,13 @@
 % See the file rpg-module.pdf (source file doc/rpg-module.tex) for documentation. 
 % There are a number of worked examples in the examples/ directory.
 %
-% Technical support is provided on Dragonsfoot Forums:
+% Technical support is provided on GitHub:
 %
-% http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
+%    https://github.com/slithy/rpg_module
+%
+% and on the Dragonsfoot Forums:
+%
+%    http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
 %
 %
 % KNOWN BUGS
@@ -51,11 +57,10 @@
 %
 % TO DO
 %
-% 1. Advanced edition stat block options
-% 2. Holmes Basic stat block options
+% 1. Holmes Basic stat block options
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{rpg-module}[2016/04/25 Role-Playing Game Module document class]
+\ProvidesClass{rpg-module}[2017/05/06 Role-Playing Game Module document class]
 
 
 
@@ -64,7 +69,7 @@
 
 \RequirePackage{comment}                                                        % Allow some sections to conditionally appear or not
 \excludecomment{ifbasicstats}
-\excludecomment{ifadvancedstats}
+\excludecomment{if1estats}
 % \excludecomment{next_system}{...
 
 
@@ -89,7 +94,7 @@
 \DeclareOption{sansserif}{\module@seriffontfalse\stepcounter{fontoption}}
 
 \DeclareOption{basic}{\def\statstyle@module{rpg-basic-stats.sty}\stepcounter{statsoption}}
-\DeclareOption{advanced}{\def\statstyle@module{rpg-advanced-stats.sty}\stepcounter{statsoption}}
+\DeclareOption{1e}{\def\statstyle@module{rpg-1e-stats.sty}\stepcounter{statsoption}}
 % \DeclareOption{next_system}{...
 
 % Note: the class does not define a default AC display option. The default is handled by the
@@ -102,7 +107,7 @@
 
 \DeclareOption*{
    \ClassError{rpg-module}{Unrecognised option '\CurrentOption'}{Valid options are:\MessageBreak
-      a4paper,letterpaper,tightsqueeze\MessageBreak serif,sansserif,\MessageBreak basic,advanced,\MessageBreak acdesc,acac,acb1,acsw}
+      a4paper,letterpaper,tightsqueeze\MessageBreak serif,sansserif,\MessageBreak basic,1e,\MessageBreak acdesc,acac,acb1,acsw}
 }
 
 \ExecuteOptions{a4paper}                                                        % default paper size is A4
@@ -130,10 +135,10 @@
 \ifcase\thestatsoption\or\or\else
    \ClassError{rpg-module}{you can only select one style}
    {The input file contains a statement like:
-    \protect\documentclass[basic,advanced]{rpg-module}.
+    \protect\documentclass[basic,1e]{rpg-module}.
     You can only select one style for stat blocks.\MessageBreak
-    The recognised styles are basic and advanced.\MessageBreak
-    The default is basic. Advanced will be defined in a future version of the rpg-module class.}
+    The recognised styles are basic and 1e.\MessageBreak
+    The default is basic.}
 \fi
 
 \ifcase\theacoption\or\else

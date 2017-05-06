@@ -1,6 +1,6 @@
-%% rpg-basic-stats.sty
+%% rpg-1e-stats.sty
 %
-% Basic stat blocks for the Role-Playing Game Module class
+% Advanced First Edition stat blocks for the Role-Playing Game Module class
 %
 % Copyright 2017 Michael C. Davis
 %
@@ -47,14 +47,14 @@
 %
 %    http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
 
-\ProvidesPackage{rpg-basic-stats}[2016/04/25 Basic Stat Blocks for the Role-Playing Game Module class]
+\ProvidesPackage{rpg-1e-stats}[2017/05/06 Advanced First Edition Stat Blocks for the Role-Playing Game Module class]
 
 \RequirePackage{tabularx}
 
 
 
 % Redefine which environment will be displayed
-\includecomment{ifbasicstats}
+\includecomment{if1estats}
 
 % Armour class macro
 %
@@ -402,4 +402,4 @@ Alignment:     & \pgfkeys{/#1/AL}                                & \pgfkeys{/#2/
 % Load pre-defined monster stats
 %
 
-\input{rpg-basic-stats.def}
+\input{rpg-1e-stats.def}

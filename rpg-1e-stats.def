@@ -1,19 +1,6 @@
-#!/bin/sh
-
-error()
-{
-   echo "publish: $*" >&2
-   exit 1
-}
-
-INPUT_FILE=$1
-
-[ -r ${INPUT_FILE} ] || error "Can't read ${INPUT_FILE}"
-
-cat <<'END_OF_HEADER'
-%% rpg-basic-stats.def
+%% rpg-1e-stats.def
 %
-% Basic stats for the Role-Playing Game Module class
+% Advanced First Edition stats for the Role-Playing Game Module class
 %
 % Copyright 2017 Michael C. Davis
 %
@@ -68,13 +55,9 @@ cat <<'END_OF_HEADER'
 %
 %    http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
 
+\monster{acolyte}{Acolyte}{Men||2|1|60'|20'||||1|1 mace|1d6|1d6|Cleric: 1|7|Any|1--8|1--20|U|10}
+\monster{crocodile}{Crocodile}{Crocodile||5|2|90'|30'|Swim|90'|30'|1|1 bite|1d8|1d8|Fighter: 1|7|Neutral|0|1--8|Nil|20}
+\monster{gnoll}{Gnoll}{||5|2|90'|30'||||1|1 weapon|2d4|2d4 or by weapon\+1|Fighter: 2|8|Chaotic|1--6|3--18|D|20}
+\monster{rock_baboon}{Rock Baboon}{||6|2|120'|40'||||2|1 club\?1 bite|1d6/1d3|1d6\?1d3|Fighter: 2|8|Neutral|2--12|5--30|U|20}
+\monster{pit_viper}{Pit Viper}{Snake||6|2*|90'|30'||||1|1 bite|1d4+poison|1d4\+poison|Fighter: 1|7|Neutral|1--8|1--8|Nil|25}
 
-END_OF_HEADER
-
-awk 'BEGIN{ FS="|"; }
-{
-   if(NR == 1) next;
-   printf("\\monster%s{%s}{%s}{%s", $3, $1, $2, $4);
-   for(i = 5; i <= NF; ++i) printf("|%s", $i);
-   printf("}\n");
-}' ${INPUT_FILE}
