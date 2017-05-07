@@ -100,6 +100,10 @@
 
 \newcommand\hd@module[1]{\IfBeginWith{#1}{\half}{#1 (1--4 hit points)}{#1}}
 
+% Size : convert long form to short form for stat blocks
+
+\newcommand\sz@module[1]{\StrLeft{#1}{1}}
+
 % Alignment macro : convert long form to short form for stat blocks
 
 \newcommand\al@module[1]{%
@@ -149,7 +153,7 @@
    \or
       \pgfkeys{/#1/MR/.initial          = {#2}}
    \or
-      \pgfkeys{/#1/SZ/.initial          = {#2}}
+      \pgfkeys{/#1/SZ/.initial          = \sz@module{#2}}
       \pgfkeys{/#1/SZlong/.initial      = {#2}}
    \or
       \pgfkeys{/#1/Int/.initial         = {#2}}
@@ -239,7 +243,7 @@
    HD~\pgfkeys{/#2/HD},
    hp~#4,
    \#AT~\pgfkeys{/#2/Attacks},
-   D~\pgfkeys{/#2/Dmglong}%
+   D~\pgfkeys{/#2/Dmg}%
 }
 
 % Display monster stats in a stat block
