@@ -103,10 +103,12 @@
 % Alignment macro : convert long form to short form for stat blocks
 
 \newcommand\al@module[1]{%
-   \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/AL}}{Any}=\z@
-      N % For monsters with variable alignment, assume Neutral unless we specify with changealignment
+   \StrPosition{#1}{ }[\spacepos]%
+   \ifnum\spacepos=0
+      N% defaults to Neutral if alignment is 'Any', 'Variable', etc.
    \else
-      \StrLeft{\pgfkeysvalueof{/#1/AL}}{1}
+      \StrGobbleLeft{#1}{\spacepos}[\secondword]%
+      \StrLeft{#1}{1}\StrLeft{\secondword}{1}%
    \fi
 }
 
@@ -152,8 +154,8 @@
    \or
       \pgfkeys{/#1/Int/.initial         = {#2}}
    \or
-      \pgfkeys{/#1/AL/.initial          = {#2}}
-      \pgfkeys{/#1/ALlong/.initial      = \al@module{#2}}
+      \pgfkeys{/#1/AL/.initial          = \al@module{#2}}
+      \pgfkeys{/#1/ALlong/.initial      = {#2}}
    \or
       \pgfkeys{/#1/Psi/.initial         = {#2}}
    \or
@@ -190,7 +192,40 @@
 %
 % Usage: \stats[monster name]{monster key}{no. appearing}{hit points}
 
-\newcommand{\stats}[4][default]{%
+% Default to longstats
+
+\newcommand{\stats}{\longstats}
+
+% Define long stat format
+
+\newcommand{\longstats}[4][default]{%
+   \ifnum\pdfstrcmp{#1}{default}=\z@
+      \ifnum\pdfstrcmp{#3}{1}=\z@
+         \pgfkeys{/#2/SingleName}:               % Use the generic name defined for this monster (single instance)
+      \else
+         \pgfkeys{/#2/PluralName} (#3):          % Use the generic name defined for this monster (plural + number appearing)
+      \fi
+   \else
+      #1                                         % Override the generic name with the optional argument
+   \fi
+   AC~\pgfkeys{/#2/AC},
+   MV~\pgfkeys{/#2/MV},
+   THAC0~\pgfkeys{/#2/THAC0},
+   HD~\pgfkeys{/#2/HD},
+   hp~#4,
+   \#AT~\pgfkeys{/#2/Attacks},
+   D~\pgfkeys{/#2/Dmglong},
+   SA~\pgfkeys{/#2/SA},
+   SD~\pgfkeys{/#2/SD},
+   MR~\pgfkeys{/#2/MR},
+   SZ~\pgfkeys{/#2/SZ},
+   AL~\pgfkeys{/#2/AL},
+   XP~\pgfkeys{/#2/XP}%
+}
+
+% Define short stat format
+
+\newcommand{\shortstats}[4][default]{%
    \ifnum\pdfstrcmp{#1}{default}=\z@
       \ifnum\pdfstrcmp{#3}{1}=\z@
          \pgfkeys{/#2/SingleName}:               % Use the generic name defined for this monster (single instance)
@@ -203,16 +238,8 @@
    AC~\pgfkeys{/#2/AC},
    HD~\pgfkeys{/#2/HD},
    hp~#4,
-   MV~\pgfkeys{/#2/MVturn}\thinspacebrk(\pgfkeys{/#2/MVrd}),
-\ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/MVspec}}{}=\z@\else
-   \pgfkeys{/#2/MVspec}~\pgfkeys{/#2/MVspec_turn}\thinspacebrk(\pgfkeys{/#2/MVspec_rd}),
-\fi
-   Att~\pgfkeys{/#2/Attlong},
-   D~\pgfkeys{/#2/Dmglong},
-   Save~\pgfkeys{/#2/SV},
-   ML~\pgfkeys{/#2/ML},
-   AL~\al@module{#2},
-   XP~\pgfkeys{/#2/XP}%
+   \#AT~\pgfkeys{/#2/Attacks},
+   D~\pgfkeys{/#2/Dmglong}%
 }
 
 % Display monster stats in a stat block
