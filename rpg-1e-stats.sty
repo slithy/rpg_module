@@ -294,8 +294,8 @@
 
 % Table display format for monster roster
 
-\newenvironment{monsterroster}[1][c]{\begin{center}\begin{tabular}{clcccccccccc}
-\tableheader[#1]{Room & Monster & No. & AC & HD & hp & MV & Attacks & Damage & Save & ML & AL}}
+\newenvironment{monsterroster}[1][c]{\begin{center}\begin{tabular}{clccccccccccccc}
+\tableheader[#1]{Room & Monster & No. & AC & MV & THAC0 & HD & hp & \#AT & Damage & SA & SD & MR & AL & XP}}
 {\end{tabular}\end{center}}
 
 % Usage: \rosteritem{room key}{monster key}{no. appearing}{hit points}
@@ -310,11 +310,7 @@
    \else
       \pgfkeys{/#2/PluralName} &
    \fi
-   #3 & \pgfkeys{/#2/AC} & \pgfkeys{/#2/HD} & #4 & \pgfkeys{/#2/MVrd}%
-\ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/MVspec}}{}=\z@\else
-   /\pgfkeys{/#2/MVspec_rd}%
-\fi
-   & \pgfkeys{/#2/Attshort} & \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \al@module{#2}\\
+   #3 & \pgfkeys{/#2/AC} & \pgfkeys{/#2/MV} & \pgfkeys{/#2/THAC0} & \pgfkeys{/#2/HD} & #4 & \pgfkeys{/#2/Attacks} & \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SA} & \pgfkeys{/#2/SD}& \pgfkeys{/#2/MR} & \pgfkeys{/#2/AL} & \pgfkeys{/#2/XP}\\
 }
 
 
