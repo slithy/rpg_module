@@ -55,9 +55,9 @@
 %
 %    http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
 
-% \monster{key}[Name, Plural]{Name, Singular}{Type|THAC0|AC|MV|HD|Attacks|Dmg|Dmglong|SA|SD|MR|SZ|Int|AL|Psi|PsiAtt|Frequency|NoAppear|InLair|TT|Level|XP}
+% \monster{key}[Name, Plural]{Name, Singular}{Type|THAC0|AC|MV|HD|Attacks|Dmglong|Dmg|SA|SD|MR|Special|SZ|Int|AL|Psi|PsiAtt|Frequency|NoAppear|InLair|TT|Level|XP}
 
-\monster{gnoll}{Gnoll}{|16|5|9"|2|1|2--8|2--8 or by weapon|Nil|Nil|Standard|L (7'+ tall)|Low--Average|Chaotic Evil|Nil|Nil|Uncommon|20--200|20\%|Individuals L, M; D, Q (\x 5), S in lair|II|28\+ 2/hp}
+\monster{gnoll}{Gnoll}{|16|5|9"|2|1|2--8 or by weapon|2--8|Nil|Nil|Standard||L (7'+ tall)|Low--Average|Chaotic Evil|Nil|Nil|Uncommon|20--200|20\%|Individuals L, M; D, Q (\x 5), S in lair|II|28\+ 2/hp}
 
 %\monster{acolyte}{Acolyte}{Men||2|1|60'|20'||||1|1 mace|1d6|1d6|Cleric: 1|7|Any|1--8|1--20|U|10}
 %\monster{crocodile}{Crocodile}{Crocodile||5|2|90'|30'|Swim|90'|30'|1|1 bite|1d8|1d8|Fighter: 1|7|Neutral|0|1--8|Nil|20}

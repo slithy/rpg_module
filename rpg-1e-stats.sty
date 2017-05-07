@@ -143,15 +143,17 @@
    \or
       \pgfkeys{/#1/Attacks/.initial     = {#2}}
    \or
-      \pgfkeys{/#1/Dmg/.initial         = {#2}}
-   \or
       \pgfkeys{/#1/Dmglong/.initial     = {#2}}
+   \or
+      \pgfkeys{/#1/Dmg/.initial         = {#2}}
    \or
       \pgfkeys{/#1/SA/.initial          = {#2}}
    \or
       \pgfkeys{/#1/SD/.initial          = {#2}}
    \or
       \pgfkeys{/#1/MR/.initial          = {#2}}
+   \or
+      \pgfkeys{/#1/Special/.initial     = {#2}}
    \or
       \pgfkeys{/#1/SZ/.initial          = \sz@module{#2}}
       \pgfkeys{/#1/SZlong/.initial      = {#2}}
@@ -244,6 +246,9 @@
    hp~#4,
    \#AT~\pgfkeys{/#2/Attacks},
    D~\pgfkeys{/#2/Dmg}%
+   \ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/Special}}{}=\z@\else
+      , \pgfkeys{/#2/Special}%
+   \fi
 }
 
 % Display monster stats in a stat block
@@ -294,9 +299,9 @@
 
 % Table display format for monster roster
 
-\newenvironment{monsterroster}[1][c]{\begin{center}\begin{tabular}{clccccccccccccc}
-\tableheader[#1]{Room & Monster & No. & AC & MV & THAC0 & HD & hp & \#AT & Damage & SA & SD & MR & AL & XP}}
-{\end{tabular}\end{center}}
+\newenvironment{monsterroster}[1][c]{\begingroup\tabularx{\linewidth}{clccccccccXc}
+\tableheader[#1]{Room & Monster & No. & AC & MV & THAC0 & HD & hp & \#AT & Damage & Special & AL}}
+{\endtabularx\endgroup}
 
 % Usage: \rosteritem{room key}{monster key}{no. appearing}{hit points}
 %
@@ -310,7 +315,7 @@
    \else
       \pgfkeys{/#2/PluralName} &
    \fi
-   #3 & \pgfkeys{/#2/AC} & \pgfkeys{/#2/MV} & \pgfkeys{/#2/THAC0} & \pgfkeys{/#2/HD} & #4 & \pgfkeys{/#2/Attacks} & \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SA} & \pgfkeys{/#2/SD}& \pgfkeys{/#2/MR} & \pgfkeys{/#2/AL} & \pgfkeys{/#2/XP}\\
+   #3 & \pgfkeys{/#2/AC} & \pgfkeys{/#2/MV} & \pgfkeys{/#2/THAC0} & \pgfkeys{/#2/HD} & #4 & \pgfkeys{/#2/Attacks} & \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/Special} & \pgfkeys{/#2/AL}\\
 }
 
 
