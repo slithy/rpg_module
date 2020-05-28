@@ -567,7 +567,12 @@
 
 \captionsetup[table]{font=bf}
 
+% Magic Item block
 
+\newenvironment{newmagic}[1]{%
+\@afterindentfalse\@afterheading\vspace{\topskip}
+{\Large\bfseries #1}\phantomsection\addcontentsline{toc}{section}{#1}\\[\topskip]}
+{\vspace{\newmonsterbottomskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
 % Copyright and license macros
 
