@@ -1,3 +1,10 @@
+#!/bin/sh
+
+SOURCE_CSV=monster_list.csv
+DEST_DEF=../rpg-1e-stats.def
+DEST_TEX=test_all.tex
+
+cat <<END_HEADER >${DEST_DEF}
 %% rpg-1e-stats.def
 %
 % Advanced First Edition stats for the Role-Playing Game Module class
@@ -21,7 +28,7 @@
 % and version 1.3 or later is part of all distributions of LaTeX version
 % 2005/12/01 or later.
 %
-% This work has the LPPL maintenance status `author-maintained'.
+% This work has the LPPL maintenance status \`author-maintained'.
 % 
 % The Author and Maintainer of this work is Michael C. Davis
 %
@@ -58,11 +65,95 @@
 % The format of entries in this file is:
 % \monster{key}[Name, Plural]{Name, Singular}{Type|THAC0|AC|MV|HD|Attacks|Dmglong|Dmg|SA|SD|MR|Special|SZ|Int|AL|Psi|PsiAtt|Frequency|NoAppear|InLair|TT|Level|XP}
 
-\monster{aerial_servant}{Aerial Servant}{|7|3|24"|16|1|8--32|8--32|Surprises on 1--4|Can be hit only by magic weapons|Standard|Surprises on 1--4, can only be hit by magic weapons|8' tall|Semi-|Neutral|Nil|Nil|Very rare|1|0\%|Nil|VIII|5250\+ 20/hp}
-\monster{anhkheg}{Anhkheg}{|16/15/14/13|Overall 2; Underside 4|12" (6")|3--8|1|3--18 (\+ 1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+ hp value}
-\monster{ant_giant}{Giant Ant}{|16|3|18"|2|1|1--6|1--6|Nil|Nil|Standard||S (2' long)|Animal|Neutral|Nil|Nil|Rare|1--100|10\%|Q (\x3), S|I|20\+ 2/hp}
-\monster{ant_warrior}{Warrior Ant}{|16|3|18"|3|2|2--8/3-12|2--8/3--12|Sting|Nil|Standard|Sting|S (2' long)|Animal|Neutral|Nil|Nil|Rare|1--20|10\%|Q (\x3), S|II|40\+ 3/hp}
-\monster[Apes (Gorillas)]{ape_gorilla}{Ape (Gorilla)}{|15|6|12"|4+1|3|1--3/1--3/1--6|1--3/1--3/1--6|Rending|Nil|Standard|Rending|M (6' tall, broad)|Low|Neutral|Nil|Nil|Very rare|1--4|Nil|Nil|III|130\+ 5/hp}
-\monster{ape_carnivorous}{Carnivorous Ape}{|15|6|12"|5|3|1--4/1--4/1--8|1--4/1--4/1--8|Rending|Nil|Standard|Rending|L (7'+, very broad)|Low (upper)|Neutral|Nil|Nil|Rare|2--8|10\%|C|IV|170\+ 5/hp}
-\monster{axe_beak}{Axe Beak}{|16|6|18"|3|3|1--3/1--3/2--8|1--3/1--3/2--8|Nil|Nil|Standard||L (7'+ tall)|Animal|Neutral|Nil|Nil|Uncommon|1--6|Nil|Nil|II|35\+ 3/hp}
-\monster{gnoll}{Gnoll}{|16|5|9"|2|1|2--8 or by weapon|2--8|Nil|Nil|Standard||L (7'+ tall)|Low--Average|Chaotic Evil|Nil|Nil|Uncommon|20--200|20\%|Individuals L, M; D, Q (\x 5), S in lair|II|28\+ 2/hp}
+END_HEADER
+
+tail -n +3 ${SOURCE_CSV} |\
+awk 'BEGIN{FS="|"}{
+  printf("\\monster")
+  if($3 != "") { printf("[%s]", $3) }
+  printf("{%s}{%s}{", $1, $2)
+  for(i = 4; i < NF; ++i) { printf("%s|", $i) }
+  printf("%s}\n", $NF)
+}' >>${DEST_DEF}
+
+#
+# Test stats document
+#
+
+cat <<END_LATEX >${DEST_TEX}
+\documentclass[a4paper,sansserif,1e]{rpg-module}
+
+\begin{document}
+
+\title{\textrm{\LaTeX}~RPG Module Class: 1e Stats Test}
+
+\part{1e Stats Test}
+
+\section{Long statblock format}
+
+The default is the long format, here shown for single monsters.
+
+END_LATEX
+
+tail -n +3 ${SOURCE_CSV} |\
+awk 'BEGIN{FS="|"}{
+  printf("\\statblock{%s}{1}{8}\n", $1)
+}' >>${DEST_TEX}
+
+cat <<END_LATEX >>${DEST_TEX}
+
+\section{Short statblock format}
+
+Short (inline) format, shown for two monsters (to make sure plurals look OK).
+
+END_LATEX
+
+tail -n +3 ${SOURCE_CSV} |\
+awk 'BEGIN{FS="|"}{
+  printf("\\noindent You must fight \\shortstats{%s}{2}{8 each}\n\n", $1)
+}' >>${DEST_TEX}
+
+cat <<END_LATEX >>${DEST_TEX}
+
+\section{Monster Listing format}
+
+END_LATEX
+
+tail -n +3 ${SOURCE_CSV} |\
+awk 'BEGIN{FS="|"}{
+  printf("\\begin{newmonster}{%s}\n", $1)
+  printf("\\end{newmonster}\n")
+}' >>${DEST_TEX}
+
+cat <<END_LATEX >>${DEST_TEX}
+
+\onecolumn
+
+\section{Wandering Monster Table}
+
+\begin{wanderingmonsters}[b]
+END_LATEX
+
+tail -n +3 ${SOURCE_CSV} |\
+awk 'BEGIN{FS="|"}{
+  printf("\\wanderitem{%s}{}\n", $1)
+}' >>${DEST_TEX}
+
+cat <<END_LATEX >>${DEST_TEX}
+\end{wanderingmonsters}
+
+\section{Monster Roster Table}
+
+\begin{monsterroster}
+END_LATEX
+
+tail -n +3 ${SOURCE_CSV} |\
+awk 'BEGIN{FS="|"}{
+  printf("\\rosteritem{Room 1}{%s}{2}{5 each}\n", $1)
+}' >>${DEST_TEX}
+
+cat <<END_LATEX >>${DEST_TEX}
+\end{monsterroster}
+
+\end{document}
+END_LATEX
