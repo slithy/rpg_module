@@ -1,0 +1,109 @@
+\documentclass[a4paper,sansserif,1e]{rpg-module}
+
+\begin{document}
+
+\title{\textrm{\LaTeX}~RPG Module Class: 1e Stats Test}
+
+\part{1e Stats Test}
+
+The default stat blocks are the full (long) version. Using \textbf{gnoll} as an example, here are all the ways the stat
+blocks can be displayed:
+
+\section{Long statblock format}
+
+The default is the long format, here shown as a statblock for a single monster and a statblock for multiple monsters (to
+test that single/plural handling works OK):
+
+\statblock{gnoll}{1}{16}
+\statblock{gnoll}{5}{16,14,12,9,8}
+
+\noindent The stats can also be included inline in a paragraph of text like this:
+You find yourself face to face with the \stats[Gnoll Chieftain!]{gnoll}{1}{16}.
+
+\section{Short statblock format}
+
+The \verb|\longstats| and \verb|\shortstats| commands display the stat blocks in long/short format. It is possible to
+mix both formats in the same document (e.g. use long format on first appearance and short format for subsequent mentions
+of monsters of the same type).
+
+The \verb|\stats| command is an alias to \verb|\longstats|, but it can be redefined as \verb|\shortstats|. Here are the
+same stats as above in short format:
+
+\renewcommand{\stats}{\shortstats}
+
+\statblock{gnoll}{1}{16}
+\statblock{gnoll}{5}{16,14,12,9,8}
+
+\noindent If you want to display stats inline in brackets, that's also possible: You find yourself face to face with the
+fearsome Gnoll Chieftain! \stats[(\ignorespaces]{gnoll}{1}{16}).
+
+\section{New Monster format}
+
+The format for listing new monsters at the end of a module is shown below. Optionally, include an image file with the listing.
+
+\begin{newmonster}{gnoll}
+Gnolls travel and live in rapacious bands of loose organization, with the
+largest dominating the rest. These bands recognize no other gnoll as
+supreme, but they do not necessarily dislike other bands, and on occasion
+two or more such groups will ioin together briefly in order to fight, raid,
+loot, or similarly have greater chance of success against some common foe
+or potential victim. They are adaptable and inhabit nearly any area save
+those which are arctic and/or arid. They hove a so-called king, very
+powerful personally and with a double normal-sized following, but his
+authority extends only as far as his reach.
+\end{newmonster}
+
+\begin{newmonster}[gnoll.png]{gnoll}
+Gnolls travel and live in rapacious bands of loose organization, with the
+largest dominating the rest. These bands recognize no other gnoll as
+supreme, but they do not necessarily dislike other bands, and on occasion
+two or more such groups will ioin together briefly in order to fight, raid,
+loot, or similarly have greater chance of success against some common foe
+or potential victim. They are adaptable and inhabit nearly any area save
+those which are arctic and/or arid. They hove a so-called king, very
+powerful personally and with a double normal-sized following, but his
+authority extends only as far as his reach.
+\end{newmonster}
+
+Test 2-column and 3-column new monster formats:
+
+\begin{newmonster2}{gnoll}{gnoll}
+Gnolls travel and live in rapacious bands of loose organization, with the
+largest dominating the rest. These bands recognize no other gnoll as
+supreme, but they do not necessarily dislike other bands, and on occasion
+two or more such groups will ioin together briefly in order to fight, raid,
+loot, or similarly have greater chance of success against some common foe
+or potential victim. They are adaptable and inhabit nearly any area save
+those which are arctic and/or arid. They hove a so-called king, very
+powerful personally and with a double normal-sized following, but his
+authority extends only as far as his reach.
+\end{newmonster2}
+
+\begin{newmonster3}{gnoll}{gnoll}{gnoll}
+Gnolls travel and live in rapacious bands of loose organization, with the
+largest dominating the rest. These bands recognize no other gnoll as
+supreme, but they do not necessarily dislike other bands, and on occasion
+two or more such groups will ioin together briefly in order to fight, raid,
+loot, or similarly have greater chance of success against some common foe
+or potential victim. They are adaptable and inhabit nearly any area save
+those which are arctic and/or arid. They hove a so-called king, very
+powerful personally and with a double normal-sized following, but his
+authority extends only as far as his reach.
+\end{newmonster3}
+
+\onecolumn
+
+\section{Wandering Monster Table}
+
+\begin{wanderingmonsters}[b]
+\wanderitem{gnoll}{} % default number appearing
+\wanderitem{gnoll}{1--8} % specify number appearing
+\end{wanderingmonsters}
+
+\section{Monster Roster Table}
+
+\begin{monsterroster}
+\rosteritem{Room 1}{gnoll}{6}{9 each}
+\end{monsterroster}
+
+\end{document}
