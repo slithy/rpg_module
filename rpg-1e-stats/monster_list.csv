@@ -27,27 +27,33 @@ bear_black|Black Bear|||16|7|12”|3+3|3|1--3/1--3/1--6|1--3/1--3/1--6|Hugs: 2--
 bear_brown|Brown Bear|||15|6|12”|5+5|3|1--6/1--6/1--8|1--6/1--6/1--8|Hugs: 2--12|Nil|Standard|Hugs: 2--12|L (9’+ tall)|Semi-|Neutral|Nil|Nil|Uncommon|1--6|Nil|Nil|V|300\+ 6/hp
 bear_cave|Cave Bear|||13|6|12”|6+6|3|1--8/1--8/1--12|1--8/1--8/1--12|Hugs: 2--16|Nil|Standard|Hugs: 2--16|L (12’+ tall)|Semi-|Neutral|Nil|Nil|Uncommon|1--2|Nil|Nil|V|475\+ 8/hp
 beaver_giant|Giant Beaver|||15|6|6”//12”|4|1|4--16|4--16|Nil|Nil|Standard||M (6’ long)|Low to average|Neutral|Nil|Nil|Very rare|10--40|80\%|C|III|60\+ 4/hp
-beetle_bombardier|Bombardier Beetle||Beetle, Giant|16||9”|2+2|1|2--12|2--12|Acid Cloud|Firing Cloud|Standard|Acid Cloud, Firing Cloud|M (4’ long)|Non-|Neutral|Nil|Nil|Common|3--12|Nil|Nil|III|105\+ 3/hp
-beetle_boring|Boring Beetle||Beetle, Giant|15||6”|5|1|5--20|5--20|Nil|Nil|Standard||L (9’ long)|Animal|Neutral|Nil|Nil|Common|3--18|40\%|C, R, S, T|III|90\+ 3/hp
-beetle_fire|Fire Beetle||Beetle, Giant|18||12”|1+2|1|2--8|2--8|Nil|Nil|Standard||S (2.5’ long)|Non-|Neutral|Nil|Nil|Common|3--12|Nil|Nil|I|20\+ 2/hp
-beetle_rhinoceros|Rhinoceros Beetle||Beetle, Giant|9||6”|12|2|3--18/2--16|3--18/2--16|Nil|Nil|Standard||L (12’ long plus horn)|Non-|Neutral|Nil|Nil|Uncommon|1--6|Nil|Nil|VII|2150\+ 16/hp
-beetle_stag|Stag Beetle||Beetle, Giant|13||6”|7|3|4--16/1--10/1--10|4--16/1--10/1--10|Nil|Nil|Standard||L (10’ long)|Non-|Neutral|Nil|Nil|Common|2--12|Nil|Nil|V|400\+ 8/hp
-beetle_water|Water Beetle||Beetle, Giant|15||3”/12”|4|1|3--18|3--18|Nil|Nil|Standard||L (6’ long)|Non-|Neutral|Nil|Nil|Common|1--12|Nil|Nil|III|85\+ 4/hp
-beholder|Beholder|||10/9/8/7|0\,(2,7)|3”|45-75 hit points|1|2--8|2--8|Magic|Anti-magic ray|Special|Magic, Anti-magic ray|L (4’-6’ dia.)|Exceptional|Lawful evil|Nil|Nil|Very rare|1|80\%|I, S, T|X|12900\+ 20/hp
+beetle_bombardier|Bombardier Beetle||Beetle, Giant|16|4|9”|2+2|1|2--12|2--12|Acid Cloud|Firing Cloud|Standard|Acid Cloud, Firing Cloud|M (4’ long)|Non-|Neutral|Nil|Nil|Common|3--12|Nil|Nil|III|105\+ 3/hp
+beetle_boring|Boring Beetle||Beetle, Giant|15|3|6”|5|1|5--20|5--20|Nil|Nil|Standard||L (9’ long)|Animal|Neutral|Nil|Nil|Common|3--18|40\%|C, R, S, T|III|90\+ 3/hp
+beetle_fire|Fire Beetle||Beetle, Giant|18|4|12”|1+2|1|2--8|2--8|Nil|Nil|Standard||S (2\half’ long)|Non-|Neutral|Nil|Nil|Common|3--12|Nil|Nil|I|20\+ 2/hp
+beetle_rhinoceros|Rhinoceros Beetle||Beetle, Giant|9|2|6”|12|2|3--18/2--16|3--18/2--16|Nil|Nil|Standard||L (12’ long plus horn)|Non-|Neutral|Nil|Nil|Uncommon|1--6|Nil|Nil|VII|2150\+ 16/hp
+beetle_stag|Stag Beetle||Beetle, Giant|13|3|6”|7|3|4--16/1--10/1--10|4--16/1--10/1--10|Nil|Nil|Standard||L (10’ long)|Non-|Neutral|Nil|Nil|Common|2--12|Nil|Nil|V|400\+ 8/hp
+beetle_water|Water Beetle||Beetle, Giant|15|3|3”/12”|4|1|3--18|3--18|Nil|Nil|Standard||L (6’ long)|Non-|Neutral|Nil|Nil|Common|1--12|Nil|Nil|III|85\+ 4/hp
+beholder|Beholder|||10/9/8/7|0\,(2,7)|3”|45-75 hit points|1|2--8|2--8|Magic|Anti-magic ray|Special|Magic, Anti-magic ray|L (4’-6’ dia.)|Exceptional|Lawful Evil|Nil|Nil|Very rare|1|80\%|I, S, T|X|12900\+ 20/hp
+beholder_10hd|Beholder|||10|0\,(2,7)|3”|10|1|2--8|2--8|Magic|Anti-magic ray|Special|Magic, Anti-magic ray|L (4’-6’ dia.)|Exceptional|Lawful Evil|Nil|Nil|Very rare|1|80\%|I, S, T|VIII|4800\+ 14/hp
+beholder_11hd|Beholder|||10|0\,(2,7)|3”|11|1|2--8|2--8|Magic|Anti-magic ray|Special|Magic, Anti-magic ray|L (4’-6’ dia.)|Exceptional|Lawful Evil|Nil|Nil|Very rare|1|80\%|I, S, T|IX|6950\+ 16/hp
+beholder_12hd|Beholder|||9|0\,(2,7)|3”|12|1|2--8|2--8|Magic|Anti-magic ray|Special|Magic, Anti-magic ray|L (4’-6’ dia.)|Exceptional|Lawful Evil|Nil|Nil|Very rare|1|80\%|I, S, T|IX|6950\+ 16/hp
+beholder_13hd|Beholder|||9|0\,(2,7)|3”|13|1|2--8|2--8|Magic|Anti-magic ray|Special|Magic, Anti-magic ray|L (4’-6’ dia.)|Exceptional|Lawful Evil|Nil|Nil|Very rare|1|80\%|I, S, T|IX|9700\+ 18/hp
+beholder_14hd|Beholder|||8|0\,(2,7)|3”|14|1|2--8|2--8|Magic|Anti-magic ray|Special|Magic, Anti-magic ray|L (4’-6’ dia.)|Exceptional|Lawful Evil|Nil|Nil|Very rare|1|80\%|I, S, T|IX|9700\+ 18/hp
+beholder_15hd|Beholder|||8|0\,(2,7)|3”|15|1|2--8|2--8|Magic|Anti-magic ray|Special|Magic, Anti-magic ray|L (4’-6’ dia.)|Exceptional|Lawful Evil|Nil|Nil|Very rare|1|80\%|I, S, T|X|12900\+ 20/hp
+beholder_16hd|Beholder|||7|0\,(2,7)|3”|16|1|2--8|2--8|Magic|Anti-magic ray|Special|Magic, Anti-magic ray|L (4’-6’ dia.)|Exceptional|Lawful Evil|Nil|Nil|Very rare|1|80\%|I, S, T|X|12900\+ 20/hp
 black_pudding|Black Pudding|||10|6|6”|10|1|3--24|3--24|Dissolve wood and metal|Blows, cold and lightning do not harm|Standard|Dissolve wood and metal; Blows, cold and lightning do not harm|S to L (5’ dia. to 8’ dia.)|Non-|Neutral|Nil|Nil|Uncommon|1 to 1--4|Nil|Nil|VII|1350\+ 14/hp
-blink_dog|Blink Dog|||15|5|12”|4|1|1--6|1--6|From rear 75\% of time|Teleporting|Standard|From rear 75\% off time; Teleporting|M (3’ at shoulder)|Average|Lawful good|Nil|Nil|Rare|4--16|20\%|C|IV|170\+ 5/hp
+blink_dog|Blink Dog|||15|5|12”|4|1|1--6|1--6|From rear 75\% of time|Teleporting|Standard|From rear 75\% off time; Teleporting|M (3’ at shoulder)|Average|Lawful Good|Nil|Nil|Rare|4--16|20\%|C|IV|170\+ 5/hp
 boar_wild|Wild Boar|||16|7|15”|3+3|1|3--12|3--12|Nil|Nil|Standard||M (3’ at shoulder)|Semi-|Neutral|Nil|Nil|Common|1--12|Nil|Nil|III|85\+ 4/hp
-giant_boar|Giant Boar|||13|6|12”|7|1|3--18|3--18|Nil|Nil|Standard||L (5’ at shoulder)|Animal|Neutral|Nil|Nil|Uncommon|2--8|Nil|Nil|IV|225\+ 8/hp
 boar_giant|Giant Boar|||13|6|12”|7|1|3--18|3--18|Nil|Nil|Standard||L (5’ at shoulder)|Animal|Neutral|Nil|Nil|Uncommon|2--8|Nil|Nil|IV|225\+ 8/hp
-warthog|Warthog|||16|7|12”|3|2|2--8/2--8|2--8/2--8|Nil|Nil|Standard||M (2.5’ at shoulder)|Animal|Neutral|Nil|Nil|Common|1--6|Nil|Nil|II|35\+ 3/hp
-boar_warthog|Warthog|||16|7|12”|3|2|2--8/2--8|2--8/2--8|Nil|Nil|Standard||M (2.5’ at shoulder)|Animal|Neutral|Nil|Nil|Common|1--6|Nil|Nil|II|35\+ 3/hp
+warthog|Warthog|||16|7|12”|3|2|2--8/2--8|2--8/2--8|Nil|Nil|Standard||M (2\half’ at shoulder)|Animal|Neutral|Nil|Nil|Common|1--6|Nil|Nil|II|35\+ 3/hp
+boar_warthog|Warthog|||16|7|12”|3|2|2--8/2--8|2--8/2--8|Nil|Nil|Standard||M (2\half’ at shoulder)|Animal|Neutral|Nil|Nil|Common|1--6|Nil|Nil|II|35\+ 3/hp
 brain_mole|Brain Mole|||-|9|1”|1 hit point|Nil|Nil|Nil|Psionic only|Nil|Standard|Psionic only|S (3” long)|Animal|Neutral|121 point attack|B/Nil|Very rare|1--3|Nil|Nil|II|31
-brownie|Brownie|||20|3|12”|0.5|1|1--3|1--3|Spells|Save as 9th level cleric|As above|Spells; Save as 9th level cleric|S (1.5’ tall)|High|Lawful good|Nil|Nil|Rare|4--16|Nil|Nil|III|65\+ 1/hp
+brownie|Brownie|||20|3|12”|\half|1|1--3|1--3|Spells|Save as 9th level cleric|As above|Spells; Save as 9th level cleric|S (1\half’ tall)|High|Lawful Good|Nil|Nil|Rare|4--16|Nil|Nil|III|65\+ 1/hp
 buffalo|Buffalo|||15|7|15”|5|2|1--8/1--8|1--8/1--8|Charge|Head is armor class 3|Standard|Charge; Head is armor class 3|L (5’ at shoulder)|Semi-|Neutral|Nil|Nil|Uncommon|4--24|Nil|Nil|V|350\+ 8/hp
-bugbear|Bugbear|||16|5|9”|3+1|1|2--8 or by weapon|2--8|Surprise on a 1--3|Nil|Standard|Surprise on a 1--3|L (7’+ tall)|Low to Average (low)|Chaotic evil|Nil|Nil|Uncommon|6--36|Nil|Nil|III|135\+ 4/hp
-bulette|Bulette|||12|2\,(4,6)|14” (3”)|9|3|4--48/3--18/3--18|4--48/3--18/3--18|8’ jump|Nil|Standard|8’ jump|L (9.5’ tall, 12’+ long)|Animal|Neutral|Nil|Nil|Very rare|1--2 (10\% chance)|Nil|Nil|VII|2300\+ 12/hp
+bugbear|Bugbear|||16|5|9”|3+1|1|2--8 or by weapon|2--8|Surprise on a 1--3|Nil|Standard|Surprise on a 1--3|L (7’+ tall)|Low to Average (low)|Chaotic Evil|Nil|Nil|Uncommon|6--36|Nil|Nil|III|135\+ 4/hp
+bulette|Bulette|||12|2\,(4,6)|14” (3”)|9|3|4--48/3--18/3--18|4--48/3--18/3--18|8’ jump|Nil|Standard|8’ jump|L (9\half’ tall, 12’+ long)|Animal|Neutral|Nil|Nil|Very rare|1--2 (10\% chance)|Nil|Nil|VII|2300\+ 12/hp
 bull|Bull|||15|7|15”|4|2|1--6/1--6|1--6/1--6|Charge|Nil|Standard|Charge|L (5’ at shoulder)|Semi-|Neutral|Nil|Nil|Common|1--20|Nil|Nil|III|85\+ 4/hp
-gnoll|Gnoll|||16|5|9"|2|1|2--8 or by weapon|2--8|Nil|Nil|Standard||L (7'+ tall)|Low--Average|Chaotic evil|Nil|Nil|Uncommon|20--200|20\%|Individuals L, M; D, Q (\x5), S in lair|II|28\+2/hp
+gnoll|Gnoll|||16|5|9"|2|1|2--8 or by weapon|2--8|Nil|Nil|Standard||L (7'+ tall)|Low--Average|Chaotic Evil|Nil|Nil|Uncommon|20--200|20\%|Individuals L, M; D, Q (\x5), S in lair|II|28\+2/hp
 acolyte|Acolyte||Men|17|2|6"|1|1|1--6 (mace)|1--6|spell use|spell use|Standard|Spell use|M|Average|Any|Nil|Nil|Common|10--100|0\%|Special|I|10\+ 1/hp
 crocodile|Crocodile||Crocodile|16|5|9"|2|1|1--8 (bite)|1--8|Nil|Nil|Standard||L (8'--15' long)|Animal|Neutral|Nil|Nil|Common|3--24|Nil|Nil|II|60\+ 4/hp
 rock_baboon|Rock Baboon|||18|6|12"|1+1|2|1--6 (club)\?1--3 (bite)|1--6/1--3|Nil|Nil|Standard||S (4'+ tall)|Low|Neutral|Nil|Nil|Common|10--40|Nil|Nil|I|20\+ 2/hp
