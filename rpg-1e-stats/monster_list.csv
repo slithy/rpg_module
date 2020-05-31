@@ -53,8 +53,26 @@ buffalo|Buffalo|||15|7|15”|5|2|1--8/1--8|1--8/1--8|Charge|Head is armor class 
 bugbear|Bugbear|||16|5|9”|3+1|1|2--8 or by weapon|2--8|Surprise on a 1--3|Nil|Standard|Surprise on a 1--3|L (7’+ tall)|Low to Average (low)|Chaotic Evil|Nil|Nil|Uncommon|6--36|Nil|Nil|III|135\+ 4/hp
 bulette|Bulette|||12|2\,(4,6)|14” (3”)|9|3|4--48/3--18/3--18|4--48/3--18/3--18|8’ jump|Nil|Standard|8’ jump|L (9\half’ tall, 12’+ long)|Animal|Neutral|Nil|Nil|Very rare|1--2 (10\% chance)|Nil|Nil|VII|2300\+ 12/hp
 bull|Bull|||15|7|15”|4|2|1--6/1--6|1--6/1--6|Charge|Nil|Standard|Charge|L (5’ at shoulder)|Semi-|Neutral|Nil|Nil|Common|1--20|Nil|Nil|III|85\+ 4/hp
+camel_wild|Wild Camel|||16|7|21”|3|1|1--4|1--4|Spitting|Nil|Standard|Spitting|L|Animal to Semi-|Neutral|Nil|Nil|Common|1--12|Nil|Nil|II|35\+ 3/hp
+carrion_crawler|Carrion Crawler|||16|3\,(7)|12”|3+1|8|Paralysis|Paralysis|Paralysis|Nil|Standard|Paralysis|L (9’ long)|Non-|Neutral|Nil|Nil|Uncommon|1--6|50\%|B|VI|580\+ 4/hp
+catoblepas|Catoblepas|Catoblepones||13|7|6”|6+2|1|1--6\+ stun|1--6\+ stun|Gaze causes death|Nil|Standard|Gaze causes death|L (6' at shoulder)|Semi-|Neutral|Nil|Nil|Very rare|1--3|60\%|C|VI|700\+ 8/hp
+cattle_wild|Wild Cattle|Wild Cattle||19/16/15|7|15”|1--4|1|1--4|1--4|Stampede|Nil|Standard|Stampede|L|Semi-|Neutral|Nil|Nil|Common|20--200|Nil|Nil|II|35\+ 3/hp
+cattle_wild_1hd|Wild Cattle|Wild Cattle||19|7|15”|1|1|1--4|1--4|Stampede|Nil|Standard|Stampede|L|Semi-|Neutral|Nil|Nil|Common|20--200|Nil|Nil|I|10\+ 1/hp
+cattle_wild_2hd|Wild Cattle|Wild Cattle||16|7|15”|2|1|1--4|1--4|Stampede|Nil|Standard|Stampede|L|Semi-|Neutral|Nil|Nil|Common|20--200|Nil|Nil|I|20\+ 2/hp
+cattle_wild_3hd|Wild Cattle|Wild Cattle||16|7|15”|3|1|1--4|1--4|Stampede|Nil|Standard|Stampede|L|Semi-|Neutral|Nil|Nil|Common|20--200|Nil|Nil|II|35\+ 3/hp
+cattle_wild_4hd|Wild Cattle|Wild Cattle||15|7|15”|4|1|1--4|1--4|Stampede|Nil|Standard|Stampede|L|Semi-|Neutral|Nil|Nil|Common|20--200|Nil|Nil|III|60\+ 4/hp
+centaur|Centaur|||15|5\,(4)|18”|4|2|1--6/1--6|1--6/1--6|Human weapon|Nil|Standard|Human weapon|L|Low-Average|Neutral--Chaotic Good|Nil|Nil|Rare|4--24|5\%|M, Q1, with each; D, I, T in lair|III|85\+ 4/hp
+centipede_giant|Giant Centipede|||20|9|15”|1/4|1|Nil|Nil|Poison|Nil|Standard|Poison|S (1'+)|Non-|Neutral|Nil|Nil|Common|2--24|Nil|Nil|II|30\+ 1/hp
+cerebral_parasite|Cerebral Parasite|||-|n/a|n/a|n/a|0|0|0|Infestation|Not harmed except by cure disease|Standard|Infestation; Not harmed except by cure disease|S (flea-sized)|Non-|Neutral|Nil|Nil|Rare|3--12|Nil|Nil|I|nil
+chimera|Chimera|||12|6\,(5/2)|9”/18”|9|6|1--3/1--3/1--4/1--4/2--8/3--12|1--3/1--3/1--4/1--4/2--8/3--12|Breath weapon|Nil|Standard|Breath weapon|L (4’ at shoulder)|Semi-|Chaotic Evil|Nil|Nil|Rare|1--4|40\%|F|VI|1000\+ 12/hp
+cockatrice|Cockatrice|||15|6|6”/18”|5|1|1--3|1--3|Touch turns to stone|Nil|Standard|Touch turns to stone|S|Animal|Neutral|Nil|Nil|Uncommon|1--6|30\%|D|V|315\+ 5/hp
+couatl|Couatl|Couatl||12|5|6”/18”|9|2|1--3/2--8|1--3/2--8|Poison, magic use|Become ethereal|Standard|Poison, magic use; Become ethereal|M (12’ long)|Genius|Lawful Good|60--110|vary|Very rare|1--4|10\%|B, I|VII|2400\+ 12/hp
+crab_giant|Giant Crab|||16|3|9”|3|2|2--8/2--8|2--8/2--8|Nil|Nil|Standard||L (4’+ dia.)|Non-|Neutral|Nil|Nil|Rare|2--12|Nil|Nil|II|35\+ 3/hp
+crayfish_giant|Giant Crayfish|Giant Crayfishes||15|4|6”//12”|4+4|2|2--12/2--12|2--12/2--12|Nil|Nil|Standard||L (8’+ long)|Non-|Neutral|Nil|Nil|Uncommon|1--4|Nil|Nil|III|90\+ 5/hp
+crocodile|Crocodile||Crocodile|16|5|6”//12”|3|2|2--8/1--12|2--8/1--12|Nil|Nil|Standard||L (8’--15’ long)|Animal|Neutral|Nil|Nil|Common|3--24|Nil|Nil|II|60\+ 4/hp
+crocodile_giant|Giant Crocodile||Crocodile|13|4|6”//12”|7|2|3--18/2--20|3--18/2--20|Nil|Nil|Standard||L (21’--30’ long)|Animal|Neutral|Nil|Nil|Very rare to common|1 to 2--12|Nil|Nil|V|400\+ 8/hp
+|||||||||||||||||||||||||
 gnoll|Gnoll|||16|5|9"|2|1|2--8 or by weapon|2--8|Nil|Nil|Standard||L (7'+ tall)|Low--Average|Chaotic Evil|Nil|Nil|Uncommon|20--200|20\%|Individuals L, M; D, Q (\x5), S in lair|II|28\+2/hp
 acolyte|Acolyte||Men|17|2|6"|1|1|1--6 (mace)|1--6|spell use|spell use|Standard|Spell use|M|Average|Any|Nil|Nil|Common|10--100|0\%|Special|I|10\+ 1/hp
-crocodile|Crocodile||Crocodile|16|5|9"|2|1|1--8 (bite)|1--8|Nil|Nil|Standard||L (8'--15' long)|Animal|Neutral|Nil|Nil|Common|3--24|Nil|Nil|II|60\+ 4/hp
 rock_baboon|Rock Baboon|||18|6|12"|1+1|2|1--6 (club)\?1--3 (bite)|1--6/1--3|Nil|Nil|Standard||S (4'+ tall)|Low|Neutral|Nil|Nil|Common|10--40|Nil|Nil|I|20\+ 2/hp
 pit_viper|Pit Viper||Snake|18|6|9"|2|1|1--4 (bite)|1--4|poison|Nil|Standard|Poison bite|1d4\+poison|Animal|Neutral|Nil|Nil|Uncommon|1--6|Nil|Nil|II|50\+ 2/hp
