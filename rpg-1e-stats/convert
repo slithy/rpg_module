@@ -68,7 +68,9 @@ cat <<END_HEADER >${DEST_DEF}
 END_HEADER
 
 tail -n +3 ${SOURCE_CSV} |\
+sed 's/”/"/g' |\
 awk 'BEGIN{FS="|"}{
+  if($1 == "") next
   printf("\\monster")
   if($3 != "") { printf("[%s]", $3) }
   printf("{%s}{%s}{", $1, $2)
