@@ -128,4 +128,5 @@
 \monster[Giant Crayfishes]{crayfish_giant}{Giant Crayfish}{|15|4|6"//12"|4+4|2|2--12/2--12|2--12/2--12|Nil|Nil|Standard||L (8'+ long)|Non-|Neutral|Nil|Nil|Uncommon|1--4|Nil|Nil|III|90\+5/hp}
 \monster{crocodile}{Crocodile}{Crocodile|16|5|6"//12"|3|2|2--8/1--12|2--8/1--12|Nil|Nil|Standard||L (8'--15' long)|Animal|Neutral|Nil|Nil|Common|3--24|Nil|Nil|II|60\+4/hp}
 \monster{crocodile_giant}{Giant Crocodile}{Crocodile|13|4|6"//12"|7|2|3--18/2--20|3--18/2--20|Nil|Nil|Standard||L (21'--30' long)|Animal|Neutral|Nil|Nil|Very rare to common|1 to 2--12|Nil|Nil|V|400\+8/hp}
+\monster{demogorgon}{Demogorgon}{Demon|7|-8|15"|44|3|1--6\?1--6\?special|1--6/1--6|See description|\+2 or better weapon to hit|95\%|See description; \+2 or better weapon to hit|L (18' tall)|Supra-genius|Chaotic Evil|150/head|All/all|Very rare|1|50\%|R, S, T, V|X|67000\+35/hp}
 \monster{gnoll}{Gnoll}{|16|5|9"|2|1|2--8 or by weapon|2--8|Nil|Nil|Standard||L (7'+ tall)|Low--Average|Chaotic Evil|Nil|Nil|Uncommon|20--200|20\%|Individuals L, M; D, Q (\x5), S in lair|II|28\+2/hp}

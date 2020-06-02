@@ -11,3 +11,6 @@ rpg-1e-stats.def
 reference/
 examples/
 test/
+.idea
+*.iml
+out
