@@ -68,7 +68,6 @@ cat <<END_HEADER >${DEST_DEF}
 END_HEADER
 
 tail -n +3 ${SOURCE_CSV} |\
-sed 's/”/"/g' |\
 awk 'BEGIN{FS="|"}{
   if($1 == "") next
   printf("\\monster")
@@ -137,8 +136,14 @@ cat <<END_LATEX >>${DEST_TEX}
 END_LATEX
 
 tail -n +3 ${SOURCE_CSV} |\
-awk 'BEGIN{FS="|"}{
+awk 'BEGIN{FS="|"; count = 0}{
+  if($1 == "beholder" || $1 == "cattle_wild") { next }
   printf("\\wanderitem{%s}{}\n", $1)
+  ++count
+  if(count == 30) {
+    printf("\\end{wanderingmonsters}\n\\begin{wanderingmonsters}[b]\n")
+    count = 0
+  }
 }' >>${DEST_TEX}
 
 cat <<END_LATEX >>${DEST_TEX}
@@ -150,8 +155,14 @@ cat <<END_LATEX >>${DEST_TEX}
 END_LATEX
 
 tail -n +3 ${SOURCE_CSV} |\
-awk 'BEGIN{FS="|"}{
+awk 'BEGIN{FS="|"; count = 0}{
+  if($1 == "beholder" || $1 == "cattle_wild") { next }
   printf("\\rosteritem{Room 1}{%s}{2}{5 each}\n", $1)
+  ++count
+  if(count == 30) {
+    printf("\\end{monsterroster}\n\\begin{monsterroster}\n")
+    count = 0
+  }
 }' >>${DEST_TEX}
 
 cat <<END_LATEX >>${DEST_TEX}

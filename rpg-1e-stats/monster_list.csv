@@ -40,17 +40,17 @@ beholder_13hd|Beholder|||9|0\,(2,7)|3"|13|1|2--8|2--8|Magic|Anti-magic ray|Speci
 beholder_14hd|Beholder|||8|0\,(2,7)|3"|14|1|2--8|2--8|Magic|Anti-magic ray|Special|Magic, Anti-magic ray|L (4'-6' dia.)|Exceptional|Lawful Evil|Nil|Nil|Very rare|1|80\%|I, S, T|IX|9700\+18/hp
 beholder_15hd|Beholder|||8|0\,(2,7)|3"|15|1|2--8|2--8|Magic|Anti-magic ray|Special|Magic, Anti-magic ray|L (4'-6' dia.)|Exceptional|Lawful Evil|Nil|Nil|Very rare|1|80\%|I, S, T|X|12900\+20/hp
 beholder_16hd|Beholder|||7|0\,(2,7)|3"|16|1|2--8|2--8|Magic|Anti-magic ray|Special|Magic, Anti-magic ray|L (4'-6' dia.)|Exceptional|Lawful Evil|Nil|Nil|Very rare|1|80\%|I, S, T|X|12900\+20/hp
-black_pudding|Black Pudding|||10|6|6"|10|1|3--24|3--24|Dissolve wood and metal|Blows, cold and lightning do not harm|Standard|Dissolve wood and metal; Blows, cold and lightning do not harm|S to L (5' dia. to 8' dia.)|Non-|Neutral|Nil|Nil|Uncommon|1 to 1--4|Nil|Nil|VII|1350\+14/hp
+black_pudding|Black Pudding|||10|6|6"|10|1|3--24|3--24|Dissolve wood and metal|Blows, cold and lightning do not harm|Standard|Dissolve wood and metal; Blows, cold and lightning do not harm|S to L (5' dia. to 8' dia.)|Non-|Neutral|Nil|Nil|Uncommon|1--4|Nil|Nil|VII|1350\+14/hp
 blink_dog|Blink Dog|||15|5|12"|4|1|1--6|1--6|From rear 75\% of time|Teleporting|Standard|From rear 75\% off time; Teleporting|M (3' at shoulder)|Average|Lawful Good|Nil|Nil|Rare|4--16|20\%|C|IV|170\+5/hp
 boar_wild|Wild Boar|||16|7|15"|3+3|1|3--12|3--12|Nil|Nil|Standard||M (3' at shoulder)|Semi-|Neutral|Nil|Nil|Common|1--12|Nil|Nil|III|85\+4/hp
 boar_giant|Giant Boar|||13|6|12"|7|1|3--18|3--18|Nil|Nil|Standard||L (5' at shoulder)|Animal|Neutral|Nil|Nil|Uncommon|2--8|Nil|Nil|IV|225\+8/hp
 warthog|Warthog|||16|7|12"|3|2|2--8/2--8|2--8/2--8|Nil|Nil|Standard||M (2\half' at shoulder)|Animal|Neutral|Nil|Nil|Common|1--6|Nil|Nil|II|35\+3/hp
 boar_warthog|Warthog|||16|7|12"|3|2|2--8/2--8|2--8/2--8|Nil|Nil|Standard||M (2\half' at shoulder)|Animal|Neutral|Nil|Nil|Common|1--6|Nil|Nil|II|35\+3/hp
-brain_mole|Brain Mole|||-|9|1"|1 hit point|Nil|Nil|Nil|Psionic only|Nil|Standard|Psionic only|S (3" long)|Animal|Neutral|121 point attack|B/Nil|Very rare|1--3|Nil|Nil|II|31
+brain_mole|Brain Mole|||-|9|1"|\sfrac{1}{8}|Nil|Nil|Nil|Psionic only|Nil|Standard|Psionic only|S (3" long)|Animal|Neutral|121 point attack|B/Nil|Very rare|1--3|Nil|Nil|II|31
 brownie|Brownie|||20|3|12"|\half|1|1--3|1--3|Spells|Save as 9th level cleric|As above|Spells; Save as 9th level cleric|S (1\half' tall)|High|Lawful Good|Nil|Nil|Rare|4--16|Nil|Nil|III|65\+1/hp
-buffalo|Buffalo|||15|7|15"|5|2|1--8/1--8|1--8/1--8|Charge|Head is armor class 3|Standard|Charge; Head is armor class 3|L (5' at shoulder)|Semi-|Neutral|Nil|Nil|Uncommon|4--24|Nil|Nil|V|350\+8/hp
+buffalo|Buffalo|||15|7\,(3)|15"|5|2|1--8/1--8|1--8/1--8|Charge|Head is AC3|Standard|Charge|L (5' at shoulder)|Semi-|Neutral|Nil|Nil|Uncommon|4--24|Nil|Nil|V|350\+8/hp
 bugbear|Bugbear|||16|5|9"|3+1|1|2--8 or by weapon|2--8|Surprise on a 1--3|Nil|Standard|Surprise on a 1--3|L (7'+ tall)|Low to Average (low)|Chaotic Evil|Nil|Nil|Uncommon|6--36|Nil|Nil|III|135\+4/hp
-bulette|Bulette|||12|2\,(4,6)|14" (3")|9|3|4--48/3--18/3--18|4--48/3--18/3--18|8' jump|Nil|Standard|8' jump|L (9\half' tall, 12'+ long)|Animal|Neutral|Nil|Nil|Very rare|1--2 (10\% chance)|Nil|Nil|VII|2300\+12/hp
+bulette|Bulette|||12|2\,(4,6)|14" (3")|9|3|4--48/3--18/3--18|4--48/3--18/3--18|8' jump|Nil|Standard|8' jump|L (9\half' tall, 12'+ long)|Animal|Neutral|Nil|Nil|Very rare|1--2|Nil|Nil|VII|2300\+12/hp
 bull|Bull|||15|7|15"|4|2|1--6/1--6|1--6/1--6|Charge|Nil|Standard|Charge|L (5' at shoulder)|Semi-|Neutral|Nil|Nil|Common|1--20|Nil|Nil|III|85\+4/hp
 camel_wild|Wild Camel|||16|7|21"|3|1|1--4|1--4|Spitting|Nil|Standard|Spitting|L|Animal to Semi-|Neutral|Nil|Nil|Common|1--12|Nil|Nil|II|35\+3/hp
 carrion_crawler|Carrion Crawler|||16|3\,(7)|12"|3+1|8|Paralysis|Paralysis|Paralysis|Nil|Standard|Paralysis|L (9' long)|Non-|Neutral|Nil|Nil|Uncommon|1--6|50\%|B|VI|580\+4/hp
@@ -60,7 +60,7 @@ cattle_wild_1hd|Wild Cattle|Wild Cattle||19|7|15"|1|1|1--4|1--4|Stampede|Nil|Sta
 cattle_wild_2hd|Wild Cattle|Wild Cattle||16|7|15"|2|1|1--4|1--4|Stampede|Nil|Standard|Stampede|L|Semi-|Neutral|Nil|Nil|Common|20--200|Nil|Nil|I|20\+2/hp
 cattle_wild_3hd|Wild Cattle|Wild Cattle||16|7|15"|3|1|1--4|1--4|Stampede|Nil|Standard|Stampede|L|Semi-|Neutral|Nil|Nil|Common|20--200|Nil|Nil|II|35\+3/hp
 cattle_wild_4hd|Wild Cattle|Wild Cattle||15|7|15"|4|1|1--4|1--4|Stampede|Nil|Standard|Stampede|L|Semi-|Neutral|Nil|Nil|Common|20--200|Nil|Nil|III|60\+4/hp
-centaur|Centaur|||15|5\,(4)|18"|4|2|1--6/1--6|1--6/1--6|Human weapon|Nil|Standard|Human weapon|L|Low-Average|Neutral--Chaotic Good|Nil|Nil|Rare|4--24|5\%|M, Q1, with each; D, I, T in lair|III|85\+4/hp
+centaur|Centaur|||15|5\,(4)|18"|4|2|1--6/1--6|1--6/1--6|Human weapon|Nil|Standard|Human weapon|L|Low-Average|Neutral|Nil|Nil|Rare|4--24|5\%|M, Q1, with each; D, I, T in lair|III|85\+4/hp
 centipede_giant|Giant Centipede|||20|9|15"|1/4|1|Nil|Nil|Poison|Nil|Standard|Poison|S (1'+)|Non-|Neutral|Nil|Nil|Common|2--24|Nil|Nil|II|30\+1/hp
 cerebral_parasite|Cerebral Parasite|||-|n/a|n/a|n/a|0|0|0|Infestation|Not harmed except by cure disease|Standard|Infestation; Not harmed except by cure disease|S (flea-sized)|Non-|Neutral|Nil|Nil|Rare|3--12|Nil|Nil|I|nil
 chimera|Chimera|||12|6\,(5/2)|9"/18"|9|6|1--3\?1--3\?1--4\?1--4\?2--8\?3--12|2\x d3\?2\x d4\?2d4\?3d4|Breath weapon|Nil|Standard|Breath weapon|L (4' at shoulder)|Semi-|Chaotic Evil|Nil|Nil|Rare|1--4|40\%|F|VI|1000\+12/hp
