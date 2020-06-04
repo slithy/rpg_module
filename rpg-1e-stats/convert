@@ -130,6 +130,8 @@ cat <<END_LATEX >>${DEST_TEX}
 
 \onecolumn
 
+\small
+
 \section{Wandering Monster Table}
 
 \begin{wanderingmonsters}[b]
