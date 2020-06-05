@@ -122,6 +122,13 @@ characters.
 
 This is supposed to be a combination of the `SA` and `SD` fields
 above, but it can be abbreviated and compressed to save space.
+Always separate the SA and SD sections with a semicolon. For tips,
+compare the MM1 entries with the DMG; the DMG often has a shorter
+convention.
+
+If the SA or SD fields mention psionics or magic resistance, it 
+is still a good idea to include them here because the normal 
+psionic or MR columns are not included in every output format.
 
 ---
 
