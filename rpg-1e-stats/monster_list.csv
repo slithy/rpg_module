@@ -94,4 +94,32 @@ horned|Horned|Horned Devils|Devil|13|-5|9"/18"|5+5|4 or +1 weapon|1--4\?1--4\?2-
 ice|Ice|Ice Devils|Devil|10|-4|6"|11|4|1--4\?1--4\?2--8\?3--12|2\x{}1--4\?2--8\?3--12|Weapon, magic use, fear, psionics|+2 or better weapon to hit, regeneration, MR 55\%|55\%|Weapon, magic use, fear, psionics; +2 weapon to hit, regen, MR 55\%|L (10\half' tall)|High|Lawful Evil|166|C, D/F, G, H|Uncommon|1|60\%|Q, R|VIII|4400\+16/hp
 lemure|Lemure||Devil|16|7|3"|3|1|1--3|1--3|Nil|Regeneration, spell immunity (charm, sleep, etc.)|Standard|Regeneration, charm/sleep immunity|M|Semi-|Lawful Evil|Nil|Nil|Common|5--30|100\%|Nil|III|65\+3/hp
 pit_fiend|Pit Fiend||Devil|9|-3|6"/15"|13|2|5--8\?7--12|5--8\?7--12|Tail (2--8), magic use, psionics|+2 or better weapon to hit, regeneration, MR 65\%|65\%|Tail, magic use, psionics; +2 weapon to hit, regen, MR 65\%|L (12' tall)|Exceptional|Lawful Evil|213|A, C, E/G, H, I|Rare|1|65\%|J, R|IX|7900\+18/hp
+anatosaurus|Anatosaurus||Dinosaur|9|5|12"|12|1|1--4|1--4|Nil|Nil|Standard||L (30'+ long)|Non-|Neutral|Nil|Nil|Common|2--12|Nil|Nil|VII|1300\+16/hp
+anklyosaurus|Anklyosaurus||Dinosaur|12|0|6"|9|1|3--18|3--18|Nil|Nil|Standard||L (15'+ long)|Non-|Neutral|Nil|Nil|Uncommon|2--5|Nil|Nil|VI|900\+12/hp
+antrodemus|Antrodemus||Dinosaur|8|5|15"|15|3|1--4\?1--4\?6--24|2\x{}1--4\?6--24|Nil|Nil|Standard||L (30' long)|Non-|Neutral|Nil|Nil|Uncommon|1--2|Nil|Nil|VII|2400\+20/hp
+apatosaurus|Apatosaurus||Dinosaur|7|5|6"|30|1|3--18|3--18|Step on (4--40)|Nil|Standard|Step on (4--40)|L (70' long)|Non-|Neutral|Nil|Nil|Common|1--6|Nil|Nil|VIII|5000\+35/hp
+archelon_ischyras|Archelon Ischyras||Dinosaur|13|3|3"//15"|7|1|3--12|3--12|Nil|Nil|Standard||L (12' dia.)|Non-|Neutral|Nil|Nil|Uncommon|1--4|Nil|Nil|IV|225\+8/hp
+brachiosaurus|Brachiosaurus||Dinosaur|7|5|6"|36|1|5--20|5--20|Step on (8--80)|Nil|Standard|Step on (8--80)|L (60' long)|Non-|Neutral|Nil|Nil|Uncommon|1--6|Nil|Nil|VIII|5000\+35/hp
+camarasaurus|Camarasaurus||Dinosaur|7|6|6"|20|1|3--12|3--12|Step on (3--30)|Nil|Standard|Step on (3--30)|L (50' long)|Non-|Neutral|Nil|Nil|Common|2--8|Nil|Nil|VIII|4000\+30/hp
+ceratosaurus|Ceratosaurus||Dinosaur|12|5|15"|8|3|1--6\?1--6\?4--16|2\x{}1--6\?4--16|Nil|Nil|Standard||L (17' long)|Non-|Neutral|Nil|Nil|Uncommon|1--4|Nil|Nil|VI|600\+12/hp
+cetiosaurus|Cetiosaurus||Dinosaur|7|6|6"|24|1|3--18|3--18|Step on (4--40)|Nil|Standard|Step on (4--40)|L (60' long)|Non-|Neutral|Nil|Nil|Uncommon|1--4|Nil|Nil|VIII|5000\+35/hp
+dinichtys|Dinichtys||Dinosaur|10|7|21"|10|1|5--20|5--20|Swallowing whole|Nil|Standard|Swallowing whole|L (25'+ long)|Non-|Neutral|Nil|Nil|Common|1--4|Nil|Nil|VII|1500\+14/hp
+diplodocus|Diplodocus||Dinosaur|7|6|6"|24|1|3--18|3--18|Step on (3--30)|Nil|Standard|Step on (3--30)|L (80' long)|Non-|Neutral|Nil|Nil|Common|1--6|Nil|Nil|VIII|5000\+35/hp
+elasmosaurus|Elasmosaurus||Dinosaur|8|7|15"|15|1|4--24|4--24|Nil|Nil|Standard||L (50' long)|Non-|Neutral|Nil|Nil|Uncommon|1--2|Nil|Nil|VII|2400\+20/hp
+gorgosaurus|Gorgosaurus||Dinosaur|9|5|15"|13|3|1--3\?1--3\?7--28|2\x{}1--3\?7--28|Nil|Nil|Standard||L (30' long)|Non-|Neutral|Nil|Nil|Uncommon|1--2|Nil|Nil|VII|1800\+18/hp
+iguanadon|Iguanadon||Dinosaur|13|4|15"|6|3|1--3\?1--3\?2--8|2\x{}1--3\?2--8|Nil|Nil|Standard||L (30' long)|Non-|Neutral|Nil|Nil|Common|3--18|Nil|Nil|III|150\+6/hp
+lambeosaurus|Lambeosaurus||Dinosaur|9|6|12"|12|1|2--12|2--12|Nil|Nil|Standard||L (20'+ long)|Non-|Neutral|Nil|Nil|Common|2--16|Nil|Nil|VII|1300\+16/hp
+megalosaurus|Megalosaurus||Dinosaur|9|5|12"|12|1|3--18|3--18|Nil|Nil|Standard||L (25' long)|Non-|Neutral|Nil|Nil|Uncommon|1--2|Nil|Nil|VII|1300\+16/hp
+monoclonius|Monoclonius||Dinosaur|12|3\,(4)|6"|8|1|2--16|2--16|Charge/trample (2--16)|Nil|Standard|Charge/trample (2--16)|L (18' long)|Non-|Neutral|Nil|Nil|Common|2--12|Nil|Nil|VI|550\+8/hp
+mosasaurus|Mosasaurus||Dinosaur|9|7|3"//15"|12|1|4--32|4--32|Nil|Nil|Standard||L (50' long)|Non-|Neutral|Nil|Nil|Uncommon|1--3|Nil|Nil|VII|1300\+18/hp
+paleoscincus|Paleoscincus||Dinosaur|12|-3|3"|9|1|2--12|2--12|Nil|Biting inflicts 3--12 hp on attacker|Standard|(3--12) if bitten|L (20' long)|Non-|Neutral|Nil|Nil|Uncommon|1--4|Nil|Nil|VII|1300\+12/hp
+pentaceratops|Pentaceratops||Dinosaur|9|2\,(6)|9"|12|3|1--6\?1--10\?1--10|1--6\?2\x{}1--10|Charge/trample (2--20)|Nil|Standard|Charge/trample (2--20)|L (20'+ long)|Non-|Neutral|Nil|Nil|Common|2--12|Nil|Nil|VII|1300\+18/hp
+plateosaurus|Plateosaurus||Dinosaur|12|5|12"|8|Nil|Nil|Nil|Nil|Nil|Standard||L (20'+ long)|Non-|Neutral|Nil|Nil|Common|5--20|Nil|Nil|V|375\+10/hp
+plesiosaurus|Plesiosaurus||Dinosaur|7|7|15"|20|1|5--20|5--20|Flippers in water (2--12\?2--12)|Nil|Standard|Flippers in water (2--12\?2--12)|L (50'+ long)|Non-|Neutral|Nil|Nil|Common|1--3|Nil|Nil|VIII|4000\+30/hp
+pteranodon|Pteranodon||Dinosaur|16|7|3"/15"|3+3|1|2--8|2--8|Nil|Nil|Standard||L (30' wing spread)|Non-|Neutral|Nil|Nil|Common|3--18|Nil|Nil|III|85\+4/hp
+stegosaurus|Stegosaurus||Dinosaur|7|2\,(5)|6"|18|1|5--20|5--20|Nil|Nil|Standard||L (25' long, 8'+ high)|Non-|Neutral|Nil|Nil|Common|2--8|Nil|Nil|VII|3000\+25/hp
+styracosaurus|Styracosaurus||Dinosaur|10|2\,(4)|6"|10|1|2--16|2--16|Charge/trample (2--16)|Biting inflicts 1--6 to 3--18 hp|Standard|Charge/trample (2--16); 3\x{}1--6 if bitten|L (18' long)|Non-|Neutral|Nil|Nil|Common|2--8|Nil|Nil|VII|1950\+14/hp
+teratosaurus|Teratosaurus||Dinosaur|10|5|18"|10|3|1--3\?1--3\?3--18|2\x{}1--3\?3--18|Nil|Nil|Standard||L (20' long, 9' tall)|Non-|Neutral|Nil|Nil|Uncommon|1--3|Nil|Nil|VI|900\+14/hp
+triceratops|Triceratops||Dinosaur|7|2\,(6)|9"|16|3|1--8\?1--12\?1--12|1--8\?2\x{}1--12|Charge/trample (2--24)|Nil|Standard|Charge/trample (2--24)|L (24' long)|Non-|Neutral|Nil|Nil|Common|2--8|Nil|Nil|VIII|4000\+20/hp
+tyrannosaurus_rex|Tyrannosaurus Rex||Dinosaur|7|5|15"|18|3|1--6\?1--6\?5--40|2\x{}1--6\?5--40|Swallowing whole|Nil|Standard|Swallowing whole|L (50' long, 20' high)|Non-|Neutral|Nil|Nil|Uncommon|1--2|Nil|Nil|IX|6550\+25/hp
 gnoll|Gnoll|||16|5|9"|2|1|2--8 or by weapon|2--8|Nil|Nil|Standard||L (7'+ tall)|Low--Average|Chaotic Evil|Nil|Nil|Uncommon|20--200|20\%|Individuals L, M; D, Q (\x5), S in lair|II|28\+2/hp
