@@ -106,7 +106,7 @@
 \monster{warthog}{Warthog}{|16|7|12"|3|2|2--8\?2--8|2--8\?2--8|Nil|Nil|Standard||M (2\half' at shoulder)|Animal|Neutral|Nil|Nil|Common|1--6|Nil|Nil|II|35\+3/hp}
 \monster{boar_warthog}{Warthog}{|16|7|12"|3|2|2--8\?2--8|2--8\?2--8|Nil|Nil|Standard||M (2\half' at shoulder)|Animal|Neutral|Nil|Nil|Common|1--6|Nil|Nil|II|35\+3/hp}
 \monster{brain_mole}{Brain Mole}{|-|9|1"|\sfrac{1}{8}|Nil|Nil|Nil|Psionic only|Nil|Standard|Psionic only|S (3" long)|Animal|Neutral|121 point attack|B/Nil|Very rare|1--3|Nil|Nil|II|31}
-\monster{brownie}{Brownie}{|20|3|12"|\half|1|1--3|1--3|Spells|Save as 9th level cleric, no surprise|As above|Spells; savings throws, no surprise|S (1\half' tall)|High|Lawful Good|Nil|Nil|Rare|4--16|Nil|Nil|III|65\+1/hp}
+\monster{brownie}{Brownie}{|20|3|12"|\half|1|1--3|1--3|Spells|Save as 9th level cleric, no surprise|As above|Spells; Save as Cleric 9, no surprise|S (1\half' tall)|High|Lawful Good|Nil|Nil|Rare|4--16|Nil|Nil|III|65\+1/hp}
 \monster{buffalo}{Buffalo}{|15|7\,(3)|15"|5|2|1--8\?1--8|1--8\?1--8|Charge|Head is AC3|Standard|Charge; Head is AC3|L (5' at shoulder)|Semi-|Neutral|Nil|Nil|Uncommon|4--24|Nil|Nil|V|350\+8/hp}
 \monster{bugbear}{Bugbear}{|16|5|9"|3+1|1|2--8 or by weapon|2--8|Surprise on a 1--3|Nil|Standard|Surprise on 1--3|L (7'+ tall)|Low to Average (low)|Chaotic Evil|Nil|Nil|Uncommon|6--36|Nil|Nil|III|135\+4/hp}
 \monster{bulette}{Bulette}{|12|2\,(4,6)|14" (3")|9|3|4--48\?3--18\?3--18|4--48\?2\x3--18|8' jump|Nil|Standard|8' jump|L (9\half' tall, 12'+ long)|Animal|Neutral|Nil|Nil|Very rare|1--2|Nil|Nil|VII|2300\+12/hp}
@@ -180,4 +180,13 @@
 \monster{teratosaurus}{Teratosaurus}{Dinosaur|10|5|18"|10|3|1--3\?1--3\?3--18|2\x{}1--3\?3--18|Nil|Nil|Standard||L (20' long, 9' tall)|Non-|Neutral|Nil|Nil|Uncommon|1--3|Nil|Nil|VI|900\+14/hp}
 \monster{triceratops}{Triceratops}{Dinosaur|7|2\,(6)|9"|16|3|1--8\?1--12\?1--12|1--8\?2\x{}1--12|Charge/trample (2--24)|Nil|Standard|Charge/trample (2--24)|L (24' long)|Non-|Neutral|Nil|Nil|Common|2--8|Nil|Nil|VIII|4000\+20/hp}
 \monster{tyrannosaurus_rex}{Tyrannosaurus Rex}{Dinosaur|7|5|15"|18|3|1--6\?1--6\?5--40|2\x{}1--6\?5--40|Swallowing whole|Nil|Standard|Swallowing whole|L (50' long, 20' high)|Non-|Neutral|Nil|Nil|Uncommon|1--2|Nil|Nil|IX|6550\+25/hp}
+\monster{displacer_beast}{Displacer Beast}{|13|4|15"|6|2|2--8\?2--8|2\x{}2--8|Nil|-2 on opponent's attack dice, save as Fighter 12 +2 on die|Special|opponents -2 to hit, save as Fighter 12 +2|L|Semi-|Neutral|Nil|Nil|Very rare|2--5|25\%|D|V|475\+8/hp}
+\monster[Djinn]{djinni}{Djinni}{|13|4|9"/24"|7+3|1|2--16|2--16|Whirlwind, magic use|Nil|Standard|Whirlwind, magic use|L (10\half' tall)|Average-high|Chaotic Good|Nil|Nil|Very rare|1|Nil|Nil|VI|725\+10/hp}
+\monster[Noble Djinn]{djinni_noble}{Noble Djinni}{|10|4|9"/24"|10|1|3--24|3--24|Whirlwind, magic use|Nil|Standard|Whirlwind, magic use|L (10\half' tall)|Average-high|Chaotic Good|Nil|Nil|Very rare|1|Nil|Nil|VII|1800\+14/hp}
+\monster{dog_war}{War Dog}{Dog|16|6|12"|2+2|1|2--8|2--8|Nil|Nil|Standard||M|Semi-|Neutral|Nil|Nil|Uncommon|--|Nil|Nil|II|35\+3/hp}
+\monster{dog_wild}{Wild Dog}{Dog|18|7|15"|1+1|1|1--4|1--4|Nil|Nil|Standard||S|Semi-|Neutral|Nil|Nil|Common|4--16|Nil|Nil|I|20\+2/hp}
+\monster{dolphin}{Dolphin}{|16|5|30"|2+2|1|2--8|2--8|Nil|Save as 4th level fighter|Standard|Save as Fighter 4|M|Very|Lawful Good|Nil|Nil|Uncommon|2--20|Nil|Nil|III|65\+3/hp}
+\monster{swordfish}{Swordfish}{|18|6|24"|1+1|1|2--12|2--12|Nil|Nil|Standard||L|Average|Neutral|Nil|Nil|Uncommon|2--5|Nil|Nil|I|20\+2/hp}
+\monster{narwhale}{Narwhale}{|15|6|21"|4+4|1|2--24|2--24|Nil|Nil|Standard||L|Average|Neutral|Nil|Nil|Uncommon|1--3|Nil|Nil|III|90\+5/hp}
+\monster{doppleganger}{Doppleganger}{|15|5|9"|4|1|1--12|1--12|Mutable form, surprise|ESP, immune to sleep and charm, save as 10th level ftr.|Special|Mutable form, surprise, ESP, sleep/charp immunity, save as Fighter 10|M|Very|Neutral|Nil|Nil|Very rare|3--12|20\%|E|V|330\+4/hp}
 \monster{gnoll}{Gnoll}{|16|5|9"|2|1|2--8 or by weapon|2--8|Nil|Nil|Standard||L (7'+ tall)|Low--Average|Chaotic Evil|Nil|Nil|Uncommon|20--200|20\%|Individuals L, M; D, Q (\x5), S in lair|II|28\+2/hp}
