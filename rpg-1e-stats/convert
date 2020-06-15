@@ -135,14 +135,17 @@ cat <<END_LATEX >>${DEST_TEX}
 \section{Wandering Monster Table}
 
 \begin{wanderingmonsters}[b]
+\wanderitem{chimera}{}
+\end{wanderingmonsters}
+\begin{wanderingmonsters}[b]
 END_LATEX
 
 tail -n +3 ${SOURCE_CSV} |\
 awk 'BEGIN{FS="|"; count = 0}{
-  if($1 == "beholder" || $1 == "cattle_wild") { next }
+  if($1 == "beholder" || $1 == "cattle_wild" || $1 == "chimera") { next }
   printf("\\wanderitem{%s}{}\n", $1)
   ++count
-  if(count == 30) {
+  if(count == 20) {
     printf("\\end{wanderingmonsters}\n\\begin{wanderingmonsters}[b]\n")
     count = 0
   }
@@ -154,14 +157,17 @@ cat <<END_LATEX >>${DEST_TEX}
 \section{Monster Roster Table}
 
 \begin{monsterroster}
+\rosteritem{Room 1}{chimera}{2}{5 each}
+\end{monsterroster}
+\begin{monsterroster}
 END_LATEX
 
 tail -n +3 ${SOURCE_CSV} |\
 awk 'BEGIN{FS="|"; count = 0}{
-  if($1 == "beholder" || $1 == "cattle_wild") { next }
+  if($1 == "beholder" || $1 == "cattle_wild" || $1 == "chimera") { next }
   printf("\\rosteritem{Room 1}{%s}{2}{5 each}\n", $1)
   ++count
-  if(count == 30) {
+  if(count == 20) {
     printf("\\end{monsterroster}\n\\begin{monsterroster}\n")
     count = 0
   }
