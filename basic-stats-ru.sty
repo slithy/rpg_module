@@ -1,0 +1,429 @@
+%% basic-stats-ru.sty
+%
+% Базовые блоки характеристик для класса Модуль для Настольных Ролевых Игр
+%
+% Копирайт 2016 Майкл С. Дэвис
+%
+% ЛИЦЕНЗИЯ НА РАБОТУ
+%
+% Эта работа состоит из следующих файлов:
+%    rpg-module-ru.cls
+%    basic-stats-ru.sty
+%    basic-stats-ru.def
+%    doc/rpg-module-ru.tex
+%
+% Эта работа может быть распространена и/или изменена в соответствии с условиями
+% лицензии публичного проекта LaTeX, либо версии 1.3, либо (по вашему выбору)
+% любой последующей версии. Последнюю версию этой лицензии можно найти на:
+% http://www.latex-project.org/lppl.txt
+% и версия 1.3 или более поздняя является частью всех сборок LaTeX версии 2005/12/01
+% или более поздних.
+%
+% Эта работа имеет статус LPPL `сопровождается автором'.
+% 
+% Автор и сопроводитель этой работы --- Майкл С. Дэвис
+%
+%
+% ЛИЦЕНЗИЯ НА КОМПИЛЯЦИЮ
+%
+% Вы можете распространять скомпилированные работы, созданные с использованием работы,
+% как указано в пункте 3 лицензии публичного проекта LaTeX.
+% Если вы включаете открытый игровой контент в составленную работу,
+% вы также должны соблюдать условия этой лицензии.
+%
+%
+% ИСПОЛЬЗОВАНИЕ
+%
+% См. документацию в файле rpg-module-ru.pdf (исходный файл doc/rpg-module-ru.tex). 
+% Также представлены несколько рабочих примеров в директории examples/.
+%
+% Техническая поддержка предоставляется на форумах Dragonsfoot:
+%
+% http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
+
+\ProvidesPackage{basic-stats}[2016/04/25 Basic Stat Blocks for the Role-Playing Game Module class]
+
+\RequirePackage{tabularx}
+
+
+
+% Redefine which environment will be displayed
+\includecomment{ifbasicstats}
+
+% Armour class macro
+%
+% The default for Basic stats is to use the same descending AC that is used in
+% the Basic rulebook. However, three alternative styles are defined: ascending
+% AC style, B1 style and Swords & Wizardry style. Thanks to Zenopus archives
+% for pointing out that the B1 style is an early form of ascending AC, see:
+%
+% http://zenopusarchives.blogspot.com/2014/02/ascending-ac-in-holmes-basic.html
+
+\newcounter{acasc@module}                                                       % Counter for AC calculations
+
+\newcommand\ac@module[1]{%
+   \@ifundefined{acstyle@module}{\gdef\acstyle@module{desc}}{}%                 % Default AC style is descending
+   \ifnum\pdfstrcmp{\acstyle@module}{desc}=\z@                                  % Display descending AC
+      #1\ignorespaces
+   \else\ifnum\pdfstrcmp{#1}{---}=\z@
+      #1\ignorespaces
+   \else%
+      \setcounter{acasc@module}{19}%
+      \IfSubStr{#1}{\,}{\StrBefore{#1}{\,}[\tmpac]}{\def\tmpac{#1}}%
+      \IfBeginWith{\tmpac}{\minus}{%
+         \StrBehind{\tmpac}{\minus}[\tmpac]%
+         \addtocounter{acasc@module}{\tmpac}%
+      }{%
+         \addtocounter{acasc@module}{-\tmpac}%
+      }%
+      \ifnum\pdfstrcmp{\acstyle@module}{asc}=\z@                                % Display ascending AC
+         \theacasc@module\ignorespaces
+      \else\ifnum\pdfstrcmp{\acstyle@module}{b1}=\z@                            % Display AC using B1 notation
+         #1/\theacasc@module\ignorespaces
+      \else\ifnum\pdfstrcmp{\acstyle@module}{sw}=\z@                            % Display AC using Swords & Wizardry notation
+         #1\,(\theacasc@module)\ignorespaces
+      \else
+         Unknown AC style \acstyle@module
+      \fi\fi\fi
+   \fi\fi
+}
+
+% Hit Dice : convert short form to long form for stat blocks
+
+\newcommand\hd@module[1]{\IfBeginWith{#1}{\half}{#1 (1-4 оз)}{#1}}
+
+% выше меняю hp на оз
+
+% Saving throws : convert long form to short form for stat blocks
+
+\newcommand\sv@module[1]{\StrLeft{#1}{1}[\first]\StrBehind{#1}{ }[\second]\IfInteger{\second}{}{\StrLeft{\second}{1}[\second]}\first\second}
+
+% Morale macro : convert long form to short form for stat blocks
+
+\newcommand\ml@module[1]{\IfSubStr{#1}{ }{\StrBefore{#1}{ }}{#1}}
+
+% Alignment macro : convert long form to short form for stat blocks
+
+\newcommand\al@module[1]{%
+   \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/AL}}{Any}=\z@
+      N % For monsters with variable alignment, assume Neutral unless we specify with changealignment
+   \else
+      \StrLeft{\pgfkeysvalueof{/#1/AL}}{1}
+   \fi
+}
+
+% Change alignment macro, for monsters with Alignment ``Any'' or ``Variable''
+
+\newcommand{\changealignment}[2]{\pgfkeys{/#1/AL = {#2}}}
+
+
+
+% Basic stat block key-value pairs
+
+\newcommand{\setstatbasic}[2]{%
+   \ifcase\thecurrentstat
+      \pgfkeys{/#1/Type/.initial        = {#2}}
+   \or
+      \pgfkeys{/#1/SilverMagic/.initial = {#2}}
+   \or
+      \pgfkeys{/#1/AC/.initial          = \ac@module{#2}}
+   \or
+      \pgfkeys{/#1/HD/.initial          = {#2}}
+      \pgfkeys{/#1/HDlong/.initial      = \hd@module{#2}}
+   \or
+      \pgfkeys{/#1/MVturn/.initial      = {#2}}
+   \or
+      \pgfkeys{/#1/MVrd/.initial        = {#2}}
+   \or
+      \pgfkeys{/#1/MVspec/.initial      = {#2}}
+   \or
+      \pgfkeys{/#1/MVspec_turn/.initial = {#2}}
+   \or
+      \pgfkeys{/#1/MVspec_rd/.initial   = {#2}}
+   \or
+      \pgfkeys{/#1/Attshort/.initial    = {#2}}
+   \or
+      \pgfkeys{/#1/Attlong/.initial     = {#2}}
+   \or
+      \pgfkeys{/#1/Dmg/.initial         = {#2}}
+   \or
+      \pgfkeys{/#1/Dmglong/.initial     = {#2}}
+   \or
+      \pgfkeys{/#1/SV/.initial          = \sv@module{#2}}
+      \pgfkeys{/#1/SVlong/.initial      = {#2}}
+   \or
+      \pgfkeys{/#1/ML/.initial          = \ml@module{#2}}
+      \pgfkeys{/#1/MLlong/.initial      = {#2}}
+   \or
+      \pgfkeys{/#1/AL/.initial          = {#2}}
+   \or
+      \pgfkeys{/#1/NoAppear/.initial    = {#2}}
+   \or
+      \pgfkeys{/#1/NoInLair/.initial    = {#2}}
+   \or
+      \pgfkeys{/#1/TT/.initial          = {#2}}
+   \or
+      \pgfkeys{/#1/XP/.initial          = {#2}}
+   \fi
+}
+
+% Define monsters using \setstatbasic
+
+\def\scan@stats#1|{%
+   \ifnum\pdfstrcmp{#1}{\relax}=\z@
+      \let\next\relax
+   \else
+      \setstatbasic{\currentmonster}{#1}\let\next\scan@stats
+      \stepcounter{currentstat}
+  \fi\next
+}
+
+
+
+% Display monster stats inline
+%
+% Usage: \stats[monster name]{monster key}{no. appearing}{hit points}
+
+\newcommand{\stats}[4][default]{%
+   \ifnum\pdfstrcmp{#1}{default}=\z@
+      \ifnum\pdfstrcmp{#3}{1}=\z@
+         \pgfkeys{/#2/SingleName}:               % Use the generic name defined for this monster (single instance)
+      \else
+         \pgfkeys{/#2/PluralName} (#3):          % Use the generic name defined for this monster (plural + number appearing)
+      \fi
+   \else
+      #1                                         % Override the generic name with the optional argument
+   \fi
+   КБ~\pgfkeys{/#2/AC},
+   КЗ~\pgfkeys{/#2/HD},
+   оз~#4,
+   Скорость~\pgfkeys{/#2/MVturn}\thinspacebrk(\pgfkeys{/#2/MVrd}),
+\ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/MVspec}}{}=\z@\else
+   \pgfkeys{/#2/MVspec}~\pgfkeys{/#2/MVspec_turn}\thinspacebrk(\pgfkeys{/#2/MVspec_rd}),
+\fi
+   \#Атак~\pgfkeys{/#2/Attlong},
+   Урон~\pgfkeys{/#2/Dmglong},
+   Спас~\pgfkeys{/#2/SV},
+   Боевой дух~\pgfkeys{/#2/ML},
+   МВ~\al@module{#2},
+   Опыт~\pgfkeys{/#2/XP}%
+}
+
+% выше меняю AC~ на КБ~
+% выше меняю HD~ на КЗ~
+% выше меняю hp~ на оз~
+% выше меняю MV~ на Скорость~
+% выше меняю Att~ на \#Атак~
+% выше меняю D~ на Урон~
+% выше меняю Save~ на Спас~
+% выше меняю ML~ на Боевой дух~
+% выше меняю AL~ на МВ~
+% выше меняю XP~ на Опыт~ 
+
+% Display monster stats in a stat block
+%
+% Usage: \statblock[monster name]{monster key}{no. appearing}{hit points}
+
+\newcommand{\statblock}[4][default]{%
+   \begin{statblockfreestyle}
+   \stats[#1]{#2}{#3}{#4}
+   \end{statblockfreestyle}
+}
+
+
+
+% Table display format for wandering monsters
+
+\newcounter{wandering@module}
+
+% ниже меняю Die Roll & Wandering Monster & No. & AC & HD & MV & Attacks & Damage & Save & ML & AL
+% на Бросок Кубика & Бродящий монстр & Кол-во & КБ & КЗ & Скорость & \#Атак & Урон & Спас & Боевой дух & МВ
+
+\newenvironment{wanderingmonsters}[1][c]{\begin{center}\begin{tabular}{clccccccccc}
+\setcounter{wandering@module}{0}%
+\tableheader[#1]{Бросок Кубика & Бродящий монстр & Кол-во & КБ & КЗ & Скорость & \#Атак & Урон & Спас & Боевой дух & МВ}}
+{\end{tabular}\end{center}}
+
+% Usage: \wanderitem[die roll]{monster key}{no. appearing}
+%
+% Leave no. appearing blank to use the value from the monster stats
+
+\newcommand{\wanderitem}[3][default]{%
+   \ifnum\pdfstrcmp{#1}{default}=\z@
+      \stepcounter{wandering@module}\thewandering@module
+   \else
+      \IfInteger{#1}{\setcounter{wandering@module}{#1}\thewandering@module}{#1}
+   \fi &
+   \IfStrEq{#3}{}{%
+      \if\pgfkeysvalueof{/#2/NoAppear}\string 1\pgfkeys{/#2/SingleName}\else\pgfkeys{/#2/PluralName}\fi & \pgfkeys{/#2/NoAppear} &
+   }{%
+      \ifnum\pdfstrcmp{#3}{1}=\z@\pgfkeys{/#2/SingleName}\else\pgfkeys{/#2/PluralName}\fi & #3 &
+   }
+   \pgfkeys{/#2/AC} & \pgfkeys{/#2/HD} & \pgfkeys{/#2/MVrd}%
+\ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/MVspec}}{}=\z@\else
+   /\pgfkeys{/#2/MVspec_rd}%
+\fi
+   & \pgfkeys{/#2/Attshort} & \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \al@module{#2}\\
+}
+
+
+
+% Table display format for monster roster
+
+% ниже меняю Room & Monster & No. & AC & HD & hp & MV & Attacks & Damage & Save & ML & AL
+% на Комната & Монстр & Кол-во & КБ & КЗ & оз & Скорость & \#Атак & Урон & Спас & Боевой дух & МВ
+
+\newenvironment{monsterroster}[1][c]{\begin{center}\begin{tabular}{clcccccccccc}
+\tableheader[#1]{Комната & Монстр & Кол-во & КБ & КЗ & оз & Скорость & \#Атак & Урон & Спас & Боевой дух & МВ}}
+{\end{tabular}\end{center}}
+
+% Usage: \rosteritem{room key}{monster key}{no. appearing}{hit points}
+%
+% If the room key is provided as a reference, the class will create a hyperlink from the monster
+% roster to the room description
+
+\newcommand{\rosteritem}[4]{%
+   #1 &
+   \ifnum\pdfstrcmp{#3}{1}=\z@
+      \pgfkeys{/#2/SingleName} &
+   \else
+      \pgfkeys{/#2/PluralName} &
+   \fi
+   #3 & \pgfkeys{/#2/AC} & \pgfkeys{/#2/HD} & #4 & \pgfkeys{/#2/MVrd}%
+\ifnum\pdfstrcmp{\pgfkeysvalueof{/#2/MVspec}}{}=\z@\else
+   /\pgfkeys{/#2/MVspec_rd}%
+\fi
+   & \pgfkeys{/#2/Attshort} & \pgfkeys{/#2/Dmg} & \pgfkeys{/#2/SV} & \pgfkeys{/#2/ML} & \al@module{#2}\\
+}
+
+
+
+%
+% New Monster environment
+%
+
+\newcommand{\newmonsterfont}{\Large\bfseries}
+\newcommand{\newmonsterbottomskip}{\topskip}
+
+\newcommand{\longname}[1]{%
+   \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/Type}}{}=\z@
+      \pgfkeysvalueof{/#1/SingleName}%
+   \else\ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SingleName}}=\z@
+      \pgfkeysvalueof{/#1/SingleName}%
+   \else
+      \pgfkeysvalueof{/#1/Type}, \texorpdfstring{\protect\StrDel{\pgfkeysvalueof{/#1/SingleName}}{ \pgfkeysvalueof{/#1/Type}}}{}%
+   \fi\fi
+}
+
+% меняю No. Appearing: на Кол-во:
+% меняю Save As: на Спас:
+% меняю Hit Dice: на Кубик Здоровья:
+% меняю Move: на Скорость:
+% меняю Damage: на Урон:
+% меняю Morale: на Боевой дух:
+% меняю Treasure Type: на Тип Сокровищ:
+% меняю Attacks: на \#Атак:
+% меняю Alignment: на Мировоззрение:
+% меняю Armour Class: на Класс Брони:
+
+\newenvironment{newmonster}[1]{%
+\@afterindentfalse\@afterheading\vspace{\topskip}
+\begin{tabularx}{\linewidth}{@{}l>{\raggedright\arraybackslash}Xl>{\raggedright\arraybackslash}X@{}}
+\multicolumn{4}{l}{\hspace{-\tabcolsep}\newmonsterfont\longname{#1}\pgfkeys{/#1/SilverMagic}%
+\phantomsection\addcontentsline{toc}{section}{\longname{#1}}}\\[\topskip]
+\ArmourClass: & \pgfkeys{/#1/AC}                          & Кол-во: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})\\
+Кубик Здоровья:     & \pgfkeys{/#1/HDlong}                      & Спас:       & \pgfkeys{/#1/SVlong}\\
+Скорость:         & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd}) & Боевой дух:        & \pgfkeys{/#1/MLlong}\\
+\ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/MVspec}}{}=\z@\else
+\hspace{1em}\pgfkeys{/#1/MVspec}: & \pgfkeys{/#1/MVspec_turn} (\pgfkeys{/#1/MVspec_rd})\\
+\fi
+\#Атак:      & \pgfkeys{/#1/Attlong}                     & Тип Сокровищ: & \pgfkeys{/#1/TT}\\
+Урон:       & \pgfkeys{/#1/Dmglong}                     & Мировоззрение:     & \pgfkeys{/#1/AL}\\
+\end{tabularx}\par\vspace{\newmonsterbottomskip}\noindent\ignorespaces}{\vspace{\newmonsterbottomskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
+
+% Two-column version
+
+\newenvironment{newmonster2*}[4]{%
+\@afterindentfalse\@afterheading\vspace{\topskip}
+\begin{tabularx}{\linewidth}{@{}X>{\raggedright\arraybackslash}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\ifnum\pdfstrcmp{#3}{}=\z@\else
+\multicolumn{3}{l}{\hspace{-\tabcolsep}\newmonsterfont#3#4%
+\phantomsection\addcontentsline{toc}{section}{#3}}\\[\newmonsterbottomskip]
+\fi
+ & \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SingleName}}=\z@
+   Normal
+\fi\pgfkeys{/#1/SingleName}                                      & \pgfkeys{/#2/SingleName}\\
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){2-2}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){3-3}
+\ArmourClass:  & \pgfkeys{/#1/AC}                                & \pgfkeys{/#2/AC}\\
+Кубик Здоровья:      & \pgfkeys{/#1/HDlong}                            & \pgfkeys{/#2/HDlong}\\
+Скорость:          & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd})       & \pgfkeys{/#2/MVturn} (\pgfkeys{/#2/MVrd})\\
+\ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/MVspec}}{}=\z@\else
+\hspace{1em}\pgfkeys{/#1/MVspec}: & \pgfkeys{/#1/MVspec_turn} (\pgfkeys{/#1/MVspec_rd}) & \pgfkeys{/#2/MVspec_turn} (\pgfkeys{/#2/MVspec_rd})\\
+\fi
+\#Атак:       & \pgfkeys{/#1/Attlong}                           & \pgfkeys{/#2/Attlong}\\
+Урон:        & \pgfkeys{/#1/Dmglong}                           & \pgfkeys{/#2/Dmglong}\\
+Кол-во: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair}) & \pgfkeys{/#2/NoAppear} (\pgfkeys{/#2/NoInLair})\\
+Спас:       & \pgfkeys{/#1/SVlong}                            & \pgfkeys{/#2/SVlong}\\
+Боевой дух:        & \pgfkeys{/#1/MLlong}                            & \pgfkeys{/#2/MLlong}\\
+Тип Сокровищ: & \pgfkeys{/#1/TT}                                & \pgfkeys{/#2/TT}\\
+Мировоззрение:     & \pgfkeys{/#1/AL}                                & \pgfkeys{/#2/AL}\\
+\end{tabularx}\par\vspace{\newmonsterbottomskip}\noindent\ignorespaces}{\vspace{\newmonsterbottomskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
+
+\newenvironment{newmonster2}[2]{\begin{newmonster2*}{#1}{#2}{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SilverMagic}}}{\end{newmonster2*}}
+
+% Three-column version
+
+\newenvironment{newmonster3*}[5]{%
+\@afterindentfalse\@afterheading\vspace{\topskip}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\ifnum\pdfstrcmp{#4}{}=\z@\else
+\multicolumn{4}{l}{\hspace{-\tabcolsep}\newmonsterfont#4#5%
+\phantomsection\addcontentsline{toc}{section}{#4}}\\[\newmonsterbottomskip]
+\fi
+ & \ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SingleName}}=\z@
+   Normal
+\fi\pgfkeys{/#1/SingleName}                                      & \pgfkeys{/#2/SingleName} & \pgfkeys{/#3/SingleName}\\
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){2-2}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){3-3}
+\cmidrule(l{\tabcolsep}r{\tabcolsep}){4-4}
+\ArmourClass:  & \pgfkeys{/#1/AC}                                & \pgfkeys{/#2/AC}         & \pgfkeys{/#3/AC}\\
+Кубик Здоровья:      & \pgfkeys{/#1/HDlong}                            & \pgfkeys{/#2/HDlong}     & \pgfkeys{/#3/HDlong}\\
+Скорость:          & \pgfkeys{/#1/MVturn} (\pgfkeys{/#1/MVrd})
+               & \pgfkeys{/#2/MVturn} (\pgfkeys{/#2/MVrd})
+               & \pgfkeys{/#3/MVturn} (\pgfkeys{/#3/MVrd})\\
+\ifnum\pdfstrcmp{\pgfkeysvalueof{/#1/MVspec}}{}=\z@\else
+\hspace{1em}\pgfkeys{/#1/MVspec}: & \pgfkeys{/#1/MVspec_turn} (\pgfkeys{/#1/MVspec_rd})
+                                  & \pgfkeys{/#2/MVspec_turn} (\pgfkeys{/#2/MVspec_rd})
+                                  & \pgfkeys{/#3/MVspec_turn} (\pgfkeys{/#3/MVspec_rd})\\
+\fi
+\#Атак:       & \pgfkeys{/#1/Attlong}                           & \pgfkeys{/#2/Attlong}    & \pgfkeys{/#3/Attlong}\\
+Урон:        & \pgfkeys{/#1/Dmglong}                           & \pgfkeys{/#2/Dmglong}    & \pgfkeys{/#3/Dmglong}\\
+Кол-во: & \pgfkeys{/#1/NoAppear} (\pgfkeys{/#1/NoInLair})
+               & \pgfkeys{/#2/NoAppear} (\pgfkeys{/#2/NoInLair})
+               & \pgfkeys{/#3/NoAppear} (\pgfkeys{/#3/NoInLair})\\
+Спас:       & \pgfkeys{/#1/SVlong}                            & \pgfkeys{/#2/SVlong}     & \pgfkeys{/#3/SVlong}\\
+Боевой дух:        & \pgfkeys{/#1/MLlong}                            & \pgfkeys{/#2/MLlong}     & \pgfkeys{/#3/MLlong}\\
+Тип Сокровищ: & \pgfkeys{/#1/TT}                                & \pgfkeys{/#2/TT}         & \pgfkeys{/#3/TT}\\
+Мировоззрение:     & \pgfkeys{/#1/AL}                                & \pgfkeys{/#2/AL}         & \pgfkeys{/#3/AL}\\
+\end{tabularx}\par\vspace{\newmonsterbottomskip}\noindent\ignorespaces}{\vspace{\newmonsterbottomskip}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
+
+\newenvironment{newmonster3}[3]{\begin{newmonster3*}{#1}{#2}{#3}{\pgfkeysvalueof{/#1/Type}}{\pgfkeysvalueof{/#1/SilverMagic}}}{\end{newmonster3*}}
+
+
+
+% A few special macros for stat blocks
+
+\newcommand\x{$\times$}                                                         % Text-mode multiplication symbol
+\newcommand\minus{$-$}                                                          % Text-mode minus sign
+\newcommand{\?}{\discretionary{/}{}{/}}                                         % Breaking slash
+\newcommand{\+}{\discretionary{\,+}{}{\,+\,}}                                   % Breaking + with 1/6 em space either side
+
+
+
+%
+% Load pre-defined monster stats
+%
+
+%\input{basic-stats.def}
+\input{basic-stats-ru.def}
