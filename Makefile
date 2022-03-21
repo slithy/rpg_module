@@ -1,9 +1,8 @@
-STYLE=rpg-basic-stats
-STAT_FILE=$(STYLE).def
+STAT_FILE=rpg-basic-stats.def rpg-1e-stats.def
+STYLE_FILE=rpg-basic-stats.sty rpg-1e-stats.sty
 
 TARGET=rpg-module.pdf
 CLASS=rpg-module.cls
-STYLE_FILE=$(STYLE).sty
 
 ZIP_TARGET=/tmp/rpg-module.zip
 ZIPFILES=README LICENSE $(TARGET) $(CLASS) $(STYLE_FILE) $(STAT_FILE) LICENSE doc/ examples/
@@ -20,8 +19,8 @@ examples: $(STAT_FILE)
 show: $(TARGET)
 	evince $(TARGET)
 
-$(STAT_FILE): $(STYLE)/publish $(STYLE)/$(STYLE).csv
-	$(STYLE)/publish $(STYLE)/$(STYLE).csv > $@
+$(STAT_FILE):
+	(cd ${@:.def=}; make install)
 
 zip: $(ZIPFILES) clean
 	rm -f $(ZIP_TARGET)
