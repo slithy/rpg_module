@@ -12,6 +12,12 @@ show: $(TARGET)
 convert:
 	./convert
 
+rpg-1e-stats.def: convert
+
+install: rpg-1e-stats.def
+	cp rpg-1e-stats.def ..
+
+
 clean:
 	rm -f *.aux *.bbl *.blg *.log *.dvi *.bak *.lof *.log *.lol *.lot *.out *.toc *.cut
 

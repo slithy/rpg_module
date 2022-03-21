@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SOURCE_CSV=monster_list.csv
-DEST_DEF=../rpg-1e-stats.def
+DEST_DEF=rpg-1e-stats.def
 DEST_TEX=test_all.tex
 
 cat <<END_HEADER >${DEST_DEF}
@@ -29,7 +29,7 @@ cat <<END_HEADER >${DEST_DEF}
 % 2005/12/01 or later.
 %
 % This work has the LPPL maintenance status \`author-maintained'.
-% 
+%
 % The Author and Maintainer of this work is Michael C. Davis
 %
 %
@@ -51,7 +51,7 @@ cat <<END_HEADER >${DEST_DEF}
 %
 % USAGE
 %
-% See the file rpg-module.pdf (source file doc/rpg-module.tex) for documentation. 
+% See the file rpg-module.pdf (source file doc/rpg-module.tex) for documentation.
 % There are a number of worked examples in the examples/ directory.
 %
 % Technical support is provided on GitHub:
