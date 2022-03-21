@@ -14,6 +14,7 @@ $(TARGET): $(STAT_FILE)
 	cd doc; make install
 
 examples: $(STAT_FILE)
+	mkdir -p examples
 	cd examples_src; for dir in *; do if [ -d $$dir ]; then cd $$dir; make install; cd ..; fi; done
 	cp examples_src/README examples/README.examples
 
