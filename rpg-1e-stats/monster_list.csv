@@ -217,3 +217,4 @@ kobold_guard|Kobold Guard|||20|6|6"|1-1 (4 hp)|1|1--6 or by weapon|1--6|Nil|Nil|
 kobold_leader|Kobold Leader|||20|6|6"|1-1 (4 hp)|1|1--6 or by weapon|1--6|Nil|Nil|Standard||S (3' tall)|Average-low|Lawful Evil|Nil|Nil|Uncommon|40--400|40\%|Individuals J; O, Q (\x5) in lair|I|10\+1/hp
 orc|Orc|||19|6|9"|1|1|1--8 or by weapon|1--8|Nil|Nil|Standard||M (6'+ tall)|Average-low|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|10\+1/hp
 rat_giant|Giant Rat|||21|7|12"//6"|\half|1|1--3|1--3|Disease, +5\% chance per wound|Nil|Standard|Disease, +5\% chance per wound|S|Semi-|Neutral Evil|Nil|Nil|Common|5--50|10\%|C|III|85\+4/hp
+wight|Wight|||15|5|12"|4+3|1|1--4|1--4|Energy drain|Silver or magic weapons to hit, immune to sleep, hold, charm, cold, poison, paralysis|Special|Energy drain; Silver or magic weapons to hit, immune to sleep, hold, charm, cold, poison, paralysis|M|Average|Lawful Evil|Nil|Nil|Uncommon|2--16|70\%|B|VI|540\+5/hp
