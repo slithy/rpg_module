@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SOURCE_CSV=monster_list.csv
+SOURCE_CSV=$1
 DEST_DEF=rpg-1e-stats.def
 DEST_TEX=test_all.tex
 
