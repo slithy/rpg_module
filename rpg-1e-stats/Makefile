@@ -1,4 +1,3 @@
-#TARGET=test_gnoll.pdf
 TARGET=test_all.pdf
 
 all: $(TARGET)
@@ -6,22 +5,26 @@ all: $(TARGET)
 show: $(TARGET)
 	evince $(TARGET)
 
+$(TARGET): rpg-1e-stats.def
+
 %.pdf: %.tex
 	pdflatex $<
 
-convert:
-	./convert
+%.def: %.csv convert
+	./convert $<
 
-rpg-1e-stats.def: convert
+rpg-1e-stats.csv: mm.csv ff.csv mm2.csv
+	$(RM) $@
+	tail -n +3 mm.csv >> $@
+	tail -n +3 ff.csv >> $@
+	tail -n +3 mm2.csv >> $@
 
 install: rpg-1e-stats.def
 	cp rpg-1e-stats.def ..
 
-
 clean:
-	rm -f *.aux *.bbl *.blg *.log *.dvi *.bak *.lof *.log *.lol *.lot *.out *.toc *.cut
+	$(RM) *.aux *.bbl *.blg *.log *.dvi *.bak *.lof *.log *.lol *.lot *.out *.toc *.cut
+	$(RM) all-monsters.csv
 
 clobber: clean
-	rm -f $(TARGET)
-
-.PHONY: convert
+	$(RM) $(TARGET)

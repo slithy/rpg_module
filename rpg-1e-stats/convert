@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SOURCE_CSV=monster_list.csv
+SOURCE_CSV=$1
 DEST_DEF=rpg-1e-stats.def
 DEST_TEX=test_all.tex
 
@@ -67,7 +67,7 @@ cat <<END_HEADER >${DEST_DEF}
 
 END_HEADER
 
-tail -n +3 ${SOURCE_CSV} |\
+cat ${SOURCE_CSV} |\
 awk 'BEGIN{FS="|"}{
   if($1 == "") next
   printf("\\monster")
@@ -96,7 +96,7 @@ The default is the long format, here shown for single monsters.
 
 END_LATEX
 
-tail -n +3 ${SOURCE_CSV} |\
+cat ${SOURCE_CSV} |\
 awk 'BEGIN{FS="|"}{
   printf("\\statblock{%s}{1}{8}\n", $1)
 }' >>${DEST_TEX}
@@ -109,7 +109,7 @@ Short (inline) format, shown for two monsters (to make sure plurals look OK).
 
 END_LATEX
 
-tail -n +3 ${SOURCE_CSV} |\
+cat ${SOURCE_CSV} |\
 awk 'BEGIN{FS="|"}{
   printf("\\noindent You must fight \\shortstats{%s}{2}{8 each}\n\n", $1)
 }' >>${DEST_TEX}
@@ -120,7 +120,7 @@ cat <<END_LATEX >>${DEST_TEX}
 
 END_LATEX
 
-tail -n +3 ${SOURCE_CSV} |\
+cat ${SOURCE_CSV} |\
 awk 'BEGIN{FS="|"}{
   printf("\\begin{newmonster}{%s}\n", $1)
   printf("\\end{newmonster}\n")
@@ -140,7 +140,7 @@ cat <<END_LATEX >>${DEST_TEX}
 \begin{wanderingmonsters}[b]
 END_LATEX
 
-tail -n +3 ${SOURCE_CSV} |\
+cat ${SOURCE_CSV} |\
 awk 'BEGIN{FS="|"; count = 0}{
   if($1 == "beholder" || $1 == "cattle_wild" || $1 == "chimera") { next }
   printf("\\wanderitem{%s}{}\n", $1)
@@ -162,7 +162,7 @@ cat <<END_LATEX >>${DEST_TEX}
 \begin{monsterroster}
 END_LATEX
 
-tail -n +3 ${SOURCE_CSV} |\
+cat ${SOURCE_CSV} |\
 awk 'BEGIN{FS="|"; count = 0}{
   if($1 == "beholder" || $1 == "cattle_wild" || $1 == "chimera") { next }
   printf("\\rosteritem{Room 1}{%s}{2}{5 each}\n", $1)
