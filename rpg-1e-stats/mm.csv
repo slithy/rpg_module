@@ -9,6 +9,7 @@ anhkheg_6hd|Anhkheg|||13|2\,(4)|12" (6")|6|1|3--18 (\+1--4)|3--18|Squirt acid|Ni
 anhkheg_7hd|Anhkheg|||13|2\,(4)|12" (6")|7|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+8/hp
 anhkheg_8hd|Anhkheg|||12|2\,(4)|12" (6")|8|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+10/hp
 ant_giant|Giant Ant||Ant|16|3|18"|2|1|1--6|1--6|Nil|Nil|Standard||S (2' long)|Animal|Neutral|Nil|Nil|Rare|1--100|10\%|Q (\x3), S|I|20\+2/hp
+ant_queen|Queen Ant||Ant|10|3|Nil|10|0|Nil|Nil|Nil|Nil|Standard||S|Animal|Neutral|Nil|Nil|Rare|1|10\%|Q (\x3), S|I|0
 ant_warrior|Warrior Ant||Ant|16|3|18"|3|2|2--8\?3-12|2--8/3--12|Poison sting|Nil|Standard|Poison sting|S (2' long)|Animal|Neutral|Nil|Nil|Rare|1--20|10\%|Q (\x3), S|II|40\+3/hp
 ape|Ape|||15|6|12"|4+1|3|1--3\?1--3\?1--6|2\x1--3\?1--6|Rending|Nil|Standard|Rending|M (6' tall, broad)|Low|Neutral|Nil|Nil|Very rare|1--4|Nil|Nil|III|130\+5/hp
 gorilla|Gorilla|||15|6|12"|4+1|3|1--3\?1--3\?1--6|2\x1--3\?1--6|Rending|Nil|Standard|Rending|M (6' tall, broad)|Low|Neutral|Nil|Nil|Very rare|1--4|Nil|Nil|III|130\+5/hp
@@ -218,4 +219,6 @@ kobold_guard|Kobold Guard|||20|6|6"|1-1 (4 hp)|1|1--6 or by weapon|1--6|Nil|Nil|
 kobold_leader|Kobold Leader|||20|6|6"|1-1 (4 hp)|1|1--6 or by weapon|1--6|Nil|Nil|Standard||S (3' tall)|Average-low|Lawful Evil|Nil|Nil|Uncommon|40--400|40\%|Individuals J; O, Q (\x5) in lair|I|10\+1/hp
 orc|Orc|||19|6|9"|1|1|1--8 or by weapon|1--8|Nil|Nil|Standard||M (6'+ tall)|Average-low|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|10\+1/hp
 rat_giant|Giant Rat|||21|7|12"//6"|\half|1|1--3|1--3|Disease, +5\% chance per wound|Nil|Standard|Disease, +5\% chance per wound|S|Semi-|Neutral Evil|Nil|Nil|Common|5--50|10\%|C|III|85\+4/hp
+stirge|Stirge|||18|8|3"//18"|1+1|1|1--3|1--3|Attack as 4HD monster, drain blood (1--4)|Nil|Standard|Attack as 4HD monster, drain blood (1--4)|S|Animal|Neutral|Nil|Nil|Uncommon|3--30|60\%|D|II|36\+2/hp
+troll|Troll|||13|4|12"|6+6|3|5--8\?5--8\?2--12|2\x5--8\?2--12|Nil|Surprised on a 1 only, regeneration (+3/r)|Standard|Surprised on a 1 only, regeneration (+3/r)|L (9'+ tall)|Low|Chaotic Evil|Nil|Nil|Uncommon|1--12|40\%|D|VI|525\+8/hp
 wight|Wight|||15|5|12"|4+3|1|1--4|1--4|Energy drain|Silver or magic weapons to hit, immune to sleep, hold, charm, cold, poison, paralysis|Special|Energy drain; Silver or magic weapons to hit, immune to sleep, hold, charm, cold, poison, paralysis|M|Average|Lawful Evil|Nil|Nil|Uncommon|2--16|70\%|B|VI|540\+5/hp
