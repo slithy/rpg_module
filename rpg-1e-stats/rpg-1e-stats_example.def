@@ -55,7 +55,7 @@
 %
 %    http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
 
-% \monster{key}[Name, Plural]{Name, Singular}{Type|THAC0|AC|MV|HD|Attacks|Dmglong|Dmg|SA|SD|MR|Special|SZ|Int|AL|Psi|PsiAtt|Frequency|NoAppear|InLair|TT|Level|XP}
+% \monster[Name, Plural]{key}{Name, Singular}{Type|THAC0|AC|MV|HD|Attacks|Dmglong|Dmg|SA|SD|MR|Special|SZ|Int|AL|Psi|PsiAtt|Frequency|NoAppear|InLair|TT|Level|XP}
 
 \monster{gnoll}{Gnoll}{|16|5|9"|2|1|2--8 or by weapon|2--8|Nil|Nil|Standard||L (7'+ tall)|Low--Average|Chaotic Evil|Nil|Nil|Uncommon|20--200|20\%|Individuals L, M; D, Q (\x 5), S in lair|II|28\+ 2/hp}
 \monster{acolyte}{Acolyte}{Men|17|2|6"|1|1|1--6 (mace)|1--6|spell use|spell use|Standard|Spell use|M|Average|Any|Nil|Nil|Common|10--100|0\%|Special|I|10\+ 1/hp}

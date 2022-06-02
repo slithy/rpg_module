@@ -63,7 +63,7 @@ cat <<END_HEADER >${DEST_DEF}
 %    http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
 %
 % The format of entries in this file is:
-% \monster{key}[Name, Plural]{Name, Singular}{Type|THAC0|AC|MV|HD|Attacks|Dmglong|Dmg|SA|SD|MR|Special|SZ|Int|AL|Psi|PsiAtt|Frequency|NoAppear|InLair|TT|Level|XP}
+% \monster[Name, Plural]{key}{Name, Singular}{Type|THAC0|AC|MV|HD|Attacks|Dmglong|Dmg|SA|SD|MR|Special|SZ|Int|AL|Psi|PsiAtt|Frequency|NoAppear|InLair|TT|Level|XP}
 
 END_HEADER
 
