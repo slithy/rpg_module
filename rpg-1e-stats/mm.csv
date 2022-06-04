@@ -1,13 +1,13 @@
 Key|Singular|Plural|Category|THACO|AC|MV|HD|#AT|Damage (long)|Damage (short)|SA|SD|MR|Special|Size|Int|Alignment|Psionic|Attack/Defense Modes|Frequency|No. Appearing|% in Lair|Treasure Type|Level|XP
 |||||||||||||||||||||||||
 aerial_servant|Aerial Servant|||7|3|24"|16|1|8--32|8--32|Surprises on 1--4|Can be hit only by magic weapons|Standard|Surprises on 1--4; magic weapon to hit|8' tall|Semi-|Neutral|Nil|Nil|Very rare|1|0\%|Nil|VIII|5250\+20/hp
-anhkheg|Anhkheg|||13--16|2\,(4)|12" (6")|3--8|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+hp value
-anhkheg_3hd|Anhkheg|||16|2\,(4)|12" (6")|3|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+3/hp
-anhkheg_4hd|Anhkheg|||15|2\,(4)|12" (6")|4|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+4/hp
-anhkheg_5hd|Anhkheg|||15|2\,(4)|12" (6")|5|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+5/hp
-anhkheg_6hd|Anhkheg|||13|2\,(4)|12" (6")|6|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+6/hp
-anhkheg_7hd|Anhkheg|||13|2\,(4)|12" (6")|7|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+8/hp
-anhkheg_8hd|Anhkheg|||12|2\,(4)|12" (6")|8|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+10/hp
+anhkheg|Anhkheg|||13--16|2\,(4)|12" (6")|3--8|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non-|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+hp value
+anhkheg_3hd|Anhkheg|||16|2\,(4)|12" (6")|3|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non-|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+3/hp
+anhkheg_4hd|Anhkheg|||15|2\,(4)|12" (6")|4|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non-|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+4/hp
+anhkheg_5hd|Anhkheg|||15|2\,(4)|12" (6")|5|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non-|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+5/hp
+anhkheg_6hd|Anhkheg|||13|2\,(4)|12" (6")|6|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non-|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+6/hp
+anhkheg_7hd|Anhkheg|||13|2\,(4)|12" (6")|7|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non-|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+8/hp
+anhkheg_8hd|Anhkheg|||12|2\,(4)|12" (6")|8|1|3--18 (\+1--4)|3--18|Squirt acid|Nil|Standard|Squirt acid|L (10'--20' long)|Non-|Neutral|Nil|Nil|Rare|1--6|15\%|C|V|390\+10/hp
 ant_giant|Giant Ant||Ant|16|3|18"|2|1|1--6|1--6|Nil|Nil|Standard||S (2' long)|Animal|Neutral|Nil|Nil|Rare|1--100|10\%|Q (\x3), S|I|20\+2/hp
 ant_queen|Queen Ant||Ant|10|3|Nil|10|0|Nil|Nil|Nil|Nil|Standard||S|Animal|Neutral|Nil|Nil|Rare|1|10\%|Q (\x3), S|I|0
 ant_warrior|Warrior Ant||Ant|16|3|18"|3|2|2--8\?3-12|2--8/3--12|Poison sting|Nil|Standard|Poison sting|S (2' long)|Animal|Neutral|Nil|Nil|Rare|1--20|10\%|Q (\x3), S|II|40\+3/hp
@@ -172,10 +172,10 @@ dryad|Dryad|||16|9|12"|2|1|Dagger|Dagger|Charm|Magic use|50\%|Charm, magic use|M
 dwarf|Dwarf|Dwarves||19|4|6"|1|1|1--8 or by weapon|1--8|+1 against orcs, goblins, hobgoblins|ogres, trolls, giants -4 to hit; save magic\?poison at 4 levels higher|Special|+1 against orcs, goblins, hobgoblins; ogres, trolls, giants -4 to hit; save magic\?poison at 4 levels higher|S (4'+ tall)|Very|Lawful Good|Nil*|Nil*|Common|40--400|50\%|Individuals M (\x5); G, Q, (\x20), R|III|53\+1/hp
 dwarf_mountain|Mountain Dwarf|Mountain Dwarves||18|4|6"|1+1|1|1--8 or by weapon|1--8|+1 against orcs, goblins, hobgoblins|ogres, trolls, giants -4 to hit; save magic\?poison at 4 levels higher|Special|+1 against orcs, goblins, hobgoblins; ogres, trolls, giants -4 to hit; save magic\?poison at 4 levels higher|S (4\half'+ tall)|Very|Lawful Good|Nil*|Nil*|Common|40--400|50\%|Individuals M (\x5); G, Q, (\x20), R|III|118\+2/hp
 eagle_giant|Giant Eagle|||20|7|3"/48"|4|3|1--6\?1--6\?2--12|1--6\?1--6\?2--12|Diving (+4 to hit, 2\x2--12)|Eyesight|Standard|Diving (+4 to hit, 2\x2--12); eyesight|M (20' wing spread)|Average|Neutral|Nil|Nil|Rare|1--20|20\%|Q, C (magic only)|III|150\+4/hp
-ear_seaker|Ear Seeker|||20|9|1"|\sfrac{1}{8}|1|Lay eggs in ear|special|Nil|Nil|Standard||S (about \half" long)|Non|Neutral|Nil|Nil|Very rare|1--4|90\%|Nil|Nil|Nil
-eel_electric|Electric Eel||Eel|16|9|12"|2|1|1--3|1--3|Jolt (1, 2, or 3D8)|Nil|Standard|Jolt (1, 2, or 3D8)|M (9' long)|Non|Neutral|Nil|Nil|Rare|1--3|Nil|Nil|III|65\+2/hp
-eel_giant|Giant Eel||Eel|15|6|9"|5|1|3--18|3--18|Nil|Nil|Standard||M (20' long)|Non|Neutral|Nil|Nil|Uncommon|1--4|Nil|Nil|II|49\+1/hp
-eel_weed|Weed Eel||Eel|20|8|15"|1-1|1|1|1|Poison|Camouflage|Standard|Poison|S (6' long)|Non|Neutral|Nil|Nil|Very rare|10--60|100\%|O, P, R|III|150\+6/hp
+ear_seaker|Ear Seeker|||20|9|1"|\sfrac{1}{8}|1|Lay eggs in ear|special|Nil|Nil|Standard||S (about \half" long)|Non-|Neutral|Nil|Nil|Very rare|1--4|90\%|Nil|Nil|Nil
+eel_electric|Electric Eel||Eel|16|9|12"|2|1|1--3|1--3|Jolt (1, 2, or 3D8)|Nil|Standard|Jolt (1, 2, or 3D8)|M (9' long)|Non-|Neutral|Nil|Nil|Rare|1--3|Nil|Nil|III|65\+2/hp
+eel_giant|Giant Eel||Eel|15|6|9"|5|1|3--18|3--18|Nil|Nil|Standard||M (20' long)|Non-|Neutral|Nil|Nil|Uncommon|1--4|Nil|Nil|II|49\+1/hp
+eel_weed|Weed Eel||Eel|20|8|15"|1-1|1|1|1|Poison|Camouflage|Standard|Poison|S (6' long)|Non-|Neutral|Nil|Nil|Very rare|10--60|100\%|O, P, R|III|150\+6/hp
 efreeti|Efreeti|Efreet||10|2|9"//24"|10|1|3--24|3--24|Magic use|Resist fire damage|Standard|Magic use|L (12' tall)|Very|Neutral|Nil|Nil|Very rare|1|Nil|Nil|VII|1950\+14/hp
 elemental_air|Air Elemental||Elemental|12/9/7|2|36"|8/12/16|1|2--20|2--20|Whirlwind|Hit only by +2 weapons|Standard|Whirlwind; Hit only by +2 weapons|L|Low|Neutral|Nil|Nil|Very rare|1|Nil|Nil|VII|2850\+15/hp
 elemental_air_8hd|Air Elemental||Elemental|12|2|36"|8|1|2--20|2--20|Whirlwind|Hit only by +2 weapons|Standard|Whirlwind; Hit only by +2 weapons|L|Low|Neutral|Nil|Nil|Very rare|1|Nil|Nil|VI|825\+10/hp
@@ -207,7 +207,8 @@ eye_of_the_deep_12hd|Eye of the Deep|Eyes of the Deep||9|5|6"|12|3|2--8\?2--8\?1
 ghast|Ghast|||15|4|15"|4|3|1--4\?1--4\?1--8|2\x1--4\?1--8|Nausea, paralyzation|Immune to sleep and charm|Standard|Nausea, paralyzation; Immune to sleep and charm|M|Very|Chaotic Evil|Nil|Nil|Rare|1--6|10\%|B, Q, R, S, T|IV|190\+4/hp
 ghoul|Ghoul|||16|6|9"|2|3|1--3\?1--3\?1--6|2\x1--3\?1--6|Paralyzation|Immune to sleep and charm|Standard|Paralyzation; Immune to sleep and charm|M|Low|Chaotic Evil|Nil|Nil|Uncommon|2--24|20\%|B, T|III|65\+2/hp
 gnoll|Gnoll|||16|5|9"|2|1|2--8 or by weapon|2--8|Nil|Nil|Standard||L (7'+ tall)|Low-average|Chaotic Evil|Nil|Nil|Uncommon|20--200|20\%|Individuals L, M; D, Q (\x5), S in lair|II|28\+2/hp
-gnome|Gnome|||19|5|6"|1|1|1--6 or by weapon|1--6|+1 against kobolds, goblins|gnolls, bugbears, ogres, trolls giants -4 to hit; save magic\?poison at 4 levels higher|Special|+1 against kobolds, goblins; gnolls, bugbears, ogres, trolls giants -4 to hit; save magic\?poison at 4 levels higher|S (3'+ tall)|Very|Lawful Good|Nil|Nil|Rare|40--400|50\%|Individuals M (\x3); C, Q (\x20) in lair|II|22\+1/hp
+gnome|Gnome|||19|5|6"|1|1|1--6 or by weapon|1--6|+1 against kobolds, goblins|Gnolls, bugbears, ogres, trolls giants -4 to hit; save magic\?poison at 4 levels higher|Special|+1 against kobolds, goblins; Gnolls, bugbears, ogres, trolls giants -4 to hit; save magic\?poison at 4 levels higher|S (3'+ tall)|Very|Lawful Good|Nil|Nil|Rare|40--400|50\%|Individuals M (\x3); C, Q (\x20) in lair|II|22\+1/hp
+gray_ooze|Gray Ooze|||16|8|1"|3+3|1|2--16|2--16|Corrosive properties, possible psionics|Immune to most spells|Special|Corrosive properties, possible psionics; Immune to most spells|M--L|Animal|Neutral|21--121|E\?Nil|Rare|1--3|Nil|Nil|IV|200\+5/hp
 harpy|Harpy|Harpies||16|7|6"/15"|3|3|1--3\?1--3\?1--6|2\x1--3\?1--6|Singing, charm|Nil|Standard|Singing, charm|M|Low|Chaotic Evil|Nil|Nil|Rare|2--12|25\%|C|III|145\+3/hp
 hobgoblin|Hobgoblin|||18|5|9"|1+1|1|1--8 or by weapon|1--8|Nil|Nil|Standard||M (6\half' tall)|Average|Lawful Evil|Nil|Nil|Uncommon|20--200|25\%|Individuals J, M; D, Q (\x5) in lair|I|20\+2/hp
 hobgoblin_leader|Hobgoblin Leader|||16|5|9"|3 (9 hp)|1|1--8 or by weapon|1--8|Nil|Nil|Standard||M (6\half' tall)|Average|Lawful Evil|Nil|Nil|Uncommon|20--200|25\%|Individuals J, M; D, Q (\x5) in lair|II|50\+3/hp
@@ -219,6 +220,7 @@ kobold_guard|Kobold Guard|||20|6|6"|1-1 (4 hp)|1|1--6 or by weapon|1--6|Nil|Nil|
 kobold_leader|Kobold Leader|||20|6|6"|1-1 (4 hp)|1|1--6 or by weapon|1--6|Nil|Nil|Standard||S (3' tall)|Average-low|Lawful Evil|Nil|Nil|Uncommon|40--400|40\%|Individuals J; O, Q (\x5) in lair|I|10\+1/hp
 orc|Orc|||19|6|9"|1|1|1--8 or by weapon|1--8|Nil|Nil|Standard||M (6'+ tall)|Average-low|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|10\+1/hp
 rat_giant|Giant Rat|||21|7|12"//6"|\half|1|1--3|1--3|Disease, +5\% chance per wound|Nil|Standard|Disease, +5\% chance per wound|S|Semi-|Neutral Evil|Nil|Nil|Common|5--50|10\%|C|III|85\+4/hp
+rot_grub|Rot Grub|||-|9|1"|\sfrac{1}{8}|0|Nil|Nil|Burrow into flesh|Nil|Standard|Burrow into flesh|S|Non-|Neutral|Nil|Nil|Rare|5--20|Nil|Nil|Nil|Nil
 stirge|Stirge|||18|8|3"//18"|1+1|1|1--3|1--3|Attack as 4HD monster, drain blood (1--4)|Nil|Standard|Attack as 4HD monster, drain blood (1--4)|S|Animal|Neutral|Nil|Nil|Uncommon|3--30|60\%|D|II|36\+2/hp
 troll|Troll|||13|4|12"|6+6|3|5--8\?5--8\?2--12|2\x5--8\?2--12|Nil|Surprised on a 1 only, regeneration (+3/r)|Standard|Surprised on a 1 only, regeneration (+3/r)|L (9'+ tall)|Low|Chaotic Evil|Nil|Nil|Uncommon|1--12|40\%|D|VI|525\+8/hp
 wight|Wight|||15|5|12"|4+3|1|1--4|1--4|Energy drain|Silver or magic weapons to hit, immune to sleep, hold, charm, cold, poison, paralysis|Special|Energy drain; Silver or magic weapons to hit, immune to sleep, hold, charm, cold, poison, paralysis|M|Average|Lawful Evil|Nil|Nil|Uncommon|2--16|70\%|B|VI|540\+5/hp
