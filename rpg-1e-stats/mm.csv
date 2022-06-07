@@ -224,6 +224,12 @@ ogre_chieftain|Ogre Chieftain|||13|3|9"|7 (34--37 hp)|1|4--14 or by weapon|4--14
 ogre_female|Ogre Female|||15|5|9"|4+1 (6 max per)|1|2--8 or by weapon|2--8|Nil|Nil|Standard||L (9'+ tall)|Low|Chaotic Evil|Nil|Nil|Common|2--20|20\%|Individuals M (\x10); Q, B, S in lair|III|90\+5/hp
 ogre_child|Ogre Child|Ogre Children||20|6|9"|1-1|1|1--6 or by weapon|1--6|Nil|Nil|Standard||M|Low|Chaotic Evil|Nil|Nil|Common|2--20|20\%|Individuals M (\x10); Q, B, S in lair|I|10\+1/hp
 orc|Orc|||19|6|9"|1|1|1--8 or by weapon|1--8|Nil|Nil|Standard||M (6'+ tall)|Average-low|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|10\+1/hp
+orc_leader|Orc Leader|||19|6|9"|1 (8 hp)|1|1--8 or by weapon|1--8|Nil|Nil|Standard||M (6'+ tall)|Average-low|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|10\+1/hp
+orc_assistant|Orc Assistant|||19|6|9"|1 (8 hp)|1|1--8 or by weapon|1--8|Nil|Nil|Standard||M (6'+ tall)|Average-low|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|10\+1/hp
+orc_subchief|Orc Subchief|||16|4|9"|2 (11 hp)|1|2--7 or by weapon|2--7|Nil|Nil|Standard||M (6'+ tall)|Average|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|20\+2/hp
+orc_guard|Orc Guard|||16|4|9"|2 (11 hp)|1|2--7 or by weapon|2--7|Nil|Nil|Standard||M (6'+ tall)|Average|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|20\+2/hp
+orc_chief|Orc Chief|||16|4|9"|3 (13--16 hp)|1|2--8 or by weapon|2--8|Nil|Nil|Standard||M (6'+ tall)|Average-high|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|20\+2/hp
+orc_bodyguard|Orc Bodyguard|||16|4|9"|3 (13--16 hp)|1|2--8 or by weapon|2--8|Nil|Nil|Standard||M (6'+ tall)|Average-high|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|20\+2/hp
 rat_giant|Giant Rat|||21|7|12"//6"|\half|1|1--3|1--3|Disease, +5\% chance per wound|Nil|Standard|Disease, +5\% chance per wound|S|Semi-|Neutral Evil|Nil|Nil|Common|5--50|10\%|C|III|85\+4/hp
 rot_grub|Rot Grub|||-|9|1"|\sfrac{1}{8}|0|Nil|Nil|Burrow into flesh|Nil|Standard|Burrow into flesh|S|Non-|Neutral|Nil|Nil|Rare|5--20|Nil|Nil|Nil|Nil
 stirge|Stirge|||18|8|3"//18"|1+1|1|1--3|1--3|Attack as 4HD monster, drain blood (1--4)|Nil|Standard|Attack as 4HD monster, drain blood (1--4)|S|Animal|Neutral|Nil|Nil|Uncommon|3--30|60\%|D|II|36\+2/hp
