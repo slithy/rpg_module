@@ -1,0 +1,53 @@
+%% rpg-dcc-stats.def
+%
+% Dungeon Crawl Classics stats for the Role-Playing Game Module class
+%
+% Copyright 2023 Michael C. Davis
+%
+% LICENSE FOR THE WORK
+%
+% This work consists of the following files:
+%    rpg-module.cls
+%    rpg-basic-stats.sty
+%    rpg-basic-stats.def
+%    rpg-1e-stats.sty
+%    rpg-1e-stats.def
+%    rpg-dcc-stats.sty
+%    rpg-dcc-stats.def
+%    doc/rpg-module.tex
+%
+% This work may be distributed and/or modified under the conditions of the LaTeX
+% Project Public License, either version 1.3 of this license or (at your option)
+% any later version. The latest version of this license can be found at:
+% http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX version
+% 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `author-maintained'.
+% 
+% The Author and Maintainer of this work is Michael C. Davis
+%
+%
+% LICENSE FOR COMPILED WORKS
+%
+% You may distribute compiled works generated using the work as specified in
+% Clause 3 of the LaTeX Project Public License. If you incorporate Open Gaming
+% Content into the compiled work, you must also comply with the terms of that
+% license.
+%
+%
+% USAGE
+%
+% See the file rpg-module.pdf (source file doc/rpg-module.tex) for documentation. 
+% There are a number of worked examples in the examples/ directory.
+%
+% Technical support is provided on GitHub:
+%
+%    https://github.com/slithy/rpg_module
+%
+% and on the Dragonsfoot Forums:
+%
+%    http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
+
+\monster[Lizard Men]{lizardman}{Lizard Man}{\minus 2|bite +3 melee (1d4 and roll) or club +2 melee (1d4)|14|1d8|30' or swim 30'|1d20|roll, move silently|+2|\minus 1|\minus 1|N}
+

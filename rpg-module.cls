@@ -2,7 +2,7 @@
 %
 % A Role-Playing Game Module class for LaTeX
 %
-% Copyright 2017 Michael C. Davis
+% Copyright 2023 Michael C. Davis
 %
 % LICENSE FOR THE WORK
 %
@@ -12,6 +12,8 @@
 %    rpg-basic-stats.def
 %    rpg-1e-stats.sty
 %    rpg-1e-stats.def
+%    rpg-dcc-stats.sty
+%    rpg-dcc-stats.def
 %    doc/rpg-module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
