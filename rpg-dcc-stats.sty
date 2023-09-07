@@ -53,8 +53,20 @@
 
 % DCC fonts
 \RequirePackage{fontspec}
-\newfontfamily\titlefont{Duvall}
-\setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
+\defaultfontfeatures{Ligatures=TeX}
+\newfontfamily\titlefont{DuvallSmallCaps}
+\newfontfamily\souvenir{Souvenir SSi}
+\newfontfamily\souvenirbold{Souvenir SSi Semi Bold}
+\setmainfont{TeX Gyre Pagella}
+
+% Map area macro
+\newcommand{\area}[2]{%
+   {\souvenirbold\textbf Area #1 --- #2:}%
+   \phantomsection\label{area#1}%
+}
+\newcommand{\arearef}[1]{%
+   Area \hyperref[area#1]{#1}%
+}
 
 \RequirePackage{tabularx}
 
@@ -67,25 +79,29 @@
    \ifcase\thecurrentstat
       \pgfkeys{/#1/Init/.initial = {#2}}
    \or
-      \pgfkeys{/#1/Atk/.initial  = {#2}}
+      \pgfkeys{/#1/Atk/.initial = {#2}}
    \or
-      \pgfkeys{/#1/AC/.initial   = {#2}}
+      \pgfkeys{/#1/AC/.initial = {#2}}
    \or
-      \pgfkeys{/#1/HD/.initial   = {#2}}
+      \pgfkeys{/#1/HD/.initial = {#2}}
    \or
-      \pgfkeys{/#1/MV/.initial   = {#2}}
+      \pgfkeys{/#1/MV/.initial = {#2}}
    \or
-      \pgfkeys{/#1/Act/.initial  = {#2}}
+      \pgfkeys{/#1/Act/.initial = {#2}}
    \or
-      \pgfkeys{/#1/SP/.initial   = {#2}}
+      \pgfkeys{/#1/SP/.initial = {#2}}
+   \or
+      \pgfkeys{/#1/CritTable/.initial = {#2}}
+   \or
+      \pgfkeys{/#1/CritDie/.initial = {#2}}
    \or
       \pgfkeys{/#1/Fort/.initial = {#2}}
    \or
-      \pgfkeys{/#1/Ref/.initial  = {#2}}
+      \pgfkeys{/#1/Ref/.initial = {#2}}
    \or
       \pgfkeys{/#1/Will/.initial = {#2}}
    \or
-      \pgfkeys{/#1/AL/.initial   = {#2}}
+      \pgfkeys{/#1/AL/.initial = {#2}}
    \fi
 }
 
@@ -123,6 +139,7 @@
    hp~#4;
    MV~\pgfkeys{/#2/MV};
    Act~\pgfkeys{/#2/Act};
+   Crit~\pgfkeys{/#2/CritTable}/\pgfkeys{/#2/CritDie};
    SP~\pgfkeys{/#2/SP};
    SV Fort~\pgfkeys{/#2/Fort}, Ref~\pgfkeys{/#2/Ref}, Will~\pgfkeys{/#2/Will};
    AL~\pgfkeys{/#2/AL}.%

@@ -49,5 +49,5 @@
 %
 %    http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
 
-\monster[Lizard Men]{lizardman}{Lizard Man}{\minus 2|bite +3 melee (1d4 and roll) or club +2 melee (1d4)|14|1d8|30' or swim 30'|1d20|roll, move silently|+2|\minus 1|\minus 1|N}
+\monster[Lizard Men]{lizardman}{Lizard Man}{\minus 2|bite +3 melee (1d4 and roll) or club +2 melee (1d4)|14|1d8|30' or swim 30'|1d20|roll, move silently|M or III|d6|+2|\minus 1|\minus 1|N}
 
