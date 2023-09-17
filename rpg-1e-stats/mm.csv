@@ -230,7 +230,7 @@ orc_subchief|Orc Subchief|||16|4|9"|2 (11 hp)|1|2--7 or by weapon|2--7|Nil|Nil|S
 orc_guard|Orc Guard|||16|4|9"|2 (11 hp)|1|2--7 or by weapon|2--7|Nil|Nil|Standard||M (6'+ tall)|Average|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|20\+2/hp
 orc_chief|Orc Chief|||16|4|9"|3 (13--16 hp)|1|2--8 or by weapon|2--8|Nil|Nil|Standard||M (6'+ tall)|Average-high|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|20\+2/hp
 orc_bodyguard|Orc Bodyguard|||16|4|9"|3 (13--16 hp)|1|2--8 or by weapon|2--8|Nil|Nil|Standard||M (6'+ tall)|Average-high|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|20\+2/hp
-rat_giant|Giant Rat|||21|7|12"//6"|\half|1|1--3|1--3|Disease, +5\% chance per wound|Nil|Standard|Disease, +5\% chance per wound|S|Semi-|Neutral Evil|Nil|Nil|Common|5--50|10\%|C|III|85\+4/hp
+rat_giant|Giant Rat|||21|7|12"//6"|\half|1|1--3|1--3|Disease, +5\% chance per wound|Nil|Standard|Disease, +5\% chance per wound|S|Semi-|Neutral Evil|Nil|Nil|Common|5--50|10\%|C|I|7\+1/hp
 rot_grub|Rot Grub|||-|9|1"|\sfrac{1}{8}|0|Nil|Nil|Burrow into flesh|Nil|Standard|Burrow into flesh|S|Non-|Neutral|Nil|Nil|Rare|5--20|Nil|Nil|Nil|Nil
 stirge|Stirge|||18|8|3"//18"|1+1|1|1--3|1--3|Attack as 4HD monster, drain blood (1--4)|Nil|Standard|Attack as 4HD monster, drain blood (1--4)|S|Animal|Neutral|Nil|Nil|Uncommon|3--30|60\%|D|II|36\+2/hp
 troll|Troll|||13|4|12"|6+6|3|5--8\?5--8\?2--12|2\x5--8\?2--12|Nil|Surprised on a 1 only, regeneration (+3/r)|Standard|Surprised on a 1 only, regeneration (+3/r)|L (9'+ tall)|Low|Chaotic Evil|Nil|Nil|Uncommon|1--12|40\%|D|VI|525\+8/hp
