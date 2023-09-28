@@ -1,2 +1,7 @@
 Key|Singular|Plural|Category|THACO|AC|MV|HD|#AT|Damage (long)|Damage (short)|SA|SD|MR|Special|Size|Int|Alignment|Psionic|Attack/Defense Modes|Frequency|No. Appearing|% in Lair|Treasure Type|Level|XP
 |||||||||||||||||||||||||
+coffer_corpse|Coffer Corpse|||16|8|6"|2|1|1--6 or weapon type|1--6|Nil|Can only be hit by magical weapons|Immune to sleep, charm, mind-affecting spells|Can only be hit by magical weapons; immune to sleep, charm|M|Low|Chaotic Evil|Nil|Nil|Rare|1|80\%|B|II|36\+2/hp
+gibberling|Gibberling|||17|10|9"|1|1|1--8|1--8|morale checks for hirelings every round|Nil|Standard|morale checks for hirelings every round|M|Low|Chaotic Neutral|Nil|Nil|Uncommon|40--400|40\%|D|I|14\+1/hp
+grimlock|Grimlock|||16|5|12"|2|1|1--6 or by weapon|1--6|Nil|Immune to vision based spells|Saves as F6||M|Average|Neutral Evil|Nil|Nil|Uncommon|20--200|50\%|Individuals K, L, M;\@ in lair B|II|28\+2/hp
+grimlock_leader|Grimlock Leader|||16|4|12"|3|1|1--6 or by weapon|1--6|Nil|Immune to vision based spells|Saves as F6||M|Average|Neutral Evil|Nil|Nil|Uncommon|20--200|50\%|Individuals K, L, M;\@ in lair B|III|50\+3/hp
+grimlock_champion|Grimlock Champion|||15|3|12"|4|1|1--6 or by weapon|1--6|Nil|Immune to vision based spells|Saves as F6||M|Average|Neutral Evil|Nil|Nil|Uncommon|20--200|50\%|Individuals K, L, M;\@ in lair B|III|85\+4/hp

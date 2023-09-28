@@ -204,6 +204,10 @@ eye_of_the_deep|Eye of the Deep|Eyes of the Deep||10/9|5|6"|10--12|3|2--8\?2--8\
 eye_of_the_deep_10hd|Eye of the Deep|Eyes of the Deep||10|5|6"|10|3|2--8\?2--8\?1--6|2\x2--8\?1--6|Stunning, magic use|Nil|Standard|Stunning, magic use|L (3' dia.)|Very|Lawful Evil|Nil|Nil|Very rare|1|20\%|R|VII|2550\+14/hp
 eye_of_the_deep_11hd|Eye of the Deep|Eyes of the Deep||10|5|6"|11|3|2--8\?2--8\?1--6|2\x2--8\?1--6|Stunning, magic use|Nil|Standard|Stunning, magic use|L (4' dia.)|Very|Lawful Evil|Nil|Nil|Very rare|1|20\%|R|VIII|3700\+16/hp
 eye_of_the_deep_12hd|Eye of the Deep|Eyes of the Deep||9|5|6"|12|3|2--8\?2--8\?1--6|2\x2--8\?1--6|Stunning, magic use|Nil|Standard|Stunning, magic use|L (5' dia.)|Very|Lawful Evil|Nil|Nil|Very rare|1|20\%|R|VIII|3700\+16/hp
+frog_giant|Giant Frog||Frog|19--16|7|3"//9"|1--3|1|1--3/1--6/2--8|1--3/1--6/2--8|Surprise on 1--4; Tongue attack +4 to pull opponent in and do max damage|Nil|Standard|Surprise on 1--4; Sticky tongue|S to M|Non-|Neutral|Nil|Nil|Uncommon|5--40|Nil|Nil|II|45\+3/hp
+frog_giant_1hd|Giant Frog||Frog|19|7|3"//9"|1|1|1--3|1--3|Surprise on 1--4; Tongue attack +4 to pull opponent in and do max damage|Nil|Standard|Surprise on 1--4; Sticky tongue|S|Non-|Neutral|Nil|Nil|Uncommon|5--40|Nil|Nil|II|45\+3/hp
+frog_giant_2hd|Giant Frog||Frog|16|7|3"//9"|2|1|1--6|1--6|Surprise on 1--4; Tongue attack +4 to pull opponent in and do max damage|Nil|Standard|Surprise on 1--4; Sticky tongue|M|Non-|Neutral|Nil|Nil|Uncommon|5--40|Nil|Nil|II|45\+3/hp
+frog_giant_3hd|Giant Frog||Frog|16|7|3"//9"|3|1|2--8|2--8|Surprise on 1--4; Tongue attack +4 to pull opponent in and do max damage|Nil|Standard|Surprise on 1--4; Sticky tongue|S to M|Non-|Neutral|Nil|Nil|Uncommon|5--40|Nil|Nil|II|45\+3/hp
 ghast|Ghast|||15|4|15"|4|3|1--4\?1--4\?1--8|2\x1--4\?1--8|Nausea, paralyzation|Immune to sleep and charm|Standard|Nausea, paralyzation; Immune to sleep and charm|M|Very|Chaotic Evil|Nil|Nil|Rare|1--6|10\%|B, Q, R, S, T|IV|190\+4/hp
 ghoul|Ghoul|||16|6|9"|2|3|1--3\?1--3\?1--6|2\x1--3\?1--6|Paralyzation|Immune to sleep and charm|Standard|Paralyzation; Immune to sleep and charm|M|Low|Chaotic Evil|Nil|Nil|Uncommon|2--24|20\%|B, T|III|65\+2/hp
 gnoll|Gnoll|||16|5|9"|2|1|2--8 or by weapon|2--8|Nil|Nil|Standard||L (7'+ tall)|Low-average|Chaotic Evil|Nil|Nil|Uncommon|20--200|20\%|Individuals L, M; D, Q (\x5), S in lair|II|28\+2/hp
@@ -218,6 +222,15 @@ hobgoblin_chief|Hobgoblin Chief|||15|2|9"|4 (22 hp)|1|2--11 or by weapon|2--11|N
 kobold|Kobold|||21|7|6"|\half|1|1--4 or by weapon|1--4|Nil|Nil|Standard||S (3' tall)|Average-low|Lawful Evil|Nil|Nil|Uncommon|40--400|40\%|Individuals J; O, Q (\x5) in lair|I|5\+1/hp
 kobold_guard|Kobold Guard|||20|6|6"|1-1 (4 hp)|1|1--6 or by weapon|1--6|Nil|Nil|Standard||S (3' tall)|Average-low|Lawful Evil|Nil|Nil|Uncommon|40--400|40\%|Individuals J; O, Q (\x5) in lair|I|10\+1/hp
 kobold_leader|Kobold Leader|||20|6|6"|1-1 (4 hp)|1|1--6 or by weapon|1--6|Nil|Nil|Standard||S (3' tall)|Average-low|Lawful Evil|Nil|Nil|Uncommon|40--400|40\%|Individuals J; O, Q (\x5) in lair|I|10\+1/hp
+men_bandit|Bandit||Men|20*|By armor type|By armor type|1--6hp|1|By weapon type|By weapon type|Leader types|Standard|Standard||M|Mean: average to very|Neutral|Leader types|Leader types|Common|20--200|20\%|Individual M, A in lair|I|10\+1/hp
+men_brigand|Brigand||Men|20*|By armor type|By armor type|1--6hp|1|By weapon type|By weapon type|Leader types|Standard|Standard||M|Mean: average to very|Chaotic Evil|Leader types|Leader types|Common|20--200|20\%|Individual M, A in lair|I|10\+1/hp
+men_berserker|Berserker||Men|20*|7|12"|2--7hp|1 (or 2)|By weapon type|By weapon type|Leader types|Leader types|Standard||M|Mean: average to very|Neutral|Nil|Nil|Rare|10--100|10\%|Individual K, B in lair|I|10\+1/hp
+mule|Mule|||16|7|12"|2|1 or 2|1--2/1--6|1--2/1--6|Nil|Nil|Standard||L|Semi-|Neutral|Nil|Nil|Common|1|Nil|Nil|II|35\+3/hp
+piercer|Piercer|||19--15|3|1"|1--4|1|1--6, 2--12, 3--18 or 4--24|(by size)|95\% likely to surprise|Nil|Standard|95\% change to surprise|S to M|Non-|Neutral|Nil|Nil|Uncommon|3--18|Nil|Nil|I--III|(by size)
+piercer_1hd|Piercer|||19|3|1"|1|1|1--6 |1--6 |95\% likely to surprise|Nil|Standard|95\% change to surprise|S|Non-|Neutral|Nil|Nil|Uncommon|3--18|Nil|Nil|I|10\+1/hp
+piercer_2hd|Piercer|||16|3|1"|2|1|2--12|2--12|95\% likely to surprise|Nil|Standard|95\% change to surprise|S|Non-|Neutral|Nil|Nil|Uncommon|3--18|Nil|Nil|II|20\+2/hp
+piercer_3hd|Piercer|||16|3|1"|3|1|3--18|3--18|95\% likely to surprise|Nil|Standard|95\% change to surprise|M|Non-|Neutral|Nil|Nil|Uncommon|3--18|Nil|Nil|II|35\+3/hp
+piercer_4hd|Piercer|||15|3|1"|4|1|4--24|4--24|95\% likely to surprise|Nil|Standard|95\% change to surprise|M|Non-|Neutral|Nil|Nil|Uncommon|3--18|Nil|Nil|III|60\+4/hp
 ogre|Ogre|||15|5|9"|4+1|1|1--10 or by weapon|1--10|Nil|Nil|Standard||L (9'+ tall)|Low|Chaotic Evil|Nil|Nil|Common|2--20|20\%|Individuals M (\x10); Q, B, S in lair|III|90\+5/hp
 ogre_leader|Ogre Leader|||13|4|9"|7 (30--33 hp)|1|2--12 or by weapon|2--12|Nil|Nil|Standard||L (9'+ tall)|Low|Chaotic Evil|Nil|Nil|Common|2--20|20\%|Individuals M (\x10); Q, B, S in lair|IV|225\+8/hp
 ogre_chieftain|Ogre Chieftain|||13|3|9"|7 (34--37 hp)|1|4--14 or by weapon|4--14|Nil|Nil|Standard||L (9'+ tall)|Low|Chaotic Evil|Nil|Nil|Common|2--20|20\%|Individuals M (\x10); Q, B, S in lair|IV|225\+8/hp
@@ -230,8 +243,16 @@ orc_subchief|Orc Subchief|||16|4|9"|2 (11 hp)|1|2--7 or by weapon|2--7|Nil|Nil|S
 orc_guard|Orc Guard|||16|4|9"|2 (11 hp)|1|2--7 or by weapon|2--7|Nil|Nil|Standard||M (6'+ tall)|Average|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|20\+2/hp
 orc_chief|Orc Chief|||16|4|9"|3 (13--16 hp)|1|2--8 or by weapon|2--8|Nil|Nil|Standard||M (6'+ tall)|Average-high|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|20\+2/hp
 orc_bodyguard|Orc Bodyguard|||16|4|9"|3 (13--16 hp)|1|2--8 or by weapon|2--8|Nil|Nil|Standard||M (6'+ tall)|Average-high|Lawful Evil|Nil|Nil|Common|30--300|35\%|Individuals L; C, O, Q (\x10), S in lair|I|20\+2/hp
+owl_giant|Giant Owl|||16|6|3"/18"|4|3|2--8/2--8/2--5|2--8/2--8/2--5|Surprises on 1--5|Nil|Standard|Surprises on 1--5|M|Very|Neutral|Nil|Nil|Rare|2--5|5\%|Q(\x5), X|III|150\+4/hp
 rat_giant|Giant Rat|||21|7|12"//6"|\half|1|1--3|1--3|Disease, +5\% chance per wound|Nil|Standard|Disease, +5\% chance per wound|S|Semi-|Neutral Evil|Nil|Nil|Common|5--50|10\%|C|I|7\+1/hp
 rot_grub|Rot Grub|||-|9|1"|\sfrac{1}{8}|0|Nil|Nil|Burrow into flesh|Nil|Standard|Burrow into flesh|S|Non-|Neutral|Nil|Nil|Rare|5--20|Nil|Nil|Nil|Nil
+shrieker|Shrieker|||16|7|1"|3|0|Nil|Nil|Nil|Noise|Standard|Noise|S to L|Non-|Neutral|Nil|Nil|Common|2--8|0\%|Nil|I|5\+1/hp
+snake_poisonous|Poisonous Snake||Snake|15|5|15"|4\+2|1|1--3|1--3|Poison (3--18 even if saved)|Nil|Standard|Poison (3--18 even if saved)|L|Animal|Neutral|Nil|Nil|Uncommon|1--6|0\%|Nil|V|390\+5/hp
+spider_huge|Huge Spider||Spider|16|6|18"|2\+2|1|1-6|1--6|Poison, surprise on 1--5|Nil|Standard|Poison, Surprise 1--5|S|Animal|Neutral|Nil|Nil|Common|1-12|0\%|J--N, Q|III|146\+3/hp
+spider_large|Large Spider||Spider|18|8|6"*15"|1\+1|1|1|1|Poison (\+2 on save)|Nil|Standard|Poison (\+2)|S|Non-|Neutral|Nil|Nil|Common|2--20|0\%|J--N|III|65\+2/hp
+skeleton|Skeleton|||19|7|12"|1|1|1--6|1--6|Nil|half damage from sharp and/or edged weapons; fire as normal; holy water does 2--8hp|Immune to sleep, charm, hold and cold-based spells|half-damage from non-blunt; damage from holy water; immune to sleep, charm, hold, cold|M|Non-|N|Nil|Nil|Rare|3--30|Nil|Nil|I|14\+1/hp
 stirge|Stirge|||18|8|3"//18"|1+1|1|1--3|1--3|Attack as 4HD monster, drain blood (1--4)|Nil|Standard|Attack as 4HD monster, drain blood (1--4)|S|Animal|Neutral|Nil|Nil|Uncommon|3--30|60\%|D|II|36\+2/hp
 troll|Troll|||13|4|12"|6+6|3|5--8\?5--8\?2--12|2\x5--8\?2--12|Nil|Surprised on a 1 only, regeneration (+3/r)|Standard|Surprised on a 1 only, regeneration (+3/r)|L (9'+ tall)|Low|Chaotic Evil|Nil|Nil|Uncommon|1--12|40\%|D|VI|525\+8/hp
 wight|Wight|||15|5|12"|4+3|1|1--4|1--4|Energy drain|Silver or magic weapons to hit, immune to sleep, hold, charm, cold, poison, paralysis|Special|Energy drain; Silver or magic weapons to hit, immune to sleep, hold, charm, cold, poison, paralysis|M|Average|Lawful Evil|Nil|Nil|Uncommon|2--16|70\%|B|VI|540\+5/hp
+wolf|Wolf||Wolf|16|7|18"|2\+2|1|2--5|2--5|Howling - 50\% to panic herbivores not being held and calmed|Nil|Standard|Howling|S|Semi-|Neutral|Nil|Nil|Common|2--20|10\%|Nil|II|35\+3/hp
+zombie|Zombie|||16|8|6"|2|1|1--8|1--8|Nil|Nil|Immune to sleep, charm, hold and cold-based spells|Immune to sleep, char, hold and cold-based spells; damage from holy water|M|Non-|N|Nil|Nil|Rare|3--24|Nil|Nil|I|20\+2/hp
