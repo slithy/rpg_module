@@ -2,7 +2,7 @@
 %
 % A Role-Playing Game Module class for LaTeX
 %
-% Copyright 2017 Michael C. Davis
+% Copyright 2023 Michael C. Davis
 %
 % LICENSE FOR THE WORK
 %
@@ -12,6 +12,8 @@
 %    rpg-basic-stats.def
 %    rpg-1e-stats.sty
 %    rpg-1e-stats.def
+%    rpg-dcc-stats.sty
+%    rpg-dcc-stats.def
 %    doc/rpg-module.tex
 %
 % This work may be distributed and/or modified under the conditions of the LaTeX
@@ -70,6 +72,7 @@
 \RequirePackage{comment}                                                        % Allow some sections to conditionally appear or not
 \excludecomment{ifbasicstats}
 \excludecomment{if1estats}
+\excludecomment{ifdccstats}
 % \excludecomment{next_system}{...
 
 
@@ -95,6 +98,7 @@
 
 \DeclareOption{basic}{\def\statstyle@module{rpg-basic-stats.sty}\stepcounter{statsoption}}
 \DeclareOption{1e}{\def\statstyle@module{rpg-1e-stats.sty}\stepcounter{statsoption}}
+\DeclareOption{dcc}{\def\statstyle@module{rpg-dcc-stats.sty}\stepcounter{statsoption}}
 % \DeclareOption{next_system}{...
 
 % Note: the class does not define a default AC display option. The default is handled by the
@@ -107,7 +111,7 @@
 
 \DeclareOption*{
    \ClassError{rpg-module}{Unrecognised option '\CurrentOption'}{Valid options are:\MessageBreak
-      a4paper,letterpaper,tightsqueeze\MessageBreak serif,sansserif,\MessageBreak basic,1e,\MessageBreak acdesc,acac,acb1,acsw}
+      a4paper,letterpaper,tightsqueeze\MessageBreak serif,sansserif,\MessageBreak basic,1e,dcc,\MessageBreak acdesc,acac,acb1,acsw}
 }
 
 \ExecuteOptions{a4paper}                                                        % default paper size is A4
@@ -135,7 +139,7 @@
 \ifcase\thestatsoption\or\or\else
    \ClassError{rpg-module}{you can only select one style}
    {The input file contains a statement like:
-    \protect\documentclass[basic,1e]{rpg-module}.
+    \protect\documentclass[basic,1e,dcc]{rpg-module}.
     You can only select one style for stat blocks.\MessageBreak
     The recognised styles are basic and 1e.\MessageBreak
     The default is basic.}
@@ -370,7 +374,7 @@
 \begin{titlepage}
 \vspace*{\fill}
 \begin{center}
-\Huge \textbf{\@title} \par
+\Huge{\titlefont\@title} \par
 \@author
 \@subtitle
 \@coverimg
@@ -446,24 +450,28 @@
 \renewcommand\thesubsection{\arabic{subsection}}
 \renewcommand\thesubsubsection{\arabic{subsection}\alph{subsubsection}}
 
+\@ifundefined{titlefont}{%
+\newcommand\titlefont{\bfseries}
+}
+
 \titleformat{\part}[block]
-{\LARGE\bfseries\filcenter}
+{\LARGE\titlefont\filcenter}
 {\LARGE PART \thepart:}{0.5em}{\MakeUppercase{#1}}
 
 \titleformat{\section}[hang]
-{\Large\bfseries\filright}
+{\Large\titlefont\filright}
 {}{0em}{\MakeUppercase{#1}}
 
 \titleformat{name=\section,numberless}[block]                                   % how to handle \section*
-{\Large\bfseries\filcenter}
+{\Large\titlefont\filcenter}
 {}{0em}{#1\phantomsection\addcontentsline{toc}{section}{#1}}
 
 \titleformat{\subsection}[hang]
-{\normalfont\bfseries\filright}
+{\normalfont\titlefont\filright}
 {\thesubsection.}{0.5em}{\MakeUppercase{#1}}
 
 \titleformat{\subsubsection}[hang]                                              % \subsubsection is indentical to \subsection except for the numbering
-{\normalfont\bfseries\filright}
+{\normalfont\titlefont\filright}
 {\thesubsubsection.}{0.5em}{\MakeUppercase{#1}}
 
 % Default section spacing, for reference
@@ -483,7 +491,7 @@
 
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
-\titlecontents{part}[0em]{\normalsize\bfseries}{PART \thecontentslabel : \MakeUppercase}{}{\quad\thecontentspage}[\vspace{1.5ex plus .2ex}]
+\titlecontents{part}[0em]{\normalsize\titlefont}{PART \thecontentslabel : \MakeUppercase}{}{\quad\thecontentspage}[\vspace{1.5ex plus .2ex}]
 \titlecontents*{section}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
 \titlecontents*{subsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
 \titlecontents*{subsubsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
