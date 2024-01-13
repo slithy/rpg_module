@@ -306,8 +306,7 @@
 % Key-value pairs, used for stat blocks
 
 \RequirePackage{pgfkeys}
-\input{pgfutil-common}
-\input{pgfmath.code}
+\RequirePackage{pgfmath}
 
 % Define a narrow breaking space
 
