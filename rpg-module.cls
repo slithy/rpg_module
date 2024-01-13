@@ -454,9 +454,13 @@
 \newcommand\titlefont{\bfseries}
 }
 
+\@ifundefined{partname}{%
+\newcommand\partname{PART}
+}
+
 \titleformat{\part}[block]
 {\LARGE\titlefont\filcenter}
-{\LARGE PART \thepart:}{0.5em}{\MakeUppercase{#1}}
+{\LARGE\partname\ \thepart\,:}{0.5em}{\MakeUppercase{#1}}
 
 \titleformat{\section}[hang]
 {\Large\titlefont\filright}
@@ -489,9 +493,8 @@
    \noindent\Large\textbf{\MakeUppercase\contentsname}\vspace{1em}\@starttoc{toc}
 }
 
-
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
-\titlecontents{part}[0em]{\normalsize\titlefont}{PART \thecontentslabel : \MakeUppercase}{}{\quad\thecontentspage}[\vspace{1.5ex plus .2ex}]
+\titlecontents{part}[0em]{\normalsize\titlefont}{\partname \thecontentslabel : \MakeUppercase}{}{\quad\thecontentspage}[\vspace{1.5ex plus .2ex}]
 \titlecontents*{section}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
 \titlecontents*{subsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
 \titlecontents*{subsubsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]

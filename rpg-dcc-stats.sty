@@ -59,14 +59,25 @@
 \newfontfamily\souvenirbold{Souvenir SSi Semi Bold}
 \setmainfont{TeX Gyre Pagella}
 
+% PART
+\renewcommand{\partname}{AREA}
+
 % Map area macro
 \newcommand{\area}[2]{%
-   {\souvenirbold\textbf Area #1 --- #2:}%
+   {\souvenirbold Area #1 --- #2:}%
    \phantomsection\label{area#1}%
 }
 \newcommand{\arearef}[1]{%
    Area \hyperref[area#1]{#1}%
 }
+
+\renewcommand{\subsection}[1]{%
+   {\souvenirbold #1.}%
+   \phantomsection\label{#1}%
+}
+
+% DC spacing macro
+\newcommand{\dc}[1]{DC\,#1}
 
 \RequirePackage{tabularx}
 
