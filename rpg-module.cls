@@ -512,9 +512,10 @@
 
 % Single-column text
 
-\newcommand\onecolumninline[1]{%
 \newlength{\tmpparindent}
 \newlength{\tmpparskip}
+
+\newcommand\onecolumninline[1]{%
 \setlength{\tmpparindent}{\parindent}
 \setlength{\tmpparskip}{\parskip}
 \twocolumn[{
