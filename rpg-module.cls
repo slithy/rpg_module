@@ -87,6 +87,7 @@
 \newif\ifmodule@letterpaper
 \newif\ifmodule@seriffont
 \newif\ifmodule@tightsqueeze
+\newif\ifmodule@dcc
 
 \DeclareOption{letterpaper}{\module@letterpapertrue\stepcounter{papersizeoption}}
 \DeclareOption{a4paper}{\module@letterpaperfalse\stepcounter{papersizeoption}}
@@ -98,7 +99,7 @@
 
 \DeclareOption{basic}{\def\statstyle@module{rpg-basic-stats.sty}\stepcounter{statsoption}}
 \DeclareOption{1e}{\def\statstyle@module{rpg-1e-stats.sty}\stepcounter{statsoption}}
-\DeclareOption{dcc}{\def\statstyle@module{rpg-dcc-stats.sty}\stepcounter{statsoption}}
+\DeclareOption{dcc}{\module@dcctrue\def\statstyle@module{rpg-dcc-stats.sty}\stepcounter{statsoption}}
 % \DeclareOption{next_system}{...
 
 % Note: the class does not define a default AC display option. The default is handled by the
@@ -181,20 +182,25 @@
 
 % Set page margins
 
-\setlength{\oddsidemargin}{0.8cm}
-\setlength{\evensidemargin}{0.8cm}
+\ifmodule@dcc
+  \setlength{\oddsidemargin}{0.95cm}
+  \setlength{\evensidemargin}{0.95cm}
+  \setlength{\columnsep}{0.45cm}
+  \setlength{\textwidth}{19.05cm}
+\else
+  \setlength{\oddsidemargin}{0.8cm}
+  \setlength{\evensidemargin}{0.8cm}
+  \setlength{\columnsep}{1.15cm}
+  \setlength{\textwidth}{19.4cm}
+\fi
 
 \setlength{\topmargin}{2.6cm}
-
 \setlength{\textheight}{25.4cm}
-\setlength{\textwidth}{19.4cm}
 
 \setlength{\marginparsep}{0cm}
 \setlength{\marginparwidth}{0cm}
 
 \setlength{\footskip}{0.7cm}
-
-\setlength{\columnsep}{1.15cm}
 
 \pagenumbering{arabic}
 

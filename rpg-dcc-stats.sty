@@ -54,10 +54,21 @@
 % DCC fonts
 \RequirePackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
+% DCC House Style https://goodman-games.com/third-party-publisher-hub/
+% Chapter headers: Duvall, 24 pt, all caps
+% Section headers: Duvall Bold, 14 point, all caps
+% Section subheaders: Duvall Bold, 14 point, small caps
 \newfontfamily\titlefont{DuvallSmallCaps}
+% Area titles: Cooper Std Black, 10 pt
 \newfontfamily\souvenir{Souvenir SSi}
 \newfontfamily\souvenirbold{Souvenir SSi Semi Bold}
+% Body copy: Book Antiqua, 10 point (italics for read-aloud text)
+% Book Antiqua is an imitation of Palatino. TeX Gyre Pagella is
+% an enhanced version of URW Palladio, which is also based on Palatino.
 \setmainfont{TeX Gyre Pagella}
+\RequirePackage[fontsize=10.3pt]{fontsize}
+% Drop Caps: Romantique Initials, 48 pt, capitalize
+% OGL and credits: Futura and Futura Condensed, 9 pt or smaller
 
 \DeclareCaptionFormat{tabcapformat}{\Large\titlefont\textmd{#1#2#3}}
 \captionsetup[table]{format=tabcapformat}
