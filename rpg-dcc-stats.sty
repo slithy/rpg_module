@@ -66,15 +66,28 @@
 % Book Antiqua is an imitation of Palatino. TeX Gyre Pagella is
 % an enhanced version of URW Palladio, which is also based on Palatino.
 \setmainfont{TeX Gyre Pagella}
-\RequirePackage[fontsize=10.3pt]{fontsize}
+\RequirePackage[fontsize=10pt]{fontsize}
 % Drop Caps: Romantique Initials, 48 pt, capitalize
 % OGL and credits: Futura and Futura Condensed, 9 pt or smaller
+
+% Fake an apostrophe as a raised comma (Duvall font lacks one)
+\newcommand{\apost}{\raisebox{1ex}{,}}
 
 \DeclareCaptionFormat{tabcapformat}{\Large\titlefont\textmd{#1#2#3}}
 \captionsetup[table]{format=tabcapformat}
 
 % PART
 \renewcommand{\partname}{AREA}
+\titleclass{\part}{top}
+\titleformat{\part}[block]
+{\Huge\titlefont\filcenter}
+{\Huge\partname\ \thepart\,:}{0.5em}{\MakeUppercase{#1}}
+
+% Section
+\titleformat{\section}[block]
+{\Large\titlefont\filcenter}
+{}{0em}{\MakeUppercase{#1}\phantomsection\addcontentsline{toc}{section}{\MakeUppercase{#1}}}
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 
 % Map area macro
 \newcommand{\area}[2]{%

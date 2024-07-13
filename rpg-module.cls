@@ -467,9 +467,11 @@
 {\LARGE\titlefont\filcenter}
 {\LARGE\partname\ \thepart\,:}{0.5em}{\MakeUppercase{#1}}
 
+\@ifundefined{section}{%
 \titleformat{\section}[hang]
 {\Large\titlefont\filright}
 {}{0em}{\MakeUppercase{#1}}
+}
 
 \titleformat{name=\section,numberless}[block]                                   % how to handle \section*
 {\Large\titlefont\filcenter}
@@ -499,7 +501,7 @@
 }
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
-\titlecontents{part}[0em]{\normalsize\titlefont}{\partname \thecontentslabel : \MakeUppercase}{}{\quad\thecontentspage}[\vspace{1.5ex plus .2ex}]
+\titlecontents{part}[0em]{\normalsize\titlefont}{\partname\ \thecontentslabel\,: \MakeUppercase}{}{\quad\thecontentspage}[\vspace{1.5ex plus .2ex}]
 \titlecontents*{section}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
 \titlecontents*{subsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
 \titlecontents*{subsubsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
