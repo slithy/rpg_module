@@ -200,7 +200,7 @@
 \setlength{\marginparsep}{0cm}
 \setlength{\marginparwidth}{0cm}
 
-\setlength{\footskip}{0.7cm}
+\setlength{\footskip}{1cm} % Distance separation between baseline of last line of text and baseline of footer.
 
 \pagenumbering{arabic}
 
