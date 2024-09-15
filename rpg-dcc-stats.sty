@@ -82,11 +82,11 @@
 
 \titleformat{\part}[block]
 {\Huge\titlefont\filcenter}
-{\Huge\partname{} \thepart\,:}{0.5em}{\MakeUppercase{#1}}
+{\Huge\partname{} \thepart\,:}{0.5em}{\MakeUppercase{#1}\phantomsection\addcontentsline{pdf}{part}{Area~\thepart: #1}}
 
 \titleformat{name=\part,numberless}[block]
 {\Huge\titlefont\filcenter}
-{}{0em}{\MakeUppercase{#1}\phantomsection\addcontentsline{toc}{part}{\MakeUppercase{#1}}}
+{}{0em}{\MakeUppercase{#1}\phantomsection\addcontentsline{pdf}{part}{#1}}
 
 % Appendix --------------------
 \titleclass{\appendix}{top}[\part]
@@ -96,7 +96,7 @@
 
 \titleformat{\appendix}[block]
 {\Huge\titlefont\filcenter}
-{\Huge APPENDIX \theappendix\,:}{0.5em}{\MakeUppercase{#1}}
+{\Huge APPENDIX \theappendix\,:}{0.5em}{\MakeUppercase{#1}\phantomsection\addcontentsline{pdf}{appendix}{Appendix~\theappendix: #1}}
 
 % Section ---------------------
 \titleclass{\section}{straight}
@@ -109,7 +109,7 @@
 \fontdimen2\font=0.3em% interword space
 \fontdimen3\font=0.1em% interword stretch
 \fontdimen4\font=0.2em% interword shrink
-}{}{0em}{\MakeUppercase{#1}\phantomsection\addcontentsline{toc}{section}{#1}}
+}{}{0em}{\MakeUppercase{#1}\phantomsection\addcontentsline{pdf}{section}{#1}}
 
 % Subsection ----------------------------------
 \titleclass{\subsection}{straight}
@@ -122,7 +122,7 @@
 \fontdimen2\font=0.3em% interword space
 \fontdimen3\font=0.1em% interword stretch
 \fontdimen4\font=0.2em% interword shrink
-}{}{0em}{#1\phantomsection\addcontentsline{toc}{subsection}{#1}}
+}{}{0em}{#1\phantomsection\addcontentsline{pdf}{subsection}{#1}}
 
 % Subsection ------------------
 \renewcommand{\subsubsection}[1]{%
