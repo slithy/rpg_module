@@ -285,8 +285,6 @@
 \renewcommand{\huge}        {\fontsize{16pt}{19.2pt}\selectfont}
 \renewcommand{\Huge}        {\fontsize{17.28pt}{20.74pt}\selectfont}
 
-
-
 % Load the rest of the required packages
 
 \RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry} % Page size
@@ -461,29 +459,32 @@
 
 \@ifundefined{partname}{%
 \newcommand\partname{PART}
-}
-
 \titleformat{\part}[block]
 {\LARGE\titlefont\filcenter}
 {\LARGE\partname\ \thepart\,:}{0.5em}{\MakeUppercase{#1}}
+}% partname
 
 \@ifundefined{section}{%
 \titleformat{\section}[hang]
 {\Large\titlefont\filright}
 {}{0em}{\MakeUppercase{#1}}
-}
 
 \titleformat{name=\section,numberless}[block]                                   % how to handle \section*
 {\Large\titlefont\filcenter}
 {}{0em}{#1\phantomsection\addcontentsline{toc}{section}{#1}}
+}% section
 
+\@ifundefined{subsection}{%
 \titleformat{\subsection}[hang]
 {\normalfont\titlefont\filright}
 {\thesubsection.}{0.5em}{\MakeUppercase{#1}}
+}% subsection
 
+\@ifundefined{subsubsection}{%
 \titleformat{\subsubsection}[hang]                                              % \subsubsection is indentical to \subsection except for the numbering
 {\normalfont\titlefont\filright}
 {\thesubsubsection.}{0.5em}{\MakeUppercase{#1}}
+}% subsubsection
 
 % Default section spacing, for reference
 %
