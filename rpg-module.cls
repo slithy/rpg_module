@@ -163,6 +163,7 @@
 
 \ifmodule@letterpaper
    \PassOptionsToClass{letterpaper}{article}
+   \PassOptionsToClass{twoside}{article}
    \addtolength\voffset{-17.6mm}
    \addtolength\hoffset{2.95mm}
    \newcommand{\ArmourClass}{Armor Class}                                       % Concession to US spelling of Armour
