@@ -462,7 +462,7 @@
 \newcommand\partname{PART}
 \titleformat{\part}[block]
 {\LARGE\titlefont\filcenter}
-{\LARGE\partname\ \thepart\,:}{0.5em}{\MakeUppercase{#1}}
+{\LARGE\partname{}\thepart\,:}{0.5em}{\MakeUppercase{#1}}
 }% partname
 
 \@ifundefined{section}{%
