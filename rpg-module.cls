@@ -87,6 +87,7 @@
 \newif\ifmodule@letterpaper
 \newif\ifmodule@seriffont
 \newif\ifmodule@tightsqueeze
+\newif\ifmodule@dcc
 
 \DeclareOption{letterpaper}{\module@letterpapertrue\stepcounter{papersizeoption}}
 \DeclareOption{a4paper}{\module@letterpaperfalse\stepcounter{papersizeoption}}
@@ -98,7 +99,7 @@
 
 \DeclareOption{basic}{\def\statstyle@module{rpg-basic-stats.sty}\stepcounter{statsoption}}
 \DeclareOption{1e}{\def\statstyle@module{rpg-1e-stats.sty}\stepcounter{statsoption}}
-\DeclareOption{dcc}{\def\statstyle@module{rpg-dcc-stats.sty}\stepcounter{statsoption}}
+\DeclareOption{dcc}{\module@dcctrue\def\statstyle@module{rpg-dcc-stats.sty}\stepcounter{statsoption}}
 % \DeclareOption{next_system}{...
 
 % Note: the class does not define a default AC display option. The default is handled by the
@@ -181,20 +182,25 @@
 
 % Set page margins
 
-\setlength{\oddsidemargin}{0.8cm}
-\setlength{\evensidemargin}{0.8cm}
+\ifmodule@dcc
+  \setlength{\oddsidemargin}{0.95cm}
+  \setlength{\evensidemargin}{0.95cm}
+  \setlength{\columnsep}{0.45cm}
+  \setlength{\textwidth}{19.05cm}
+\else
+  \setlength{\oddsidemargin}{0.8cm}
+  \setlength{\evensidemargin}{0.8cm}
+  \setlength{\columnsep}{1.15cm}
+  \setlength{\textwidth}{19.4cm}
+\fi
 
 \setlength{\topmargin}{2.6cm}
-
 \setlength{\textheight}{25.4cm}
-\setlength{\textwidth}{19.4cm}
 
 \setlength{\marginparsep}{0cm}
 \setlength{\marginparwidth}{0cm}
 
 \setlength{\footskip}{0.7cm}
-
-\setlength{\columnsep}{1.15cm}
 
 \pagenumbering{arabic}
 
@@ -461,9 +467,11 @@
 {\LARGE\titlefont\filcenter}
 {\LARGE\partname\ \thepart\,:}{0.5em}{\MakeUppercase{#1}}
 
+\@ifundefined{section}{%
 \titleformat{\section}[hang]
 {\Large\titlefont\filright}
 {}{0em}{\MakeUppercase{#1}}
+}
 
 \titleformat{name=\section,numberless}[block]                                   % how to handle \section*
 {\Large\titlefont\filcenter}
@@ -493,7 +501,7 @@
 }
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
-\titlecontents{part}[0em]{\normalsize\titlefont}{\partname \thecontentslabel : \MakeUppercase}{}{\quad\thecontentspage}[\vspace{1.5ex plus .2ex}]
+\titlecontents{part}[0em]{\normalsize\titlefont}{\partname\ \thecontentslabel\,: \MakeUppercase}{}{\quad\thecontentspage}[\vspace{1.5ex plus .2ex}]
 \titlecontents*{section}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
 \titlecontents*{subsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
 \titlecontents*{subsubsection}[0em]{\normalsize}{}{}{~\thecontentspage}[\unskip, ][.\vspace{1.5ex plus .2ex}]
@@ -512,9 +520,10 @@
 
 % Single-column text
 
-\newcommand\onecolumninline[1]{%
 \newlength{\tmpparindent}
 \newlength{\tmpparskip}
+
+\newcommand\onecolumninline[1]{%
 \setlength{\tmpparindent}{\parindent}
 \setlength{\tmpparskip}{\parskip}
 \twocolumn[{

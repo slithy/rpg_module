@@ -54,13 +54,49 @@
 % DCC fonts
 \RequirePackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
+% DCC House Style https://goodman-games.com/third-party-publisher-hub/
+% Chapter headers: Duvall, 24 pt, all caps
+% Section headers: Duvall Bold, 14 point, all caps
+% Section subheaders: Duvall Bold, 14 point, small caps
 \newfontfamily\titlefont{DuvallSmallCaps}
+% Area titles: Cooper Std Black, 10 pt
 \newfontfamily\souvenir{Souvenir SSi}
 \newfontfamily\souvenirbold{Souvenir SSi Semi Bold}
+% Body copy: Book Antiqua, 10 point (italics for read-aloud text)
+% Book Antiqua is an imitation of Palatino. TeX Gyre Pagella is
+% an enhanced version of URW Palladio, which is also based on Palatino.
 \setmainfont{TeX Gyre Pagella}
+\RequirePackage[fontsize=10pt]{fontsize}
+% Drop Caps: Romantique Initials, 48 pt, capitalize
+% OGL and credits: Futura and Futura Condensed, 9 pt or smaller
+
+% Fake an apostrophe as a raised comma (Duvall font lacks one)
+\newcommand{\apost}{\raisebox{1ex}{,}}
+
+\DeclareCaptionFormat{tabcapformat}{\Large\titlefont\textmd{#1#2#3}}
+\captionsetup[table]{format=tabcapformat}
 
 % PART
 \renewcommand{\partname}{AREA}
+\titleclass{\part}{top}
+\titleformat{\part}[block]
+{\Huge\titlefont\filcenter}
+{\Huge\partname\ \thepart\,:}{0.5em}{\MakeUppercase{#1}}
+
+% Section
+\titleclass{\section}{straight}
+\titleformat{\section}[block]{%
+\vspace{14pt}\vspace*{-14pt}% fix spacing when heading appears at top of page
+\Large\titlefont\filcenter%
+% Inter-word spacing in Duvall font was too wide, this fixes it
+\fontdimen2\font=0.3em% interword space
+\fontdimen3\font=0.1em% interword stretch
+\fontdimen4\font=0.2em% interword shrink
+}{}{0em}{%
+\MakeUppercase{#1}%
+\phantomsection\addcontentsline{toc}{section}{\MakeUppercase{#1}}}
+
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 
 % Map area macro
 \newcommand{\area}[2]{%
