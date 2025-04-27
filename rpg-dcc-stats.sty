@@ -214,7 +214,11 @@
    MV~\pgfkeys{/#2/MV};
    Act~\pgfkeys{/#2/Act};
    Crit~\pgfkeys{/#2/CritTable}/\pgfkeys{/#2/CritDie};
-   SP~\pgfkeys{/#2/SP};
+   \edef\SP{\pgfkeysvalueof{/#2/SP}}
+   \ifnum\pdfstrcmp{\SP}{none}=\z@
+   \else
+     SP~\pgfkeys{/#2/SP};
+   \fi
    SV Fort~\pgfkeys{/#2/Fort}, Ref~\pgfkeys{/#2/Ref}, Will~\pgfkeys{/#2/Will};
    AL~\pgfkeys{/#2/AL}.%
 }
@@ -224,9 +228,11 @@
 % Usage: \statblock[monster name]{monster key}{no. appearing}{hit points}
 
 \newcommand{\statblock}[4][default]{%
-   \begin{statblockfreestyle}
-   \stats[#1]{#2}{#3}{#4}
-   \end{statblockfreestyle}
+  \begin{statblockfreestyle}
+  \noindent\begin{minipage}{\linewidth}
+  \stats[#1]{#2}{#3}{#4}
+  \end{minipage}
+  \end{statblockfreestyle}
 }
 
 % A few special macros for stat blocks

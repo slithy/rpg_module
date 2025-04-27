@@ -64,8 +64,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{rpg-module}[2017/05/06 Role-Playing Game Module document class]
 
-
-
 % Define which stat block systems are recognised. ONE of these environments should be redefined in
 % the system-specific stat block package.
 
