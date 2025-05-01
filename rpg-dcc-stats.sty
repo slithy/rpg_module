@@ -54,11 +54,19 @@
 % DCC fonts
 \RequirePackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
+
+% Hack for missing apostrophe glyph in Duvall font
+\DeclareUnicodeEncoding{apost}{
+  \input{tuenc.def}
+  \EncodingSymbol{\textquotesingle}{"002C}
+}
+\newcommand*{\apost}{\raisebox{1ex}{\textquotesingle}}
+
 % DCC House Style https://goodman-games.com/third-party-publisher-hub/
 % Chapter headers: Duvall, 24 pt, all caps
 % Section headers: Duvall Bold, 14 point, all caps
 % Section subheaders: Duvall Bold, 14 point, small caps
-\newfontfamily\titlefont{DuvallSmallCaps}
+\newfontfamily\titlefont{DuvallSmallCaps}[NFSSEncoding=apost]
 % Area titles: Cooper Std Black, 10 pt
 \newfontfamily\souvenir{Souvenir SSi}
 \newfontfamily\souvenirbold{Souvenir SSi Semi Bold}
@@ -70,11 +78,11 @@
 % Drop Caps: Romantique Initials, 48 pt, capitalize
 % OGL and credits: Futura and Futura Condensed, 9 pt or smaller
 
-% Fake an apostrophe as a raised comma (Duvall font lacks one)
-\newcommand{\apost}{\raisebox{1ex}{,}}
-
 \DeclareCaptionFormat{tabcapformat}{\Large\titlefont\textmd{#1#2#3}}
 \captionsetup[table]{format=tabcapformat}
+
+% Get a good-looking 1/2 symbol
+\renewcommand\half{$\sfrac{1}{2}$}
 
 % Part -----------------------
 \renewcommand{\partname}{AREA}
