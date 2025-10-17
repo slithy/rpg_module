@@ -62,9 +62,7 @@
 % 1. Holmes Basic stat block options
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{rpg-module}[2017/05/06 Role-Playing Game Module document class]
-
-
+\ProvidesClass{rpg-module}[2025/07/25 Role-Playing Game Module document class]
 
 % Define which stat block systems are recognised. ONE of these environments should be redefined in
 % the system-specific stat block package.
@@ -85,12 +83,15 @@
 \newcounter{acoption}
 
 \newif\ifmodule@letterpaper
+\newif\ifmodule@afourpaper
+\newif\ifmodule@afivepaper
 \newif\ifmodule@seriffont
 \newif\ifmodule@tightsqueeze
 \newif\ifmodule@dcc
 
-\DeclareOption{letterpaper}{\module@letterpapertrue\stepcounter{papersizeoption}}
-\DeclareOption{a4paper}{\module@letterpaperfalse\stepcounter{papersizeoption}}
+\DeclareOption{letterpaper}{\module@letterpapertrue\module@afourpaperfalse\module@afivepaperfalse\stepcounter{papersizeoption}}
+\DeclareOption{a4paper}{\module@letterpaperfalse\module@afourpapertrue\module@afivepaperfalse\stepcounter{papersizeoption}}
+\DeclareOption{a5paper}{\module@letterpaperfalse\module@afourpaperfalse\module@afivepapertrue\stepcounter{papersizeoption}}
 
 \DeclareOption{tightsqueeze}{\module@tightsqueezetrue}
 
@@ -112,7 +113,7 @@
 
 \DeclareOption*{
    \ClassError{rpg-module}{Unrecognised option '\CurrentOption'}{Valid options are:\MessageBreak
-      a4paper,letterpaper,tightsqueeze\MessageBreak serif,sansserif,\MessageBreak basic,1e,dcc,\MessageBreak acdesc,acac,acb1,acsw}
+      a4paper,a5paper,letterpaper,tightsqueeze\MessageBreak serif,sansserif,\MessageBreak basic,1e,dcc,\MessageBreak acdesc,acac,acb1,acsw}
 }
 
 \ExecuteOptions{a4paper}                                                        % default paper size is A4
@@ -122,10 +123,10 @@
 \ProcessOptions\relax
 
 \ifcase\thepapersizeoption\or\or\else
-   \ClassError{rpg-module}{a4paper and letterpaper options are mutually exclusive}
+   \ClassError{rpg-module}{a4paper, a5paper and letterpaper options are mutually exclusive}
    {The input file contains a statement like:\MessageBreak
-    \protect\documentclass[letterpaper,a4paper]{rpg-module}\MessageBreak
-    You can only select one paper size, either letterpaper or a4paper.\MessageBreak
+    \protect\documentclass[letterpaper,a4paper,a5paper]{rpg-module}\MessageBreak
+    You can only select one paper size, either letterpaper, a4paper or a5paper.\MessageBreak
     The default is a4paper.}
 \fi
 
@@ -163,20 +164,28 @@
 
 \ifmodule@letterpaper
    \PassOptionsToClass{letterpaper}{article}
+   \PassOptionsToClass{twoside}{article}
+   \PassOptionsToClass{twocolumn}{article}
    \addtolength\voffset{-17.6mm}
    \addtolength\hoffset{2.95mm}
    \newcommand{\ArmourClass}{Armor Class}                                       % Concession to US spelling of Armour
-\else
+\fi
+\ifmodule@afourpaper
    \PassOptionsToClass{a4paper}{article}
    \PassOptionsToClass{twoside}{article}
+   \PassOptionsToClass{twocolumn}{article}
+   \newcommand{\ArmourClass}{Armour Class}
+\fi
+\ifmodule@afivepaper
+   \PassOptionsToClass{a5paper}{article}
+   \PassOptionsToClass{twoside}{article}
+   \PassOptionsToClass{onecolumn}{article}
    \newcommand{\ArmourClass}{Armour Class}
 \fi
 
-
-
 % Load the standard LaTeX 'article' document class that module is based on
 
-\LoadClass[twocolumn]{article}
+\LoadClass{article}
 
 
 
@@ -200,14 +209,15 @@
 \setlength{\marginparsep}{0cm}
 \setlength{\marginparwidth}{0cm}
 
-\setlength{\footskip}{0.7cm}
+\setlength{\footskip}{1cm} % Distance separation between baseline of last line of text and baseline of footer.
 
 \pagenumbering{arabic}
 
 \ifmodule@letterpaper
    \setlength{\headheight}{0cm}
    \setlength{\headsep}{0cm}
-\else
+\fi
+\ifmodule@afourpaper
    \addtolength{\topmargin}{-\headheight}
    \addtolength{\topmargin}{-\headsep}
    \RequirePackage{fancyhdr}                                                    % Add headers and footers
@@ -220,6 +230,13 @@
       \renewcommand{\footrulewidth}{0pt}
    }
    \pagestyle{plain}
+\fi
+\ifmodule@afivepaper
+   \setlength{\headheight}{0cm}
+   \setlength{\headsep}{0cm}
+   \setlength{\topmargin}{0.95cm}
+   \setlength{\textheight}{18.4cm}
+   \setlength{\textwidth}{12.8cm}
 \fi
 
 
@@ -284,8 +301,6 @@
 \renewcommand{\LARGE}       {\fontsize{13pt}{15.6pt}\selectfont}
 \renewcommand{\huge}        {\fontsize{16pt}{19.2pt}\selectfont}
 \renewcommand{\Huge}        {\fontsize{17.28pt}{20.74pt}\selectfont}
-
-
 
 % Load the rest of the required packages
 
@@ -461,29 +476,32 @@
 
 \@ifundefined{partname}{%
 \newcommand\partname{PART}
-}
-
 \titleformat{\part}[block]
 {\LARGE\titlefont\filcenter}
-{\LARGE\partname\ \thepart\,:}{0.5em}{\MakeUppercase{#1}}
+{\LARGE\partname{}\thepart\,:}{0.5em}{\MakeUppercase{#1}}
+}% partname
 
 \@ifundefined{section}{%
 \titleformat{\section}[hang]
 {\Large\titlefont\filright}
 {}{0em}{\MakeUppercase{#1}}
-}
 
 \titleformat{name=\section,numberless}[block]                                   % how to handle \section*
 {\Large\titlefont\filcenter}
 {}{0em}{#1\phantomsection\addcontentsline{toc}{section}{#1}}
+}% section
 
+\@ifundefined{subsection}{%
 \titleformat{\subsection}[hang]
 {\normalfont\titlefont\filright}
 {\thesubsection.}{0.5em}{\MakeUppercase{#1}}
+}% subsection
 
+\@ifundefined{subsubsection}{%
 \titleformat{\subsubsection}[hang]                                              % \subsubsection is indentical to \subsection except for the numbering
 {\normalfont\titlefont\filright}
 {\thesubsubsection.}{0.5em}{\MakeUppercase{#1}}
+}% subsubsection
 
 % Default section spacing, for reference
 %
