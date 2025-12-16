@@ -304,6 +304,15 @@
 
 % Load the rest of the required packages
 
+% Print On Demand (POD) options
+\ifdefined\pod
+  % Add .125" bleed on three non-binding edges
+  \addtolength\paperwidth{0.125in}
+  \addtolength\paperheight{0.25in}
+  \addtolength\topmargin{0.125in}
+  \addtolength\oddsidemargin{0.125in}
+\fi
+
 \RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry} % Page size
 \RequirePackage[explicit,newparttoc]{titlesec}                                  % Redefine section headings
 \RequirePackage{titletoc}                                                       % Redefine table of contents
