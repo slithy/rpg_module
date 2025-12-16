@@ -310,7 +310,7 @@
   \addtolength\paperwidth{0.125in}
   \addtolength\paperheight{0.25in}
   \addtolength\topmargin{0.125in}
-  \addtolength\oddsidemargin{0.125in}
+  \addtolength\evensidemargin{0.125in}
 \fi
 
 \RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry} % Page size
