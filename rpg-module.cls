@@ -304,15 +304,6 @@
 
 % Load the rest of the required packages
 
-% Print On Demand (POD) options
-\ifdefined\pod
-  % Add .125" bleed on three non-binding edges
-  \addtolength\paperwidth{0.125in}
-  \addtolength\paperheight{0.25in}
-  \addtolength\topmargin{0.125in}
-  \addtolength\evensidemargin{0.125in}
-\fi
-
 \RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry} % Page size
 \RequirePackage[explicit,newparttoc]{titlesec}                                  % Redefine section headings
 \RequirePackage{titletoc}                                                       % Redefine table of contents
@@ -327,7 +318,14 @@
 % Hyperlinks
 
 \RequirePackage[linktocpage]{hyperref}                                          % Allow hyperlinks, only page numbers in TOC are clickable
-\RequirePackage[dvipsnames]{xcolor}                                             % Pre-defined colour names
+\ifdefined\pod
+  \RequirePackage[dvipdfmx]{xcolor}                                             % Colour model compatible with PDF/X-3:2002
+  \selectcolormodel{natural}
+  \usepackage{ninecolors}
+  \selectcolormodel{rgb}
+\else
+  \RequirePackage[dvipsnames]{xcolor}                                           % Pre-defined colour names
+\fi
 \hypersetup{colorlinks=true,
     urlcolor=MidnightBlue,                                                      % Colour for external links
     linkcolor=MidnightBlue,                                                     % Colour for internal links (including Table of Contents)
