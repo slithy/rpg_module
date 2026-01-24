@@ -97,7 +97,7 @@
 
 \titleformat{name=\part,numberless}[block]
 {\Huge\titlefont\filcenter}
-{}{0em}{\MakeUppercase{#1}\phantomsection\addcontentsline{pdf}{part}{#1}}
+{}{0em}{\MakeUppercase{#1}\phantomsection\addcontentsline{pdf}{part}{#1}\markright{\MakeLowercase{#1}}}
 
 % Appendix --------------------
 \titleclass{\appendix}{top}[\part]
@@ -107,7 +107,7 @@
 
 \titleformat{\appendix}[block]
 {\Huge\titlefont\filcenter}
-{\Huge APPENDIX \theappendix\,:}{0.5em}{\MakeUppercase{#1}\phantomsection\addcontentsline{pdf}{appendix}{Appendix~\theappendix: #1}}
+{\Huge APPENDIX \theappendix\,:}{0.5em}{\MakeUppercase{#1}\phantomsection\addcontentsline{pdf}{appendix}{Appendix~\theappendix: #1}\markright{\MakeLowercase{#1}}}
 
 % Section ---------------------
 \titleclass{\section}{straight}

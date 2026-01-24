@@ -82,16 +82,18 @@
 \newcounter{statsoption}
 \newcounter{acoption}
 
-\newif\ifmodule@letterpaper
 \newif\ifmodule@afourpaper
 \newif\ifmodule@afivepaper
+\newif\ifmodule@letterpaper
+\newif\ifmodule@tradepaper
 \newif\ifmodule@seriffont
 \newif\ifmodule@tightsqueeze
 \newif\ifmodule@dcc
 
-\DeclareOption{letterpaper}{\module@letterpapertrue\module@afourpaperfalse\module@afivepaperfalse\stepcounter{papersizeoption}}
-\DeclareOption{a4paper}{\module@letterpaperfalse\module@afourpapertrue\module@afivepaperfalse\stepcounter{papersizeoption}}
-\DeclareOption{a5paper}{\module@letterpaperfalse\module@afourpaperfalse\module@afivepapertrue\stepcounter{papersizeoption}}
+\DeclareOption{letterpaper}{\module@letterpapertrue\module@afourpaperfalse\module@afivepaperfalse\module@tradepaperfalse\stepcounter{papersizeoption}}
+\DeclareOption{a4paper}{\module@letterpaperfalse\module@afourpapertrue\module@afivepaperfalse\module@tradepaperfalse\stepcounter{papersizeoption}}
+\DeclareOption{a5paper}{\module@letterpaperfalse\module@afourpaperfalse\module@afivepapertrue\module@tradepaperfalse\stepcounter{papersizeoption}}
+\DeclareOption{tradepaper}{\module@letterpaperfalse\module@afourpaperfalse\module@afivepaperfalse\module@tradepapertrue\stepcounter{papersizeoption}}
 
 \DeclareOption{tightsqueeze}{\module@tightsqueezetrue}
 
@@ -113,7 +115,7 @@
 
 \DeclareOption*{
    \ClassError{rpg-module}{Unrecognised option '\CurrentOption'}{Valid options are:\MessageBreak
-      a4paper,a5paper,letterpaper,tightsqueeze\MessageBreak serif,sansserif,\MessageBreak basic,1e,dcc,\MessageBreak acdesc,acac,acb1,acsw}
+      a4paper,a5paper,letterpaper,tradepaper,tightsqueeze\MessageBreak serif,sansserif,\MessageBreak basic,1e,dcc,\MessageBreak acdesc,acac,acb1,acsw}
 }
 
 \ExecuteOptions{a4paper}                                                        % default paper size is A4
@@ -123,10 +125,10 @@
 \ProcessOptions\relax
 
 \ifcase\thepapersizeoption\or\or\else
-   \ClassError{rpg-module}{a4paper, a5paper and letterpaper options are mutually exclusive}
+   \ClassError{rpg-module}{a4paper, a5paper, letterpaper and tradepaper options are mutually exclusive}
    {The input file contains a statement like:\MessageBreak
-    \protect\documentclass[letterpaper,a4paper,a5paper]{rpg-module}\MessageBreak
-    You can only select one paper size, either letterpaper, a4paper or a5paper.\MessageBreak
+    \protect\documentclass[letterpaper,a4paper,a5paper,tradepaper]{rpg-module}\MessageBreak
+    You can only select one paper size, either a4paper, a5paper, letterpaper or tradepaper.\MessageBreak
     The default is a4paper.}
 \fi
 
@@ -162,14 +164,6 @@
 \setlength\voffset{-1in}
 \setlength\hoffset{-1in}
 
-\ifmodule@letterpaper
-   \PassOptionsToClass{letterpaper}{article}
-   \PassOptionsToClass{twoside}{article}
-   \PassOptionsToClass{twocolumn}{article}
-   \addtolength\voffset{-17.6mm}
-   \addtolength\hoffset{2.95mm}
-   \newcommand{\ArmourClass}{Armor Class}                                       % Concession to US spelling of Armour
-\fi
 \ifmodule@afourpaper
    \PassOptionsToClass{a4paper}{article}
    \PassOptionsToClass{twoside}{article}
@@ -182,12 +176,23 @@
    \PassOptionsToClass{onecolumn}{article}
    \newcommand{\ArmourClass}{Armour Class}
 \fi
+\ifmodule@letterpaper
+   \PassOptionsToClass{letterpaper}{article}
+   \PassOptionsToClass{twoside}{article}
+   \PassOptionsToClass{twocolumn}{article}
+   \addtolength\voffset{-17.6mm}
+   \addtolength\hoffset{2.95mm}
+   \newcommand{\ArmourClass}{Armor Class}                                       % Concession to US spelling of Armour
+\fi
+\ifmodule@tradepaper
+   \PassOptionsToClass{twoside}{article}
+   \PassOptionsToClass{onecolumn}{article}
+   \newcommand{\ArmourClass}{Armor Class}
+\fi
 
 % Load the standard LaTeX 'article' document class that module is based on
 
 \LoadClass{article}
-
-
 
 % Set page margins
 
@@ -238,12 +243,40 @@
    \setlength{\textheight}{18.4cm}
    \setlength{\textwidth}{12.8cm}
 \fi
+\ifmodule@tradepaper
+   % Trade is a non-standard paper size, set it after loading the class
+   \setlength\paperheight{9in}
+   \setlength\paperwidth{6in}
 
+   % From the Elements of Typographic Style, Chapter 8: Shaping the Page
+   % Page ratio P is 1.5 (6in × 9in) 5th on chromatic scale
+   % Textarea ratio T is 1.7 (tall pentagon)
+   % Spine margin s = Top margin t = 0.5in
+   % Fore-edge e = 2s = 1in
+   % Textblock width m = w - (s+e) = 4.5in
+   % Textblock depth d = m × T = 7.65
+   \setlength{\textwidth}{4.5in}
+   \setlength{\textheight}{7.65in}
+   \setlength{\headheight}{11pt}
+   \setlength{\headsep}{11pt}
+   \setlength{\topmargin}{0.5in}
+   \setlength{\oddsidemargin}{0.5in}
+   \setlength{\evensidemargin}{1in}
 
+   % Headers and footers
+   \RequirePackage{fancyhdr}
+   \fancypagestyle{fancy}{%
+      \fancyhf{} % clear all header and footer fields
+      \fancyhead[LO,RE]{\scshape \rightmark}
+      \fancyhead[RO,LE]{\scshape \thepage}
+      \renewcommand{\headrulewidth}{0pt}
+      \renewcommand{\footrulewidth}{0pt}
+   }
+   \pagestyle{fancy}
+\fi
 
 % Float placement options
 % See p.199-200 of Lamport's "LaTeX" book for details and p.105 of "TeX Unbound" for suggested values
-
 \renewcommand{\topfraction}{0.9}                                                % max fraction of floats at top
 \renewcommand{\bottomfraction}{0.8}                                             % max fraction of floats at bottom
 
@@ -453,8 +486,6 @@
 \end{tabular}
 }}
 
-
-
 % Running heads (used on A4 paper size only)
 
 \newcommand\titlerunning[1]{%
@@ -462,11 +493,16 @@
 }
 
 \ifmodule@letterpaper\else
-   \renewcommand{\partmark}[1]{\markright{\MakeUppercase{#1}}{}}
+   \renewcommand{\partmark}[1]{\markright{\MakeUppercase{#1}}}
    \renewcommand{\sectionmark}[1]{}
    \renewcommand{\subsectionmark}[1]{}
    \renewcommand{\leftmark}{\runningtitle}
    \titlerunning{\@title}
+\fi
+\ifmodule@tradepaper
+   \renewcommand{\partmark}[1]{\markright{\MakeLowercase{#1}}}
+   \renewcommand{\sectionmark}[1]{}
+   \renewcommand{\subsectionmark}[1]{}
 \fi
 
 
