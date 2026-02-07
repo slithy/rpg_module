@@ -251,17 +251,18 @@
    % From the Elements of Typographic Style, Chapter 8: Shaping the Page
    % Page ratio P is 1.5 (6in × 9in) 5th on chromatic scale
    % Textarea ratio T is 1.7 (tall pentagon)
-   % Spine margin s = Top margin t = 0.5in
-   % Fore-edge e = 2s = 1in
-   % Textblock width m = w - (s+e) = 4.5in
-   % Textblock depth d = m × T = 7.65
-   \setlength{\textwidth}{4.5in}
-   \setlength{\textheight}{7.65in}
-   \setlength{\headheight}{11pt}
-   \setlength{\headsep}{11pt}
-   \setlength{\topmargin}{0.5in}
-   \setlength{\oddsidemargin}{0.5in}
+   % Spine margin s = Top margin t = 2/3in
+   \setlength{\topmargin}{0.667in}
+   \setlength{\oddsidemargin}{0.667in}
+   % Fore-edge e = 1.5s = 1in
    \setlength{\evensidemargin}{1in}
+   % Textblock width m = w - (s+e) = 4.5in
+   \setlength{\textwidth}{4.333in}
+   % Textblock depth d = m × T = 7.3661
+   % Subtract header 10pt + 10pt = 20pt = 9/32in. d = 7.08485
+   \setlength{\headheight}{10pt}
+   \setlength{\headsep}{10pt}
+   \setlength{\textheight}{7.085in}
 
    % Headers and footers
    \RequirePackage{fancyhdr}
