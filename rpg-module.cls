@@ -259,17 +259,17 @@
    % Textblock width m = w - (s+e) = 4.5in
    \setlength{\textwidth}{4.333in}
    % Textblock depth d = m × T = 7.3661
-   % Subtract header 10pt + 10pt = 20pt = 9/32in. d = 7.08485
-   \setlength{\headheight}{10pt}
-   \setlength{\headsep}{10pt}
-   \setlength{\textheight}{7.085in}
+   \setlength{\headheight}{0pt}
+   \setlength{\headsep}{0pt}
+   \setlength{\textheight}{7.3661in}
 
    % Headers and footers
    \RequirePackage{fancyhdr}
    \fancypagestyle{fancy}{%
       \fancyhf{} % clear all header and footer fields
-      \fancyhead[LO,RE]{\scshape \rightmark}
-      \fancyhead[RO,LE]{\scshape \thepage}
+      %\fancyhead[LO,RE]{\scshape \rightmark}
+      %\fancyhead[RO,LE]{\scshape \thepage}
+      \fancyfoot[RO,LE]{\thepage}
       \renewcommand{\headrulewidth}{0pt}
       \renewcommand{\footrulewidth}{0pt}
    }
@@ -395,7 +395,7 @@
 %
 % Other stat-block styles depend on the RPG system option chosen and are defined in the appropriate .sty file
 
-\newenvironment{statblockfreestyle}{\begin{list}{}{\leftmargin=1em\rightmargin=1em}\item}{\end{list}}
+\newenvironment{statblockfreestyle}{\begin{list}{}{\leftmargin=1em\rightmargin=1em}\item}{\end{list}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
 % Define monsters
 
