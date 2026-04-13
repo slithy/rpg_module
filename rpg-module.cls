@@ -245,8 +245,8 @@
 \fi
 \ifmodule@tradepaper
    % Trade is a non-standard paper size, set it after loading the class
-   \setlength\paperheight{9in}
-   \setlength\paperwidth{6in}
+   \setlength\paperwidth{6truein}
+   \setlength\paperheight{9truein}
 
    % From the Elements of Typographic Style, Chapter 8: Shaping the Page
    % Page ratio P is 1.5 (6in × 9in) 5th on chromatic scale
@@ -265,7 +265,7 @@
 
    % Headers and footers
    \RequirePackage{fancyhdr}
-   \fancypagestyle{fancy}{%
+   \fancypagestyle{plain}{%
       \fancyhf{} % clear all header and footer fields
       %\fancyhead[LO,RE]{\scshape \rightmark}
       %\fancyhead[RO,LE]{\scshape \thepage}
@@ -273,7 +273,7 @@
       \renewcommand{\headrulewidth}{0pt}
       \renewcommand{\footrulewidth}{0pt}
    }
-   \pagestyle{fancy}
+   \pagestyle{plain}
 \fi
 
 % Float placement options
@@ -336,9 +336,47 @@
 \renewcommand{\huge}        {\fontsize{16pt}{19.2pt}\selectfont}
 \renewcommand{\Huge}        {\fontsize{17.28pt}{20.74pt}\selectfont}
 
+%%%%%%%%%%%%%%%
+%
+% Page Geometry
+%
+%%%%%%%%%%%%%%%
+
+% If this is for printing, add bleed
+\ifdefined\pod
+  \ifnum\pdfstrcmp{\pod}{LULU}=0
+    \newlength{\layoutwidth}
+    \newlength{\layoutheight}
+    \setlength{\layoutwidth}{\paperwidth}
+    \setlength{\layoutheight}{\paperheight}
+    % 0.125" bleed on all four edges
+    \newlength{\bleed}
+    \setlength{\bleed}{0.125truein}
+    \addtolength{\paperwidth}{0.25truein}
+    \addtolength{\paperheight}{0.25truein}
+    \addtolength{\topmargin}{\bleed}
+    \addtolength{\oddsidemargin}{\bleed}
+    \addtolength{\evensidemargin}{\bleed}
+    % Set page geometry
+    \RequirePackage[pass,
+      paperwidth=\paperwidth,
+      paperheight=\paperheight,
+      layoutwidth=\layoutwidth,
+      layoutheight=\layoutheight,
+      layoutvoffset=\bleed,
+      layouthoffset=\bleed,
+      xetex
+    ]{geometry}
+  \else
+    \RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry} % Page size
+  \fi
+\else
+  \RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry} % Page size
+\fi
+
+
 % Load the rest of the required packages
 
-\RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry} % Page size
 \RequirePackage[explicit,newparttoc]{titlesec}                                  % Redefine section headings
 \RequirePackage{titletoc}                                                       % Redefine table of contents
 \RequirePackage{array}                                                          % Format table headings
