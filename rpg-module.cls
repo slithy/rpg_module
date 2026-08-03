@@ -82,16 +82,18 @@
 \newcounter{statsoption}
 \newcounter{acoption}
 
-\newif\ifmodule@letterpaper
 \newif\ifmodule@afourpaper
 \newif\ifmodule@afivepaper
+\newif\ifmodule@letterpaper
+\newif\ifmodule@tradepaper
 \newif\ifmodule@seriffont
 \newif\ifmodule@tightsqueeze
 \newif\ifmodule@dcc
 
-\DeclareOption{letterpaper}{\module@letterpapertrue\module@afourpaperfalse\module@afivepaperfalse\stepcounter{papersizeoption}}
-\DeclareOption{a4paper}{\module@letterpaperfalse\module@afourpapertrue\module@afivepaperfalse\stepcounter{papersizeoption}}
-\DeclareOption{a5paper}{\module@letterpaperfalse\module@afourpaperfalse\module@afivepapertrue\stepcounter{papersizeoption}}
+\DeclareOption{letterpaper}{\module@letterpapertrue\module@afourpaperfalse\module@afivepaperfalse\module@tradepaperfalse\stepcounter{papersizeoption}}
+\DeclareOption{a4paper}{\module@letterpaperfalse\module@afourpapertrue\module@afivepaperfalse\module@tradepaperfalse\stepcounter{papersizeoption}}
+\DeclareOption{a5paper}{\module@letterpaperfalse\module@afourpaperfalse\module@afivepapertrue\module@tradepaperfalse\stepcounter{papersizeoption}}
+\DeclareOption{tradepaper}{\module@letterpaperfalse\module@afourpaperfalse\module@afivepaperfalse\module@tradepapertrue\stepcounter{papersizeoption}}
 
 \DeclareOption{tightsqueeze}{\module@tightsqueezetrue}
 
@@ -113,7 +115,7 @@
 
 \DeclareOption*{
    \ClassError{rpg-module}{Unrecognised option '\CurrentOption'}{Valid options are:\MessageBreak
-      a4paper,a5paper,letterpaper,tightsqueeze\MessageBreak serif,sansserif,\MessageBreak basic,1e,dcc,\MessageBreak acdesc,acac,acb1,acsw}
+      a4paper,a5paper,letterpaper,tradepaper,tightsqueeze\MessageBreak serif,sansserif,\MessageBreak basic,1e,dcc,\MessageBreak acdesc,acac,acb1,acsw}
 }
 
 \ExecuteOptions{a4paper}                                                        % default paper size is A4
@@ -123,10 +125,10 @@
 \ProcessOptions\relax
 
 \ifcase\thepapersizeoption\or\or\else
-   \ClassError{rpg-module}{a4paper, a5paper and letterpaper options are mutually exclusive}
+   \ClassError{rpg-module}{a4paper, a5paper, letterpaper and tradepaper options are mutually exclusive}
    {The input file contains a statement like:\MessageBreak
-    \protect\documentclass[letterpaper,a4paper,a5paper]{rpg-module}\MessageBreak
-    You can only select one paper size, either letterpaper, a4paper or a5paper.\MessageBreak
+    \protect\documentclass[letterpaper,a4paper,a5paper,tradepaper]{rpg-module}\MessageBreak
+    You can only select one paper size, either a4paper, a5paper, letterpaper or tradepaper.\MessageBreak
     The default is a4paper.}
 \fi
 
@@ -162,14 +164,6 @@
 \setlength\voffset{-1in}
 \setlength\hoffset{-1in}
 
-\ifmodule@letterpaper
-   \PassOptionsToClass{letterpaper}{article}
-   \PassOptionsToClass{twoside}{article}
-   \PassOptionsToClass{twocolumn}{article}
-   \addtolength\voffset{-17.6mm}
-   \addtolength\hoffset{2.95mm}
-   \newcommand{\ArmourClass}{Armor Class}                                       % Concession to US spelling of Armour
-\fi
 \ifmodule@afourpaper
    \PassOptionsToClass{a4paper}{article}
    \PassOptionsToClass{twoside}{article}
@@ -182,12 +176,23 @@
    \PassOptionsToClass{onecolumn}{article}
    \newcommand{\ArmourClass}{Armour Class}
 \fi
+\ifmodule@letterpaper
+   \PassOptionsToClass{letterpaper}{article}
+   \PassOptionsToClass{twoside}{article}
+   \PassOptionsToClass{twocolumn}{article}
+   \addtolength\voffset{-17.6mm}
+   \addtolength\hoffset{2.95mm}
+   \newcommand{\ArmourClass}{Armor Class}                                       % Concession to US spelling of Armour
+\fi
+\ifmodule@tradepaper
+   \PassOptionsToClass{twoside}{article}
+   \PassOptionsToClass{onecolumn}{article}
+   \newcommand{\ArmourClass}{Armor Class}
+\fi
 
 % Load the standard LaTeX 'article' document class that module is based on
 
 \LoadClass{article}
-
-
 
 % Set page margins
 
@@ -238,12 +243,41 @@
    \setlength{\textheight}{18.4cm}
    \setlength{\textwidth}{12.8cm}
 \fi
+\ifmodule@tradepaper
+   % Trade is a non-standard paper size, set it after loading the class
+   \setlength\paperwidth{6truein}
+   \setlength\paperheight{9truein}
 
+   % From the Elements of Typographic Style, Chapter 8: Shaping the Page
+   % Page ratio P is 1.5 (6in × 9in) 5th on chromatic scale
+   % Textarea ratio T is 1.7 (tall pentagon)
+   % Spine margin s = Top margin t = 2/3in
+   \setlength{\topmargin}{0.667in}
+   \setlength{\oddsidemargin}{0.667in}
+   % Fore-edge e = 1.5s = 1in
+   \setlength{\evensidemargin}{1in}
+   % Textblock width m = w - (s+e) = 4.5in
+   \setlength{\textwidth}{4.333in}
+   % Textblock depth d = m × T = 7.3661
+   \setlength{\headheight}{0pt}
+   \setlength{\headsep}{0pt}
+   \setlength{\textheight}{7.3661in}
 
+   % Headers and footers
+   \RequirePackage{fancyhdr}
+   \fancypagestyle{plain}{%
+      \fancyhf{} % clear all header and footer fields
+      %\fancyhead[LO,RE]{\scshape \rightmark}
+      %\fancyhead[RO,LE]{\scshape \thepage}
+      \fancyfoot[RO,LE]{\thepage}
+      \renewcommand{\headrulewidth}{0pt}
+      \renewcommand{\footrulewidth}{0pt}
+   }
+   \pagestyle{plain}
+\fi
 
 % Float placement options
 % See p.199-200 of Lamport's "LaTeX" book for details and p.105 of "TeX Unbound" for suggested values
-
 \renewcommand{\topfraction}{0.9}                                                % max fraction of floats at top
 \renewcommand{\bottomfraction}{0.8}                                             % max fraction of floats at bottom
 
@@ -302,9 +336,47 @@
 \renewcommand{\huge}        {\fontsize{16pt}{19.2pt}\selectfont}
 \renewcommand{\Huge}        {\fontsize{17.28pt}{20.74pt}\selectfont}
 
+%%%%%%%%%%%%%%%
+%
+% Page Geometry
+%
+%%%%%%%%%%%%%%%
+
+% If this is for printing, add bleed
+\ifdefined\pod
+  \ifnum\pdfstrcmp{\pod}{LULU}=0
+    \newlength{\layoutwidth}
+    \newlength{\layoutheight}
+    \setlength{\layoutwidth}{\paperwidth}
+    \setlength{\layoutheight}{\paperheight}
+    % 0.125" bleed on all four edges
+    \newlength{\bleed}
+    \setlength{\bleed}{0.125truein}
+    \addtolength{\paperwidth}{0.25truein}
+    \addtolength{\paperheight}{0.25truein}
+    \addtolength{\topmargin}{\bleed}
+    \addtolength{\oddsidemargin}{\bleed}
+    \addtolength{\evensidemargin}{\bleed}
+    % Set page geometry
+    \RequirePackage[pass,
+      paperwidth=\paperwidth,
+      paperheight=\paperheight,
+      layoutwidth=\layoutwidth,
+      layoutheight=\layoutheight,
+      layoutvoffset=\bleed,
+      layouthoffset=\bleed,
+      xetex
+    ]{geometry}
+  \else
+    \RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry} % Page size
+  \fi
+\else
+  \RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry} % Page size
+\fi
+
+
 % Load the rest of the required packages
 
-\RequirePackage[pass,paperwidth=\paperwidth,paperheight=\paperheight]{geometry} % Page size
 \RequirePackage[explicit,newparttoc]{titlesec}                                  % Redefine section headings
 \RequirePackage{titletoc}                                                       % Redefine table of contents
 \RequirePackage{array}                                                          % Format table headings
@@ -318,7 +390,14 @@
 % Hyperlinks
 
 \RequirePackage[linktocpage]{hyperref}                                          % Allow hyperlinks, only page numbers in TOC are clickable
-\RequirePackage[dvipsnames]{xcolor}                                             % Pre-defined colour names
+\ifdefined\pod
+  \RequirePackage[dvipdfmx]{xcolor}                                             % Colour model compatible with PDF/X-3:2002
+  \selectcolormodel{natural}
+  \usepackage{ninecolors}
+  \selectcolormodel{rgb}
+\else
+  \RequirePackage[dvipsnames]{xcolor}                                           % Pre-defined colour names
+\fi
 \hypersetup{colorlinks=true,
     urlcolor=MidnightBlue,                                                      % Colour for external links
     linkcolor=MidnightBlue,                                                     % Colour for internal links (including Table of Contents)
@@ -354,7 +433,7 @@
 %
 % Other stat-block styles depend on the RPG system option chosen and are defined in the appropriate .sty file
 
-\newenvironment{statblockfreestyle}{\begin{list}{}{\leftmargin=1em\rightmargin=1em}\item}{\end{list}}
+\newenvironment{statblockfreestyle}{\begin{list}{}{\leftmargin=1em\rightmargin=1em}\item}{\end{list}\par\aftergroup\@afterindentfalse\aftergroup\@afterheading}
 
 % Define monsters
 
@@ -446,8 +525,6 @@
 \end{tabular}
 }}
 
-
-
 % Running heads (used on A4 paper size only)
 
 \newcommand\titlerunning[1]{%
@@ -455,11 +532,16 @@
 }
 
 \ifmodule@letterpaper\else
-   \renewcommand{\partmark}[1]{\markright{\MakeUppercase{#1}}{}}
+   \renewcommand{\partmark}[1]{\markright{\MakeUppercase{#1}}}
    \renewcommand{\sectionmark}[1]{}
    \renewcommand{\subsectionmark}[1]{}
    \renewcommand{\leftmark}{\runningtitle}
    \titlerunning{\@title}
+\fi
+\ifmodule@tradepaper
+   \renewcommand{\partmark}[1]{\markright{\MakeLowercase{#1}}}
+   \renewcommand{\sectionmark}[1]{}
+   \renewcommand{\subsectionmark}[1]{}
 \fi
 
 
