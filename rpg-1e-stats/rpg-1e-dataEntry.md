@@ -18,6 +18,33 @@ are guidelines on how to handle each of the columns.
 4. For a non-breaking space, use `\,`
 5. When inputting data don't use smart or escaped single quotes or 
     double quotes.
+6. Read introductory material that applies to an entire monster group,
+    not only the individual stat block. Dragon ages and abilities, giant
+    rock throwing, and similar shared rules can change several fields.
+
+## Sources and Precedence
+
+Use the sources for different purposes rather than treating any one of
+them as uniformly authoritative:
+
+1. Use the full monster entry in MM1, FF, or MM2 for the monster's actual
+    statistics and abilities. Include abilities stated in the prose even
+    when they are absent from the summary lines.
+2. Use the DMG Appendix E listing for THAC0 and as the starting point for
+    XP, but check both against the monster's actual HD and description.
+    Appendix E contains transcription, row-selection, and arithmetic
+    errors; a blank or abbreviated field there does not override the full
+    monster entry.
+3. Use the Experience Points Value of Monsters table on DMG p. 85 to
+    reconstruct and validate XP. Its category definitions and explicit
+    examples take precedence over an Appendix E value that contradicts
+    them.
+4. Use *Dismembering the Monster Manual* as an audit aid. It is useful for
+    finding likely ability counts, crossed values, and wrong HD rows, but
+    verify its assumptions against the primary books.
+5. Do not use publication order alone to resolve a disagreement. Prefer
+    the source that actually defines the statistic, and use internal
+    consistency to identify obvious typographical errors.
 
 ---
 
@@ -26,6 +53,11 @@ are guidelines on how to handle each of the columns.
 A lower-case, snake-case string that serves as the key to look
 up the monster. Usually a literal copy of the monster listing.
 For instance, MM1's `Ant, Giant` becomes `ant_giant`.
+
+Keep separate records when two useful lookup keys refer to the same
+statistics. Such aliases are intentional when either name is likely to be
+used by a module author, even if the resulting records are otherwise
+identical.
 
 ---
 
@@ -60,6 +92,10 @@ there are multiple consecutive possible THAC0s, a range is
 preferred, e.g. `13--16`. Otherwise, escaped slashes are 
 acceptable, e.g. `19\?16\?15`.
 
+Validate the DMG value against the monster's HD or an explicit "attacks
+as" statement. "Attacks as N HD" changes THAC0 and related combat
+performance; it does not by itself change the monster's HD for XP.
+
 ---
 
 ### AC
@@ -84,6 +120,10 @@ For HD pluses, don't use spaces - i.e. use `4+3` instead of
 `4 + 3` or `4\+ 3`.  For fractional HDs, favor LaTeX fractions 
 instead of hp descriptions, like `\sfrac{1}{8}` instead of
 `1 hit point`.
+
+Keep fixed hit points from the prose on leader and other variant records,
+but do not infer a new XP bracket merely because the variant attacks as a
+higher-HD creature.
 
 ---
 
@@ -180,7 +220,11 @@ For MM1 monsters, while this is not explicitly listed in the DMG, it
 can be derived. Look at the raw subtotal of XP that the DMG mentions.
 This is the subtotal of base + special abilities + exceptional
 abilities, before hit points. Look up that subtotal in the table
-on page 175. That is the level of the monster.
+on page 174. That is the level of the monster.
+
+The random encounter tables are a useful cross-check on intended monster
+level, especially when an XP value is malformed, but they do not replace
+the p. 85 calculation.
 
 ---
 
@@ -189,3 +233,71 @@ on page 175. That is the level of the monster.
 For MM1 monsters, refer to DMG p. 196 and beyond. To format, use
 the small-spaced plus, e.g. `40\+3/hp`.
 
+Appendix E values must be checked against the table on DMG p. 85. Use:
+
+```
+BXP + (number of S x SAXPB) + (number of E x EAXPA) + (hp x XP/HP)
+```
+
+The CSV value before `\+N/hp` is the subtotal of BXP and all ability
+awards. `N` is the XP/HP value from the same HD row. If Appendix E gives a
+fixed-hp monster a fixed XP total, verify that the total includes the
+correct XP/HP component before preserving it. Do not convert to a fixed
+total merely because a leader or other variant has fixed hit points; such
+a variant can retain the parent monster's XP formula.
+
+Apply these row boundaries literally:
+
+- Exactly `1-1` HD uses the `1-1 to 1` row, not `up to 1-1`.
+- An exact integer HD uses the row that ends at that integer. For example,
+  7 HD uses `6+1 to 7`.
+- Any positive hit-point addition after an integer uses the following
+  row. For example, 3+3 HD uses `3+1 to 4`.
+- Select the row from actual HD, not THAC0, fixed hit points, monster
+  level, or an "attacks as" statement.
+
+Audit the subtotal and the XP/HP value separately. A published subtotal
+can reverse-engineer cleanly while its per-hit-point value comes from the
+wrong row. Conversely, values for adjacent monsters can be crossed even
+when both numbers are individually valid.
+
+Every ability award should map to a combat-relevant feature in the full
+monster description. Use the p. 85 categories consistently:
+
+- Special abilities include four or more attacks, missile discharge,
+  armor class 0 or lower, ordinary special attacks and defenses, being
+  hit only by special or magical weapons, combat-relevant high
+  intelligence, and minor spell-like defenses.
+- Exceptional abilities include energy drain, paralysis, poison, major
+  breath weapons, magic resistance, spell use, swallowing whole,
+  weakness, and the listed maximum-damage thresholds.
+- For a maximum-damage award, total the attacks in one normal attack
+  routine that can be directed at a single opponent. For one, two, three,
+  or four or more attacks, award an exceptional ability only when the
+  combined maximum is greater than 24, 30, 36, or 42, respectively. Do
+  not include attacks that must be distributed among other opponents.
+- Treat a material saving-throw bonus, elemental immunity or resistance,
+  improved surprise chance, or a reliable prose-only combat ability as
+  an award when it fits one of those categories.
+- Do not award intelligence merely because its rating is high; it must
+  affect combat.
+
+Ability awards are cumulative. The p. 85 rule for an extraordinary power
+can multiply an individual ability award or a clearly related package by
+2, 4, 8, 10, or more. Preserve the ordinary BXP and XP/HP components when
+using a multiplier. First identify the underlying S and E abilities, then
+apply the multiplier; do not invent fractional or negative ability counts
+merely to reproduce a published total.
+
+If Appendix E cannot be expressed as a non-negative whole-number
+combination of the selected row's BXP, SAXPB, and EAXPA, treat that as
+evidence of an error. Reconstruct the value from the monster description
+and p. 85 rather than copying it unchanged.
+
+For a monster with a range of HD, retain the summary record and add a
+record for each specific form. Calculate each specific form from its own
+HD row. When a single XP and level are required for the summary record,
+use the representative middle form rather than the lowest or highest
+form. Add separately described leaders, guards, or named subtypes when
+their AC, THAC0, hit points, attacks, or damage differ, even when their XP
+formula remains the same.
