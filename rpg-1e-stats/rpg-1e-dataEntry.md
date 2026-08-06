@@ -96,6 +96,12 @@ Validate the DMG value against the monster's HD or an explicit "attacks
 as" statement. "Attacks as N HD" changes THAC0 and related combat
 performance; it does not by itself change the monster's HD for XP.
 
+Do not copy a `20` from Appendix E's "To Hit A.C. 0" column without
+checking the attack matrix. Rows with repeated or "sticky" 20s can have
+a different extrapolated THAC0. Derive it from the surrounding armor
+classes: for example, a sub-1-HD creature that needs 14 to hit AC 7 has
+THAC0 21, even though its matrix entry against AC 0 is 20.
+
 ---
 
 ### AC
