@@ -259,8 +259,33 @@ Apply these row boundaries literally:
   7 HD uses `6+1 to 7`.
 - Any positive hit-point addition after an integer uses the following
   row. For example, 3+3 HD uses `3+1 to 4`.
-- Select the row from actual HD, not THAC0, fixed hit points, monster
-  level, or an "attacks as" statement.
+- For a monster with stated HD, select the row from actual HD, not THAC0,
+  monster level, or an "attacks as" statement.
+
+Fixed-hit-point monsters require a separate inference because the rules do
+not provide a general conversion from fixed hit points to HD for XP. Preserve
+the literal hit-point value in the HD field, and infer the p. 85 row from the
+whole record:
+
+- Follow an explicit monster-specific conversion when the MM supplies one.
+  The Golem introduction directs the referee to divide hit points by 4.5 and
+  round up, yielding 9 HD for Flesh, 11 for Clay, 14 for Stone, and 18 for
+  Iron Golems. This is a rule for golems, not a general fixed-HP rule.
+- Dividing by 4.5, the average of a d8, is a useful plausibility check, not a
+  rule. Likewise, do not infer HD by dividing by the maximum 8 hp per die or
+  rounding that quotient up.
+- Cross-check the plausible HD range against THAC0, comparable monsters, the
+  XP/HP rate, and whether the published total reverse-engineers into
+  non-negative whole-number Special and Exceptional award units.
+- Exact arithmetic can justify an adjacent row when the other evidence is
+  coherent. Record the reason for such exceptions; Juiblex is an example,
+  because the 21-and-up row exactly reproduces the published total with a
+  balanced allocation despite 88 hp being close to the average for 20 HD.
+- Do not select a less plausible row merely because it is the only way to
+  reproduce a suspect published total. Reconstruct the award from the most
+  defensible row and the described abilities. For example, Geryon's 133 hp is
+  roughly the average for 30 d8 HD, supporting the 21-and-up row rather than
+  17--18+.
 
 Audit the subtotal and the XP/HP value separately. A published subtotal
 can reverse-engineer cleanly while its per-hit-point value comes from the
