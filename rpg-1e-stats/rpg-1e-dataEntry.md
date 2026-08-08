@@ -21,6 +21,11 @@ are guidelines on how to handle each of the columns.
 6. Read introductory material that applies to an entire monster group,
     not only the individual stat block. Dragon ages and abilities, giant
     rock throwing, and similar shared rules can change several fields.
+7. Add every new MM1 monster record to both `mm.csv` and
+    `mm-xp-audit.csv` in the same change. This includes summary records,
+    aliases, and keyed HD or ability variants; each CSV key should have a
+    corresponding XP-tracking row explaining the selected p. 85 row and
+    ability awards.
 
 ## Sources and Precedence
 
