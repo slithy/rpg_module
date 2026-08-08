@@ -107,6 +107,13 @@ a different extrapolated THAC0. Derive it from the surrounding armor
 classes: for example, a sub-1-HD creature that needs 14 to hit AC 7 has
 THAC0 21, even though its matrix entry against AC 0 is 20.
 
+Keep explicit bonuses or penalties to the "to hit" die separate from
+THAC0. THAC0 records the unmodified attack-matrix value; apply the
+modifier to the d20 roll and record it in the appropriate attack or
+special field. Do not bake it into THAC0: the repeated-20 portion of the
+matrix is non-linear, and doing so would also double-count a modifier
+already recorded elsewhere.
+
 ---
 
 ### AC
