@@ -272,6 +272,14 @@ not provide a general conversion from fixed hit points to HD for XP. Preserve
 the literal hit-point value in the HD field, and infer the p. 85 row from the
 whole record:
 
+- When Appendix E supplies a plausible XP formula for a fixed-hit-point
+  leader or variant, do not replace its row solely because the fixed hit
+  points resemble a different number of dice or the variant attacks as a
+  higher-HD creature. Preserve the Appendix row unless independent evidence
+  demonstrates an error. Orc chiefs and bodyguards therefore retain
+  `20+2/hp`: their 13--16 hit points make their actual awards higher than the
+  11-hit-point subchief and guard even though the formula is the same.
+
 - Follow an explicit monster-specific conversion when the MM supplies one.
   The Golem introduction directs the referee to divide hit points by 4.5 and
   round up, yielding 9 HD for Flesh, 11 for Clay, 14 for Stone, and 18 for
@@ -317,6 +325,10 @@ monster description. Use the p. 85 categories consistently:
   an award when it fits one of those categories.
 - Do not award intelligence merely because its rating is high; it must
   affect combat.
+- Classify the same ability consistently across closely related forms even
+  when Appendix E implies different categories. For the Otyugh family,
+  disease is one Exceptional ability and never being surprised is one
+  Special ability; the Neo-Otyugh adds one Special for AC 0.
 
 Ability awards are cumulative. The p. 85 rule for an extraordinary power
 can multiply an individual ability award or a clearly related package by
