@@ -114,6 +114,11 @@ special field. Do not bake it into THAC0: the repeated-20 portion of the
 matrix is non-linear, and doing so would also double-count a modifier
 already recorded elsewhere.
 
+Apply the p. 75 positive-hit-point modifier note literally when choosing
+an attack-matrix column. A modifier of `+1` through `+3` remains in the
+base HD column, while a modifier above `+3` counts as one additional hit
+die. Thus 3+2 and 3+3 use the 2--3+ column, while 5+5 attacks as 6 HD.
+
 ---
 
 ### AC
