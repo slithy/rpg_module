@@ -312,6 +312,15 @@ can reverse-engineer cleanly while its per-hit-point value comes from the
 wrong row. Conversely, values for adjacent monsters can be crossed even
 when both numbers are individually valid.
 
+Use the sources in this order. The MM establishes the monster's actual
+statistics and abilities, and DMG p. 85 establishes how supported abilities
+are classified and valued. Appendix E is strong corroborating evidence,
+especially for an ambiguous weighting or multiplier, but it does not create
+an ability absent from the MM. A secondary reconstruction is an arithmetic
+and interpretive cross-check, not an authority. If Appendix E contains an
+unexplained award, use the minimum allocation supported by the MM and record
+the override.
+
 Every ability award should map to a combat-relevant feature in the full
 monster description. Use the p. 85 categories consistently:
 
@@ -330,6 +339,16 @@ monster description. Use the p. 85 categories consistently:
 - Treat a material saving-throw bonus, elemental immunity or resistance,
   improved surprise chance, or a reliable prose-only combat ability as
   an award when it fits one of those categories.
+- Do not award an unusual movement mode merely because it can be useful in
+  an encounter. Require the MM to present it as a special attack or defense,
+  or to describe a concrete combat use. Thus Xorn stone phasing is a Special
+  defense used to escape combat, while the Umber Hulk's solid-stone tunneling
+  is only a movement rate and earns no award.
+- Treat a coherent immunity suite as one ability rather than awarding each
+  named immunity separately. The standard undead immunity to sleep, charm,
+  hold, and cold is one Special package. A mechanically distinct defense,
+  such as a magic-weapon requirement, physical damage reduction, or the
+  corporeal poison-and-paralysis suite, can earn a separate Special.
 - Do not award intelligence merely because its rating is high; it must
   affect combat.
 - Classify the same ability consistently across closely related forms even
@@ -343,6 +362,12 @@ can multiply an individual ability award or a clearly related package by
 using a multiplier. First identify the underlying S and E abilities, then
 apply the multiplier; do not invent fractional or negative ability counts
 merely to reproduce a published total.
+
+Use the cleric turning matrix as a broad undead-progression sanity check,
+not as a requirement that XP values increase monotonically. Turning
+resistance measures a narrower relationship to clerical power; Appendix E
+itself values a Wight above a Ghast despite placing the Ghast later in the
+turning order.
 
 If Appendix E cannot be expressed as a non-negative whole-number
 combination of the selected row's BXP, SAXPB, and EAXPA, treat that as
