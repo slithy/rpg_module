@@ -1,7 +1,7 @@
 #!/bin/sh
 
-SOURCE_CSV=monster_list.csv
-DEST_DEF=../rpg-1e-stats.def
+SOURCE_CSV=$1
+DEST_DEF=rpg-1e-stats.def
 DEST_TEX=test_all.tex
 
 cat <<END_HEADER >${DEST_DEF}
@@ -29,7 +29,7 @@ cat <<END_HEADER >${DEST_DEF}
 % 2005/12/01 or later.
 %
 % This work has the LPPL maintenance status \`author-maintained'.
-% 
+%
 % The Author and Maintainer of this work is Michael C. Davis
 %
 %
@@ -51,7 +51,7 @@ cat <<END_HEADER >${DEST_DEF}
 %
 % USAGE
 %
-% See the file rpg-module.pdf (source file doc/rpg-module.tex) for documentation. 
+% See the file rpg-module.pdf (source file doc/rpg-module.tex) for documentation.
 % There are a number of worked examples in the examples/ directory.
 %
 % Technical support is provided on GitHub:
@@ -63,12 +63,13 @@ cat <<END_HEADER >${DEST_DEF}
 %    http://www.dragonsfoot.org/forums/viewtopic.php?f=87&t=73823
 %
 % The format of entries in this file is:
-% \monster{key}[Name, Plural]{Name, Singular}{Type|THAC0|AC|MV|HD|Attacks|Dmglong|Dmg|SA|SD|MR|Special|SZ|Int|AL|Psi|PsiAtt|Frequency|NoAppear|InLair|TT|Level|XP}
+% \monster[Name, Plural]{key}{Name, Singular}{Type|THAC0|AC|MV|HD|Attacks|Dmglong|Dmg|SA|SD|MR|Special|SZ|Int|AL|Psi|PsiAtt|Frequency|NoAppear|InLair|TT|Level|XP}
 
 END_HEADER
 
-tail -n +3 ${SOURCE_CSV} |\
+cat ${SOURCE_CSV} |\
 awk 'BEGIN{FS="|"}{
+  if($1 == "") next
   printf("\\monster")
   if($3 != "") { printf("[%s]", $3) }
   printf("{%s}{%s}{", $1, $2)
@@ -95,7 +96,7 @@ The default is the long format, here shown for single monsters.
 
 END_LATEX
 
-tail -n +3 ${SOURCE_CSV} |\
+cat ${SOURCE_CSV} |\
 awk 'BEGIN{FS="|"}{
   printf("\\statblock{%s}{1}{8}\n", $1)
 }' >>${DEST_TEX}
@@ -108,7 +109,7 @@ Short (inline) format, shown for two monsters (to make sure plurals look OK).
 
 END_LATEX
 
-tail -n +3 ${SOURCE_CSV} |\
+cat ${SOURCE_CSV} |\
 awk 'BEGIN{FS="|"}{
   printf("\\noindent You must fight \\shortstats{%s}{2}{8 each}\n\n", $1)
 }' >>${DEST_TEX}
@@ -119,7 +120,7 @@ cat <<END_LATEX >>${DEST_TEX}
 
 END_LATEX
 
-tail -n +3 ${SOURCE_CSV} |\
+cat ${SOURCE_CSV} |\
 awk 'BEGIN{FS="|"}{
   printf("\\begin{newmonster}{%s}\n", $1)
   printf("\\end{newmonster}\n")
@@ -129,14 +130,25 @@ cat <<END_LATEX >>${DEST_TEX}
 
 \onecolumn
 
+\small
+
 \section{Wandering Monster Table}
 
 \begin{wanderingmonsters}[b]
+\wanderitem{chimera}{}
+\end{wanderingmonsters}
+\begin{wanderingmonsters}[b]
 END_LATEX
 
-tail -n +3 ${SOURCE_CSV} |\
-awk 'BEGIN{FS="|"}{
+cat ${SOURCE_CSV} |\
+awk 'BEGIN{FS="|"; count = 0}{
+  if($1 == "beholder" || $1 == "cattle_wild" || $1 == "chimera") { next }
   printf("\\wanderitem{%s}{}\n", $1)
+  ++count
+  if(count == 20) {
+    printf("\\end{wanderingmonsters}\n\\begin{wanderingmonsters}[b]\n")
+    count = 0
+  }
 }' >>${DEST_TEX}
 
 cat <<END_LATEX >>${DEST_TEX}
@@ -145,11 +157,20 @@ cat <<END_LATEX >>${DEST_TEX}
 \section{Monster Roster Table}
 
 \begin{monsterroster}
+\rosteritem{Room 1}{chimera}{2}{5 each}
+\end{monsterroster}
+\begin{monsterroster}
 END_LATEX
 
-tail -n +3 ${SOURCE_CSV} |\
-awk 'BEGIN{FS="|"}{
+cat ${SOURCE_CSV} |\
+awk 'BEGIN{FS="|"; count = 0}{
+  if($1 == "beholder" || $1 == "cattle_wild" || $1 == "chimera") { next }
   printf("\\rosteritem{Room 1}{%s}{2}{5 each}\n", $1)
+  ++count
+  if(count == 20) {
+    printf("\\end{monsterroster}\n\\begin{monsterroster}\n")
+    count = 0
+  }
 }' >>${DEST_TEX}
 
 cat <<END_LATEX >>${DEST_TEX}
